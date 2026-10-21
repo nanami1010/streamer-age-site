@@ -1,4 +1,3 @@
-
 ---
 import StreamerSearch from "../components/StreamerSearch.astro";
 import Layout from "../layouts/Layout.astro";
@@ -10,6 +9,13 @@ const streamers = await getValidatedStreamers();
 const genres = Array.from(
   new Set(streamers.flatMap((streamer) => streamer.genres))
 ).sort((a, b) => a.localeCompare(b, "ja"));
+
+function formatBirthDate(birthDate: string | null) {
+  if (!birthDate) return "非公開";
+
+  const [year, month, day] = birthDate.split("-").map(Number);
+  return `${year}年${month}月${day}日`;
+}
 ---
 
 <Layout
@@ -17,128 +23,267 @@ const genres = Array.from(
   description="ゲーム配信者の年齢・誕生日・プロフィールを調べられるサイトです。"
   canonicalPath="/"
 >
-    <main>
-      <h1>配信者年齢サイト</h1>
-      <p>配信者の年齢・誕生日をチェック</p>
+  <main class="home-main">
+    <StreamerSearch totalCount={streamers.length} genres={genres}>
+      <div id="streamer-list" class="streamer-grid">
+        {streamers.map((streamer) => {
+          const age = calculateAge(streamer.birthDate);
+          const profileUrl = `/streamers/${streamer.slug}/`;
+          const initial = streamer.name.trim().charAt(0).toUpperCase();
 
-      <StreamerSearch totalCount={streamers.length} genres={genres}>
-        <div id="streamer-list" class="grid">
-          {streamers.map((streamer) => (
+          return (
             <article
-              class="card"
+              class="streamer-card"
               data-streamer-card
               data-search={createStreamerSearchIndex(streamer)}
               data-genres={JSON.stringify(streamer.genres)}
               data-birth-date={streamer.birthDate ?? ""}
             >
-              <h2>
-                <a
-                  class="profile-link"
-                  href={`/streamers/${streamer.slug}/`}
-                >
-                  {streamer.name}
+              <a class="streamer-card__link" href={profileUrl}>
+                <div class="streamer-card__header">
+                  <div class="streamer-card__avatar">
+                    {streamer.profileImage ? (
+                      <img
+                        src={streamer.profileImage}
+                        alt={`${streamer.name}のプロフィール画像`}
+                        width="72"
+                        height="72"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span aria-hidden="true">{initial}</span>
+                    )}
+                  </div>
+
+                  <div class="streamer-card__identity">
+                    <h2>{streamer.name}</h2>
+                    <p class="streamer-card__affiliation">
+                      {streamer.affiliation ?? "所属なし"}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="streamer-card__names">
+                  <p>読み：{streamer.nameKana}</p>
                   {streamer.aliases.length > 0 && (
-                    <span class="alias">
-                      （{streamer.aliases.join("・")}）
-                    </span>
+                    <p>別名：{streamer.aliases.join("・")}</p>
                   )}
-                </a>
-              </h2>
+                </div>
 
-              <p class="age">
-                年齢：
-                <strong data-birth={streamer.birthDate ?? ""}>
-                  {calculateAge(streamer.birthDate) === null
-                    ? "非公開"
-                    : `${calculateAge(streamer.birthDate)}歳`}
-                </strong>
-              </p>
+                <div class="streamer-card__genres" aria-label="ジャンル">
+                  {streamer.genres.map((genre) => <span>{genre}</span>)}
+                </div>
 
-              <p class="genre">
-                {streamer.genres.join("・")}
-              </p>
+                <dl class="streamer-card__facts">
+                  <div>
+                    <dt>年齢</dt>
+                    <dd data-birth={streamer.birthDate ?? ""}>
+                      {age === null ? "非公開" : `${age}歳`}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>誕生日</dt>
+                    <dd>{formatBirthDate(streamer.birthDate)}</dd>
+                  </div>
+                </dl>
 
-              <a
-                class="detail-link"
-                href={`/streamers/${streamer.slug}/`}
-              >
-                プロフィールを見る →
+                <span class="streamer-card__detail">
+                  プロフィールを見る <span aria-hidden="true">→</span>
+                </span>
               </a>
             </article>
-          ))}
-        </div>
-      </StreamerSearch>
-    </main>
+          );
+        })}
+      </div>
+    </StreamerSearch>
+  </main>
 </Layout>
 
 <style>
-  main {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
+  .home-main {
+    min-width: 0;
   }
 
-  h1 {
-    font-size: 32px;
-  }
-
-  .grid {
+  .streamer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 360px));
+    gap: 22px;
+    justify-content: start;
   }
 
-  .card {
-    background: white;
+  .streamer-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .streamer-card[hidden] {
+    display: none;
+  }
+
+  .streamer-card:hover {
+    border-color: #c8c0f5;
+    box-shadow: 0 18px 48px rgb(15 23 42 / 13%);
+    transform: translateY(-3px);
+  }
+
+  .streamer-card__link {
+    display: flex;
+    min-height: 100%;
     padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #00000010;
-  }
-
-  .card h2 {
-    color: #2563eb;
-    margin-top: 0;
-  }
-
-  .alias {
-    color: #64748b;
-    font-size: 0.8em;
-    font-weight: normal;
-  }
-
-  .profile-link {
     color: inherit;
+    flex-direction: column;
     text-decoration: none;
   }
 
-  .profile-link:hover {
-    text-decoration: underline;
+  .streamer-card__link:focus-visible {
+    border-radius: inherit;
+    outline: 3px solid rgb(117 89 232 / 35%);
+    outline-offset: -3px;
   }
 
-  .age {
-    margin: 20px 0 12px;
+  .streamer-card__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
 
-  .age strong {
+  .streamer-card__avatar {
+    display: grid;
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    overflow: hidden;
+    place-items: center;
+    border-radius: 18px;
+    background: linear-gradient(145deg, var(--color-purple-soft), var(--color-teal-soft));
+    color: var(--color-purple);
+    font-size: 29px;
+    font-weight: 800;
+  }
+
+  .streamer-card__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .streamer-card__identity {
+    min-width: 0;
+  }
+
+  .streamer-card h2 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--color-text);
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.15;
+  }
+
+  .streamer-card__affiliation {
+    margin: 7px 0 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .streamer-card__names {
+    min-height: 48px;
+    margin-top: 20px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+  }
+
+  .streamer-card__names p {
+    margin: 3px 0;
+  }
+
+  .streamer-card__genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .streamer-card__genres span {
+    padding: 5px 10px;
+    border: 1px solid #dcd6ff;
+    border-radius: 999px;
+    background: var(--color-purple-soft);
+    color: #5842bd;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .streamer-card__facts {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 1px;
+    margin: 24px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-border);
+  }
+
+  .streamer-card__facts div {
+    min-width: 0;
+    padding: 14px;
+    background: #fafbfe;
+  }
+
+  .streamer-card__facts dt {
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .streamer-card__facts dd {
+    margin: 5px 0 0;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .streamer-card__facts div:first-child dd {
+    color: var(--color-purple);
     font-size: 24px;
+    line-height: 1;
   }
 
-  .genre {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 24px;
+  .streamer-card__detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 22px;
+    color: var(--color-purple);
+    font-size: 13px;
+    font-weight: 800;
   }
 
-  .detail-link {
-    display: inline-block;
-    color: #2563eb;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-  }
+  @media (max-width: 600px) {
+    .streamer-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
 
-  .detail-link:hover {
-    text-decoration: underline;
+    .streamer-card__link {
+      padding: 20px;
+    }
+
+    .streamer-card__facts {
+      grid-template-columns: 1fr 1.35fr;
+    }
+
+    .streamer-card__facts div {
+      padding: 12px;
+    }
   }
 </style>

@@ -4,6 +4,7 @@ import {
   shouldIncludeInSitemap
 } from "../../site.config.mjs";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import { getRobotsMetaContent, toAbsoluteUrl } from "../utils/seo";
 
 interface Props {
@@ -62,6 +63,7 @@ const robotsContent = getRobotsMetaContent(
   </head>
 
   <body>
+    <Header />
     <slot />
     <Footer />
 
@@ -74,10 +76,41 @@ const robotsContent = getRobotsMetaContent(
 </html>
 
 <style is:global>
+  :root {
+    --color-navy: #0b1020;
+    --color-navy-soft: #121a31;
+    --color-surface: #ffffff;
+    --color-background: #f5f7fb;
+    --color-border: #e2e8f0;
+    --color-text: #172033;
+    --color-text-muted: #64748b;
+    --color-text-on-dark-muted: #aeb9d0;
+    --color-purple: #7559e8;
+    --color-purple-soft: #f0edff;
+    --color-teal: #20b8a5;
+    --color-teal-soft: #e8faf7;
+    --content-width: 1180px;
+    --radius-large: 20px;
+    --shadow-card: 0 14px 40px rgb(15 23 42 / 8%);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--color-background);
+  }
+
   body {
     margin: 0;
-    font-family: sans-serif;
-    background: #f4f6fa;
-    color: #222;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family:
+      Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 </style>

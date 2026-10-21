@@ -1,0 +1,80 @@
+---
+import { SITE_CONFIG } from "../../site.config.mjs";
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label={`${SITE_CONFIG.name} トップページ`}>
+      <span class="brand__mark" aria-hidden="true">S</span>
+      <span class="brand__text">
+        <span class="brand__name">STREAMER DB</span>
+        <span class="brand__caption">{SITE_CONFIG.name}</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    background: var(--color-navy);
+  }
+
+  .site-header__inner {
+    width: min(100% - 40px, var(--content-width));
+    margin-inline: auto;
+    padding-block: 16px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .brand__mark {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--color-purple), var(--color-teal));
+    box-shadow: 0 8px 24px rgb(39 209 183 / 16%);
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .brand__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .brand__name {
+    letter-spacing: 0.08em;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .brand__caption {
+    color: var(--color-text-on-dark-muted);
+    font-size: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .site-header__inner {
+      width: min(100% - 32px, var(--content-width));
+      padding-block: 13px;
+    }
+
+    .brand__mark {
+      width: 34px;
+      height: 34px;
+    }
+  }
+</style>
