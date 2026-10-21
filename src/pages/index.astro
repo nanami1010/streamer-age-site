@@ -1,55 +1,16 @@
 
 ---
+import Layout from "../layouts/Layout.astro";
 import { getValidatedStreamers } from "../lib/streamers";
+import { calculateAge } from "../utils/age";
 
 const streamers = await getValidatedStreamers();
-
-// 日本時間を取得
-function getTodayJST() {
-  const parts = new Intl.DateTimeFormat("en-US", {
-    timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "numeric",
-    day: "numeric"
-  }).formatToParts(new Date());
-
-  const get = (type: string) =>
-    Number(parts.find((p) => p.type === type)?.value);
-
-  return {
-    year: get("year"),
-    month: get("month"),
-    day: get("day")
-  };
-}
-
-// 年齢計算
-function calculateAge(birthDate: string | null) {
-  if (!birthDate) return null;
-
-  const [year, month, day] = birthDate.split("-").map(Number);
-  const today = getTodayJST();
-
-  const age = today.year - year -
-    (today.month < month ||
-    (today.month === month && today.day < day) ? 1 : 0);
-
-  return Number.isFinite(age) && age >= 0 ? age : null;
-}
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="ゲーム配信者の年齢・誕生日・プロフィールを調べられるサイトです。"
-    />
-    <title>配信者年齢サイト</title>
-  </head>
-
-  <body>
+<Layout
+  title="配信者年齢サイト"
+  description="ゲーム配信者の年齢・誕生日・プロフィールを調べられるサイトです。"
+>
     <main>
       <h1>配信者年齢サイト</h1>
       <p>配信者の年齢・誕生日をチェック</p>
@@ -94,50 +55,9 @@ function calculateAge(birthDate: string | null) {
         ))}
       </div>
     </main>
-
-    <script>
-      const parts = new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Tokyo",
-        year: "numeric",
-        month: "numeric",
-        day: "numeric"
-      }).formatToParts(new Date());
-
-      const get = (type: string) =>
-        Number(parts.find((p) => p.type === type)?.value);
-
-      document.querySelectorAll<HTMLElement>("[data-birth]")
-        .forEach((element) => {
-          const birth = element.dataset.birth;
-
-          if (!birth) {
-            element.textContent = "非公開";
-            return;
-          }
-
-          const [year, month, day] = birth.split("-").map(Number);
-
-          const age = get("year") - year -
-            (get("month") < month ||
-            (get("month") === month && get("day") < day) ? 1 : 0);
-
-          element.textContent =
-            Number.isFinite(age) && age >= 0
-              ? `${age}歳`
-              : "非公開";
-        });
-    </script>
-  </body>
-</html>
+</Layout>
 
 <style>
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background: #f4f6fa;
-    color: #222;
-  }
-
   main {
     max-width: 1000px;
     margin: 50px auto;

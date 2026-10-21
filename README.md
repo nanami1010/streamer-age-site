@@ -19,6 +19,12 @@ src/
 │       └── shaka.json         # 配信者ごとのデータ
 ├── lib/
 │   └── streamers.ts           # コレクション取得・重複検証
+├── layouts/
+│   └── Layout.astro           # 言語・meta情報・共通HTML構造
+├── scripts/
+│   └── update-displayed-ages.ts # ブラウザ上の年齢更新
+├── utils/
+│   └── age.ts                 # 日本時間基準の年齢計算
 └── pages/
     ├── index.astro
     └── streamers/[slug].astro
