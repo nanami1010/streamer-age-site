@@ -1,9 +1,10 @@
 ---
 interface Props {
   totalCount: number;
+  genres: string[];
 }
 
-const { totalCount } = Astro.props;
+const { totalCount, genres } = Astro.props;
 ---
 
 <div class="streamer-search" data-streamer-search-root>
@@ -12,7 +13,11 @@ const { totalCount } = Astro.props;
     role="search"
     aria-labelledby="streamer-search-label"
   >
-    <label id="streamer-search-label" for="streamer-search-input">
+    <label
+      id="streamer-search-label"
+      class="search-label"
+      for="streamer-search-input"
+    >
       配信者を検索
     </label>
 
@@ -29,6 +34,47 @@ const { totalCount } = Astro.props;
       />
       <button type="button" data-search-clear disabled>
         クリア
+      </button>
+    </div>
+
+    <div class="filter-controls">
+      <div class="filter-field">
+        <label for="streamer-genre-filter">ジャンル</label>
+        <select
+          id="streamer-genre-filter"
+          aria-controls="streamer-list"
+          data-genre-filter
+        >
+          <option value="">すべて</option>
+          {genres.map((genre) => <option value={genre}>{genre}</option>)}
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="streamer-age-filter">年齢</label>
+        <select
+          id="streamer-age-filter"
+          aria-controls="streamer-list"
+          data-age-filter
+        >
+          <option value="">すべて</option>
+          <option value="under-20">19歳以下</option>
+          <option value="20-24">20〜24歳</option>
+          <option value="25-29">25〜29歳</option>
+          <option value="30-34">30〜34歳</option>
+          <option value="35-39">35〜39歳</option>
+          <option value="40-and-over">40歳以上</option>
+          <option value="unknown">年齢不明</option>
+        </select>
+      </div>
+
+      <button
+        class="reset-button"
+        type="button"
+        data-filter-reset
+        disabled
+      >
+        条件をリセット
       </button>
     </div>
 
@@ -52,6 +98,8 @@ const { totalCount } = Astro.props;
 </div>
 
 <script>
+  import { calculateAge, getTodayJST } from "../utils/age";
+  import { matchesAgeFilter, matchesGenre } from "../utils/filter";
   import { matchesStreamer } from "../utils/search";
 
   document
@@ -59,31 +107,87 @@ const { totalCount } = Astro.props;
     .forEach((root) => {
       const input = root.querySelector<HTMLInputElement>("[data-search-input]");
       const clearButton = root.querySelector<HTMLButtonElement>("[data-search-clear]");
+      const genreSelect = root.querySelector<HTMLSelectElement>("[data-genre-filter]");
+      const ageSelect = root.querySelector<HTMLSelectElement>("[data-age-filter]");
+      const resetButton = root.querySelector<HTMLButtonElement>("[data-filter-reset]");
       const count = root.querySelector<HTMLElement>("[data-search-count]");
       const emptyMessage = root.querySelector<HTMLElement>("[data-search-empty]");
-      const cards = Array.from(
+      const cardElements = Array.from(
         root.querySelectorAll<HTMLElement>("[data-streamer-card]")
       );
 
-      if (!input || !clearButton || !count || !emptyMessage) return;
+      if (
+        !input ||
+        !clearButton ||
+        !genreSelect ||
+        !ageSelect ||
+        !resetButton ||
+        !count ||
+        !emptyMessage
+      ) return;
+
+      const cards = cardElements.map((element) => {
+        let genres: string[] = [];
+
+        try {
+          const parsedGenres: unknown = JSON.parse(element.dataset.genres ?? "[]");
+          if (
+            Array.isArray(parsedGenres) &&
+            parsedGenres.every((genre) => typeof genre === "string")
+          ) {
+            genres = parsedGenres;
+          }
+        } catch {
+          genres = [];
+        }
+
+        return {
+          element,
+          searchIndex: element.dataset.search ?? "",
+          genres,
+          birthDate: element.dataset.birthDate || null
+        };
+      });
 
       const updateResults = () => {
         let visibleCount = 0;
+        const selectedAge = ageSelect.value;
+        const today = getTodayJST();
 
         for (const card of cards) {
-          const matches = matchesStreamer(card.dataset.search ?? "", input.value);
-          card.hidden = !matches;
+          const matches =
+            matchesStreamer(card.searchIndex, input.value) &&
+            matchesGenre(card.genres, genreSelect.value) &&
+            (
+              selectedAge === "" ||
+              matchesAgeFilter(calculateAge(card.birthDate, today), selectedAge)
+            );
+
+          card.element.hidden = !matches;
           if (matches) visibleCount += 1;
         }
 
         count.textContent = String(visibleCount);
         emptyMessage.hidden = visibleCount !== 0;
         clearButton.disabled = input.value === "";
+        resetButton.disabled =
+          input.value === "" &&
+          genreSelect.value === "" &&
+          ageSelect.value === "";
       };
 
       input.addEventListener("input", updateResults);
+      genreSelect.addEventListener("change", updateResults);
+      ageSelect.addEventListener("change", updateResults);
       clearButton.addEventListener("click", () => {
         input.value = "";
+        updateResults();
+        input.focus();
+      });
+      resetButton.addEventListener("click", () => {
+        input.value = "";
+        genreSelect.value = "";
+        ageSelect.value = "";
         updateResults();
         input.focus();
       });
@@ -97,7 +201,8 @@ const { totalCount } = Astro.props;
     margin-top: 30px;
   }
 
-  label {
+  .search-label,
+  .filter-field label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
@@ -121,7 +226,28 @@ const { totalCount } = Astro.props;
     font: inherit;
   }
 
-  input:focus {
+  .filter-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+    gap: 10px;
+    align-items: end;
+    margin-top: 16px;
+  }
+
+  select {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 36px 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #222;
+    font: inherit;
+  }
+
+  input:focus,
+  select:focus {
     border-color: #2563eb;
     outline: 2px solid #bfdbfe;
     outline-offset: 1px;
@@ -169,8 +295,17 @@ const { totalCount } = Astro.props;
       gap: 8px;
     }
 
+    .filter-controls {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
     button {
       padding-inline: 14px;
+    }
+
+    .reset-button {
+      width: 100%;
     }
   }
 </style>

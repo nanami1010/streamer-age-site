@@ -7,6 +7,9 @@ import { calculateAge } from "../utils/age";
 import { createStreamerSearchIndex } from "../utils/search";
 
 const streamers = await getValidatedStreamers();
+const genres = Array.from(
+  new Set(streamers.flatMap((streamer) => streamer.genres))
+).sort((a, b) => a.localeCompare(b, "ja"));
 ---
 
 <Layout
@@ -17,13 +20,15 @@ const streamers = await getValidatedStreamers();
       <h1>配信者年齢サイト</h1>
       <p>配信者の年齢・誕生日をチェック</p>
 
-      <StreamerSearch totalCount={streamers.length}>
+      <StreamerSearch totalCount={streamers.length} genres={genres}>
         <div id="streamer-list" class="grid">
           {streamers.map((streamer) => (
             <article
               class="card"
               data-streamer-card
               data-search={createStreamerSearchIndex(streamer)}
+              data-genres={JSON.stringify(streamer.genres)}
+              data-birth-date={streamer.birthDate ?? ""}
             >
               <h2>
                 <a
