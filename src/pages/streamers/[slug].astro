@@ -33,6 +33,9 @@ const sourceLabels: Record<string, string> = {
 <Layout
   title={`${streamer.name}の年齢・プロフィール | 配信者年齢サイト`}
   description={`${streamer.name}の年齢・誕生日・プロフィール・使用デバイスを紹介します。`}
+  canonicalPath={`/streamers/${streamer.slug}/`}
+  ogType="profile"
+  image={streamer.profileImage}
 >
     <main>
       <a href="/" class="back">← トップページに戻る</a>

@@ -106,4 +106,13 @@ npm run build
 npm run generate-types
 ```
 
+## SEO設定
+
+サイトURLと検索エンジンへのインデックス許可は、ルートの `site.config.mjs` で管理します。
+
+- `url`: canonical、OGP、サイトマップ、robots.txtで共通利用するサイトURL
+- `indexingEnabled`: 正式公開前は `false`。公開準備が整った時点で `true` に変更
+
+独自ドメイン決定後は `url` を変更し、公開内容を確認してから `indexingEnabled` を `true` にしてください。プレビュー・テスト用のパスは同じ設定ファイルの `sitemapExcludedPathPrefixes` でサイトマップから除外され、共通レイアウトでも自動的に `noindex` になります。
+
 Cloudflare Workersの設定は `astro.config.mjs` と `wrangler.jsonc` で管理しています。
