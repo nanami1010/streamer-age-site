@@ -2,6 +2,12 @@ export const SITE_CONFIG = Object.freeze({
   name: "配信者年齢サイト",
   url: "https://streamer-age-site.sheryl1414.workers.dev/",
   indexingEnabled: false,
+  contactEmail: null,
+  services: Object.freeze({
+    analytics: null,
+    displayAdvertising: null,
+    affiliatePrograms: []
+  }),
   sitemapExcludedPathPrefixes: [
     "/device-preview/",
     "/preview/",

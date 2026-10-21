@@ -3,6 +3,7 @@ import {
   SITE_CONFIG,
   shouldIncludeInSitemap
 } from "../../site.config.mjs";
+import Footer from "../components/Footer.astro";
 import { getRobotsMetaContent, toAbsoluteUrl } from "../utils/seo";
 
 interface Props {
@@ -62,6 +63,7 @@ const robotsContent = getRobotsMetaContent(
 
   <body>
     <slot />
+    <Footer />
 
     <script>
       import { updateDisplayedAges } from "../scripts/update-displayed-ages";

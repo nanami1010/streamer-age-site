@@ -112,6 +112,10 @@ npm run generate-types
 
 - `url`: canonical、OGP、サイトマップ、robots.txtで共通利用するサイトURL
 - `indexingEnabled`: 正式公開前は `false`。公開準備が整った時点で `true` に変更
+- `contactEmail`: 問い合わせ先。未決定の場合は `null`
+- `services`: アクセス解析、ディスプレイ広告、アフィリエイトの導入状況
+
+`contactEmail` は決定後に実値へ変更してください。`services` は未導入中は `null` または空配列のままにし、実際に導入したサービス名だけを設定します。固定ページの案内文は、この設定に応じて未導入・導入済みの表示を切り替えます。
 
 独自ドメイン決定後は `url` を変更し、公開内容を確認してから `indexingEnabled` を `true` にしてください。プレビュー・テスト用のパスは同じ設定ファイルの `sitemapExcludedPathPrefixes` でサイトマップから除外され、共通レイアウトでも自動的に `noindex` になります。
 

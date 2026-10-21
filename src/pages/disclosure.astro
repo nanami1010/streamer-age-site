@@ -1,0 +1,53 @@
+---
+import { SITE_CONFIG } from "../../site.config.mjs";
+import InfoPage from "../components/InfoPage.astro";
+
+const {
+  affiliatePrograms,
+  displayAdvertising
+} = SITE_CONFIG.services;
+---
+
+<InfoPage
+  title="広告掲載方針・免責事項 | 配信者年齢サイト"
+  description="配信者年齢サイトのアフィリエイト広告、ディスプレイ広告、PR表記、免責事項について説明します。"
+  canonicalPath="/disclosure/"
+  heading="広告掲載方針・免責事項"
+>
+  <h2>アフィリエイト広告の利用方針</h2>
+  {affiliatePrograms.length > 0 ? (
+    <p>
+      当サイトは{affiliatePrograms.join("、")}のアフィリエイトプログラムを利用しています。商品リンクから購入された場合、当サイトが紹介料を受け取ることがあります。
+    </p>
+  ) : (
+    <p class="status-note">
+      現在、アフィリエイト商品リンクは掲載していません。Amazon・楽天などのプログラムを導入した場合は、このページを更新します。
+    </p>
+  )}
+
+  <h2>ディスプレイ広告の利用方針</h2>
+  {displayAdvertising ? (
+    <p>
+      当サイトは{displayAdvertising}の広告を掲載しています。Cookieなどの取り扱いはプライバシーポリシーをご確認ください。
+    </p>
+  ) : (
+    <p class="status-note">
+      現在、Google AdSenseを含むディスプレイ広告は掲載していません。導入時にこのページを更新します。
+    </p>
+  )}
+
+  <h2>PR・広告表記</h2>
+  <p>
+    広告やアフィリエイトリンクには、「広告」「PR」などの表記を分かりやすい位置に表示します。
+  </p>
+
+  <h2>情報と外部リンクについて</h2>
+  <p>
+    内容はできる限り確認・更新しますが、正確性や最新性を保証するものではありません。商品情報や配信者のプロフィールは変更される場合があります。購入やサービスの利用時は、リンク先の最新情報や条件をご確認ください。
+  </p>
+
+  <h2>画像・名称などの権利</h2>
+  <p>
+    プロフィール画像、製品画像、ロゴ、名称などの権利は、それぞれの権利者に帰属します。掲載に問題がある場合は、お問い合わせページからご連絡ください。
+  </p>
+</InfoPage>

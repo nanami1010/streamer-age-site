@@ -1,0 +1,38 @@
+---
+import { SITE_CONFIG } from "../../site.config.mjs";
+import InfoPage from "../components/InfoPage.astro";
+
+const contactEmail = SITE_CONFIG.contactEmail;
+---
+
+<InfoPage
+  title="お問い合わせ | 配信者年齢サイト"
+  description="掲載情報の訂正・削除、権利関係、その他のお問い合わせ方法をご案内します。"
+  canonicalPath="/contact/"
+  heading="お問い合わせ"
+>
+  <p>次のようなご連絡はこちらで受け付けます。</p>
+
+  <ul>
+    <li>掲載情報の訂正依頼</li>
+    <li>掲載情報の削除依頼</li>
+    <li>画像、名称、商標、著作物などの権利関係に関するお問い合わせ</li>
+    <li>その他のお問い合わせ</li>
+  </ul>
+
+  <h2>連絡方法</h2>
+  {contactEmail ? (
+    <p>
+      メール：<a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+    </p>
+  ) : (
+    <p class="status-note">
+      現在、問い合わせ窓口を準備中です。連絡先が決まり次第、このページに掲載します。
+    </p>
+  )}
+
+  <h2>ご連絡時にお知らせいただきたい内容</h2>
+  <p>
+    対象ページのURL、訂正・削除したい内容、その根拠となる公開情報のURLをお知らせください。権利関係のご連絡では、ご本人または代理人であることを確認する場合があります。
+  </p>
+</InfoPage>

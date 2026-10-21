@@ -1,0 +1,58 @@
+---
+import { SITE_CONFIG } from "../../site.config.mjs";
+---
+
+<footer class="site-footer">
+  <nav aria-label="フッターナビゲーション">
+    <ul>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/contact/">お問い合わせ</a></li>
+      <li><a href="/disclosure/">広告掲載方針・免責事項</a></li>
+    </ul>
+  </nav>
+  <p>© {SITE_CONFIG.name}</p>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 48px;
+    padding: 28px 20px;
+    border-top: 1px solid #e2e8f0;
+    background: #fff;
+    color: #64748b;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: #475569;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  p {
+    margin: 18px 0 0;
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    ul {
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+</style>

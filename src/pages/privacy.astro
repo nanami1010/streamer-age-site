@@ -1,0 +1,55 @@
+---
+import { SITE_CONFIG } from "../../site.config.mjs";
+import InfoPage from "../components/InfoPage.astro";
+
+const { analytics, displayAdvertising } = SITE_CONFIG.services;
+---
+
+<InfoPage
+  title="プライバシーポリシー | 配信者年齢サイト"
+  description="配信者年齢サイトにおける個人情報、Cookie、アクセス解析、広告サービスの取り扱いを説明します。"
+  canonicalPath="/privacy/"
+  heading="プライバシーポリシー"
+>
+  <h2>個人情報の取り扱い</h2>
+  <p>
+    お問い合わせで受け取った氏名、メールアドレスなどの情報は、回答や本人確認のためにのみ利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。
+  </p>
+
+  <h2>Cookieの利用</h2>
+  <p>
+    現在、広告配信やアクセス解析を目的としたCookieは使用していません。今後これらのサービスを導入した場合、サービス提供者がCookieなどを使用することがあります。
+  </p>
+
+  <h2>アクセス解析について</h2>
+  {analytics ? (
+    <p>
+      サイトの利用状況を確認するため、{analytics}を利用しています。収集される情報については、サービス提供者のプライバシーポリシーもご確認ください。
+    </p>
+  ) : (
+    <p class="status-note">
+      現在、アクセス解析サービスは利用していません。導入時にこのページを更新します。
+    </p>
+  )}
+
+  <h2>Google AdSenseなどの広告配信について</h2>
+  {displayAdvertising ? (
+    <p>
+      当サイトは{displayAdvertising}を利用しています。広告配信事業者が、興味に応じた広告を表示するためにCookieなどを使用する場合があります。
+    </p>
+  ) : (
+    <p class="status-note">
+      現在、Google AdSenseを含むディスプレイ広告は掲載していません。導入時にこのページを更新します。
+    </p>
+  )}
+
+  <h2>外部サービスへのリンク</h2>
+  <p>
+    外部サイトでの情報の取り扱いについては、リンク先のプライバシーポリシーをご確認ください。
+  </p>
+
+  <h2>ポリシーの改定</h2>
+  <p>
+    サービス内容や利用する外部サービスの変更に合わせて、このポリシーを更新することがあります。
+  </p>
+</InfoPage>

@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  heading: string;
+}
+
+const { title, description, canonicalPath, heading } = Astro.props;
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+>
+  <main class="info-page">
+    <a href="/" class="back">← トップページに戻る</a>
+
+    <article class="info-content">
+      <h1>{heading}</h1>
+      <slot />
+    </article>
+  </main>
+</Layout>
+
+<style is:global>
+  .info-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .info-page .back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #2563eb;
+  }
+
+  .info-content {
+    padding: 32px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 3px 12px #00000010;
+  }
+
+  .info-content h1 {
+    margin-top: 0;
+    color: #2563eb;
+    font-size: 32px;
+  }
+
+  .info-content h2 {
+    margin-top: 32px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 20px;
+  }
+
+  .info-content p,
+  .info-content li {
+    line-height: 1.8;
+  }
+
+  .info-content li + li {
+    margin-top: 8px;
+  }
+
+  .info-content a {
+    color: #2563eb;
+    overflow-wrap: anywhere;
+  }
+
+  .info-content .status-note {
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #475569;
+  }
+
+  @media (max-width: 600px) {
+    .info-page {
+      margin-top: 20px;
+      padding: 16px;
+    }
+
+    .info-content {
+      padding: 20px;
+    }
+
+    .info-content h1 {
+      font-size: 26px;
+    }
+  }
+</style>
