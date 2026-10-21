@@ -1,46 +1,98 @@
-# Astro Starter Kit: Basics
+# 配信者年齢サイト
 
-```sh
-npm create astro@latest -- --template basics
-```
+ゲーム配信者の年齢・プロフィール・使用デバイス情報を掲載するAstroサイトです。配信者データはAstro Content CollectionsとZodで検証し、配信者ごとのJSONファイルとして管理します。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 開発環境
 
-## 🚀 Project Structure
+- Astro 7
+- TypeScript
+- Cloudflare Workers
+- Node.js 22.22.0以上
 
-Inside of your Astro project, you'll see the following folders and files:
+## 主な構成
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── content.config.ts          # 配信者データのスキーマ
+├── data/
+│   └── streamers/
+│       └── shaka.json         # 配信者ごとのデータ
+├── lib/
+│   └── streamers.ts           # コレクション取得・重複検証
+└── pages/
+    ├── index.astro
+    └── streamers/[slug].astro
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 配信者を追加する手順
 
-## 🧞 Commands
+1. `src/data/streamers/` に、`slug` と同じ名前のJSONファイルを追加します。
+2. `slug` は半角英小文字・数字・ハイフンだけを使い、他の配信者と重複させないでください。
+3. 生年月日と確認日は `YYYY-MM-DD` 形式で記載してください。存在しない日付や未来の日付は使用できません。
+4. URLは `http://` または `https://` から始まる有効なURLを記載してください。
+5. 不明な生年月日・所属・プロフィール画像は推測せず `null` にします。未確認のSNSはプロパティ自体を省略できます。
+6. 根拠にしたページを `sources` に記録し、`lastVerifiedAt` を更新します。
+7. `npm run build` を実行し、スキーマ違反やslug重複がないことを確認します。
 
-All commands are run from the root of the project, from a terminal:
+最低限必要なデータの例です。
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```json
+{
+  "name": "配信者名",
+  "nameKana": "はいしんしゃめい",
+  "aliases": [],
+  "slug": "streamer-name",
+  "birthDate": null,
+  "genres": ["ゲーム配信"],
+  "affiliation": null,
+  "socialLinks": {},
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://example.com/official-profile"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-22"
+}
+```
 
-## 👀 Want to learn more?
+### 使用デバイス
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+`devices` は任意です。確認できたデバイスだけを次の形式で追加します。画像とアフィリエイトURLは省略または `null` にできます。
+
+```json
+{
+  "devices": [
+    {
+      "type": "マウス",
+      "manufacturer": "メーカー名",
+      "productName": "製品名",
+      "image": null,
+      "sourceUrl": "https://example.com/source",
+      "lastVerifiedAt": "2026-10-22",
+      "affiliateUrl": null
+    }
+  ]
+}
+```
+
+## コマンド
+
+```sh
+# 開発サーバーをバックグラウンドで起動
+npm run astro -- dev --background
+
+# 状態・ログの確認と停止
+npm run astro -- dev status
+npm run astro -- dev logs
+npm run astro -- dev stop
+
+# 本番ビルド
+npm run build
+
+# Cloudflare用の型を生成
+npm run generate-types
+```
+
+Cloudflare Workersの設定は `astro.config.mjs` と `wrangler.jsonc` で管理しています。

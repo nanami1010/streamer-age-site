@@ -1,6 +1,8 @@
 
 ---
-import streamers from "../data/streamers.json";
+import { getValidatedStreamers } from "../lib/streamers";
+
+const streamers = await getValidatedStreamers();
 
 // 日本時間を取得
 function getTodayJST() {
