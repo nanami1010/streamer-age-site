@@ -1,0 +1,273 @@
+---
+import type { Streamer } from "../lib/streamers";
+
+type Device = NonNullable<Streamer["devices"]>[number];
+
+interface Props {
+  devices: Device[];
+}
+
+const { devices } = Astro.props;
+
+const deviceGroups = Array.from(
+  devices.reduce((groups, device) => {
+    const categoryDevices = groups.get(device.type) ?? [];
+    categoryDevices.push(device);
+    groups.set(device.type, categoryDevices);
+    return groups;
+  }, new Map<string, Device[]>())
+).sort(([categoryA], [categoryB]) => categoryA.localeCompare(categoryB, "ja"));
+
+const hasAffiliateLinks = devices.some((device) =>
+  Boolean(
+    device.affiliateUrl ||
+    device.affiliateLinks?.amazon ||
+    device.affiliateLinks?.rakuten
+  )
+);
+---
+
+{devices.length === 0 ? (
+  <p>現在、使用デバイス情報を調査中です。</p>
+) : (
+  <div class="device-list">
+    <p class="device-count">登録デバイス：{devices.length}件</p>
+
+    {hasAffiliateLinks && (
+      <p class="affiliate-disclosure">
+        ※ 商品リンクには広告（PR）を含みます。
+      </p>
+    )}
+
+    {deviceGroups.map(([category, categoryDevices], groupIndex) => (
+      <section class="device-group" aria-labelledby={`device-category-${groupIndex}`}>
+        <h3 id={`device-category-${groupIndex}`}>{category}</h3>
+
+        <ul class="device-grid">
+          {categoryDevices.map((device) => (
+            <li class="device-card">
+              {device.image && (
+                <div class="device-image">
+                  <img
+                    src={device.image}
+                    alt={`${device.manufacturer} ${device.productName}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+
+              <div class="device-body">
+                <p class="manufacturer">{device.manufacturer}</p>
+                <h4>{device.productName}</h4>
+
+                <dl>
+                  <div>
+                    <dt>使用情報の出典</dt>
+                    <dd>
+                      <a
+                        href={device.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        出典を確認 ↗
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>確認日</dt>
+                    <dd>
+                      <time datetime={device.lastVerifiedAt}>
+                        {device.lastVerifiedAt}
+                      </time>
+                    </dd>
+                  </div>
+                </dl>
+
+                {(device.affiliateUrl ||
+                  device.affiliateLinks?.amazon ||
+                  device.affiliateLinks?.rakuten) && (
+                  <div
+                    class="purchase-links"
+                    role="group"
+                    aria-label={`${device.productName}の商品リンク`}
+                  >
+                    {device.affiliateLinks?.amazon && (
+                      <a
+                        class="purchase-link amazon"
+                        href={device.affiliateLinks.amazon}
+                        target="_blank"
+                        rel="sponsored nofollow noopener noreferrer"
+                      >
+                        Amazonで見る（PR）
+                      </a>
+                    )}
+                    {device.affiliateLinks?.rakuten && (
+                      <a
+                        class="purchase-link rakuten"
+                        href={device.affiliateLinks.rakuten}
+                        target="_blank"
+                        rel="sponsored nofollow noopener noreferrer"
+                      >
+                        楽天市場で見る（PR）
+                      </a>
+                    )}
+                    {device.affiliateUrl && (
+                      <a
+                        class="purchase-link"
+                        href={device.affiliateUrl}
+                        target="_blank"
+                        rel="sponsored nofollow noopener noreferrer"
+                      >
+                        商品を見る（PR）
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+)}
+
+<style>
+  .device-count {
+    margin-bottom: 16px;
+    color: #64748b;
+  }
+
+  .affiliate-disclosure {
+    padding: 12px 14px;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    background: #fff7ed;
+    color: #9a3412;
+    font-size: 13px;
+  }
+
+  .device-group {
+    margin-top: 24px;
+  }
+
+  .device-group h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    color: #334155;
+  }
+
+  .device-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .device-card {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .device-image {
+    display: grid;
+    aspect-ratio: 16 / 9;
+    place-items: center;
+    padding: 12px;
+    background: #f8fafc;
+  }
+
+  .device-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .device-body {
+    padding: 18px;
+  }
+
+  .manufacturer {
+    margin: 0 0 4px;
+    color: #64748b;
+    font-size: 13px;
+  }
+
+  h4 {
+    margin: 0 0 18px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  dl {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+  }
+
+  dl div {
+    display: grid;
+    gap: 3px;
+  }
+
+  dt {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  a {
+    color: #2563eb;
+  }
+
+  .purchase-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .purchase-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .purchase-link.amazon {
+    background: #b45309;
+  }
+
+  .purchase-link.rakuten {
+    background: #b91c1c;
+  }
+
+  @media (max-width: 600px) {
+    .device-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .purchase-link {
+      width: 100%;
+    }
+  }
+</style>

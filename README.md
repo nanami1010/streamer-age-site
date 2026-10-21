@@ -65,7 +65,7 @@ src/
 
 ### 使用デバイス
 
-`devices` は任意です。確認できたデバイスだけを次の形式で追加します。画像とアフィリエイトURLは省略または `null` にできます。
+`devices` は任意です。確認できたデバイスだけを次の形式で追加します。画像とアフィリエイトURLは省略または `null` にできます。Amazon・楽天のURLは `affiliateLinks` に分けて登録します。
 
 ```json
 {
@@ -77,11 +77,16 @@ src/
       "image": null,
       "sourceUrl": "https://example.com/source",
       "lastVerifiedAt": "2026-10-22",
-      "affiliateUrl": null
+      "affiliateLinks": {
+        "amazon": null,
+        "rakuten": null
+      }
     }
   ]
 }
 ```
+
+既存の汎用フィールド `affiliateUrl` も引き続き利用できます。商品リンクを登録すると、プロフィールページに広告（PR）であることが明示されます。確認できていない製品やリンクは登録しないでください。
 
 ## コマンド
 

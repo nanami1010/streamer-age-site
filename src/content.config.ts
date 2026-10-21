@@ -57,7 +57,11 @@ const deviceSchema = z.object({
   image: imageReference.nullable().optional(),
   sourceUrl: httpUrl,
   lastVerifiedAt: pastOrTodayDate,
-  affiliateUrl: httpUrl.nullable().optional()
+  affiliateUrl: httpUrl.nullable().optional(),
+  affiliateLinks: z.object({
+    amazon: httpUrl.nullable().optional(),
+    rakuten: httpUrl.nullable().optional()
+  }).strict().optional()
 }).strict();
 
 export const streamerSchema = z.object({

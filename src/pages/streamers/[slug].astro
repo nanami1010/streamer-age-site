@@ -1,6 +1,7 @@
 
 ---
 import type { GetStaticPaths } from "astro";
+import DeviceList from "../../components/DeviceList.astro";
 import Layout from "../../layouts/Layout.astro";
 import type { Streamer } from "../../lib/streamers";
 import { getValidatedStreamers } from "../../lib/streamers";
@@ -19,13 +20,13 @@ export const getStaticPaths = (async () => {
 const { streamer } = Astro.props as { streamer: Streamer };
 
 const age = calculateAge(streamer.birthDate);
-const devices = streamer.devices ?? [];
 
 const sourceLabels: Record<string, string> = {
   birthDate: "生年月日",
   affiliation: "所属",
   socialLinks: "公式SNS",
-  aliases: "別名"
+  aliases: "別名",
+  devices: "使用デバイス"
 };
 ---
 
@@ -97,11 +98,7 @@ const sourceLabels: Record<string, string> = {
 
         <section>
           <h2>使用デバイス</h2>
-          {devices.length === 0 ? (
-            <p>現在、使用デバイス情報を調査中です。</p>
-          ) : (
-            <p>登録デバイス：{devices.length}件</p>
-          )}
+          <DeviceList devices={streamer.devices ?? []} />
         </section>
 
         <section>
