@@ -1,8 +1,10 @@
 
 ---
+import StreamerSearch from "../components/StreamerSearch.astro";
 import Layout from "../layouts/Layout.astro";
 import { getValidatedStreamers } from "../lib/streamers";
 import { calculateAge } from "../utils/age";
+import { createStreamerSearchIndex } from "../utils/search";
 
 const streamers = await getValidatedStreamers();
 ---
@@ -15,45 +17,51 @@ const streamers = await getValidatedStreamers();
       <h1>配信者年齢サイト</h1>
       <p>配信者の年齢・誕生日をチェック</p>
 
-      <div class="grid">
-        {streamers.map((streamer) => (
-          <article class="card">
-            <h2>
+      <StreamerSearch totalCount={streamers.length}>
+        <div id="streamer-list" class="grid">
+          {streamers.map((streamer) => (
+            <article
+              class="card"
+              data-streamer-card
+              data-search={createStreamerSearchIndex(streamer)}
+            >
+              <h2>
+                <a
+                  class="profile-link"
+                  href={`/streamers/${streamer.slug}/`}
+                >
+                  {streamer.name}
+                  {streamer.aliases.length > 0 && (
+                    <span class="alias">
+                      （{streamer.aliases.join("・")}）
+                    </span>
+                  )}
+                </a>
+              </h2>
+
+              <p class="age">
+                年齢：
+                <strong data-birth={streamer.birthDate ?? ""}>
+                  {calculateAge(streamer.birthDate) === null
+                    ? "非公開"
+                    : `${calculateAge(streamer.birthDate)}歳`}
+                </strong>
+              </p>
+
+              <p class="genre">
+                {streamer.genres.join("・")}
+              </p>
+
               <a
-                class="profile-link"
+                class="detail-link"
                 href={`/streamers/${streamer.slug}/`}
               >
-                {streamer.name}
-                {streamer.aliases.length > 0 && (
-                  <span class="alias">
-                    （{streamer.aliases.join("・")}）
-                  </span>
-                )}
+                プロフィールを見る →
               </a>
-            </h2>
-
-            <p class="age">
-              年齢：
-              <strong data-birth={streamer.birthDate ?? ""}>
-                {calculateAge(streamer.birthDate) === null
-                  ? "非公開"
-                  : `${calculateAge(streamer.birthDate)}歳`}
-              </strong>
-            </p>
-
-            <p class="genre">
-              {streamer.genres.join("・")}
-            </p>
-
-            <a
-              class="detail-link"
-              href={`/streamers/${streamer.slug}/`}
-            >
-              プロフィールを見る →
-            </a>
-          </article>
-        ))}
-      </div>
+            </article>
+          ))}
+        </div>
+      </StreamerSearch>
     </main>
 </Layout>
 
