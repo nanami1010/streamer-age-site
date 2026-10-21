@@ -1,0 +1,37 @@
+
+[
+  {
+    "name": "SHAKA",
+    "nameKana": "しゃか",
+    "aliases": ["釈迦"],
+    "slug": "shaka",
+    "birthDate": "1991-12-27",
+    "genres": [
+      "ゲーム配信",
+      "FPS"
+    ],
+    "affiliation": "ZETA DIVISION",
+    "socialLinks": {
+      "youtube": "https://www.youtube.com/@SHAKAch",
+      "twitch": "https://www.twitch.tv/fps_shaka",
+      "x": "https://x.com/avashaka"
+    },
+    "profileImage": "",
+    "sources": [
+      {
+        "field": "birthDate",
+        "url": "https://zetadivision.com/players/shaka"
+      },
+      {
+        "field": "affiliation",
+        "url": "https://prtimes.jp/main/html/rd/p/000000093.000041650.html"
+      },
+      {
+        "field": "socialLinks",
+        "url": "https://prtimes.jp/main/html/rd/p/000000093.000041650.html"
+      }
+    ],
+    "lastVerifiedAt": "2026-10-22",
+    "devices": []
+  }
+]
