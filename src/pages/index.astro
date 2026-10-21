@@ -2,7 +2,7 @@
 ---
 import streamers from "../data/streamers.json";
 
-// 日本時間の今日の日付を取得する
+// 日本時間を取得
 function getTodayJST() {
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "Asia/Tokyo",
@@ -21,21 +21,16 @@ function getTodayJST() {
   };
 }
 
-// 生年月日から満年齢を計算する
+// 年齢計算
 function calculateAge(birthDate: string | null) {
   if (!birthDate) return null;
 
   const [year, month, day] = birthDate.split("-").map(Number);
   const today = getTodayJST();
 
-  let age = today.year - year;
-
-  if (
-    today.month < month ||
-    (today.month === month && today.day < day)
-  ) {
-    age--;
-  }
+  const age = today.year - year -
+    (today.month < month ||
+    (today.month === month && today.day < day) ? 1 : 0);
 
   return Number.isFinite(age) && age >= 0 ? age : null;
 }
@@ -44,34 +39,37 @@ function calculateAge(birthDate: string | null) {
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="ゲーム配信者の年齢・誕生日・プロフィールを調べられるサイトです。"
     />
-    <title>配信者年齢サイト（テスト）</title>
+    <title>配信者年齢サイト</title>
   </head>
 
   <body>
     <main>
       <h1>配信者年齢サイト</h1>
-      <p>配信者プロフィールの表示テスト</p>
+      <p>配信者の年齢・誕生日をチェック</p>
 
       <div class="grid">
         {streamers.map((streamer) => (
           <article class="card">
             <h2>
-			 {streamer.name}
-			 {streamer.aliases.length > 0 && (
-    		  <span class="alias">
-      			（{streamer.aliases.join("・")}）
-    		  </span>
-  			  )}
-			</h2>
+              <a
+                class="profile-link"
+                href={`/streamers/${streamer.slug}/`}
+              >
+                {streamer.name}
+                {streamer.aliases.length > 0 && (
+                  <span class="alias">
+                    （{streamer.aliases.join("・")}）
+                  </span>
+                )}
+              </a>
+            </h2>
 
-            <p>読み：{streamer.nameKana}</p>
-
-            <p>
+            <p class="age">
               年齢：
               <strong data-birth={streamer.birthDate ?? ""}>
                 {calculateAge(streamer.birthDate) === null
@@ -80,28 +78,22 @@ function calculateAge(birthDate: string | null) {
               </strong>
             </p>
 
-            <p>
-              生年月日：{streamer.birthDate ?? "非公開"}
+            <p class="genre">
+              {streamer.genres.join("・")}
             </p>
 
-            <p>
-              ジャンル：{streamer.genres.join("・")}
-            </p>
-
-            <p>
-              所属：{streamer.affiliation ?? "なし"}
-            </p>
-
-            <p>
-              使用デバイス：{streamer.devices.length}件
-            </p>
+            <a
+              class="detail-link"
+              href={`/streamers/${streamer.slug}/`}
+            >
+              プロフィールを見る →
+            </a>
           </article>
         ))}
       </div>
     </main>
 
     <script>
-      // ブラウザで開いた時点の年齢へ更新する
       const parts = new Intl.DateTimeFormat("en-US", {
         timeZone: "Asia/Tokyo",
         year: "numeric",
@@ -156,7 +148,7 @@ function calculateAge(birthDate: string | null) {
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 20px;
     margin-top: 30px;
   }
@@ -170,16 +162,47 @@ function calculateAge(birthDate: string | null) {
 
   .card h2 {
     color: #2563eb;
+    margin-top: 0;
   }
 
-  .card strong {
-    font-size: 24px;
-  }
-  
-  .card h2 .alias {
+  .alias {
     color: #64748b;
     font-size: 0.8em;
     font-weight: normal;
   }
 
+  .profile-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .profile-link:hover {
+    text-decoration: underline;
+  }
+
+  .age {
+    margin: 20px 0 12px;
+  }
+
+  .age strong {
+    font-size: 24px;
+  }
+
+  .genre {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .detail-link {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .detail-link:hover {
+    text-decoration: underline;
+  }
 </style>

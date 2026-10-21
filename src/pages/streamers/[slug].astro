@@ -1,0 +1,310 @@
+
+---
+import streamers from "../../data/streamers.json";
+
+// JSONに登録された配信者ごとにページを生成
+export function getStaticPaths() {
+  return streamers.map((streamer) => ({
+    params: { slug: streamer.slug },
+    props: { streamer }
+  }));
+}
+
+const { streamer } = Astro.props;
+
+// 日本時間の今日の日付を取得
+function getTodayJST() {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric"
+  }).formatToParts(new Date());
+
+  const get = (type: string) =>
+    Number(parts.find((p) => p.type === type)?.value);
+
+  return {
+    year: get("year"),
+    month: get("month"),
+    day: get("day")
+  };
+}
+
+// 生年月日から年齢を計算
+function calculateAge(birthDate: string | null) {
+  if (!birthDate) return null;
+
+  const [year, month, day] = birthDate.split("-").map(Number);
+  const today = getTodayJST();
+
+  const age = today.year - year -
+    (today.month < month ||
+    (today.month === month && today.day < day) ? 1 : 0);
+
+  return Number.isFinite(age) && age >= 0 ? age : null;
+}
+
+const age = calculateAge(streamer.birthDate);
+
+const sourceLabels: Record<string, string> = {
+  birthDate: "生年月日",
+  affiliation: "所属",
+  socialLinks: "公式SNS",
+  aliases: "別名"
+};
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content={`${streamer.name}の年齢・誕生日・プロフィール・使用デバイスを紹介します。`}
+    />
+    <title>{streamer.name}の年齢・プロフィール | 配信者年齢サイト</title>
+  </head>
+
+  <body>
+    <main>
+      <a href="/" class="back">← トップページに戻る</a>
+
+      <article class="profile">
+        <header>
+          <h1>
+            {streamer.name}
+            {streamer.aliases.length > 0 && (
+              <span class="alias">
+                （{streamer.aliases.join("・")}）
+              </span>
+            )}
+          </h1>
+          <p>読み：{streamer.nameKana}</p>
+        </header>
+
+        <section>
+          <h2>基本プロフィール</h2>
+
+          <dl>
+            <dt>年齢</dt>
+            <dd>
+              <strong data-birth={streamer.birthDate ?? ""}>
+                {age === null ? "非公開" : `${age}歳`}
+              </strong>
+            </dd>
+
+            <dt>生年月日</dt>
+            <dd>{streamer.birthDate ?? "非公開"}</dd>
+
+            <dt>ジャンル</dt>
+            <dd>{streamer.genres.join("・")}</dd>
+
+            <dt>所属</dt>
+            <dd>{streamer.affiliation ?? "なし"}</dd>
+          </dl>
+        </section>
+
+        <section>
+          <h2>公式SNS・配信サイト</h2>
+          <div class="links">
+            {streamer.socialLinks.youtube && (
+              <a href={streamer.socialLinks.youtube}
+                 target="_blank" rel="noopener noreferrer">
+                YouTube ↗
+              </a>
+            )}
+            {streamer.socialLinks.twitch && (
+              <a href={streamer.socialLinks.twitch}
+                 target="_blank" rel="noopener noreferrer">
+                Twitch ↗
+              </a>
+            )}
+            {streamer.socialLinks.x && (
+              <a href={streamer.socialLinks.x}
+                 target="_blank" rel="noopener noreferrer">
+                X ↗
+              </a>
+            )}
+          </div>
+        </section>
+
+        <section>
+          <h2>使用デバイス</h2>
+          {streamer.devices.length === 0 ? (
+            <p>現在、使用デバイス情報を調査中です。</p>
+          ) : (
+            <p>登録デバイス：{streamer.devices.length}件</p>
+          )}
+        </section>
+
+        <section>
+          <h2>情報の出典</h2>
+          <ul>
+            {streamer.sources.map((source) => (
+              <li>
+                <a href={source.url}
+                   target="_blank" rel="noopener noreferrer">
+                  {sourceLabels[source.field] ?? source.field}の出典 ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p class="updated">
+            最終確認日：{streamer.lastVerifiedAt ?? "未確認"}
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Tokyo",
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+      }).formatToParts(new Date());
+
+      const get = (type: string) =>
+        Number(parts.find((p) => p.type === type)?.value);
+
+      document.querySelectorAll<HTMLElement>("[data-birth]")
+        .forEach((element) => {
+          const birth = element.dataset.birth;
+
+          if (!birth) {
+            element.textContent = "非公開";
+            return;
+          }
+
+          const [year, month, day] = birth.split("-").map(Number);
+          const age = get("year") - year -
+            (get("month") < month ||
+            (get("month") === month && get("day") < day) ? 1 : 0);
+
+          element.textContent =
+            Number.isFinite(age) && age >= 0
+              ? `${age}歳`
+              : "非公開";
+        });
+    </script>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f4f6fa;
+    color: #222;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #2563eb;
+  }
+
+  .profile {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px #00000010;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #2563eb;
+  }
+
+  .alias {
+    font-size: 0.65em;
+    font-weight: normal;
+    color: #64748b;
+  }
+
+  h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 12px;
+  }
+
+  section {
+    margin-top: 32px;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+  }
+
+  dt {
+    font-weight: bold;
+    color: #555;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  dd strong {
+    font-size: 26px;
+    color: #2563eb;
+  }
+
+  .links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .links a:hover {
+    background: #dbeafe;
+  }
+
+  li {
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  a {
+    color: #2563eb;
+  }
+
+  .updated {
+    margin-top: 20px;
+    color: #64748b;
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .profile {
+      padding: 20px;
+    }
+
+    dl {
+      grid-template-columns: 110px 1fr;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+  }
+</style>
