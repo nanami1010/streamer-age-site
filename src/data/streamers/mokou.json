@@ -1,0 +1,56 @@
+{
+  "name": "もこう",
+  "nameKana": "もこう",
+  "aliases": ["馬場豊"],
+  "slug": "mokou",
+  "birthDate": "1990-11-15",
+  "genres": [
+    "ゲーム配信"
+  ],
+  "affiliation": "DOROKUSA／MURASH GAMING（Shadowverse部門GM）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@mokoustream",
+    "x": "https://x.com/mokouliszt"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://murashgaming.co.jp/members/mokou/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://murashgaming.co.jp/members/mokou/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://novema.jp/article/starts/mokou/202311"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://murashgaming.co.jp/members/mokou/"
+    },
+    {
+      "field": "genres",
+      "url": "https://dorokusa.co.jp/news-moko-gm"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://dorokusa.co.jp/news-moko-gm"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://murashgaming.co.jp/members/mokou/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://novema.jp/article/starts/mokou/202311"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://dorokusa.co.jp/news-moko-gm"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

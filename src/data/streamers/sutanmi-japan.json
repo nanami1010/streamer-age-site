@@ -1,0 +1,50 @@
+{
+  "name": "スタンミじゃぱん",
+  "nameKana": "すたんみじゃぱん",
+  "aliases": ["スタンミ"],
+  "slug": "sutanmi-japan",
+  "birthDate": "1995-04-23",
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
+  "affiliation": "つばさレコーズ（業務提携）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@nicosutanmi",
+    "twitch": "https://www.twitch.tv/sutanmi",
+    "x": "https://x.com/sutanmiJPN"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://tsubasa-records.co.jp/talent/sutanmi-japan/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://tsubasa-records.co.jp/talent/sutanmi-japan/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.oricon.co.jp/special/71877/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://tsubasa-records.co.jp/talent/sutanmi-japan/"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.oricon.co.jp/special/71877/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://tsubasa-ent.co.jp/company/group"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.oricon.co.jp/special/71877/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}
