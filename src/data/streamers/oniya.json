@@ -1,0 +1,42 @@
+{
+  "name": "おにや",
+  "nameKana": "おにや",
+  "aliases": ["o-228"],
+  "slug": "oniya",
+  "birthDate": null,
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
+  "affiliation": "DOROKUSA",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@o228",
+    "twitch": "https://www.twitch.tv/oniyadayo",
+    "x": "https://x.com/oniyanogame"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://dorokusa.co.jp/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.youtube.com/@o228"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.youtube.com/@o228"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://dorokusa.co.jp/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/@o228"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

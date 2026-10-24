@@ -1,0 +1,50 @@
+{
+  "name": "関優太",
+  "nameKana": "せきゆうた",
+  "aliases": ["StylishNoob", "スタヌ"],
+  "slug": "seki-yuta",
+  "birthDate": "1990-05-06",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@StylishNoob4",
+    "twitch": "https://www.twitch.tv/stylishnoob4",
+    "x": "https://x.com/stylishnoob"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://prtimes.jp/main/html/rd/p/000000023.000041650.html"
+    },
+    {
+      "field": "aliases",
+      "url": "https://prtimes.jp/main/html/rd/p/000000016.000041650.html"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.youtube.com/watch?v=kWEjEm6T5Q4"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://prtimes.jp/main/html/rd/p/000000016.000041650.html"
+    },
+    {
+      "field": "genres",
+      "url": "https://prtimes.jp/main/html/rd/p/000000016.000041650.html"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/news/2025/12/20/40170?PageSpeed=noscript"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2025/12/20/40170?PageSpeed=noscript"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

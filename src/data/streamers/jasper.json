@@ -1,0 +1,46 @@
+{
+  "name": "じゃすぱー",
+  "nameKana": "じゃすぱー",
+  "aliases": ["Jasper", "Jasper7se"],
+  "slug": "jasper",
+  "birthDate": null,
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCzAMU5Kgj8fGxVtcwTcq-_g",
+    "twitch": "https://www.twitch.tv/jasper7se",
+    "x": "https://x.com/Jasper7se"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://www.youtube.com/channel/UCzAMU5Kgj8fGxVtcwTcq-_g"
+    },
+    {
+      "field": "aliases",
+      "url": "https://crazyraccoon.jp/member/jasper/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.twitch.tv/jasper7se"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/jasper/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/jasper/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/channel/UCzAMU5Kgj8fGxVtcwTcq-_g"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

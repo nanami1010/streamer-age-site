@@ -1,0 +1,38 @@
+{
+  "name": "ボドカ",
+  "nameKana": "ぼどか",
+  "aliases": [],
+  "slug": "vodka",
+  "birthDate": null,
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "RIDDLE（オーナー）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@vodkachaso",
+    "twitch": "https://www.twitch.tv/vodkavdk",
+    "x": "https://x.com/VodkaChaso"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://riddle.info/members/vodka/"
+    },
+    {
+      "field": "genres",
+      "url": "https://riddle.info/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://riddle.info/members/vodka/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.twitch.tv/vodkavdk"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

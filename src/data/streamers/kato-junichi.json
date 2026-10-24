@@ -1,0 +1,50 @@
+{
+  "name": "加藤純一",
+  "nameKana": "かとうじゅんいち",
+  "aliases": ["うんこちゃん"],
+  "slug": "kato-junichi",
+  "birthDate": "1985-08-17",
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
+  "affiliation": "MURASH（業務提携）／MURASH GAMING（オーナー）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@junchannel",
+    "twitch": "https://www.twitch.tv/kato_junichi0817",
+    "x": "https://x.com/unkochan1234567"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://www.murash.jp/talent/katou_junichi-2/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.twitch.tv/kato_junichi0817"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://murashgaming.co.jp/members/kato-junichi/"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.murash.jp/talent/katou_junichi-2/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.murash.jp/talent/katou_junichi-2/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://murashgaming.co.jp/members/kato-junichi/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/@junchannel"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

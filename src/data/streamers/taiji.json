@@ -1,0 +1,42 @@
+{
+  "name": "たいじ",
+  "nameKana": "たいじ",
+  "aliases": [],
+  "slug": "taiji",
+  "birthDate": "1991-03-24",
+  "genres": [
+    "ゲーム配信",
+    "TPS"
+  ],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Yaritaiji",
+    "twitch": "https://www.twitch.tv/yaritaiji",
+    "x": "https://x.com/taijich0324"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/taiji/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/taiji/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/taiji/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/taiji/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/@Yaritaiji"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}

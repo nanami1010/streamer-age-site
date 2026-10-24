@@ -1,0 +1,46 @@
+{
+  "name": "SPYGEA",
+  "nameKana": "すぱいぎあ",
+  "aliases": ["スパイギア"],
+  "slug": "spygea",
+  "birthDate": "1989-11-26",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "SonicBoom Entertainment（マネジメント業務提携）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@spygea",
+    "twitch": "https://www.twitch.tv/spygea",
+    "x": "https://x.com/spygea_jp"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://www.4gamer.net/games/019/G001954/20110824077/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.youtube.com/@spygea"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.4gamer.net/games/019/G001954/20110824077/"
+    },
+    {
+      "field": "genres",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000108231.html"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000108231.html"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/@spygea"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-23",
+  "devices": []
+}
