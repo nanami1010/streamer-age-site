@@ -24,3 +24,8 @@ pnpm-debug.log*
 .idea/
 
 .wrangler/
+
+# Playwright
+playwright-report/
+test-results/
+debug.log

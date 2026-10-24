@@ -8,6 +8,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test tests/streamer-filter.test.mjs tests/seo.test.mjs",
+    "test:e2e": "playwright test",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types"
@@ -17,5 +20,8 @@
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.4.1",
     "wrangler": "^4.151.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
   }
 }
