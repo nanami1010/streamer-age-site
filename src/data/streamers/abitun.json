@@ -1,0 +1,50 @@
+{
+  "name": "あびつん",
+  "nameKana": "あびつん",
+  "aliases": ["ゴリラ"],
+  "slug": "abitun",
+  "birthDate": "1994-12-06",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "父ノ背中",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@abitun",
+    "twitch": "https://www.twitch.tv/abitun",
+    "x": "https://x.com/abitun1"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://www.abitun.club/about"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.abitun.club/about"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.abitun.club/about"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.abitun.club/about"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.abitun.club/about"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.abitun.club/about"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.abitun.club/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

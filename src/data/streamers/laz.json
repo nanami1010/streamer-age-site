@@ -1,0 +1,50 @@
+{
+  "name": "Laz",
+  "nameKana": "らず",
+  "aliases": ["Lazvell"],
+  "slug": "laz",
+  "birthDate": "1995-11-26",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/Lazvell",
+    "twitch": "https://www.twitch.tv/lazvell",
+    "x": "https://x.com/lazvell"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/players/laz"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://zetadivision.com/news/2020/04/07/1665?PageSpeed=noscript"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.youtube.com/Lazvell"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/laz"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/players/laz"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/news/2024/08/26/25257"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://x.com/lazvell"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

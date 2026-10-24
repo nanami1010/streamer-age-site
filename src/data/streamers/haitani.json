@@ -1,0 +1,46 @@
+{
+  "name": "ハイタニ",
+  "nameKana": "はいたに",
+  "aliases": [],
+  "slug": "haitani",
+  "birthDate": "1986-09-04",
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCxn5UDn9U-Km4Ug_bChuG6Q",
+    "twitch": "https://www.twitch.tv/haitani0904",
+    "x": "https://x.com/hai090"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/haitani/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.youtube.com/channel/UCxn5UDn9U-Km4Ug_bChuG6Q"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/haitani/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/haitani/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/teams/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/channel/UCxn5UDn9U-Km4Ug_bChuG6Q"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

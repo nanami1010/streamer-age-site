@@ -1,0 +1,50 @@
+{
+  "name": "あっさりしょこ",
+  "nameKana": "あっさりしょこ",
+  "aliases": [],
+  "slug": "assari-shoko",
+  "birthDate": "1994-10-19",
+  "genres": [
+    "ゲーム配信",
+    "ホラーゲーム"
+  ],
+  "affiliation": "DOROKUSA",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Assarisyoko",
+    "twitch": "https://www.twitch.tv/assarisyoko1",
+    "x": "https://x.com/Saaanjjiii"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://openrec.co.jp/news/523429234297"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://openrec.co.jp/news/523429234297"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://openrec.co.jp/news/523429234297"
+    },
+    {
+      "field": "genres",
+      "url": "https://openrec.co.jp/news/523429234297"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://dorokusa.co.jp/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://openrec.co.jp/news/523429234297"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.twitch.tv/assarisyoko1"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

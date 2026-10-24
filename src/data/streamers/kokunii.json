@@ -1,0 +1,50 @@
+{
+  "name": "こく兄",
+  "nameKana": "こくにい",
+  "aliases": ["こくじん"],
+  "slug": "kokunii",
+  "birthDate": "1980-08-07",
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCcO-FDMK_mPWEnoxyNDwvNw",
+    "twitch": "https://www.twitch.tv/kokujintv",
+    "x": "https://x.com/kokujind"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/kokunii/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://reject.jp/2023/04/05/%E3%80%90%E6%A0%BC%E9%97%98%E3%82%B2%E3%83%BC%E3%83%A0%E3%80%91%E9%83%A8%E9%96%80%E8%A8%AD%E7%AB%8B%E5%8F%8A%E3%81%B3%E3%81%93%E3%81%8F%E5%85%84%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%94%E5%A0%B1%E5%91%8A/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.youtube.com/channel/UCcO-FDMK_mPWEnoxyNDwvNw"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/kokunii/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/kokunii/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/teams/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://reject.jp/2023/04/05/%E3%80%90%E6%A0%BC%E9%97%98%E3%82%B2%E3%83%BC%E3%83%A0%E3%80%91%E9%83%A8%E9%96%80%E8%A8%AD%E7%AB%8B%E5%8F%8A%E3%81%B3%E3%81%93%E3%81%8F%E5%85%84%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%94%E5%A0%B1%E5%91%8A/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

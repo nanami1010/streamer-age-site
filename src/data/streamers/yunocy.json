@@ -1,0 +1,51 @@
+{
+  "name": "yunocy",
+  "nameKana": "ゆのしー",
+  "aliases": [],
+  "slug": "yunocy",
+  "birthDate": "1998-02-20",
+  "genres": [
+    "ゲーム配信",
+    "音楽ゲーム",
+    "FPS"
+  ],
+  "affiliation": "G-STAR.PRO",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCT6uPY-VtXHKpYesif3iNIA",
+    "twitch": "https://www.twitch.tv/yunocy",
+    "x": "https://x.com/mizuyuno_"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://g-starpro.jp/crm/member-streamer-yunocy/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://yunocy.com/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://g-starpro.jp/crm/member-streamer-yunocy/"
+    },
+    {
+      "field": "genres",
+      "url": "https://yunocy.com/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://g-starpro.jp/crm/member-streamer-yunocy/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://yunocy.com/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://g-starpro.jp/crm/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

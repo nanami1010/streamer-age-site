@@ -1,0 +1,46 @@
+{
+  "name": "しょぼすけ",
+  "nameKana": "しょぼすけ",
+  "aliases": ["ShoboSuke"],
+  "slug": "shobosuke",
+  "birthDate": "1994-06-29",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCezlPKRcEjtZhg0-m7MWFKA",
+    "twitch": "https://www.twitch.tv/shobosuke",
+    "x": "https://x.com/ShoboLinco"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://shobolin.com/shobosuke-profile/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://shobolin.com/shobosuke-profile/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://shobolin.com/shobosuke-profile/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://shobolin.com/shobosuke-profile/"
+    },
+    {
+      "field": "genres",
+      "url": "https://shobolin.com/shobosuke-profile/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://shobolin.com/shobosuke-profile/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}
