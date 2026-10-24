@@ -2,9 +2,10 @@
 interface Props {
   totalCount: number;
   genres: string[];
+  schoolYears: number[];
 }
 
-const { totalCount, genres } = Astro.props;
+const { totalCount, genres, schoolYears } = Astro.props;
 ---
 
 <div class="streamer-search" data-streamer-search-root>
@@ -75,6 +76,20 @@ const { totalCount, genres } = Astro.props;
               </select>
             </div>
 
+            <div class="filter-field">
+              <label for="streamer-school-year-filter">生まれた年度</label>
+              <select
+                id="streamer-school-year-filter"
+                aria-controls="streamer-list"
+                data-school-year-filter
+              >
+                <option value="">すべての年度</option>
+                {schoolYears.map((year) => (
+                  <option value={String(year)}>{year}年度</option>
+                ))}
+              </select>
+            </div>
+
             <button
               class="reset-button"
               type="button"
@@ -118,6 +133,7 @@ const { totalCount, genres } = Astro.props;
 <script>
   import { calculateAge, getTodayJST } from "../utils/age";
   import { matchesAgeFilter, matchesGenre } from "../utils/filter";
+  import { getSchoolYear } from "../utils/generation";
   import { matchesStreamer } from "../utils/search";
 
   document
@@ -127,6 +143,9 @@ const { totalCount, genres } = Astro.props;
       const clearButton = root.querySelector<HTMLButtonElement>("[data-search-clear]");
       const genreSelect = root.querySelector<HTMLSelectElement>("[data-genre-filter]");
       const ageSelect = root.querySelector<HTMLSelectElement>("[data-age-filter]");
+      const schoolYearSelect = root.querySelector<HTMLSelectElement>(
+        "[data-school-year-filter]"
+      );
       const resetButton = root.querySelector<HTMLButtonElement>("[data-filter-reset]");
       const count = root.querySelector<HTMLElement>("[data-search-count]");
       const emptyMessage = root.querySelector<HTMLElement>("[data-search-empty]");
@@ -139,6 +158,7 @@ const { totalCount, genres } = Astro.props;
         !clearButton ||
         !genreSelect ||
         !ageSelect ||
+        !schoolYearSelect ||
         !resetButton ||
         !count ||
         !emptyMessage
@@ -159,17 +179,21 @@ const { totalCount, genres } = Astro.props;
           genres = [];
         }
 
+        const birthDate = element.dataset.birthDate || null;
+
         return {
           element,
           searchIndex: element.dataset.search ?? "",
           genres,
-          birthDate: element.dataset.birthDate || null
+          birthDate,
+          schoolYear: getSchoolYear(birthDate)
         };
       });
 
       const updateResults = () => {
         let visibleCount = 0;
         const selectedAge = ageSelect.value;
+        const selectedSchoolYear = schoolYearSelect.value;
         const today = getTodayJST();
 
         for (const card of cards) {
@@ -179,6 +203,10 @@ const { totalCount, genres } = Astro.props;
             (
               selectedAge === "" ||
               matchesAgeFilter(calculateAge(card.birthDate, today), selectedAge)
+            ) &&
+            (
+              selectedSchoolYear === "" ||
+              String(card.schoolYear ?? "") === selectedSchoolYear
             );
 
           card.element.hidden = !matches;
@@ -191,12 +219,14 @@ const { totalCount, genres } = Astro.props;
         resetButton.disabled =
           input.value === "" &&
           genreSelect.value === "" &&
-          ageSelect.value === "";
+          ageSelect.value === "" &&
+          schoolYearSelect.value === "";
       };
 
       input.addEventListener("input", updateResults);
       genreSelect.addEventListener("change", updateResults);
       ageSelect.addEventListener("change", updateResults);
+      schoolYearSelect.addEventListener("change", updateResults);
       clearButton.addEventListener("click", () => {
         input.value = "";
         updateResults();
@@ -206,6 +236,7 @@ const { totalCount, genres } = Astro.props;
         input.value = "";
         genreSelect.value = "";
         ageSelect.value = "";
+        schoolYearSelect.value = "";
         updateResults();
         input.focus();
       });
@@ -398,7 +429,7 @@ const { totalCount, genres } = Astro.props;
   .filter-controls {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
     gap: 16px;
     align-items: end;
     padding: 22px;
@@ -484,7 +515,7 @@ const { totalCount, genres } = Astro.props;
     }
 
     .filter-controls {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .reset-button {

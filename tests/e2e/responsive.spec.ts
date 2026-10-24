@@ -34,6 +34,7 @@ for (const viewport of viewports) {
     await expectNoHorizontalScroll(page);
     await expectInsideViewport(page.locator("[data-search-input]"), viewport.width);
     await expectInsideViewport(page.locator("[data-search-clear]"), viewport.width);
+    await expectInsideViewport(page.locator("[data-school-year-filter]"), viewport.width);
     await expectInsideViewport(page.locator("[data-filter-reset]"), viewport.width);
     await expectInsideViewport(page.locator("[data-streamer-card]").first(), viewport.width);
 
@@ -56,8 +57,10 @@ for (const viewport of viewports) {
     await expect(page.locator("[data-search-input]")).toHaveValue("");
 
     await page.locator("[data-genre-filter]").selectOption("FPS");
+    await page.locator("[data-school-year-filter]").selectOption("1995");
     await page.locator("[data-filter-reset]").click();
     await expect(page.locator("[data-genre-filter]")).toHaveValue("");
+    await expect(page.locator("[data-school-year-filter]")).toHaveValue("");
 
     if (viewport.width === 375 || viewport.width === 1280) {
       mkdirSync("test-results/screenshots", { recursive: true });

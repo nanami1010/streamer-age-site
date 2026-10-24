@@ -3,12 +3,20 @@ import StreamerSearch from "../components/StreamerSearch.astro";
 import Layout from "../layouts/Layout.astro";
 import { getValidatedStreamers } from "../lib/streamers";
 import { calculateAge } from "../utils/age";
+import { getSchoolYear } from "../utils/generation";
 import { createStreamerSearchIndex } from "../utils/search";
 
 const streamers = await getValidatedStreamers();
 const genres = Array.from(
   new Set(streamers.flatMap((streamer) => streamer.genres))
 ).sort((a, b) => a.localeCompare(b, "ja"));
+const schoolYears = Array.from(
+  new Set(
+    streamers
+      .map((streamer) => getSchoolYear(streamer.birthDate))
+      .filter((year): year is number => year !== null)
+  )
+).sort((a, b) => b - a);
 
 function formatBirthDate(birthDate: string | null) {
   if (!birthDate) return "非公開";
@@ -24,7 +32,11 @@ function formatBirthDate(birthDate: string | null) {
   canonicalPath="/"
 >
   <main class="home-main">
-    <StreamerSearch totalCount={streamers.length} genres={genres}>
+    <StreamerSearch
+      totalCount={streamers.length}
+      genres={genres}
+      schoolYears={schoolYears}
+    >
       <div id="streamer-list" class="streamer-grid">
         {streamers.map((streamer) => {
           const age = calculateAge(streamer.birthDate);

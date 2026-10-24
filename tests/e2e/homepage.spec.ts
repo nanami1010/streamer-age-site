@@ -1,11 +1,13 @@
 import { expect, test, type Page } from "@playwright/test";
 import { calculateAge, getTodayJST } from "../../src/utils/age";
 import { matchesAgeFilter } from "../../src/utils/filter";
+import { getSchoolYear } from "../../src/utils/generation";
 import { streamers, formatBirthDate, type StreamerRecord } from "./streamers";
 
 const cards = (page: Page) => page.locator("[data-streamer-card]");
 const visibleCards = (page: Page) => page.locator("[data-streamer-card]:visible");
 const searchInput = (page: Page) => page.locator("[data-search-input]");
+const schoolYearFilter = (page: Page) => page.locator("[data-school-year-filter]");
 const resultCount = (page: Page) => page.locator("[data-search-count]");
 
 function cardFor(page: Page, streamer: StreamerRecord) {
@@ -107,13 +109,77 @@ test("すべての年齢帯と年齢不明で絞り込める", async ({ page }) 
   }
 });
 
-test("名前・ジャンル・年齢帯をAND条件で検索する", async ({ page }) => {
+test("年度選択肢を登録データから新しい順に生成する", async ({ page }) => {
+  const expectedYears = Array.from(
+    new Set(
+      streamers
+        .map((streamer) => getSchoolYear(streamer.birthDate))
+        .filter((year): year is number => year !== null)
+    )
+  ).sort((a, b) => b - a);
+
+  await expect(schoolYearFilter(page).locator("option")).toHaveCount(
+    expectedYears.length + 1
+  );
+  await expect(schoolYearFilter(page).locator("option")).toHaveText([
+    "すべての年度",
+    ...expectedYears.map((year) => `${year}年度`)
+  ]);
+  await expect(schoolYearFilter(page)).toHaveValue("");
+});
+
+test("年度で絞り込むと同年度の配信者だけを表示する", async ({ page }) => {
+  const cases = [
+    { year: 1995, slugs: ["sutanmi-japan", "laz", "zerost"] },
+    { year: 1994, slugs: ["shobosuke", "assari-shoko", "abitun"] },
+    { year: 1991, slugs: ["shaka", "k4sen"] },
+    { year: 1990, slugs: ["seki-yuta", "mokou", "taiji"] }
+  ];
+
+  for (const { year, slugs } of cases) {
+    await schoolYearFilter(page).selectOption(String(year));
+    await expectVisibleCount(page, slugs.length);
+
+    for (const slug of slugs) {
+      const streamer = streamers.find((candidate) => candidate.slug === slug);
+      expect(streamer).toBeDefined();
+      await expect(cardFor(page, streamer!)).toBeVisible();
+    }
+  }
+});
+
+test("年度とジャンルをAND条件で検索する", async ({ page }) => {
+  await schoolYearFilter(page).selectOption("1995");
+  await page.locator("[data-genre-filter]").selectOption("FPS");
+
+  await expectVisibleCount(page, 1);
+  await expect(cardFor(page, streamers.find(({ slug }) => slug === "laz")!)).toBeVisible();
+});
+
+test("年度と年齢帯をAND条件で検索する", async ({ page }) => {
+  await schoolYearFilter(page).selectOption("1995");
+  await page.locator("[data-age-filter]").selectOption("30-34");
+  await expectVisibleCount(page, 3);
+});
+
+test("年度と名前・別名をAND条件で検索する", async ({ page }) => {
+  const shaka = streamers.find((streamer) => streamer.slug === "shaka");
+  expect(shaka).toBeDefined();
+
+  await schoolYearFilter(page).selectOption("1991");
+  await searchInput(page).fill("釈迦");
+  await expectVisibleCount(page, 1);
+  await expect(cardFor(page, shaka!)).toBeVisible();
+});
+
+test("名前・ジャンル・年齢帯・年度をAND条件で検索する", async ({ page }) => {
   const laz = streamers.find((streamer) => streamer.slug === "laz");
   expect(laz).toBeDefined();
 
   await searchInput(page).fill("Lazvell");
   await page.locator("[data-genre-filter]").selectOption("FPS");
   await page.locator("[data-age-filter]").selectOption("30-34");
+  await schoolYearFilter(page).selectOption("1995");
 
   await expectVisibleCount(page, 1);
   await expect(cardFor(page, laz!)).toBeVisible();
@@ -123,20 +189,37 @@ test("条件リセットで全件表示へ戻る", async ({ page }) => {
   await searchInput(page).fill("Lazvell");
   await page.locator("[data-genre-filter]").selectOption("FPS");
   await page.locator("[data-age-filter]").selectOption("30-34");
+  await schoolYearFilter(page).selectOption("1995");
   await page.locator("[data-filter-reset]").click();
 
   await expect(searchInput(page)).toHaveValue("");
   await expect(page.locator("[data-genre-filter]")).toHaveValue("");
   await expect(page.locator("[data-age-filter]")).toHaveValue("");
+  await expect(schoolYearFilter(page)).toHaveValue("");
   await expect(searchInput(page)).toBeFocused();
   await expectVisibleCount(page, streamers.length);
 });
 
 test("0件検索時に案内を表示する", async ({ page }) => {
-  await searchInput(page).fill("__not_registered_streamer__");
+  await schoolYearFilter(page).selectOption("1991");
+  await searchInput(page).fill("Lazvell");
   await expectVisibleCount(page, 0);
   await expect(page.locator("[data-search-empty]")).toBeVisible();
   await expect(page.locator("[data-search-empty]")).toHaveText(
     "該当する配信者が見つかりません"
   );
+});
+
+test("年度指定を解除すると生年月日不明の4人も検索対象へ戻る", async ({ page }) => {
+  const unknownBirthDate = streamers.filter((streamer) => !streamer.birthDate);
+  expect(unknownBirthDate).toHaveLength(4);
+
+  await schoolYearFilter(page).selectOption("1995");
+  await expectVisibleCount(page, 3);
+  await schoolYearFilter(page).selectOption("");
+  await expectVisibleCount(page, streamers.length);
+
+  for (const streamer of unknownBirthDate) {
+    await expect(cardFor(page, streamer)).toBeVisible();
+  }
 });

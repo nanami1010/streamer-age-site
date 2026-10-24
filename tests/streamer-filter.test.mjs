@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync } from "node:fs";
 import { calculateAge, getTodayJST } from "../src/utils/age.ts";
 import { matchesAgeFilter, matchesGenre } from "../src/utils/filter.ts";
+import { getSchoolYear } from "../src/utils/generation.ts";
 import {
   createStreamerSearchIndex,
   matchesStreamer
@@ -28,7 +29,7 @@ const fictionalStreamers = [
   searchIndex: createStreamerSearchIndex(streamer)
 }));
 
-function filterStreamers(query = "", genre = "", ageRange = "") {
+function filterStreamers(query = "", genre = "", ageRange = "", schoolYear = "") {
   return fictionalStreamers.filter(
     (streamer) =>
       matchesStreamer(streamer.searchIndex, query) &&
@@ -36,7 +37,8 @@ function filterStreamers(query = "", genre = "", ageRange = "") {
       matchesAgeFilter(
         calculateAge(streamer.birthDate, fixedToday),
         ageRange
-      )
+      ) &&
+      (schoolYear === "" || String(getSchoolYear(streamer.birthDate) ?? "") === schoolYear)
   );
 }
 
@@ -44,6 +46,8 @@ assert.equal(filterStreamers("アル").length, 1, "名前検索");
 assert.equal(filterStreamers("", "FPS").length, 1, "ジャンル絞り込み");
 assert.equal(filterStreamers("", "", "25-29").length, 1, "年齢絞り込み");
 assert.equal(filterStreamers("alpha", "FPS", "25-29").length, 1, "3条件AND");
+assert.equal(filterStreamers("alpha", "FPS", "25-29", "2001").length, 1, "4条件AND");
+assert.equal(filterStreamers("", "", "", "2001").length, 1, "年度絞り込み");
 assert.equal(filterStreamers("alpha", "RPG", "25-29").length, 0, "0件");
 assert.equal(filterStreamers().length, 2, "初期条件へのリセット");
 assert.equal(filterStreamers("", "", "unknown")[0]?.name, "BETA", "年齢不明");
@@ -118,6 +122,7 @@ const input = new ElementMock();
 const clearButton = new ElementMock();
 const genreSelect = new ElementMock();
 const ageSelect = new ElementMock();
+const schoolYearSelect = new ElementMock();
 const resetButton = new ElementMock();
 const count = new ElementMock();
 const emptyMessage = new ElementMock();
@@ -144,6 +149,7 @@ const elements = new Map([
   ["[data-search-clear]", clearButton],
   ["[data-genre-filter]", genreSelect],
   ["[data-age-filter]", ageSelect],
+  ["[data-school-year-filter]", schoolYearSelect],
   ["[data-filter-reset]", resetButton],
   ["[data-search-count]", count],
   ["[data-search-empty]", emptyMessage]
@@ -188,8 +194,9 @@ assert.equal(count.textContent, "1", "クライアント側の年齢絞り込み
 input.value = "shaka";
 genreSelect.value = "FPS";
 ageSelect.value = "30-34";
+schoolYearSelect.value = String(getSchoolYear(thirtyYearOldBirthDate));
 input.emit("input");
-assert.equal(count.textContent, "1", "クライアント側の3条件AND");
+assert.equal(count.textContent, "1", "クライアント側の4条件AND");
 
 genreSelect.value = "RPG";
 genreSelect.emit("change");
@@ -199,6 +206,7 @@ assert.equal(emptyMessage.hidden, false, "0件メッセージの表示");
 input.value = "";
 genreSelect.value = "";
 ageSelect.value = "unknown";
+schoolYearSelect.value = "";
 ageSelect.emit("change");
 assert.equal(count.textContent, "1", "クライアント側の年齢不明");
 assert.equal(unknownAgeCard.hidden, false, "年齢不明カードの表示");
@@ -208,6 +216,7 @@ assert.equal(count.textContent, "2", "リセット後の件数");
 assert.equal(input.value, "", "名前条件のリセット");
 assert.equal(genreSelect.value, "", "ジャンル条件のリセット");
 assert.equal(ageSelect.value, "", "年齢条件のリセット");
+assert.equal(schoolYearSelect.value, "", "年度条件のリセット");
 assert.equal(resetButton.disabled, true, "リセットボタンの無効化");
 assert.equal(input.focused, true, "リセット後のフォーカス");
 
