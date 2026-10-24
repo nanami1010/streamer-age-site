@@ -42,5 +42,54 @@
     }
   ],
   "lastVerifiedAt": "2026-10-23",
-  "devices": []
+  "devices": [
+    {
+      "type": "マウス",
+      "manufacturer": "Razer",
+      "productName": "Viper V3 Pro Faker Edition",
+      "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "usageConfirmedAt": "2026-06-30",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "キーボード",
+      "manufacturer": "VSPO! GEAR",
+      "productName": "ゲーミングキーボード 如月れんモデル",
+      "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "usageConfirmedAt": "2026-06-30",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "イヤホン",
+      "manufacturer": "Sony",
+      "productName": "INZONE Buds（WF-G700N）",
+      "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "usageConfirmedAt": "2026-06-30",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "モニター",
+      "manufacturer": "Sony",
+      "productName": "INZONE M10S II（SDM-27Q102）",
+      "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "usageConfirmedAt": "2026-06-30",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "モニター",
+      "manufacturer": "Sony",
+      "productName": "INZONE M10S（SDM-27Q10S）",
+      "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "usageConfirmedAt": "2026-06-30",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "マイク",
+      "manufacturer": "Neumann",
+      "productName": "BCM 104",
+      "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "usageConfirmedAt": "2026-06-30",
+      "lastVerifiedAt": "2026-10-25"
+    }
+  ]
 }

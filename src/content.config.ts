@@ -56,6 +56,7 @@ const deviceSchema = z.object({
   productName: nonEmptyString,
   image: imageReference.nullable().optional(),
   sourceUrl: httpUrl,
+  usageConfirmedAt: pastOrTodayDate.optional(),
   lastVerifiedAt: pastOrTodayDate,
   affiliateUrl: httpUrl.nullable().optional(),
   affiliateLinks: z.object({

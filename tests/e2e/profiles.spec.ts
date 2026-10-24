@@ -8,6 +8,7 @@ interface DeviceRecord {
   manufacturer: string;
   productName: string;
   sourceUrl: string;
+  usageConfirmedAt?: string;
   lastVerifiedAt: string;
 }
 
@@ -106,6 +107,26 @@ test.describe("全配信者のプロフィール", () => {
             "datetime",
             device.lastVerifiedAt
           );
+          await expect(card.locator(".device-meta")).toContainText("サイト確認日");
+
+          const usageConfirmation = card.locator(".usage-confirmation");
+          if (device.usageConfirmedAt) {
+            const [year, month, day] = device.usageConfirmedAt.split("-").map(Number);
+            await expect(usageConfirmation).toContainText(
+              `${year}年${month}月${day}日時点の使用情報`
+            );
+            await expect(usageConfirmation).toContainText(
+              "現在も使用しているかは未確認です。"
+            );
+            await expect(usageConfirmation.locator("time")).toHaveAttribute(
+              "datetime",
+              device.usageConfirmedAt
+            );
+          } else {
+            await expect(usageConfirmation).toHaveCount(0);
+          }
+
+          await expect(card).not.toContainText("現在使用中");
           await expect(card.locator("img")).toHaveCount(0);
           await expect(card.locator(".purchase-link")).toHaveCount(0);
         }
@@ -119,5 +140,17 @@ test.describe("全配信者のプロフィール", () => {
       expect(pageErrors).toEqual([]);
       expect(consoleErrors).toEqual([]);
     });
+  }
+});
+
+test("SHAKA・k4sen・Laz以外の17人はデバイス未登録", async () => {
+  const expectedCounts = new Map([
+    ["shaka", 1],
+    ["k4sen", 6],
+    ["laz", 5]
+  ]);
+
+  for (const streamer of streamers) {
+    expect(streamer.devices ?? []).toHaveLength(expectedCounts.get(streamer.slug) ?? 0);
   }
 });

@@ -25,6 +25,11 @@ const hasAffiliateLinks = devices.some((device) =>
     device.affiliateLinks?.rakuten
   )
 );
+
+function formatJapaneseDate(date: string) {
+  const [year, month, day] = date.split("-").map(Number);
+  return `${year}年${month}月${day}日`;
+}
 ---
 
 {devices.length === 0 ? (
@@ -67,6 +72,18 @@ const hasAffiliateLinks = devices.some((device) =>
                 <p class="manufacturer">{device.manufacturer}</p>
                 <h4>{device.productName}</h4>
 
+                {device.usageConfirmedAt && (
+                  <div class="usage-confirmation">
+                    <p>
+                      <time datetime={device.usageConfirmedAt}>
+                        {formatJapaneseDate(device.usageConfirmedAt)}
+                      </time>
+                      時点の使用情報
+                    </p>
+                    <p>現在も使用しているかは未確認です。</p>
+                  </div>
+                )}
+
                 <dl class="device-meta">
                   <div>
                     <dt>使用情報の出典</dt>
@@ -81,7 +98,7 @@ const hasAffiliateLinks = devices.some((device) =>
                     </dd>
                   </div>
                   <div>
-                    <dt>確認日</dt>
+                    <dt>サイト確認日</dt>
                     <dd>
                       <time datetime={device.lastVerifiedAt}>
                         {device.lastVerifiedAt}
@@ -262,6 +279,26 @@ const hasAffiliateLinks = devices.some((device) =>
     color: var(--color-text);
     font-size: 17px;
     line-height: 1.45;
+  }
+
+  .usage-confirmation {
+    margin: 0 0 14px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--color-teal);
+    border-radius: 0 9px 9px 0;
+    background: var(--color-teal-soft);
+    color: var(--color-text-muted);
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .usage-confirmation p {
+    margin: 0;
+  }
+
+  .usage-confirmation p:first-child {
+    color: var(--color-text);
+    font-weight: 800;
   }
 
   .device-meta {

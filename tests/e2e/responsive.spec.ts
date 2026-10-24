@@ -76,9 +76,29 @@ for (const viewport of viewports) {
     await expectInsideViewport(page.locator(".section-card--wide"), viewport.width);
     await expect(page.locator(".back-link")).toBeEnabled();
 
+    for (const card of await page.locator(".device-card").all()) {
+      await expectInsideViewport(card, viewport.width);
+    }
+
     if (viewport.width === 375 || viewport.width === 1280) {
       await page.screenshot({
-        path: `test-results/screenshots/profile-shaka-${viewport.width}.png`
+        path: `test-results/screenshots/profile-shaka-${viewport.width}.png`,
+        fullPage: true
+      });
+    }
+
+    await page.goto("/streamers/k4sen/");
+    await expectNoHorizontalScroll(page);
+    await expect(page.locator(".device-card")).toHaveCount(6);
+
+    for (const card of await page.locator(".device-card").all()) {
+      await expectInsideViewport(card, viewport.width);
+    }
+
+    if (viewport.width === 375 || viewport.width === 1280) {
+      await page.screenshot({
+        path: `test-results/screenshots/profile-k4sen-${viewport.width}.png`,
+        fullPage: true
       });
 
       await page.goto("/streamers/laz/");
