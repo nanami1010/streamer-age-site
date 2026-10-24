@@ -7,6 +7,9 @@ function createRequest(overrides = {}) {
     type: "correction",
     name: "テスト利用者",
     replyEmail: "visitor@example.com",
+    targetReference: "SHAKA / https://example.com/streamers/shaka/",
+    agencyName: "サンプル事務所",
+    agencyUrl: "https://agency.example.com/",
     message: "掲載情報の訂正について確認をお願いします。",
     "cf-turnstile-response": "test-token",
     ...overrides
@@ -88,6 +91,63 @@ test("必須項目と文字数をサーバー側で検証する", async () => {
   assert.equal(verified, false);
 });
 
+test("訂正・削除依頼では対象情報を必須とする", async () => {
+  for (const type of ["correction", "deletion"]) {
+    const response = await processContactRequest(
+      createRequest({ type, targetReference: "" }),
+      createRuntime(),
+      { verifyTurnstile: validTurnstile }
+    );
+    const body = await response.json();
+
+    assert.equal(response.status, 400);
+    assert.ok(body.fieldErrors.targetReference);
+  }
+});
+
+test("その他では対象情報を任意として受け付ける", async () => {
+  const response = await processContactRequest(
+    createRequest({ type: "other", targetReference: "" }),
+    createRuntime(),
+    { verifyTurnstile: validTurnstile }
+  );
+
+  assert.equal(response.status, 200);
+});
+
+test("所属事務所URLと単一行項目を検証する", async () => {
+  const invalidUrlResponse = await processContactRequest(
+    createRequest({ agencyUrl: "javascript:alert(1)" }),
+    createRuntime(),
+    { verifyTurnstile: validTurnstile }
+  );
+  const invalidUrlBody = await invalidUrlResponse.json();
+  assert.equal(invalidUrlResponse.status, 400);
+  assert.ok(invalidUrlBody.fieldErrors.agencyUrl);
+
+  const injectionResponse = await processContactRequest(
+    createRequest({ agencyName: "サンプル事務所\r\nBcc: attacker@example.com" }),
+    createRuntime(),
+    { verifyTurnstile: validTurnstile }
+  );
+  const injectionBody = await injectionResponse.json();
+  assert.equal(injectionResponse.status, 400);
+  assert.ok(injectionBody.fieldErrors.agencyName);
+
+  const overLimitResponse = await processContactRequest(
+    createRequest({
+      targetReference: "a".repeat(501),
+      agencyName: "a".repeat(121)
+    }),
+    createRuntime(),
+    { verifyTurnstile: validTurnstile }
+  );
+  const overLimitBody = await overLimitResponse.json();
+  assert.equal(overLimitResponse.status, 400);
+  assert.ok(overLimitBody.fieldErrors.targetReference);
+  assert.ok(overLimitBody.fieldErrors.agencyName);
+});
+
 test("送信先を固定し、利用者のアドレスはReply-Toだけに使用する", async () => {
   let sentMessage;
   const runtime = createRuntime({
@@ -109,6 +169,16 @@ test("送信先を固定し、利用者のアドレスはReply-Toだけに使用
   assert.equal(sentMessage.to, "owner@example.com");
   assert.equal(sentMessage.from.email, "contact@example.com");
   assert.equal(sentMessage.replyTo.email, "visitor@example.com");
+  assert.match(
+    sentMessage.text,
+    /対象の配信者名または掲載ページURL: SHAKA \/ https:\/\/example\.com\/streamers\/shaka\//
+  );
+  assert.match(sentMessage.text, /所属事務所名: サンプル事務所/);
+  assert.match(
+    sentMessage.text,
+    /所属事務所の公式サイトURL: https:\/\/agency\.example\.com\//
+  );
+  assert.match(sentMessage.text, /本人確認済み情報ではありません/);
   assert.match(sentMessage.text, /掲載情報の訂正について/);
 });
 

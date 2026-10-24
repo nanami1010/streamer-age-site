@@ -7,6 +7,9 @@ export const CONTACT_TYPE_LABELS = {
 export const CONTACT_LIMITS = {
   name: 80,
   email: 254,
+  targetReference: 500,
+  agencyName: 120,
+  agencyUrl: 2048,
   messageMin: 10,
   messageMax: 4000,
   requestBytes: 32_768,
@@ -22,6 +25,9 @@ interface ContactInput {
   type: ContactType;
   name: string;
   replyEmail: string;
+  targetReference: string;
+  agencyName: string;
+  agencyUrl: string;
   message: string;
   turnstileToken: string;
   website: string;
@@ -91,6 +97,26 @@ function isEmail(value: string): boolean {
   return value.length <= CONTACT_LIMITS.email && EMAIL_PATTERN.test(value);
 }
 
+function isSafeSingleLine(value: string, maxLength: number): boolean {
+  return value.length <= maxLength && !/[\r\n\0]/.test(value);
+}
+
+function isHttpUrl(value: string): boolean {
+  if (!value || value.length > CONTACT_LIMITS.agencyUrl) return false;
+
+  try {
+    const url = new URL(value);
+    return (
+      (url.protocol === "https:" || url.protocol === "http:") &&
+      Boolean(url.hostname) &&
+      !url.username &&
+      !url.password
+    );
+  } catch {
+    return false;
+  }
+}
+
 function hasCompleteConfiguration(runtime: ContactRuntime): boolean {
   return Boolean(
     runtime.CONTACT_FORM_ENABLED === "true" &&
@@ -112,6 +138,9 @@ function validateInput(formData: FormData): {
     type: readText(formData, "type"),
     name: readText(formData, "name"),
     replyEmail: readText(formData, "replyEmail"),
+    targetReference: readText(formData, "targetReference"),
+    agencyName: readText(formData, "agencyName"),
+    agencyUrl: readText(formData, "agencyUrl"),
     message: readText(formData, "message").replace(/\r\n?/g, "\n"),
     turnstileToken: readText(formData, "cf-turnstile-response"),
     website: readText(formData, "website")
@@ -121,11 +150,31 @@ function validateInput(formData: FormData): {
   if (!(input.type in CONTACT_TYPE_LABELS)) {
     fieldErrors.type = "問い合わせの種類を選択してください。";
   }
-  if (input.name.length > CONTACT_LIMITS.name || /[\r\n\0]/.test(input.name)) {
+  if (!isSafeSingleLine(input.name, CONTACT_LIMITS.name)) {
     fieldErrors.name = `お名前は${CONTACT_LIMITS.name}文字以内で入力してください。`;
   }
   if (!isEmail(input.replyEmail)) {
     fieldErrors.replyEmail = "返信先メールアドレスを正しく入力してください。";
+  }
+  if (
+    (input.type === "correction" || input.type === "deletion") &&
+    !input.targetReference
+  ) {
+    fieldErrors.targetReference = "対象の配信者名または掲載ページURLを入力してください。";
+  } else if (
+    !isSafeSingleLine(input.targetReference, CONTACT_LIMITS.targetReference)
+  ) {
+    fieldErrors.targetReference = `対象の配信者名または掲載ページURLは${CONTACT_LIMITS.targetReference}文字以内で入力してください。`;
+  }
+  if (!isSafeSingleLine(input.agencyName, CONTACT_LIMITS.agencyName)) {
+    fieldErrors.agencyName = `所属事務所名は${CONTACT_LIMITS.agencyName}文字以内で入力してください。`;
+  }
+  if (
+    input.agencyUrl &&
+    (!isSafeSingleLine(input.agencyUrl, CONTACT_LIMITS.agencyUrl) ||
+      !isHttpUrl(input.agencyUrl))
+  ) {
+    fieldErrors.agencyUrl = "所属事務所の公式サイトURLをhttpまたはhttpsから入力してください。";
   }
   if (
     input.message.length < CONTACT_LIMITS.messageMin ||
@@ -200,6 +249,10 @@ function buildEmail(input: ContactInput, runtime: ContactRuntime): ContactEmailM
       `問い合わせの種類: ${typeLabel}`,
       `お名前: ${name}`,
       `返信先メールアドレス: ${input.replyEmail}`,
+      `対象の配信者名または掲載ページURL: ${input.targetReference || "未入力"}`,
+      `所属事務所名: ${input.agencyName || "未入力"}`,
+      `所属事務所の公式サイトURL: ${input.agencyUrl || "未入力"}`,
+      "※上記の氏名・メールアドレス・所属情報はフォーム入力内容であり、本人確認済み情報ではありません。",
       "",
       "問い合わせ内容:",
       input.message

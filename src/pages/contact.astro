@@ -75,6 +75,57 @@ const contactFormEnabled =
     </div>
 
     <div class="contact-form__field">
+      <label for="contact-target">
+        対象の配信者名または掲載ページURL
+        <span class="contact-form__optional" data-target-requirement>種類により必須</span>
+      </label>
+      <input
+        id="contact-target"
+        name="targetReference"
+        type="text"
+        maxlength={CONTACT_LIMITS.targetReference}
+        disabled={!contactFormEnabled}
+        data-contact-target
+      />
+      <p class="contact-form__hint">
+        掲載情報の訂正・削除依頼では必須です。配信者名または当サイトの対象ページURLを入力してください。
+      </p>
+    </div>
+
+    <div class="contact-form__field">
+      <label for="contact-agency-name">
+        所属事務所名 <span class="contact-form__optional">任意</span>
+      </label>
+      <input
+        id="contact-agency-name"
+        name="agencyName"
+        type="text"
+        maxlength={CONTACT_LIMITS.agencyName}
+        disabled={!contactFormEnabled}
+      />
+    </div>
+
+    <div class="contact-form__field">
+      <label for="contact-agency-url">
+        所属事務所の公式サイトURL <span class="contact-form__optional">任意</span>
+      </label>
+      <input
+        id="contact-agency-url"
+        name="agencyUrl"
+        type="url"
+        maxlength={CONTACT_LIMITS.agencyUrl}
+        inputmode="url"
+        placeholder="https://example.com/"
+        disabled={!contactFormEnabled}
+      />
+      <p class="contact-form__hint">確認の参考にする公式サイトがある場合のみ入力してください。</p>
+    </div>
+
+    <p class="contact-form__notice">
+      お名前、メールアドレス、所属事務所情報の入力だけで本人確認済みとはなりません。運営者が必要に応じて公式サイトなど別の経路で確認します。
+    </p>
+
+    <div class="contact-form__field">
       <label for="contact-message">問い合わせ内容 <span aria-hidden="true">必須</span></label>
       <textarea
         id="contact-message"
@@ -140,6 +191,23 @@ const contactFormEnabled =
 <script>
   const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
   const result = document.querySelector<HTMLElement>("[data-contact-result]");
+  const typeSelect = form?.elements.namedItem("type");
+  const targetInput = document.querySelector<HTMLInputElement>("[data-contact-target]");
+  const targetRequirement = document.querySelector<HTMLElement>("[data-target-requirement]");
+
+  const syncTargetRequirement = () => {
+    if (!(typeSelect instanceof HTMLSelectElement) || !targetInput || !targetRequirement) {
+      return;
+    }
+
+    const isRequired = typeSelect.value === "correction" || typeSelect.value === "deletion";
+    targetInput.required = isRequired;
+    targetRequirement.textContent = isRequired ? "必須" : "任意";
+    targetRequirement.classList.toggle("contact-form__optional", !isRequired);
+  };
+
+  typeSelect?.addEventListener("change", syncTargetRequirement);
+  syncTargetRequirement();
 
   form?.addEventListener(
     "invalid",
@@ -191,6 +259,7 @@ const contactFormEnabled =
       }
 
       form.reset();
+      syncTargetRequirement();
       result.dataset.state = "success";
       result.textContent = body.message ?? "お問い合わせを受け付けました。";
     } catch {
@@ -284,6 +353,17 @@ const contactFormEnabled =
     color: #64748b;
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .contact-form__notice {
+    margin: 0;
+    padding: 14px 16px;
+    border-left: 4px solid #0f766e;
+    border-radius: 8px;
+    background: #f0fdfa;
+    color: #334155;
+    font-size: 0.9rem;
+    line-height: 1.7;
   }
 
   .contact-form__trap {
