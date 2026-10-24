@@ -78,5 +78,35 @@ for (const viewport of viewports) {
         path: `test-results/screenshots/profile-shaka-${viewport.width}.png`
       });
     }
+
+    await page.goto("/generations/");
+    await expectNoHorizontalScroll(page);
+    await expectInsideViewport(
+      page.locator("[data-generation-link]").first(),
+      viewport.width
+    );
+    await expect(page.getByRole("link", { name: /1991年度生まれ/ })).toBeEnabled();
+
+    if (viewport.width === 375 || viewport.width === 1280) {
+      await page.screenshot({
+        path: `test-results/screenshots/generations-${viewport.width}.png`
+      });
+    }
+
+    await page.goto("/generations/1991/");
+    await expectNoHorizontalScroll(page);
+    await expectInsideViewport(
+      page.locator("[data-generation-streamer]").first(),
+      viewport.width
+    );
+    await expect(
+      page.locator("[data-generation-streamer] a").first()
+    ).toBeEnabled();
+
+    if (viewport.width === 375 || viewport.width === 1280) {
+      await page.screenshot({
+        path: `test-results/screenshots/generation-1991-${viewport.width}.png`
+      });
+    }
   });
 }

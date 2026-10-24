@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
+import { readFileSync, readdirSync } from "node:fs";
 import { SITE_CONFIG, shouldIncludeInSitemap } from "../site.config.mjs";
+import { getSchoolYear } from "../src/utils/generation.ts";
 import {
   createRobotsTxt,
   getRobotsMetaContent,
@@ -52,5 +54,33 @@ assert.equal(
   shouldIncludeInSitemap(`${SITE_CONFIG.url}__internal/`),
   false
 );
+
+const sitemap = readFileSync(
+  new URL("../dist/client/sitemap-0.xml", import.meta.url),
+  "utf8"
+);
+const streamerDirectory = new URL("../src/data/streamers/", import.meta.url);
+const generationYears = new Set(
+  readdirSync(streamerDirectory)
+    .filter((name) => name.endsWith(".json"))
+    .map((name) => {
+      const streamer = JSON.parse(
+        readFileSync(new URL(name, streamerDirectory), "utf8")
+      );
+      return getSchoolYear(streamer.birthDate);
+    })
+    .filter((year) => year !== null)
+);
+const generationPaths = [
+  "/generations/",
+  ...Array.from(generationYears, (year) => `/generations/${year}/`)
+];
+
+for (const path of generationPaths) {
+  assert.ok(
+    sitemap.includes(new URL(path, SITE_CONFIG.url).href),
+    `${path}がサイトマップに含まれる`
+  );
+}
 
 console.log("seo tests: passed");

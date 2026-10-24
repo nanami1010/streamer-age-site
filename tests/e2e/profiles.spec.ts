@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { calculateAge } from "../../src/utils/age";
+import { getSchoolYear } from "../../src/utils/generation";
 import { formatBirthDate, streamers } from "./streamers";
 
 test.describe("全配信者のプロフィール", () => {
@@ -38,6 +39,19 @@ test.describe("全配信者のプロフィール", () => {
       } else {
         await expect(ageValue).not.toContainText(/\d+歳/);
         await expect(birthDateValue.locator("time")).toHaveCount(0);
+      }
+
+      const schoolYear = getSchoolYear(streamer.birthDate);
+      const generationLink = page.locator("[data-profile-generation-link]");
+
+      if (schoolYear === null) {
+        await expect(generationLink).toHaveCount(0);
+      } else {
+        await expect(generationLink).toHaveAttribute(
+          "href",
+          `/generations/${schoolYear}/`
+        );
+        await expect(generationLink).toHaveText(/同じ学年の配信者を見る/);
       }
 
       const actualSocialLinks = await page.locator(".social-links a").evaluateAll(
