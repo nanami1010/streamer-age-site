@@ -10,6 +10,8 @@ const markerFile = path.join(markerDirectory, "playwright-managed-server");
 const runtimeConfigDirectory = path.join(markerDirectory, "playwright-runtime-config");
 const serverEnvironment = {
   ...process.env,
+  PUBLIC_CONTACT_FORM_ENABLED: "true",
+  PUBLIC_TURNSTILE_SITE_KEY: "1x00000000000000000000AA",
   XDG_CONFIG_HOME: runtimeConfigDirectory
 };
 

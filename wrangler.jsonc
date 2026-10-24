@@ -8,6 +8,21 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"send_email": [
+		{
+			"name": "CONTACT_EMAIL"
+		}
+	],
+	"ratelimits": [
+		{
+			"name": "CONTACT_RATE_LIMITER",
+			"namespace_id": "2026102501",
+			"simple": {
+				"limit": 3,
+				"period": 60
+			}
+		}
+	],
 	"observability": {
 		"enabled": true
 	}
