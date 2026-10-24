@@ -46,5 +46,41 @@
     }
   ],
   "lastVerifiedAt": "2026-10-25",
-  "devices": []
+  "devices": [
+    {
+      "type": "マウス",
+      "manufacturer": "VAXEE",
+      "productName": "NP-01S V3",
+      "sourceUrl": "https://lazvell.com/about-me/my-devices-2026/",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "キーボード",
+      "manufacturer": "ZENAIM",
+      "productName": "ZENAIM 60%",
+      "sourceUrl": "https://lazvell.com/about-me/my-devices-2026/",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "モニター",
+      "manufacturer": "BenQ ZOWIE",
+      "productName": "XL2566X+",
+      "sourceUrl": "https://lazvell.com/about-me/my-devices-2026/",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "マウスパッド",
+      "manufacturer": "VAXEE",
+      "productName": "PD155+",
+      "sourceUrl": "https://lazvell.com/about-me/my-devices-2026/",
+      "lastVerifiedAt": "2026-10-25"
+    },
+    {
+      "type": "イヤホン",
+      "manufacturer": "Sony",
+      "productName": "INZONE E9",
+      "sourceUrl": "https://lazvell.com/about-me/my-devices-2026/",
+      "lastVerifiedAt": "2026-10-25"
+    }
+  ]
 }

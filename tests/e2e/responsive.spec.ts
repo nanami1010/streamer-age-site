@@ -80,6 +80,19 @@ for (const viewport of viewports) {
       await page.screenshot({
         path: `test-results/screenshots/profile-shaka-${viewport.width}.png`
       });
+
+      await page.goto("/streamers/laz/");
+      await expectNoHorizontalScroll(page);
+      await expect(page.locator(".device-card")).toHaveCount(5);
+
+      for (const card of await page.locator(".device-card").all()) {
+        await expectInsideViewport(card, viewport.width);
+      }
+
+      await page.screenshot({
+        path: `test-results/screenshots/profile-laz-${viewport.width}.png`,
+        fullPage: true
+      });
     }
 
     await page.goto("/generations/");
