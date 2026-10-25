@@ -1,0 +1,26 @@
+{
+  "name": "ネモ",
+  "nameKana": "ねも",
+  "aliases": [],
+  "slug": "nemo",
+  "birthDate": "1985-01-05",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "Saishunkan Sol 熊本",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@GOOD_NEMO",
+    "twitch": "https://www.twitch.tv/nemo_good",
+    "x": "https://x.com/GOOD_NEMO"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
+    { "field": "nameKana", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
+    { "field": "birthDate", "url": "https://gloe.jp/news/202105_nemo/" },
+    { "field": "genres", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
+    { "field": "affiliation", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
+    { "field": "socialLinks", "url": "https://gloe.jp/news/202105_nemo/" },
+    { "field": "socialLinks", "url": "https://pc.watch.impress.co.jp/docs/column/stream_env/1568481.html" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

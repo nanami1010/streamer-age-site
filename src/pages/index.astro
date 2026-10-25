@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { getDisplayProfileImage } from "../lib/profile-image";
 import { getValidatedStreamers } from "../lib/streamers";
 import { calculateAge } from "../utils/age";
+import { formatBirthday } from "../utils/birthday";
 import { getSchoolYear } from "../utils/generation";
 import { createStreamerSearchIndex } from "../utils/search";
 
@@ -19,12 +20,6 @@ const schoolYears = Array.from(
   )
 ).sort((a, b) => b - a);
 
-function formatBirthDate(birthDate: string | null) {
-  if (!birthDate) return "非公開";
-
-  const [year, month, day] = birthDate.split("-").map(Number);
-  return `${year}年${month}月${day}日`;
-}
 ---
 
 <Layout
@@ -101,12 +96,12 @@ function formatBirthDate(birthDate: string | null) {
                   <div>
                     <dt>年齢</dt>
                     <dd data-birth={streamer.birthDate ?? ""}>
-                      {age === null ? "非公開" : `${age}歳`}
+                      {age === null ? "未確認" : `${age}歳`}
                     </dd>
                   </div>
                   <div>
                     <dt>誕生日</dt>
-                    <dd>{formatBirthDate(streamer.birthDate)}</dd>
+                    <dd>{formatBirthday(streamer.birthDate, streamer.birthMonthDay)}</dd>
                   </div>
                 </dl>
 

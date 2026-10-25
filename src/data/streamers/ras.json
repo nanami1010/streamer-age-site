@@ -1,0 +1,26 @@
+{
+  "name": "Ras",
+  "nameKana": "らす",
+  "aliases": [],
+  "slug": "ras",
+  "birthDate": null,
+  "birthMonthDay": "09-28",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCkiCNZ6c5Th3NpL2U8IhUWw",
+    "twitch": "https://www.twitch.tv/ras_sama",
+    "x": "https://x.com/Ras9915"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/ras/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/ras/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/ras/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/ras/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/ras/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/ras/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

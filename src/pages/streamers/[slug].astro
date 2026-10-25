@@ -6,6 +6,7 @@ import { getDisplayProfileImage } from "../../lib/profile-image";
 import type { Streamer } from "../../lib/streamers";
 import { getValidatedStreamers } from "../../lib/streamers";
 import { calculateAge } from "../../utils/age";
+import { formatBirthday } from "../../utils/birthday";
 import { getSchoolYear } from "../../utils/generation";
 
 // JSONに登録された配信者ごとにページを生成
@@ -28,16 +29,14 @@ const profileImage = getDisplayProfileImage(
   "profilePage"
 );
 const ogpImage = getDisplayProfileImage(streamer.profileImage, "ogp");
-const birthDateSources = streamer.birthDate
-  ? streamer.sources.filter((source) => source.field === "birthDate")
+const birthdaySourceField = streamer.birthDate
+  ? "birthDate"
+  : streamer.birthMonthDay
+    ? "birthMonthDay"
+    : null;
+const birthdaySources = birthdaySourceField
+  ? streamer.sources.filter((source) => source.field === birthdaySourceField)
   : [];
-
-function formatBirthDate(birthDate: string | null) {
-  if (!birthDate) return "非公開";
-
-  const [year, month, day] = birthDate.split("-").map(Number);
-  return `${year}年${month}月${day}日`;
-}
 
 ---
 
@@ -92,19 +91,19 @@ function formatBirthDate(birthDate: string | null) {
         <div class="fact-card fact-card--age">
           <p class="fact-card__label">現在の年齢</p>
           <p class="fact-card__value" data-birth={streamer.birthDate ?? ""}>
-            {age === null ? "非公開" : `${age}歳`}
+            {age === null ? "未確認" : `${age}歳`}
           </p>
         </div>
 
         <div class="fact-card">
-          <p class="fact-card__label">生年月日</p>
+          <p class="fact-card__label">誕生日</p>
           <p class="fact-card__value fact-card__value--date">
             {streamer.birthDate ? (
               <time datetime={streamer.birthDate}>
-                {formatBirthDate(streamer.birthDate)}
+                {formatBirthday(streamer.birthDate)}
               </time>
             ) : (
-              "非公開"
+              formatBirthday(null, streamer.birthMonthDay)
             )}
           </p>
         </div>
@@ -192,25 +191,25 @@ function formatBirthDate(birthDate: string | null) {
         <DeviceList devices={streamer.devices ?? []} />
       </section>
 
-      {birthDateSources.length > 0 && (
+      {birthdaySources.length > 0 && (
         <section
           class="section-card section-card--sources"
           data-birth-date-sources
         >
           <div class="section-heading">
             <p>SOURCE</p>
-            <h2>生年月日の出典</h2>
+            <h2>{streamer.birthDate ? "生年月日の出典" : "誕生日の出典"}</h2>
           </div>
 
           <ul class="source-list">
-            {birthDateSources.map((source) => (
+            {birthdaySources.map((source) => (
               <li>
                 <a
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  生年月日の出典
+                  {streamer.birthDate ? "生年月日の出典" : "誕生日の出典"}
                   <span aria-hidden="true">↗</span>
                 </a>
               </li>

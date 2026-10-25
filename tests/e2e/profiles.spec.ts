@@ -75,10 +75,12 @@ test.describe("全配信者のプロフィール", () => {
       const age = calculateAge(streamer.birthDate);
       const ageValue = page.locator(".fact-card--age [data-birth]");
       await expect(ageValue).toHaveAttribute("data-birth", streamer.birthDate ?? "");
-      await expect(ageValue).toHaveText(age === null ? "非公開" : `${age}歳`);
+      await expect(ageValue).toHaveText(age === null ? "未確認" : `${age}歳`);
 
       const birthDateValue = page.locator(".fact-card__value--date");
-      await expect(birthDateValue).toHaveText(formatBirthDate(streamer.birthDate));
+      await expect(birthDateValue).toHaveText(
+        formatBirthDate(streamer.birthDate, streamer.birthMonthDay)
+      );
 
       if (streamer.birthDate) {
         await expect(birthDateValue.locator("time")).toHaveAttribute(
@@ -172,18 +174,23 @@ test.describe("全配信者のプロフィール", () => {
         }
       }
 
-      const birthDateSources = streamer.birthDate
-        ? streamer.sources.filter((source) => source.field === "birthDate")
+      const birthdaySourceField = streamer.birthDate
+        ? "birthDate"
+        : streamer.birthMonthDay
+          ? "birthMonthDay"
+          : null;
+      const birthdaySources = birthdaySourceField
+        ? streamer.sources.filter((source) => source.field === birthdaySourceField)
         : [];
       const birthDateSourceSection = page.locator("[data-birth-date-sources]");
 
-      if (birthDateSources.length === 0) {
+      if (birthdaySources.length === 0) {
         await expect(birthDateSourceSection).toHaveCount(0);
       } else {
         await expect(
           birthDateSourceSection.getByRole("heading", {
             level: 2,
-            name: "生年月日の出典",
+            name: streamer.birthDate ? "生年月日の出典" : "誕生日の出典",
             exact: true
           })
         ).toBeVisible();
@@ -193,7 +200,7 @@ test.describe("全配信者のプロフィール", () => {
           .evaluateAll((links) =>
             links.map((link) => (link as HTMLAnchorElement).href).sort()
           );
-        const expectedSourceLinks = birthDateSources
+        const expectedSourceLinks = birthdaySources
           .map((source) => new URL(source.url).href)
           .sort();
         expect(actualSourceLinks).toEqual(expectedSourceLinks);
@@ -208,7 +215,7 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("SHAKA・k4sen・Laz以外の37人はデバイス未登録", async () => {
+test("SHAKA・k4sen・Laz以外の57人はデバイス未登録", async () => {
   const expectedCounts = new Map([
     ["shaka", 1],
     ["k4sen", 6],

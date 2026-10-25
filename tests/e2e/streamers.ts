@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { formatBirthday } from "../../src/utils/birthday";
 
 export interface StreamerRecord {
   name: string;
@@ -7,6 +8,7 @@ export interface StreamerRecord {
   aliases: string[];
   slug: string;
   birthDate: string | null;
+  birthMonthDay?: string;
   genres: string[];
   affiliation: string | null;
   socialLinks: {
@@ -44,9 +46,9 @@ export const streamers = readdirSync(streamerDirectory)
   )
   .sort((left, right) => left.slug.localeCompare(right.slug));
 
-export function formatBirthDate(birthDate: string | null) {
-  if (!birthDate) return "非公開";
-
-  const [year, month, day] = birthDate.split("-").map(Number);
-  return `${year}年${month}月${day}日`;
+export function formatBirthDate(
+  birthDate: string | null,
+  birthMonthDay?: string
+) {
+  return formatBirthday(birthDate, birthMonthDay);
 }

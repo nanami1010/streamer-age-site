@@ -1,0 +1,27 @@
+{
+  "name": "uruca",
+  "nameKana": "うるか",
+  "aliases": ["うるか"],
+  "slug": "uruca",
+  "birthDate": null,
+  "birthMonthDay": "01-23",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UChrTMfNcD1eN2ENGWBD7lUQ",
+    "twitch": "https://www.twitch.tv/ow_uruca",
+    "x": "https://x.com/ow_uruca"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/uruca/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/uruca/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/uruca/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/uruca/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/uruca/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/uruca/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/uruca/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

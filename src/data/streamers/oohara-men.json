@@ -1,0 +1,27 @@
+{
+  "name": "おおはらMEN",
+  "nameKana": "おおはらめん",
+  "aliases": ["ooharaMEN"],
+  "slug": "oohara-men",
+  "birthDate": null,
+  "birthMonthDay": "07-28",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "ドズル社",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@ooharaMEN",
+    "twitch": "https://www.twitch.tv/ooharameeen",
+    "x": "https://x.com/oohara0013"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.dozle.jp/members/ooharamen/" },
+    { "field": "nameKana", "url": "https://www.dozle.jp/members/ooharamen/" },
+    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
+    { "field": "birthMonthDay", "url": "https://www.dozle.jp/members/ooharamen/" },
+    { "field": "genres", "url": "https://www.dozle.jp/members/ooharamen/" },
+    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
+    { "field": "socialLinks", "url": "https://www.dozle.jp/members/ooharamen/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

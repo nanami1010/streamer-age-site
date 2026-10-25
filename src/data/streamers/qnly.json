@@ -1,0 +1,26 @@
+{
+  "name": "おんりー",
+  "nameKana": "おんりー",
+  "aliases": ["Qnly"],
+  "slug": "qnly",
+  "birthDate": null,
+  "birthMonthDay": "09-09",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "ドズル社",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@QnlyQ",
+    "x": "https://x.com/qnlyq"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.dozle.jp/members/qnly/" },
+    { "field": "nameKana", "url": "https://www.dozle.jp/members/qnly/" },
+    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
+    { "field": "birthMonthDay", "url": "https://www.dozle.jp/members/qnly/" },
+    { "field": "genres", "url": "https://www.dozle.jp/members/qnly/" },
+    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
+    { "field": "socialLinks", "url": "https://www.dozle.jp/members/qnly/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

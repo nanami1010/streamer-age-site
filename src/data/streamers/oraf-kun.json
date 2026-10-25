@@ -1,0 +1,26 @@
+{
+  "name": "おらふくん",
+  "nameKana": "おらふくん",
+  "aliases": ["Oraf-Kun"],
+  "slug": "oraf-kun",
+  "birthDate": null,
+  "birthMonthDay": "05-22",
+  "genres": ["ゲーム配信", "Minecraft", "FPS"],
+  "affiliation": "ドズル社",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@ORAFKUN",
+    "x": "https://x.com/yukiorajp"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.dozle.jp/members/oraf-kun/" },
+    { "field": "nameKana", "url": "https://www.dozle.jp/members/oraf-kun/" },
+    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
+    { "field": "birthMonthDay", "url": "https://www.dozle.jp/members/oraf-kun/" },
+    { "field": "genres", "url": "https://www.dozle.jp/members/oraf-kun/" },
+    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
+    { "field": "socialLinks", "url": "https://www.dozle.jp/members/oraf-kun/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

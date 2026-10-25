@@ -1,0 +1,27 @@
+{
+  "name": "Daruma is god",
+  "nameKana": "だるまいずごっど",
+  "aliases": ["だるまいずごっど"],
+  "slug": "daruma-is-god",
+  "birthDate": null,
+  "birthMonthDay": "10-31",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCRRKdB87Oj-FkqS4L9QQRiQ",
+    "twitch": "https://www.twitch.tv/darumaisgod",
+    "x": "https://x.com/darumaisgod"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/daruma-is-god/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

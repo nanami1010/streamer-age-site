@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { isValidBirthMonthDay } from "./utils/birthday";
 
 const nonEmptyString = z.string().trim().min(1);
 const httpUrl = z.url({ protocol: /^https?$/ });
@@ -38,6 +39,7 @@ const sourceField = z.enum([
   "nameKana",
   "aliases",
   "birthDate",
+  "birthMonthDay",
   "genres",
   "affiliation",
   "socialLinks",
@@ -95,6 +97,10 @@ export const streamerSchema = z.object({
     "slugは半角英小文字・数字・ハイフンだけで指定してください"
   ),
   birthDate: pastOrTodayDate.nullable(),
+  birthMonthDay: z.string()
+    .regex(/^\d{2}-\d{2}$/, "誕生日の月日はMM-DD形式で指定してください")
+    .refine(isValidBirthMonthDay, "存在する月日を指定してください")
+    .optional(),
   genres: uniqueStringArray.min(1),
   affiliation: nonEmptyString.nullable(),
   socialLinks: z.object({
@@ -106,7 +112,15 @@ export const streamerSchema = z.object({
   sources: z.array(sourceSchema).min(1),
   lastVerifiedAt: pastOrTodayDate,
   devices: z.array(deviceSchema).optional()
-}).strict();
+}).strict().superRefine((streamer, context) => {
+  if (streamer.birthDate !== null && streamer.birthMonthDay !== undefined) {
+    context.addIssue({
+      code: "custom",
+      path: ["birthMonthDay"],
+      message: "生年月日が登録済みの場合、誕生日の月日を重複登録できません"
+    });
+  }
+});
 
 const streamers = defineCollection({
   loader: glob({

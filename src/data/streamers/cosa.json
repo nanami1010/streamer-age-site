@@ -1,0 +1,23 @@
+{
+  "name": "cosa",
+  "nameKana": "こさ",
+  "aliases": [],
+  "slug": "cosa",
+  "birthDate": "1993-06-24",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "Saishunkan Sol 熊本",
+  "socialLinks": {
+    "x": "https://x.com/cosazeku"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.sskumamoto.com/article/20250421-1" },
+    { "field": "nameKana", "url": "https://www.sskumamoto.com/article/20250421-1" },
+    { "field": "birthDate", "url": "https://www.sskumamoto.com/article/20250421-1" },
+    { "field": "genres", "url": "https://www.sskumamoto.com/member" },
+    { "field": "affiliation", "url": "https://www.sskumamoto.com/member" },
+    { "field": "socialLinks", "url": "https://www.sskumamoto.com/article/20250421-1" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

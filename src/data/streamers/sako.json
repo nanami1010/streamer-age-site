@@ -1,0 +1,25 @@
+{
+  "name": "sako",
+  "nameKana": "さこ",
+  "aliases": [],
+  "slug": "sako",
+  "birthDate": "1979-04-09",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "FAV gaming",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/sakonoko_game",
+    "twitch": "https://www.twitch.tv/sakonoko_game",
+    "x": "https://x.com/sakonoko"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.favgaming.com/fighting-games-en/" },
+    { "field": "nameKana", "url": "https://www.favgaming.com/fighting-games-en/" },
+    { "field": "birthDate", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" },
+    { "field": "genres", "url": "https://www.favgaming.com/fighting-games-en/" },
+    { "field": "affiliation", "url": "https://www.favgaming.com/news/14523/" },
+    { "field": "socialLinks", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

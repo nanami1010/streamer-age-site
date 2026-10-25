@@ -1,0 +1,26 @@
+{
+  "name": "ぼんじゅうる",
+  "nameKana": "ぼんじゅうる",
+  "aliases": ["Bonjour"],
+  "slug": "bonjour",
+  "birthDate": null,
+  "birthMonthDay": "05-30",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "ドズル社",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@bonj55",
+    "x": "https://x.com/bonj5555"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.dozle.jp/members/bonjour/" },
+    { "field": "nameKana", "url": "https://www.dozle.jp/members/bonjour/" },
+    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
+    { "field": "birthMonthDay", "url": "https://www.dozle.jp/members/bonjour/" },
+    { "field": "genres", "url": "https://www.dozle.jp/members/bonjour/" },
+    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
+    { "field": "socialLinks", "url": "https://www.dozle.jp/members/bonjour/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

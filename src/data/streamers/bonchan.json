@@ -1,0 +1,26 @@
+{
+  "name": "Bonchan",
+  "nameKana": "ぼんちゃん",
+  "aliases": ["ボンちゃん"],
+  "slug": "bonchan",
+  "birthDate": "1987-03-11",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCJn2kguDu7hLn8rQGCUMgXQ",
+    "twitch": "https://www.twitch.tv/bonchan0311",
+    "x": "https://x.com/katitagaribon"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/bonchan/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/bonchan/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/bonchan/" },
+    { "field": "birthDate", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/bonchan/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/bonchan/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/bonchan/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

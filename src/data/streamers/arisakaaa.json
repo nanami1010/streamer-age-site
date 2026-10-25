@@ -1,0 +1,27 @@
+{
+  "name": "Arisakaaa",
+  "nameKana": "ありさか",
+  "aliases": ["ありさか"],
+  "slug": "arisakaaa",
+  "birthDate": null,
+  "birthMonthDay": "03-02",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCLLuaTElO1eRGOo2qc_Rdsw",
+    "twitch": "https://www.twitch.tv/cr_arisakaaa",
+    "x": "https://x.com/ArisakaaaT"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/arisakaaa/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

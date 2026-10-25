@@ -1,0 +1,26 @@
+{
+  "name": "Shuto",
+  "nameKana": "しゅうと",
+  "aliases": [],
+  "slug": "shuto",
+  "birthDate": null,
+  "birthMonthDay": "08-14",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCVpiMbxV0dfkINwtUlqU1bg",
+    "twitch": "https://www.twitch.tv/shuto_fgc",
+    "x": "https://x.com/Shuto_fgc"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/shuto/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/shuto/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/shuto/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/shuto/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/shuto/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/shuto/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

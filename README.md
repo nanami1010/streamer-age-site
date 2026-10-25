@@ -35,6 +35,7 @@ src/
 1. `src/data/streamers/` に、`slug` と同じ名前のJSONファイルを追加します。
 2. `slug` は半角英小文字・数字・ハイフンだけを使い、他の配信者と重複させないでください。
 3. 生年月日と確認日は `YYYY-MM-DD` 形式で記載してください。存在しない日付や未来の日付は使用できません。
+   生年が確認できず月日だけ確認できた場合は、`birthDate: null` のまま `birthMonthDay` を `MM-DD` 形式で記載します。2月29日にも対応しています。
 4. URLは `http://` または `https://` から始まる有効なURLを記載してください。
 5. 不明な生年月日・所属・プロフィール画像は推測せず `null` にします。未確認のSNSはプロパティ自体を省略できます。
 6. 根拠にしたページを `sources` に記録し、`lastVerifiedAt` を更新します。
@@ -49,6 +50,7 @@ src/
   "aliases": [],
   "slug": "streamer-name",
   "birthDate": null,
+  "birthMonthDay": "10-31",
   "genres": ["ゲーム配信"],
   "affiliation": null,
   "socialLinks": {},
@@ -62,6 +64,8 @@ src/
   "lastVerifiedAt": "2026-10-22"
 }
 ```
+
+`birthDate` が登録済みの場合、`birthMonthDay` は記載しません。月日の出典は `sources` に `field: "birthMonthDay"` として登録します。`birthMonthDay` だけでは年齢や生まれた年度を計算しません。
 
 ### プロフィール画像
 

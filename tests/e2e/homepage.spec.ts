@@ -27,8 +27,8 @@ test.beforeEach(async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test("トップページにJSONと一致する40件のカードを表示する", async ({ page }) => {
-  expect(streamers).toHaveLength(40);
+test("トップページにJSONと一致する60件のカードを表示する", async ({ page }) => {
+  expect(streamers).toHaveLength(60);
   await expect(page.locator(".hero__lead")).toHaveText(
     "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
   );
@@ -39,23 +39,53 @@ test("トップページにJSONと一致する40件のカードを表示する",
     const card = cardFor(page, streamer);
     await expect(card).toHaveCount(1);
     await expect(card).toContainText(streamer.name);
-    await expect(card).toContainText(formatBirthDate(streamer.birthDate));
+    await expect(card).toContainText(
+      formatBirthDate(streamer.birthDate, streamer.birthMonthDay)
+    );
 
     const age = calculateAge(streamer.birthDate);
     await expect(card.locator("[data-birth]")).toHaveText(
-      age === null ? "非公開" : `${age}歳`
+      age === null ? "未確認" : `${age}歳`
     );
   }
 });
 
-test("生年月日未確認の4人に年齢を表示しない", async ({ page }) => {
+test("生年月日未確認の配信者に年齢を表示しない", async ({ page }) => {
   const unknownBirthDate = streamers.filter((streamer) => !streamer.birthDate);
-  expect(unknownBirthDate).toHaveLength(4);
+  expect(unknownBirthDate.length).toBeGreaterThan(0);
 
   for (const streamer of unknownBirthDate) {
     const age = cardFor(page, streamer).locator("[data-birth]");
-    await expect(age).toHaveText("非公開");
+    await expect(age).toHaveText("未確認");
     await expect(age).not.toContainText(/\d+歳/);
+  }
+});
+
+test("生年不明で月日のみ確認済みの13人は誕生日だけを表示する", async ({ page }) => {
+  const expectedBirthdays = new Map([
+    ["daruma-is-god", "10月31日"],
+    ["arisakaaa", "3月2日"],
+    ["uruca", "1月23日"],
+    ["ras", "9月28日"],
+    ["kinako", "3月16日"],
+    ["neth", "5月26日"],
+    ["dogura", "6月12日"],
+    ["shuto", "8月14日"],
+    ["dozle", "11月21日"],
+    ["bonjour", "5月30日"],
+    ["qnly", "9月9日"],
+    ["oraf-kun", "5月22日"],
+    ["oohara-men", "7月28日"]
+  ]);
+  const monthDayOnly = streamers.filter((streamer) => streamer.birthMonthDay);
+
+  expect(monthDayOnly).toHaveLength(expectedBirthdays.size);
+
+  for (const streamer of monthDayOnly) {
+    expect(streamer.birthDate).toBeNull();
+    const card = cardFor(page, streamer);
+    await expect(card).toContainText(expectedBirthdays.get(streamer.slug)!);
+    await expect(card.locator("[data-birth]")).toHaveText("未確認");
   }
 });
 
@@ -239,9 +269,9 @@ test("0件検索時に案内を表示する", async ({ page }) => {
   );
 });
 
-test("年度指定を解除すると生年月日不明の4人も検索対象へ戻る", async ({ page }) => {
+test("年度指定を解除すると生年月日不明の配信者も検索対象へ戻る", async ({ page }) => {
   const unknownBirthDate = streamers.filter((streamer) => !streamer.birthDate);
-  expect(unknownBirthDate).toHaveLength(4);
+  expect(unknownBirthDate.length).toBeGreaterThan(0);
 
   await schoolYearFilter(page).selectOption("1995");
   await expectVisibleCount(page, 3);

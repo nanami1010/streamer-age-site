@@ -1,0 +1,24 @@
+{
+  "name": "ときど",
+  "nameKana": "ときど",
+  "aliases": [],
+  "slug": "tokido",
+  "birthDate": "1985-07-07",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "VARREL",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Tokido",
+    "x": "https://x.com/tokidoki77"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://varrel.jp/team/street-fighter" },
+    { "field": "nameKana", "url": "https://varrel.jp/team/street-fighter" },
+    { "field": "birthDate", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" },
+    { "field": "genres", "url": "https://varrel.jp/team/street-fighter" },
+    { "field": "affiliation", "url": "https://varrel.jp/news/2026/05/01/3913" },
+    { "field": "socialLinks", "url": "https://varrel.jp/team/street-fighter" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ドズル",
+  "nameKana": "どずる",
+  "aliases": ["Dozle"],
+  "slug": "dozle",
+  "birthDate": null,
+  "birthMonthDay": "11-21",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "ドズル社",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@dozle_sub",
+    "x": "https://x.com/kurakurachannel"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.dozle.jp/members/dozle/" },
+    { "field": "nameKana", "url": "https://www.dozle.jp/members/dozle/" },
+    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
+    { "field": "birthMonthDay", "url": "https://www.dozle.jp/members/dozle/" },
+    { "field": "genres", "url": "https://www.dozle.jp/members/dozle/" },
+    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
+    { "field": "socialLinks", "url": "https://www.dozle.jp/members/dozle/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

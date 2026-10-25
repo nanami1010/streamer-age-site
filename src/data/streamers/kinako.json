@@ -1,0 +1,27 @@
+{
+  "name": "kinako",
+  "nameKana": "きなこ",
+  "aliases": ["きなこ"],
+  "slug": "kinako",
+  "birthDate": null,
+  "birthMonthDay": "03-16",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCrWkFUu3DK5XpYBUPDC5uLA",
+    "twitch": "https://www.twitch.tv/kinapoppo",
+    "x": "https://x.com/kinako_pop"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/kinako/" },
+    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/kinako/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/kinako/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/kinako/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/kinako/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/kinako/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/kinako/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}
