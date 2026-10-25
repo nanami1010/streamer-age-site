@@ -1,0 +1,23 @@
+{
+  "name": "Soba",
+  "nameKana": "そば",
+  "aliases": [],
+  "slug": "soba",
+  "birthDate": "1999-06-03",
+  "genres": ["ゲーム配信", "第五人格"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@rcsoba",
+    "x": "https://x.com/kona_0603"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/soba/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/soba/" },
+    { "field": "genres", "url": "https://reject.jp/member/soba/" },
+    { "field": "affiliation", "url": "https://reject.jp/2026/05/28/0528/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2025/05/23/identityv-%E7%AC%AC%E4%BA%94%E4%BA%BA%E6%A0%BC%E9%83%A8%E9%96%80-%E5%A4%A7%E4%BC%9A%E3%83%AD%E3%82%B9%E3%82%BF%E3%83%BC%E7%99%BA%E8%A1%A8%E3%80%81%E5%8F%8A%E3%81%B3alf%E3%80%81unpyi%E3%80%81fuku/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

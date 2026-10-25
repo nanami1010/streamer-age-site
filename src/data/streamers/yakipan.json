@@ -1,0 +1,25 @@
+{
+  "name": "焼きパン",
+  "nameKana": "やきぱん",
+  "aliases": ["Varvalian"],
+  "slug": "yakipan",
+  "birthDate": "2000-08-01",
+  "genres": ["ゲーム配信", "Minecraft", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCNzyH3uRL8N3AbOmDdRfP8Q",
+    "twitch": "https://www.twitch.tv/varvalian",
+    "x": "https://x.com/VarvaIian"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3" },
+    { "field": "aliases", "url": "https://zetadivision.com/news/2022/03/07/8181" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2022/03/07/8181" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3" },
+    { "field": "socialLinks", "url": "https://zetadivision.com/news/2022/03/07/8181" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

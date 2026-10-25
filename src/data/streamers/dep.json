@@ -1,0 +1,24 @@
+{
+  "name": "Dep",
+  "nameKana": "でっぷ",
+  "aliases": [],
+  "slug": "dep",
+  "birthDate": "2000-12-04",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@dep_ow",
+    "twitch": "https://www.twitch.tv/dep_ow",
+    "x": "https://x.com/Dep_ow"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/dep/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/dep/" },
+    { "field": "genres", "url": "https://reject.jp/member/dep/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/dep/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2026/06/24/%E3%80%90valorant%E9%83%A8%E9%96%80%E3%80%91dep%E3%80%81%E3%80%8Eesports-nations-cup%E3%80%8F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E3%81%AB%E9%81%B8%E5%87%BA/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

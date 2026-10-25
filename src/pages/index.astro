@@ -43,7 +43,10 @@ function formatBirthDate(birthDate: string | null) {
           const age = calculateAge(streamer.birthDate);
           const profileUrl = `/streamers/${streamer.slug}/`;
           const initial = streamer.name.trim().charAt(0).toUpperCase();
-          const profileImage = getDisplayProfileImage(streamer.profileImage);
+          const profileImage = getDisplayProfileImage(
+            streamer.profileImage,
+            "homeCard"
+          );
 
           return (
             <article

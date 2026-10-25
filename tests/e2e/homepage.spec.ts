@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { getDisplayProfileImage } from "../../src/lib/profile-image";
 import { calculateAge, getTodayJST } from "../../src/utils/age";
 import { matchesAgeFilter } from "../../src/utils/filter";
 import { getSchoolYear } from "../../src/utils/generation";
@@ -26,8 +27,8 @@ test.beforeEach(async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test("トップページにJSONと一致する20件のカードを表示する", async ({ page }) => {
-  expect(streamers).toHaveLength(20);
+test("トップページにJSONと一致する40件のカードを表示する", async ({ page }) => {
+  expect(streamers).toHaveLength(40);
   await expect(page.locator(".hero__lead")).toHaveText(
     "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
   );
@@ -58,11 +59,29 @@ test("生年月日未確認の4人に年齢を表示しない", async ({ page })
   }
 });
 
-test("画像未登録の配信者は頭文字アイコンを表示する", async ({ page }) => {
-  await expect(page.locator(".streamer-card__avatar img")).toHaveCount(0);
-  await expect(page.locator(".streamer-card__avatar > span")).toHaveCount(
-    streamers.length
-  );
+test("トップカードは許可範囲に応じて画像または頭文字を表示する", async ({ page }) => {
+  for (const streamer of streamers) {
+    const card = cardFor(page, streamer);
+    const profileImage = getDisplayProfileImage(
+      streamer.profileImage,
+      "homeCard"
+    );
+
+    if (profileImage) {
+      await expect(card.locator(".streamer-card__avatar img")).toHaveAttribute(
+        "src",
+        profileImage.src
+      );
+      await expect(card.locator(".streamer-card__avatar img")).toHaveAttribute(
+        "alt",
+        profileImage.alt
+      );
+      await expect(card.locator(".streamer-card__avatar > span")).toHaveCount(0);
+    } else {
+      await expect(card.locator(".streamer-card__avatar img")).toHaveCount(0);
+      await expect(card.locator(".streamer-card__avatar > span")).toHaveCount(1);
+    }
+  }
 });
 
 test("名前・読み仮名・別名で全登録データを検索できる", async ({ page }) => {
@@ -142,7 +161,7 @@ test("年度で絞り込むと同年度の配信者だけを表示する", async
   const cases = [
     { year: 1995, slugs: ["sutanmi-japan", "laz", "zerost"] },
     { year: 1994, slugs: ["shobosuke", "assari-shoko", "abitun"] },
-    { year: 1991, slugs: ["shaka", "k4sen"] },
+    { year: 1991, slugs: ["shaka", "k4sen", "shomaru7"] },
     { year: 1990, slugs: ["seki-yuta", "mokou", "taiji"] }
   ];
 

@@ -1,0 +1,24 @@
+{
+  "name": "Axis",
+  "nameKana": "あくしす",
+  "aliases": [],
+  "slug": "axis",
+  "birthDate": "2005-03-11",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@axiss311",
+    "twitch": "https://www.twitch.tv/axiss311",
+    "x": "https://x.com/axiss311"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/axis/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/axis/" },
+    { "field": "genres", "url": "https://reject.jp/member/axis/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/axis/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2026/02/18/apex-legends%E9%83%A8%E9%96%80%E3%80%81%E3%83%81%E3%83%BC%E3%83%A0%E3%83%AD%E3%82%B9%E3%82%BF%E3%83%BC%E5%86%8D%E7%B7%A8%E3%81%8A%E3%82%88%E3%81%B3%E3%83%A6%E3%83%8B%E3%83%95%E3%82%A9%E3%83%BC/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

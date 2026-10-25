@@ -1,0 +1,24 @@
+{
+  "name": "ta1yo",
+  "nameKana": "たいよう",
+  "aliases": [],
+  "slug": "ta1yo",
+  "birthDate": "2000-04-12",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/ta1yotv",
+    "twitch": "https://www.twitch.tv/ta1yo_tv",
+    "x": "https://x.com/ta1yo_tv"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/ta1yo" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/ta1yo?PageSpeed=noscript" },
+    { "field": "genres", "url": "https://zetadivision.com/players/ta1yo" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/ta1yo" },
+    { "field": "socialLinks", "url": "https://zetadivision.com/news/2022/01/26/7610" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

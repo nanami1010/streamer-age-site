@@ -1,0 +1,24 @@
+{
+  "name": "ふ～ど",
+  "nameKana": "ふうど",
+  "aliases": [],
+  "slug": "fuudo",
+  "birthDate": "1985-11-07",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@thefuudo",
+    "twitch": "https://www.twitch.tv/thefuudo",
+    "x": "https://x.com/TheFuudo"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/fuudo/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/fuudo/" },
+    { "field": "genres", "url": "https://reject.jp/member/fuudo/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/fuudo/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2026/08/05/%E3%80%90street-fighter%E9%83%A8%E9%96%80%E3%80%91%E3%81%B5%EF%BD%9E%E3%81%A9%E3%80%81%E3%80%8Eesports-nations-cup-2026%E3%80%8F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

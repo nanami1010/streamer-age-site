@@ -76,7 +76,8 @@ src/
     "permissionStatus": "confirmed",
     "permissionNote": "権利者からWebサイト掲載許可を取得",
     "credit": "撮影者名 / 権利者名",
-    "lastVerifiedAt": "2026-10-25"
+    "lastVerifiedAt": "2026-10-25",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
   }
 }
 ```
@@ -87,8 +88,31 @@ src/
 - `permissionNote`: 許可・ライセンス・利用条件を確認した根拠
 - `credit`: 必要なクレジット。不要な場合は省略または `null`
 - `lastVerifiedAt`: 利用条件を最後に確認した日
+- `usageScopes`: 許可された表示用途。次の値だけを指定できます
+  - `homeCard`: トップページの配信者カード
+  - `profilePage`: 配信者プロフィールページ
+  - `generationCard`: 年度別配信者カード
+  - `ogp`: プロフィールページのOGP画像
 
-ローカル画像を保存する場合は、元画像を無断でダウンロードせず、許可されたファイルだけを `public/images/streamers/` に配置してください。
+`permissionStatus` が `confirmed` で、表示先が `usageScopes` に含まれる場合だけ画像が表示されます。OGPはWebページ内の表示とは別用途なので、権利者または利用条件がOGP利用を明示的に許可している場合だけ `ogp` を追加してください。`usageScopes` がない既存データは後方互換のため3つのページ内表示だけを許可し、OGPには使用しません。新しく登録する画像では必ず `usageScopes` を指定してください。
+
+#### 許可済み画像の登録手順
+
+1. 本人・権利者からの許可、またはプレスキット等の利用条件で、対象用途、商用サイトでの掲載可否、加工可否、クレジット要否を確認します。
+2. 許可メールや利用条件の記録は、個人情報や非公開情報をGitへ入れず、運営者だけがアクセスできる保管先に保存します。JSONの `sourceUrl`、`permissionNote`、`lastVerifiedAt` には、公開可能な根拠URL、許可内容の要約、確認日を記録します。
+3. ローカル配信が許可されている画像だけを `public/images/streamers/<slug>.<拡張子>` に配置します。外部画像の無断ダウンロードや、許可されていない切り抜き・変換は行いません。
+4. `src`、内容を説明する `alt`、必要な `credit`、許可された `usageScopes` を設定します。
+5. `sources` に `{ "field": "profileImage", "url": "根拠URL" }` を追加します。
+6. `npm run build` と `npm run test` を実行し、許可した画面だけに表示され、未許可の画面とOGPでは頭文字またはメタ画像なしへフォールバックすることを確認します。
+
+#### 利用許可が撤回された場合
+
+1. 対象JSONの `profileImage` を直ちに `null` にします。確認中の場合は一時的に `permissionStatus` を `unconfirmed` にしても、すべての用途で非表示になります。
+2. `rg` などで参照が残っていないことを確認してから、許可が撤回されたローカル画像を `public/images/streamers/` から削除します。
+3. 再ビルドし、トップ、プロフィール、年度別カード、OGPのすべてから画像が消え、頭文字表示へ戻ることを確認します。
+4. CDNや外部キャッシュの削除が必要な場合は、各サービスの手順に従います。
+
+画像が未登録、未確認、利用不可、または対象用途が許可されていない場合は、ページ内では名前の頭文字を表示します。OGPでは `og:image` と `twitter:image` を出力せず、既存のテキスト情報だけを使用します。
 
 ### 使用デバイス
 

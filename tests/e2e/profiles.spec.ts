@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { getDisplayProfileImage } from "../../src/lib/profile-image";
 import { calculateAge } from "../../src/utils/age";
 import { getSchoolYear } from "../../src/utils/generation";
 import { formatBirthDate, streamers } from "./streamers";
@@ -31,6 +32,45 @@ test.describe("全配信者のプロフィール", () => {
       await expect(
         page.getByRole("heading", { level: 1, name: streamer.name, exact: true })
       ).toBeVisible();
+
+      const profileImage = getDisplayProfileImage(
+        streamer.profileImage,
+        "profilePage"
+      );
+      const avatar = page.locator(".profile-avatar");
+
+      if (profileImage) {
+        await expect(avatar.locator("img")).toHaveAttribute("src", profileImage.src);
+        await expect(avatar.locator("img")).toHaveAttribute("alt", profileImage.alt);
+        await expect(avatar.locator("span")).toHaveCount(0);
+      } else {
+        await expect(avatar.locator("img")).toHaveCount(0);
+        await expect(avatar.locator("span")).toHaveCount(1);
+      }
+
+      const ogpImage = getDisplayProfileImage(streamer.profileImage, "ogp");
+      if (ogpImage) {
+        const expectedOgpUrl = new URL(ogpImage.src, "https://streamerage.jp/").href;
+        await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+          "content",
+          expectedOgpUrl
+        );
+        await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute(
+          "content",
+          expectedOgpUrl
+        );
+        await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+          "content",
+          "summary_large_image"
+        );
+      } else {
+        await expect(page.locator('meta[property="og:image"]')).toHaveCount(0);
+        await expect(page.locator('meta[name="twitter:image"]')).toHaveCount(0);
+        await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+          "content",
+          "summary"
+        );
+      }
 
       const age = calculateAge(streamer.birthDate);
       const ageValue = page.locator(".fact-card--age [data-birth]");
@@ -168,7 +208,7 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("SHAKA・k4sen・Laz以外の17人はデバイス未登録", async () => {
+test("SHAKA・k4sen・Laz以外の37人はデバイス未登録", async () => {
   const expectedCounts = new Map([
     ["shaka", 1],
     ["k4sen", 6],

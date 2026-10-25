@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { getDisplayProfileImage } from "../../src/lib/profile-image";
 import { calculateAge } from "../../src/utils/age";
 import {
   getSchoolYear,
@@ -80,6 +81,21 @@ for (const { year, members } of generations) {
         "href",
         `/streamers/${streamer.slug}/`
       );
+
+      const profileImage = getDisplayProfileImage(
+        streamer.profileImage,
+        "generationCard"
+      );
+      const avatar = card.locator(".generation-streamer-card__avatar");
+
+      if (profileImage) {
+        await expect(avatar.locator("img")).toHaveAttribute("src", profileImage.src);
+        await expect(avatar.locator("img")).toHaveAttribute("alt", profileImage.alt);
+        await expect(avatar.locator("span")).toHaveCount(0);
+      } else {
+        await expect(avatar.locator("img")).toHaveCount(0);
+        await expect(avatar.locator("span")).toHaveCount(1);
+      }
     }
 
     for (const streamer of streamers.filter(
@@ -93,7 +109,7 @@ for (const { year, members } of generations) {
 test("指定された主要4年度の同学年グループが正しい", async ({ page }) => {
   const expectedGroups = new Map<number, string[]>([
     [1990, ["関優太", "もこう", "たいじ"]],
-    [1991, ["SHAKA", "k4sen"]],
+    [1991, ["SHAKA", "k4sen", "shomaru7"]],
     [1994, ["しょぼすけ", "あっさりしょこ", "あびつん"]],
     [1995, ["スタンミじゃぱん", "Laz", "Zerost"]]
   ]);

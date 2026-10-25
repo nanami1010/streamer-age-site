@@ -1,0 +1,23 @@
+{
+  "name": "TON・GG",
+  "nameKana": "とんじーじー",
+  "aliases": [],
+  "slug": "ton-gg",
+  "birthDate": "2003-03-28",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@TON0465",
+    "x": "https://x.com/TON0465"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/tongg/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/tongg/" },
+    { "field": "genres", "url": "https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/tongg/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

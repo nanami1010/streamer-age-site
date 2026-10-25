@@ -1,0 +1,25 @@
+{
+  "name": "JapaneseKoreanUG",
+  "nameKana": "じゃぱにーずこりあんゆーじー",
+  "aliases": [],
+  "slug": "japanese-korean-ug",
+  "birthDate": "1993-07-01",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCPLVTmdgB-ljT3S5xGBhBQA",
+    "twitch": "https://www.twitch.tv/japanesekoreanug",
+    "x": "https://x.com/JPKR_UG"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/japanesekoreanug" },
+    { "field": "nameKana", "url": "https://zetadivision.com/news/2024/10/14/26689" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/japanesekoreanug" },
+    { "field": "genres", "url": "https://zetadivision.com/players/japanesekoreanug" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/japanesekoreanug" },
+    { "field": "socialLinks", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "くらら",
+  "nameKana": "くらら",
+  "aliases": [],
+  "slug": "kurara",
+  "birthDate": "1998-06-28",
+  "genres": ["ゲーム配信", "TPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCtQ74RU_J-VhQZX255-WLYw",
+    "x": "https://x.com/kurara__a"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/kurara/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/kurara/" },
+    { "field": "genres", "url": "https://reject.jp/member/kurara/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/kurara/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2023/11/17/%E3%80%90%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%83%85%E5%A0%B1%E3%80%91%E3%81%8F%E3%82%89%E3%82%89%E7%B7%8F%E4%BC%9A%E9%96%8B%E5%82%AC%E6%B1%BA%E5%AE%9A%EF%BC%81/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

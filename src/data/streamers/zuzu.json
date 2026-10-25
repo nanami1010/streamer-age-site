@@ -1,0 +1,24 @@
+{
+  "name": "ズズ",
+  "nameKana": "ずず",
+  "aliases": [],
+  "slug": "zuzu",
+  "birthDate": "1993-06-01",
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@zuzu_channel",
+    "twitch": "https://www.twitch.tv/zetyou2",
+    "x": "https://x.com/zetyou2"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/zuzu/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/zuzu/" },
+    { "field": "genres", "url": "https://reject.jp/member/zuzu/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/zuzu/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2025/09/25/%E3%80%90%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E9%83%A8%E9%96%80%E3%80%91%E3%80%8C%E3%82%BA%E3%82%BA%E3%80%8D%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

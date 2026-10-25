@@ -1,0 +1,24 @@
+{
+  "name": "YAS",
+  "nameKana": "やす",
+  "aliases": [],
+  "slug": "yas",
+  "birthDate": "1993-09-13",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@yas-jittyoku",
+    "twitch": "https://www.twitch.tv/yas_jittyoku",
+    "x": "https://x.com/yas_jittyoku"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/yas/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/yas/" },
+    { "field": "genres", "url": "https://reject.jp/2025/08/11/%E3%80%90%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E9%83%A8%E9%96%80%E3%80%91yas%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/yas/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2025/08/11/%E3%80%90%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E9%83%A8%E9%96%80%E3%80%91yas%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

@@ -22,6 +22,9 @@ export interface StreamerRecord {
     permissionNote: string;
     credit?: string | null;
     lastVerifiedAt: string;
+    usageScopes?: Array<
+      "homeCard" | "profilePage" | "generationCard" | "ogp"
+    >;
   } | null;
   sources: Array<{ field: string; url: string }>;
   lastVerifiedAt: string;

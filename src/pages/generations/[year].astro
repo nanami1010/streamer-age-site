@@ -69,7 +69,10 @@ function formatBirthDate(birthDate: string) {
           const age = calculateAge(streamer.birthDate);
           const birthDate = streamer.birthDate!;
           const initial = streamer.name.trim().charAt(0).toUpperCase();
-          const profileImage = getDisplayProfileImage(streamer.profileImage);
+          const profileImage = getDisplayProfileImage(
+            streamer.profileImage,
+            "generationCard"
+          );
 
           return (
             <article class="generation-streamer-card" data-generation-streamer>

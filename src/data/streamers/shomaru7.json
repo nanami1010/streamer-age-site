@@ -1,0 +1,25 @@
+{
+  "name": "shomaru7",
+  "nameKana": "しょうまる",
+  "aliases": ["翔丸"],
+  "slug": "shomaru7",
+  "birthDate": "1991-09-23",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@shomaru7",
+    "twitch": "https://www.twitch.tv/shomaru7",
+    "x": "https://x.com/shomarusamaa"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/shomaru7/" },
+    { "field": "aliases", "url": "https://reject.jp/2025/11/17/%E3%80%90reject-hour-%E7%BF%94%E4%B8%B8%E6%9D%AF%E3%80%9111%E6%9C%8822%E6%97%A5%EF%BC%88%E9%87%91%EF%BC%891900%E3%82%88%E3%82%8A%E9%96%8B%E5%82%AC%E6%B1%BA%E5%AE%9A-%E6%8E%A1%E7%94%A8/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/shomaru7/" },
+    { "field": "genres", "url": "https://reject.jp/member/shomaru7/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/shomaru7/" },
+    { "field": "socialLinks", "url": "https://reject.jp/2025/11/17/%E3%80%90reject-hour-%E7%BF%94%E4%B8%B8%E6%9D%AF%E3%80%9111%E6%9C%8822%E6%97%A5%EF%BC%88%E9%87%91%EF%BC%891900%E3%82%88%E3%82%8A%E9%96%8B%E5%82%AC%E6%B1%BA%E5%AE%9A-%E6%8E%A1%E7%94%A8/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

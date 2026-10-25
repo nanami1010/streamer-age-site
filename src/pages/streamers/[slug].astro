@@ -23,7 +23,11 @@ const { streamer } = Astro.props as { streamer: Streamer };
 const age = calculateAge(streamer.birthDate);
 const schoolYear = getSchoolYear(streamer.birthDate);
 const initial = streamer.name.trim().charAt(0).toUpperCase();
-const profileImage = getDisplayProfileImage(streamer.profileImage);
+const profileImage = getDisplayProfileImage(
+  streamer.profileImage,
+  "profilePage"
+);
+const ogpImage = getDisplayProfileImage(streamer.profileImage, "ogp");
 const birthDateSources = streamer.birthDate
   ? streamer.sources.filter((source) => source.field === "birthDate")
   : [];
@@ -42,7 +46,7 @@ function formatBirthDate(birthDate: string | null) {
   description={`${streamer.name}の年齢・誕生日・プロフィール・使用デバイスを紹介します。`}
   canonicalPath={`/streamers/${streamer.slug}/`}
   ogType="profile"
-  image={profileImage?.src}
+  image={ogpImage?.src}
 >
   <main class="profile-page">
     <section class="profile-hero" aria-labelledby="profile-name">

@@ -1,0 +1,25 @@
+{
+  "name": "ウメハラ",
+  "nameKana": "うめはら",
+  "aliases": ["Daigo"],
+  "slug": "umehara",
+  "birthDate": "1981-05-19",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@DaigotheBeasTV",
+    "twitch": "https://www.twitch.tv/daigothebeastv",
+    "x": "https://x.com/daigothebeastJP"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/umehara-daigo/" },
+    { "field": "aliases", "url": "https://reject.jp/member/umehara-daigo/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/umehara-daigo/" },
+    { "field": "genres", "url": "https://reject.jp/member/umehara-daigo/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/umehara-daigo/" },
+    { "field": "socialLinks", "url": "https://www.daigothebeast.com/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

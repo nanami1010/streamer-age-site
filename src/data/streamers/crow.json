@@ -1,0 +1,24 @@
+{
+  "name": "crow",
+  "nameKana": "くろう",
+  "aliases": [],
+  "slug": "crow",
+  "birthDate": "1997-11-28",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCdpwgXpC6jXAnj_dJryvFMg",
+    "twitch": "https://www.twitch.tv/crowfps__",
+    "x": "https://x.com/no960fps"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/crow" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/crow?PageSpeed=noscript" },
+    { "field": "genres", "url": "https://zetadivision.com/players/crow" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/crow" },
+    { "field": "socialLinks", "url": "https://gamezine.jp/13771/" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}

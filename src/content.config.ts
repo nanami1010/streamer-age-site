@@ -50,6 +50,13 @@ const sourceSchema = z.object({
   url: httpUrl
 }).strict();
 
+const profileImageUsage = z.enum([
+  "homeCard",
+  "profilePage",
+  "generationCard",
+  "ogp"
+]);
+
 const profileImageSchema = z.object({
   src: imageReference,
   alt: nonEmptyString,
@@ -57,7 +64,11 @@ const profileImageSchema = z.object({
   permissionStatus: z.enum(["confirmed", "unconfirmed", "not-permitted"]),
   permissionNote: nonEmptyString,
   credit: nonEmptyString.nullable().optional(),
-  lastVerifiedAt: pastOrTodayDate
+  lastVerifiedAt: pastOrTodayDate,
+  usageScopes: z.array(profileImageUsage).refine(
+    (values) => new Set(values).size === values.length,
+    "同じ画像利用範囲を重複して指定できません"
+  ).optional()
 }).strict();
 
 const deviceSchema = z.object({

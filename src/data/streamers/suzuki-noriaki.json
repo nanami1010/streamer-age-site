@@ -1,0 +1,24 @@
+{
+  "name": "鈴木ノリアキ",
+  "nameKana": "すずきのりあき",
+  "aliases": [],
+  "slug": "suzuki-noriaki",
+  "birthDate": "1996-07-16",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@NORIAKIISGOOD",
+    "twitch": "https://www.twitch.tv/suzukinoriaki",
+    "x": "https://x.com/NORIAKIISGOOD"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/%E9%88%B4%E6%9C%A8%E3%83%8E%E3%83%AA%E3%82%A2%E3%82%AD" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/%E9%88%B4%E6%9C%A8%E3%83%8E%E3%83%AA%E3%82%A2%E3%82%AD" },
+    { "field": "genres", "url": "https://zetadivision.com/players/%E9%88%B4%E6%9C%A8%E3%83%8E%E3%83%AA%E3%82%A2%E3%82%AD" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/%E9%88%B4%E6%9C%A8%E3%83%8E%E3%83%AA%E3%82%A2%E3%82%AD" },
+    { "field": "socialLinks", "url": "https://zetadivision.com/news/2024/07/14/25419" }
+  ],
+  "lastVerifiedAt": "2026-10-25",
+  "devices": []
+}
