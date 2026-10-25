@@ -117,6 +117,6 @@ npm run generate-types
 
 `contactEmail` は決定後に実値へ変更してください。`services` は未導入中は `null` または空配列のままにし、実際に導入したサービス名だけを設定します。固定ページの案内文は、この設定に応じて未導入・導入済みの表示を切り替えます。
 
-独自ドメイン決定後は `url` を変更し、公開内容を確認してから `indexingEnabled` を `true` にしてください。プレビュー・テスト用のパスは同じ設定ファイルの `sitemapExcludedPathPrefixes` でサイトマップから除外され、共通レイアウトでも自動的に `noindex` になります。
+正式URLは `https://streamerage.jp/` です。公開内容を確認し、検索エンジンへの登録を開始する段階になってから `indexingEnabled` を `true` にしてください。プレビュー・テスト用のパスは同じ設定ファイルの `sitemapExcludedPathPrefixes` でサイトマップから除外され、共通レイアウトでも自動的に `noindex` になります。
 
 Cloudflare Workersの設定は `astro.config.mjs` と `wrangler.jsonc` で管理しています。

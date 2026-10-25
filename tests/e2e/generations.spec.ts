@@ -115,7 +115,7 @@ test("登録者が存在しない年度ページは生成しない", async ({ re
 test("年度ページにSEOメタ情報とnoindexを設定する", async ({ page }) => {
   for (const { year } of generations) {
     await page.goto(`/generations/${year}/`);
-    const expectedUrl = `https://streamer-age-site.sheryl1414.workers.dev/generations/${year}/`;
+    const expectedUrl = `https://streamerage.jp/generations/${year}/`;
 
     await expect(page).toHaveTitle(
       `${year}年度生まれの配信者一覧 | STREAMER AGE`

@@ -88,7 +88,7 @@ test("トップページから一覧へ移動でき、SEO設定を維持する",
   await expect(page).toHaveURL(/\/devices\/$/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://streamer-age-site.sheryl1414.workers.dev/devices/"
+    "https://streamerage.jp/devices/"
   );
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",

@@ -1,7 +1,7 @@
 export const SITE_CONFIG = Object.freeze({
   name: "STREAMER AGE",
   description: "配信者の年齢・世代・使用デバイス",
-  url: "https://streamer-age-site.sheryl1414.workers.dev/",
+  url: "https://streamerage.jp/",
   indexingEnabled: false,
   contactEmail: null,
   services: Object.freeze({

@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 import { SITE_CONFIG, shouldIncludeInSitemap } from "../site.config.mjs";
 import { getSchoolYear } from "../src/utils/generation.ts";
 import {
@@ -10,6 +12,8 @@ import {
 
 assert.equal(SITE_CONFIG.name, "STREAMER AGE");
 assert.equal(SITE_CONFIG.description, "配信者の年齢・世代・使用デバイス");
+assert.equal(SITE_CONFIG.url, "https://streamerage.jp/");
+assert.equal(SITE_CONFIG.indexingEnabled, false);
 
 assert.equal(
   toAbsoluteUrl(SITE_CONFIG.url, "/streamers/shaka/"),
@@ -62,6 +66,24 @@ const sitemap = readFileSync(
   new URL("../dist/client/sitemap-0.xml", import.meta.url),
   "utf8"
 );
+const sitemapIndex = readFileSync(
+  new URL("../dist/client/sitemap-index.xml", import.meta.url),
+  "utf8"
+);
+const robotsTxt = readFileSync(
+  new URL("../dist/client/robots.txt", import.meta.url),
+  "utf8"
+);
+const legacyOrigin = "https://streamer-age-site.sheryl1414.workers.dev";
+
+assert.match(
+  sitemapIndex,
+  /<loc>https:\/\/streamerage\.jp\/sitemap-0\.xml<\/loc>/
+);
+assert.ok(!sitemapIndex.includes(legacyOrigin));
+assert.ok(!sitemap.includes(legacyOrigin));
+assert.ok(!robotsTxt.includes(legacyOrigin));
+assert.ok(robotsTxt.includes("Sitemap: https://streamerage.jp/sitemap-index.xml"));
 const streamerDirectory = new URL("../src/data/streamers/", import.meta.url);
 const generationYears = new Set(
   readdirSync(streamerDirectory)
@@ -84,6 +106,91 @@ for (const path of generationPaths) {
     sitemap.includes(new URL(path, SITE_CONFIG.url).href),
     `${path}がサイトマップに含まれる`
   );
+}
+
+function collectHtmlFiles(directory) {
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = join(directory, entry.name);
+    return entry.isDirectory()
+      ? collectHtmlFiles(entryPath)
+      : entry.name.endsWith(".html")
+        ? [entryPath]
+        : [];
+  });
+}
+
+const clientDirectory = fileURLToPath(
+  new URL("../dist/client/", import.meta.url)
+);
+const htmlFiles = collectHtmlFiles(clientDirectory);
+
+assert.ok(htmlFiles.length > 0, "生成済みHTMLが存在する");
+
+for (const htmlFile of htmlFiles) {
+  const html = readFileSync(htmlFile, "utf8");
+  const fileLabel = relative(clientDirectory, htmlFile);
+  const canonicalMatches = [
+    ...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)
+  ];
+  const ogUrlMatches = [
+    ...html.matchAll(/<meta property="og:url" content="([^"]+)">/g)
+  ];
+  const robotsMatches = [
+    ...html.matchAll(/<meta name="robots" content="([^"]+)">/g)
+  ];
+
+  assert.match(html, /<title>[^<]+<\/title>/, `${fileLabel}: title`);
+  assert.match(
+    html,
+    /<meta name="description" content="[^"]+">/,
+    `${fileLabel}: description`
+  );
+  for (const property of [
+    "site_name",
+    "locale",
+    "type",
+    "title",
+    "description",
+    "url"
+  ]) {
+    assert.match(
+      html,
+      new RegExp(`<meta property="og:${property}" content="[^"]+">`),
+      `${fileLabel}: og:${property}`
+    );
+  }
+
+  assert.equal(canonicalMatches.length, 1, `${fileLabel}: canonicalは1件`);
+  assert.equal(ogUrlMatches.length, 1, `${fileLabel}: og:urlは1件`);
+  assert.equal(robotsMatches.length, 1, `${fileLabel}: robots metaは1件`);
+
+  const canonicalUrl = canonicalMatches[0][1];
+  assert.ok(
+    canonicalUrl.startsWith("https://streamerage.jp/"),
+    `${fileLabel}: canonicalは正式ドメイン`
+  );
+  assert.equal(ogUrlMatches[0][1], canonicalUrl, `${fileLabel}: og:url`);
+  assert.equal(robotsMatches[0][1], "noindex, follow", `${fileLabel}: noindex`);
+  assert.ok(!html.includes(legacyOrigin), `${fileLabel}: 暫定ドメインを含まない`);
+  assert.ok(
+    sitemap.includes(`<loc>${canonicalUrl}</loc>`),
+    `${fileLabel}: サイトマップ掲載`
+  );
+
+  for (const [, href] of html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {
+    const url = new URL(href, SITE_CONFIG.url);
+    if (url.origin !== "https://streamerage.jp") continue;
+
+    const path = decodeURIComponent(url.pathname).replace(/^\//, "");
+    const targetPath = url.pathname.endsWith("/")
+      ? join(clientDirectory, path, "index.html")
+      : join(clientDirectory, path);
+
+    assert.ok(
+      existsSync(targetPath),
+      `${fileLabel}: 内部リンク ${href} の生成先が存在する`
+    );
+  }
 }
 
 console.log("seo tests: passed");
