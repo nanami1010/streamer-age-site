@@ -118,7 +118,7 @@ test("年度ページにSEOメタ情報とnoindexを設定する", async ({ page
     const expectedUrl = `https://streamer-age-site.sheryl1414.workers.dev/generations/${year}/`;
 
     await expect(page).toHaveTitle(
-      `${year}年度生まれの配信者一覧 | 配信者年齢サイト`
+      `${year}年度生まれの配信者一覧 | STREAMER AGE`
     );
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       "content",

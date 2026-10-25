@@ -1,6 +1,6 @@
-# 配信者年齢サイト
+# STREAMER AGE
 
-ゲーム配信者の年齢・プロフィール・使用デバイス情報を掲載するAstroサイトです。配信者データはAstro Content CollectionsとZodで検証し、配信者ごとのJSONファイルとして管理します。
+配信者の年齢・世代・使用デバイスを掲載するAstroサイトです。配信者データはAstro Content CollectionsとZodで検証し、配信者ごとのJSONファイルとして管理します。
 
 ## 開発環境
 

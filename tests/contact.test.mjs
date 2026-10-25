@@ -168,7 +168,9 @@ test("送信先を固定し、利用者のアドレスはReply-Toだけに使用
   assert.equal(body.success, true);
   assert.equal(sentMessage.to, "owner@example.com");
   assert.equal(sentMessage.from.email, "contact@example.com");
+  assert.equal(sentMessage.from.name, "STREAMER AGE");
   assert.equal(sentMessage.replyTo.email, "visitor@example.com");
+  assert.equal(sentMessage.subject, "[STREAMER AGE] 掲載情報の訂正");
   assert.match(
     sentMessage.text,
     /対象の配信者名または掲載ページURL: SHAKA \/ https:\/\/example\.com\/streamers\/shaka\//

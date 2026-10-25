@@ -7,8 +7,8 @@ import { SITE_CONFIG } from "../../site.config.mjs";
     <a class="brand" href="/" aria-label={`${SITE_CONFIG.name} トップページ`}>
       <span class="brand__mark" aria-hidden="true">S</span>
       <span class="brand__text">
-        <span class="brand__name">STREAMER DB</span>
-        <span class="brand__caption">{SITE_CONFIG.name}</span>
+        <span class="brand__name">{SITE_CONFIG.name}</span>
+        <span class="brand__caption">{SITE_CONFIG.description}</span>
       </span>
     </a>
     <nav aria-label="配信者の探し方">
@@ -111,6 +111,12 @@ import { SITE_CONFIG } from "../../site.config.mjs";
     .generation-link {
       padding-inline: 10px;
       font-size: 12px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .brand__caption {
+      display: none;
     }
   }
 </style>

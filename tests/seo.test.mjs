@@ -8,6 +8,9 @@ import {
   toAbsoluteUrl
 } from "../src/utils/seo.ts";
 
+assert.equal(SITE_CONFIG.name, "STREAMER AGE");
+assert.equal(SITE_CONFIG.description, "配信者の年齢・世代・使用デバイス");
+
 assert.equal(
   toAbsoluteUrl(SITE_CONFIG.url, "/streamers/shaka/"),
   new URL("/streamers/shaka/", SITE_CONFIG.url).href

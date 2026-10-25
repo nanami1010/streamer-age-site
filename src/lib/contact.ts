@@ -238,13 +238,13 @@ function buildEmail(input: ContactInput, runtime: ContactRuntime): ContactEmailM
     to: runtime.CONTACT_TO_EMAIL!,
     from: {
       email: runtime.CONTACT_FROM_EMAIL!,
-      name: "STREAMER DB"
+      name: "STREAMER AGE"
     },
     replyTo: {
       email: input.replyEmail,
       ...(input.name ? { name: input.name } : {})
     },
-    subject: `[STREAMER DB] ${typeLabel}`,
+    subject: `[STREAMER AGE] ${typeLabel}`,
     text: [
       `問い合わせの種類: ${typeLabel}`,
       `お名前: ${name}`,
