@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import DeviceList from "../../components/DeviceList.astro";
 import Layout from "../../layouts/Layout.astro";
+import { getDisplayProfileImage } from "../../lib/profile-image";
 import type { Streamer } from "../../lib/streamers";
 import { getValidatedStreamers } from "../../lib/streamers";
 import { calculateAge } from "../../utils/age";
@@ -22,6 +23,7 @@ const { streamer } = Astro.props as { streamer: Streamer };
 const age = calculateAge(streamer.birthDate);
 const schoolYear = getSchoolYear(streamer.birthDate);
 const initial = streamer.name.trim().charAt(0).toUpperCase();
+const profileImage = getDisplayProfileImage(streamer.profileImage);
 const birthDateSources = streamer.birthDate
   ? streamer.sources.filter((source) => source.field === "birthDate")
   : [];
@@ -40,7 +42,7 @@ function formatBirthDate(birthDate: string | null) {
   description={`${streamer.name}の年齢・誕生日・プロフィール・使用デバイスを紹介します。`}
   canonicalPath={`/streamers/${streamer.slug}/`}
   ogType="profile"
-  image={streamer.profileImage}
+  image={profileImage?.src}
 >
   <main class="profile-page">
     <section class="profile-hero" aria-labelledby="profile-name">
@@ -49,15 +51,19 @@ function formatBirthDate(birthDate: string | null) {
 
         <div class="profile-hero__content">
           <div class="profile-avatar">
-            {streamer.profileImage ? (
+            {profileImage ? (
               <img
-                src={streamer.profileImage}
-                alt={`${streamer.name}のプロフィール画像`}
+                src={profileImage.src}
+                alt={profileImage.alt}
                 width="112"
                 height="112"
+                decoding="async"
               />
             ) : (
               <span aria-hidden="true">{initial}</span>
+            )}
+            {profileImage?.credit && (
+              <small class="profile-image-credit">{profileImage.credit}</small>
             )}
           </div>
 
@@ -290,6 +296,7 @@ function formatBirthDate(birthDate: string | null) {
   }
 
   .profile-avatar {
+    position: relative;
     display: grid;
     width: 112px;
     height: 112px;
@@ -309,6 +316,24 @@ function formatBirthDate(birthDate: string | null) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .profile-image-credit {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    overflow: hidden;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: rgb(11 16 32 / 82%);
+    color: #fff;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .profile-hero__identity {

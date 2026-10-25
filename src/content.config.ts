@@ -50,6 +50,16 @@ const sourceSchema = z.object({
   url: httpUrl
 }).strict();
 
+const profileImageSchema = z.object({
+  src: imageReference,
+  alt: nonEmptyString,
+  sourceUrl: httpUrl,
+  permissionStatus: z.enum(["confirmed", "unconfirmed", "not-permitted"]),
+  permissionNote: nonEmptyString,
+  credit: nonEmptyString.nullable().optional(),
+  lastVerifiedAt: pastOrTodayDate
+}).strict();
+
 const deviceSchema = z.object({
   type: nonEmptyString,
   manufacturer: nonEmptyString,
@@ -81,7 +91,7 @@ export const streamerSchema = z.object({
     twitch: httpUrl.optional(),
     x: httpUrl.optional()
   }).strict(),
-  profileImage: imageReference.nullable(),
+  profileImage: profileImageSchema.nullable(),
   sources: z.array(sourceSchema).min(1),
   lastVerifiedAt: pastOrTodayDate,
   devices: z.array(deviceSchema).optional()

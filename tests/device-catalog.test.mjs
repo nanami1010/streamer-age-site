@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
+import {
+  createDeviceProductKey,
+  getDeviceAffiliateLinks
+} from "../src/config/device-affiliate-links.ts";
 import { createDeviceCatalog } from "../src/lib/device-catalog.ts";
 
 const streamers = readdirSync(new URL("../src/data/streamers/", import.meta.url))
@@ -55,5 +59,43 @@ test("配信者ごとの使用確認日・検証日・出典を保持する", ()
   assert.equal(
     shakaUsage?.sourceUrl,
     "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s"
+  );
+});
+
+test("商品リンクはカテゴリー・メーカー・製品名が完全一致する製品だけに適用する", () => {
+  const device = {
+    type: "モニター",
+    manufacturer: "Sony",
+    productName: "INZONE M10S（SDM-27Q10S）"
+  };
+  const links = {
+    [createDeviceProductKey(device)]: {
+      amazon: "https://www.amazon.co.jp/example",
+      rakuten: "https://item.rakuten.co.jp/example/product"
+    }
+  };
+
+  assert.deepEqual(getDeviceAffiliateLinks(device, links), links[createDeviceProductKey(device)]);
+  assert.equal(
+    getDeviceAffiliateLinks({ ...device, productName: "INZONE M10S II（SDM-27Q102）" }, links),
+    null
+  );
+});
+
+test("商品リンクはHTTPSだけを受け付ける", () => {
+  const device = {
+    type: "マウス",
+    manufacturer: "Example",
+    productName: "Example Mouse"
+  };
+
+  assert.throws(
+    () =>
+      getDeviceAffiliateLinks(device, {
+        [createDeviceProductKey(device)]: {
+          amazon: "http://www.amazon.co.jp/example"
+        }
+      }),
+    /HTTPS URL/
   );
 });

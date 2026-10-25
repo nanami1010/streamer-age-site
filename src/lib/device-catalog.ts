@@ -1,4 +1,9 @@
 import type { Streamer } from "./streamers";
+import {
+  createDeviceProductKey,
+  getDeviceAffiliateLinks,
+  type ResolvedDeviceAffiliateLinks
+} from "../config/device-affiliate-links.ts";
 
 type Device = NonNullable<Streamer["devices"]>[number];
 
@@ -15,21 +20,12 @@ export interface DeviceCatalogItem {
   type: string;
   manufacturer: string;
   productName: string;
+  affiliateLinks: ResolvedDeviceAffiliateLinks | null;
   usages: DeviceUsageRecord[];
 }
 
-function normalizeIdentityPart(value: string): string {
-  return value.trim();
-}
-
-function createIdentityKey(device: Device): string {
-  return [device.type, device.manufacturer, device.productName]
-    .map(normalizeIdentityPart)
-    .join("\u001f");
-}
-
 function createStableId(device: Device): string {
-  return createIdentityKey(device)
+  return createDeviceProductKey(device)
     .replace(/[^a-z0-9\p{Letter}\p{Number}]+/gu, "-")
     .replace(/^-|-$/g, "");
 }
@@ -39,14 +35,28 @@ export function createDeviceCatalog(streamers: Streamer[]): DeviceCatalogItem[] 
 
   for (const streamer of streamers) {
     for (const device of streamer.devices ?? []) {
-      const identityKey = createIdentityKey(device);
+      const identityKey = createDeviceProductKey(device);
+      const affiliateLinks = getDeviceAffiliateLinks(device);
       const item = catalog.get(identityKey) ?? {
         id: createStableId(device),
         type: device.type,
         manufacturer: device.manufacturer,
         productName: device.productName,
+        affiliateLinks,
         usages: []
       };
+
+      if (
+        item.affiliateLinks &&
+        affiliateLinks &&
+        JSON.stringify(item.affiliateLinks) !== JSON.stringify(affiliateLinks)
+      ) {
+        throw new Error(
+          `同一製品に異なる商品リンクが登録されています: ${device.manufacturer} ${device.productName}`
+        );
+      }
+
+      item.affiliateLinks ??= affiliateLinks;
 
       item.usages.push({
         streamerName: streamer.name,

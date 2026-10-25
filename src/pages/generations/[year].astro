@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getGenerationLabel } from "../../config/generations";
 import Layout from "../../layouts/Layout.astro";
+import { getDisplayProfileImage } from "../../lib/profile-image";
 import type { Streamer } from "../../lib/streamers";
 import { getValidatedStreamers } from "../../lib/streamers";
 import { calculateAge } from "../../utils/age";
@@ -68,22 +69,29 @@ function formatBirthDate(birthDate: string) {
           const age = calculateAge(streamer.birthDate);
           const birthDate = streamer.birthDate!;
           const initial = streamer.name.trim().charAt(0).toUpperCase();
+          const profileImage = getDisplayProfileImage(streamer.profileImage);
 
           return (
             <article class="generation-streamer-card" data-generation-streamer>
               <a href={`/streamers/${streamer.slug}/`}>
                 <div class="generation-streamer-card__header">
                   <div class="generation-streamer-card__avatar">
-                    {streamer.profileImage ? (
+                    {profileImage ? (
                       <img
-                        src={streamer.profileImage}
-                        alt={`${streamer.name}のプロフィール画像`}
+                        src={profileImage.src}
+                        alt={profileImage.alt}
                         width="64"
                         height="64"
                         loading="lazy"
+                        decoding="async"
                       />
                     ) : (
                       <span aria-hidden="true">{initial}</span>
+                    )}
+                    {profileImage?.credit && (
+                      <small class="generation-streamer-card__image-credit">
+                        {profileImage.credit}
+                      </small>
                     )}
                   </div>
                   <div class="generation-streamer-card__identity">
@@ -292,6 +300,7 @@ function formatBirthDate(birthDate: string) {
   }
 
   .generation-streamer-card__avatar {
+    position: relative;
     display: grid;
     width: 64px;
     height: 64px;
@@ -309,6 +318,24 @@ function formatBirthDate(birthDate: string) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .generation-streamer-card__image-credit {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    left: 3px;
+    overflow: hidden;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: rgb(11 16 32 / 78%);
+    color: #fff;
+    font-size: 7px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .generation-streamer-card__identity {

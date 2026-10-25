@@ -6,6 +6,7 @@ import { getValidatedStreamers } from "../../lib/streamers";
 const streamers = await getValidatedStreamers();
 const devices = createDeviceCatalog(streamers);
 const usageCount = devices.reduce((total, device) => total + device.usages.length, 0);
+const hasAffiliateLinks = devices.some((device) => device.affiliateLinks);
 const categories = Array.from(new Set(devices.map((device) => device.type))).sort(
   (a, b) => a.localeCompare(b, "ja")
 );
@@ -63,6 +64,12 @@ function formatJapaneseDate(date: string) {
           {categories.map((category) => <option value={category}>{category}</option>)}
         </select>
       </div>
+
+      {hasAffiliateLinks && (
+        <p class="affiliate-disclosure">
+          ※ 商品リンクには広告（PR）を含みます。使用情報の出典とは別のリンクです。
+        </p>
+      )}
 
       <div class="device-catalog-grid">
         {devices.map((device) => (
@@ -127,6 +134,45 @@ function formatJapaneseDate(date: string) {
                 ))}
               </ul>
             </div>
+
+            {device.affiliateLinks && (
+              <div
+                class="purchase-links"
+                role="group"
+                aria-label={`${device.productName}の商品リンク`}
+              >
+                {device.affiliateLinks.amazon && (
+                  <a
+                    class="purchase-link purchase-link--amazon"
+                    href={device.affiliateLinks.amazon}
+                    target="_blank"
+                    rel="sponsored nofollow noopener noreferrer"
+                  >
+                    Amazonで見る（PR）
+                  </a>
+                )}
+                {device.affiliateLinks.rakuten && (
+                  <a
+                    class="purchase-link purchase-link--rakuten"
+                    href={device.affiliateLinks.rakuten}
+                    target="_blank"
+                    rel="sponsored nofollow noopener noreferrer"
+                  >
+                    楽天市場で見る（PR）
+                  </a>
+                )}
+                {device.affiliateLinks.generic && (
+                  <a
+                    class="purchase-link"
+                    href={device.affiliateLinks.generic}
+                    target="_blank"
+                    rel="sponsored nofollow noopener noreferrer"
+                  >
+                    商品を見る（PR）
+                  </a>
+                )}
+              </div>
+            )}
           </article>
         ))}
       </div>
@@ -338,6 +384,17 @@ function formatJapaneseDate(date: string) {
     outline-offset: 1px;
   }
 
+  .affiliate-disclosure {
+    margin: 0 0 24px;
+    padding: 11px 14px;
+    border: 1px solid #ddd6fe;
+    border-radius: 11px;
+    background: var(--color-purple-soft);
+    color: #5842bd;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
   .device-catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
@@ -393,6 +450,45 @@ function formatJapaneseDate(date: string) {
 
   .device-users {
     padding: 20px 22px 22px;
+  }
+
+  .purchase-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 9px;
+    padding: 0 22px 22px;
+  }
+
+  .purchase-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 12px;
+    border-radius: 10px;
+    background: #5b36c8;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .purchase-link:hover {
+    filter: brightness(0.9);
+  }
+
+  .purchase-link:focus-visible {
+    outline: 3px solid rgb(32 184 165 / 45%);
+    outline-offset: 3px;
+  }
+
+  .purchase-link--amazon {
+    background: #8a4b08;
+  }
+
+  .purchase-link--rakuten {
+    background: #a71919;
   }
 
   .device-users h4 {

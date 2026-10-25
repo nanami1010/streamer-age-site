@@ -63,9 +63,36 @@ src/
 }
 ```
 
+### プロフィール画像
+
+プロフィール画像は、権利者の許可や明示された利用条件を確認できた場合だけ登録します。公式サイトやSNSに掲載されていること自体は転載許可を意味しません。未確認の場合は `null` のままにし、画面では名前の頭文字を表示します。
+
+```json
+{
+  "profileImage": {
+    "src": "/images/streamers/example.webp",
+    "alt": "配信者名のプロフィール画像",
+    "sourceUrl": "https://example.com/official-profile",
+    "permissionStatus": "confirmed",
+    "permissionNote": "権利者からWebサイト掲載許可を取得",
+    "credit": "撮影者名 / 権利者名",
+    "lastVerifiedAt": "2026-10-25"
+  }
+}
+```
+
+- `src`: `https://` で始まる画像URL、または `public/` を基準に `/` で始まる画像パス
+- `sourceUrl`: 画像の取得元ページ
+- `permissionStatus`: `confirmed`、`unconfirmed`、`not-permitted` のいずれか。画面に表示されるのは `confirmed` だけ
+- `permissionNote`: 許可・ライセンス・利用条件を確認した根拠
+- `credit`: 必要なクレジット。不要な場合は省略または `null`
+- `lastVerifiedAt`: 利用条件を最後に確認した日
+
+ローカル画像を保存する場合は、元画像を無断でダウンロードせず、許可されたファイルだけを `public/images/streamers/` に配置してください。
+
 ### 使用デバイス
 
-`devices` は任意です。確認できたデバイスだけを次の形式で追加します。画像とアフィリエイトURLは省略または `null` にできます。Amazon・楽天のURLは `affiliateLinks` に分けて登録します。
+`devices` は任意です。確認できたデバイスだけを次の形式で追加します。画像は省略または `null` にできます。
 
 ```json
 {
@@ -76,17 +103,21 @@ src/
       "productName": "製品名",
       "image": null,
       "sourceUrl": "https://example.com/source",
-      "lastVerifiedAt": "2026-10-22",
-      "affiliateLinks": {
-        "amazon": null,
-        "rakuten": null
-      }
+      "lastVerifiedAt": "2026-10-22"
     }
   ]
 }
 ```
 
-既存の汎用フィールド `affiliateUrl` も引き続き利用できます。商品リンクを登録すると、プロフィールページに広告（PR）であることが明示されます。確認できていない製品やリンクは登録しないでください。
+### アフィリエイト商品リンク
+
+Amazon・楽天の商品リンクは、同じ製品を使用する配信者ごとに重複させず、`src/config/device-affiliate-links.ts` で製品単位に管理します。キーはカテゴリー・メーカー・製品名の完全一致で作るため、型番や世代の異なる製品は別々に登録してください。
+
+登録前に、各プログラムへの参加承認と `streamerage.jp` のサイト登録を済ませ、公式のリンク作成機能から発行されたHTTPS URLだけを使用します。リンクを追加したら、`site.config.mjs` の `services.affiliatePrograms` と `/disclosure/` の表示が実態に合うことも確認してください。
+
+広告サービスから改変禁止のHTMLタグや画像素材が発行された場合は、URLだけを抜き出して登録せず、そのサービスの利用条件に従って別途実装を確認してください。価格や商品画像を手動転載せず、提供元が認めるリンク作成機能やAPIだけを使用します。
+
+商品リンクがある場合だけ、プロフィールと `/devices/` に購入ボタンおよび広告（PR）表記が表示されます。使用情報の出典リンクとは分離され、外部リンクには `rel="sponsored nofollow noopener noreferrer"` が設定されます。既存JSONの `affiliateLinks` と `affiliateUrl` は後方互換のため読み取れますが、新規登録は中央設定を使用してください。
 
 ## コマンド
 

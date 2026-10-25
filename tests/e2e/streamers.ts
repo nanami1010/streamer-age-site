@@ -14,7 +14,15 @@ export interface StreamerRecord {
     twitch?: string;
     x?: string;
   };
-  profileImage: string | null;
+  profileImage: {
+    src: string;
+    alt: string;
+    sourceUrl: string;
+    permissionStatus: "confirmed" | "unconfirmed" | "not-permitted";
+    permissionNote: string;
+    credit?: string | null;
+    lastVerifiedAt: string;
+  } | null;
   sources: Array<{ field: string; url: string }>;
   lastVerifiedAt: string;
   devices?: unknown[];

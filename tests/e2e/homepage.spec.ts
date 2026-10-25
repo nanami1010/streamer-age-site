@@ -58,6 +58,13 @@ test("生年月日未確認の4人に年齢を表示しない", async ({ page })
   }
 });
 
+test("画像未登録の配信者は頭文字アイコンを表示する", async ({ page }) => {
+  await expect(page.locator(".streamer-card__avatar img")).toHaveCount(0);
+  await expect(page.locator(".streamer-card__avatar > span")).toHaveCount(
+    streamers.length
+  );
+});
+
 test("名前・読み仮名・別名で全登録データを検索できる", async ({ page }) => {
   for (const streamer of streamers) {
     for (const query of [streamer.name, streamer.nameKana, ...streamer.aliases]) {

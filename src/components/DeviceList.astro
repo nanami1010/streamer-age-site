@@ -1,5 +1,6 @@
 ---
 import type { Streamer } from "../lib/streamers";
+import { getDeviceAffiliateLinks } from "../config/device-affiliate-links";
 
 type Device = NonNullable<Streamer["devices"]>[number];
 
@@ -19,11 +20,7 @@ const deviceGroups = Array.from(
 ).sort(([categoryA], [categoryB]) => categoryA.localeCompare(categoryB, "ja"));
 
 const hasAffiliateLinks = devices.some((device) =>
-  Boolean(
-    device.affiliateUrl ||
-    device.affiliateLinks?.amazon ||
-    device.affiliateLinks?.rakuten
-  )
+  Boolean(getDeviceAffiliateLinks(device))
 );
 
 function formatJapaneseDate(date: string) {
@@ -55,8 +52,11 @@ function formatJapaneseDate(date: string) {
         </h3>
 
         <ul class="device-grid">
-          {categoryDevices.map((device) => (
-            <li class="device-card">
+          {categoryDevices.map((device) => {
+            const affiliateLinks = getDeviceAffiliateLinks(device);
+
+            return (
+              <li class="device-card">
               {device.image && (
                 <div class="device-image">
                   <img
@@ -107,38 +107,36 @@ function formatJapaneseDate(date: string) {
                   </div>
                 </dl>
 
-                {(device.affiliateUrl ||
-                  device.affiliateLinks?.amazon ||
-                  device.affiliateLinks?.rakuten) && (
+                {affiliateLinks && (
                   <div
                     class="purchase-links"
                     role="group"
                     aria-label={`${device.productName}の商品リンク`}
                   >
-                    {device.affiliateLinks?.amazon && (
+                    {affiliateLinks.amazon && (
                       <a
                         class="purchase-link amazon"
-                        href={device.affiliateLinks.amazon}
+                        href={affiliateLinks.amazon}
                         target="_blank"
                         rel="sponsored nofollow noopener noreferrer"
                       >
                         Amazonで見る（PR）
                       </a>
                     )}
-                    {device.affiliateLinks?.rakuten && (
+                    {affiliateLinks.rakuten && (
                       <a
                         class="purchase-link rakuten"
-                        href={device.affiliateLinks.rakuten}
+                        href={affiliateLinks.rakuten}
                         target="_blank"
                         rel="sponsored nofollow noopener noreferrer"
                       >
                         楽天市場で見る（PR）
                       </a>
                     )}
-                    {device.affiliateUrl && (
+                    {affiliateLinks.generic && (
                       <a
                         class="purchase-link"
-                        href={device.affiliateUrl}
+                        href={affiliateLinks.generic}
                         target="_blank"
                         rel="sponsored nofollow noopener noreferrer"
                       >
@@ -148,8 +146,9 @@ function formatJapaneseDate(date: string) {
                   </div>
                 )}
               </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </section>
     ))}

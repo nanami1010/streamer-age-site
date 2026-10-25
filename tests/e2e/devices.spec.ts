@@ -64,6 +64,13 @@ test("使用確認日・サイト確認日・出典を使用者ごとに表示�
   );
 });
 
+test("提携リンク未登録時は購入ボタンとPR表記を表示しない", async ({ page }) => {
+  await page.goto("/devices/");
+
+  await expect(page.locator(".purchase-link")).toHaveCount(0);
+  await expect(page.locator(".affiliate-disclosure")).toHaveCount(0);
+});
+
 test("既存カテゴリーで絞り込み、全件表示へ戻せる", async ({ page }) => {
   await page.goto("/devices/");
 
