@@ -28,6 +28,9 @@ test.beforeEach(async ({ page }) => {
 
 test("トップページにJSONと一致する20件のカードを表示する", async ({ page }) => {
   expect(streamers).toHaveLength(20);
+  await expect(page.locator(".hero__lead")).toHaveText(
+    "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
+  );
   await expect(cards(page)).toHaveCount(streamers.length);
   await expectVisibleCount(page, streamers.length);
 

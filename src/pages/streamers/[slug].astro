@@ -22,6 +22,9 @@ const { streamer } = Astro.props as { streamer: Streamer };
 const age = calculateAge(streamer.birthDate);
 const schoolYear = getSchoolYear(streamer.birthDate);
 const initial = streamer.name.trim().charAt(0).toUpperCase();
+const birthDateSources = streamer.birthDate
+  ? streamer.sources.filter((source) => source.field === "birthDate")
+  : [];
 
 function formatBirthDate(birthDate: string | null) {
   if (!birthDate) return "非公開";
@@ -30,17 +33,6 @@ function formatBirthDate(birthDate: string | null) {
   return `${year}年${month}月${day}日`;
 }
 
-const sourceLabels: Record<string, string> = {
-  name: "名前",
-  nameKana: "読み",
-  aliases: "別名",
-  birthDate: "生年月日",
-  genres: "ジャンル",
-  affiliation: "所属",
-  socialLinks: "公式SNS",
-  profileImage: "プロフィール画像",
-  devices: "使用デバイス"
-};
 ---
 
 <Layout
@@ -190,33 +182,38 @@ const sourceLabels: Record<string, string> = {
         <DeviceList devices={streamer.devices ?? []} />
       </section>
 
-      <section class="section-card section-card--sources">
-        <div class="section-heading">
-          <p>SOURCES</p>
-          <h2>情報の出典</h2>
-        </div>
+      {birthDateSources.length > 0 && (
+        <section
+          class="section-card section-card--sources"
+          data-birth-date-sources
+        >
+          <div class="section-heading">
+            <p>SOURCE</p>
+            <h2>生年月日の出典</h2>
+          </div>
 
-        <ul class="source-list">
-          {streamer.sources.map((source) => (
-            <li>
-              <a
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {sourceLabels[source.field] ?? source.field}の出典
-                <span aria-hidden="true">↗</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul class="source-list">
+            {birthDateSources.map((source) => (
+              <li>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  生年月日の出典
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <p class="last-verified">
-          最終確認日：<time datetime={streamer.lastVerifiedAt}>
-            {streamer.lastVerifiedAt}
-          </time>
-        </p>
-      </section>
+          <p class="last-verified">
+            最終確認日：<time datetime={streamer.lastVerifiedAt}>
+              {streamer.lastVerifiedAt}
+            </time>
+          </p>
+        </section>
+      )}
     </div>
   </main>
 </Layout>

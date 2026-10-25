@@ -132,11 +132,36 @@ test.describe("全配信者のプロフィール", () => {
         }
       }
 
-      await expect(page.locator(".source-list a")).toHaveCount(streamer.sources.length);
-      await expect(page.locator(".last-verified time")).toHaveAttribute(
-        "datetime",
-        streamer.lastVerifiedAt
-      );
+      const birthDateSources = streamer.birthDate
+        ? streamer.sources.filter((source) => source.field === "birthDate")
+        : [];
+      const birthDateSourceSection = page.locator("[data-birth-date-sources]");
+
+      if (birthDateSources.length === 0) {
+        await expect(birthDateSourceSection).toHaveCount(0);
+      } else {
+        await expect(
+          birthDateSourceSection.getByRole("heading", {
+            level: 2,
+            name: "生年月日の出典",
+            exact: true
+          })
+        ).toBeVisible();
+
+        const actualSourceLinks = await birthDateSourceSection
+          .locator(".source-list a")
+          .evaluateAll((links) =>
+            links.map((link) => (link as HTMLAnchorElement).href).sort()
+          );
+        const expectedSourceLinks = birthDateSources
+          .map((source) => new URL(source.url).href)
+          .sort();
+        expect(actualSourceLinks).toEqual(expectedSourceLinks);
+        await expect(birthDateSourceSection.locator(".last-verified time")).toHaveAttribute(
+          "datetime",
+          streamer.lastVerifiedAt
+        );
+      }
       expect(pageErrors).toEqual([]);
       expect(consoleErrors).toEqual([]);
     });
