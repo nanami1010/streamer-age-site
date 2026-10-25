@@ -4,6 +4,7 @@ const pages = [
   { path: "/", title: /^STREAMER AGE/ },
   { path: "/streamers/shaka/", title: /\| STREAMER AGE$/ },
   { path: "/generations/", title: /\| STREAMER AGE$/ },
+  { path: "/devices/", title: /\| STREAMER AGE$/ },
   { path: "/contact/", title: /\| STREAMER AGE$/ }
 ];
 

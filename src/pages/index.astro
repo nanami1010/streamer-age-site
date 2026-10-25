@@ -108,6 +108,19 @@ function formatBirthDate(birthDate: string | null) {
         })}
       </div>
     </StreamerSearch>
+
+    <section class="device-directory-link" aria-labelledby="device-directory-heading">
+      <div>
+        <p>DEVICES</p>
+        <h2 id="device-directory-heading">配信者の使用デバイス</h2>
+        <p>
+          本人の発言や公式情報などで使用を確認できたデバイスをまとめています。
+        </p>
+      </div>
+      <a href="/devices/">
+        使用デバイス一覧を見る <span aria-hidden="true">→</span>
+      </a>
+    </section>
   </main>
 </Layout>
 
@@ -159,6 +172,70 @@ function formatBirthDate(birthDate: string | null) {
     border-radius: inherit;
     outline: 3px solid rgb(117 89 232 / 35%);
     outline-offset: -3px;
+  }
+
+  .device-directory-link {
+    display: flex;
+    width: min(calc(100% - 40px), var(--content-width));
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin: 16px auto 24px;
+    padding: 24px 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .device-directory-link > div {
+    min-width: 0;
+  }
+
+  .device-directory-link > div > p:first-child {
+    margin: 0 0 7px;
+    color: var(--color-teal);
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .device-directory-link h2 {
+    margin: 0;
+    font-size: clamp(21px, 3vw, 27px);
+  }
+
+  .device-directory-link > div > p:last-child {
+    margin: 9px 0 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .device-directory-link > a {
+    display: inline-flex;
+    min-height: 46px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 11px 16px;
+    border-radius: 11px;
+    background: #5b36c8;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .device-directory-link > a:hover {
+    background: #4726a8;
+  }
+
+  .device-directory-link > a:focus-visible {
+    outline: 3px solid rgb(32 184 165 / 45%);
+    outline-offset: 3px;
   }
 
   .streamer-card__header {
@@ -281,6 +358,18 @@ function formatBirthDate(birthDate: string | null) {
   }
 
   @media (max-width: 600px) {
+    .device-directory-link {
+      width: min(calc(100% - 32px), var(--content-width));
+      align-items: stretch;
+      flex-direction: column;
+      gap: 18px;
+      padding: 20px;
+    }
+
+    .device-directory-link > a {
+      width: 100%;
+    }
+
     .streamer-grid {
       grid-template-columns: minmax(0, 1fr);
       gap: 16px;
@@ -296,6 +385,12 @@ function formatBirthDate(birthDate: string | null) {
 
     .streamer-card__facts div {
       padding: 12px;
+    }
+  }
+
+  @media (max-width: 340px) {
+    .device-directory-link {
+      width: min(calc(100% - 24px), var(--content-width));
     }
   }
 </style>
