@@ -1,0 +1,25 @@
+{
+  "name": "ゴー☆ジャス",
+  "nameKana": "ごーじゃす",
+  "aliases": ["ゴージャス"],
+  "slug": "gorgeous",
+  "birthDate": "1978-11-10",
+  "genres": ["ゲーム配信", "ゲーム実況"],
+  "affiliation": "サンミュージックプロダクション",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/user/gorgeousgamemarket",
+    "x": "https://x.com/Gorgeous55555"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/" },
+    { "field": "nameKana", "url": "https://natalie.mu/music/artist/6529" },
+    { "field": "aliases", "url": "https://natalie.mu/music/artist/6529" },
+    { "field": "birthDate", "url": "https://natalie.mu/music/artist/6529" },
+    { "field": "genres", "url": "https://natalie.mu/music/artist/6529" },
+    { "field": "affiliation", "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/" },
+    { "field": "socialLinks", "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

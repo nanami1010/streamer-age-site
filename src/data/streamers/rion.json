@@ -1,0 +1,25 @@
+{
+  "name": "rion",
+  "nameKana": "りおん",
+  "aliases": [],
+  "slug": "rion",
+  "birthDate": null,
+  "birthMonthDay": "12-31",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/rioncr",
+    "twitch": "https://www.twitch.tv/CR_rion",
+    "x": "https://x.com/R_7qq"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/rion/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/rion/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/rion/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/rion/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/rion/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Selly",
+  "nameKana": "せりー",
+  "aliases": [],
+  "slug": "selly",
+  "birthDate": null,
+  "birthMonthDay": "02-12",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCVVQ9pKbYulBUwfu5TmIvaQ",
+    "twitch": "https://www.twitch.tv/selly55",
+    "x": "https://x.com/Selly_ow"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/selly/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/selly/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/selly/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/selly/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/selly/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "レトルト",
+  "nameKana": "れとると",
+  "aliases": [],
+  "slug": "retort",
+  "birthDate": null,
+  "birthMonthDay": "12-26",
+  "genres": ["ゲーム実況"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@retokani",
+    "x": "https://x.com/retokani"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://retokani.com/" },
+    { "field": "birthMonthDay", "url": "https://yutura.net/news/archives/87402" },
+    { "field": "genres", "url": "https://retokani.com/" },
+    { "field": "socialLinks", "url": "https://retokani.com/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

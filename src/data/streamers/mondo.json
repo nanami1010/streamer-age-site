@@ -1,0 +1,25 @@
+{
+  "name": "Mondo",
+  "nameKana": "もんど",
+  "aliases": [],
+  "slug": "mondo",
+  "birthDate": null,
+  "birthMonthDay": "07-03",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCqc7_so3xdZJnSlfDjphwpg",
+    "twitch": "https://www.twitch.tv/mondo2244",
+    "x": "https://x.com/Mondo2233"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/mondo/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/mondo/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/mondo/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/mondo/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/mondo/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

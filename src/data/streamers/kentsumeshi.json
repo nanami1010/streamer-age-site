@@ -1,0 +1,24 @@
+{
+  "name": "KENTSUMESHI",
+  "nameKana": "けんつめし",
+  "aliases": [],
+  "slug": "kentsumeshi",
+  "birthDate": "1999-10-30",
+  "genres": ["ゲーム配信"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCuWd8brzerR9XQr7RgFgpyQ",
+    "twitch": "https://www.twitch.tv/kentsumeshi_heyoo",
+    "x": "https://x.com/Kent_Golemeshi"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2727/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2727/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2727/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2727/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2727/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

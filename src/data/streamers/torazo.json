@@ -1,0 +1,23 @@
+{
+  "name": "トラゾー",
+  "nameKana": "とらぞー",
+  "aliases": [],
+  "slug": "torazo",
+  "birthDate": "1995-05-02",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "日常組",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@torazo_studio",
+    "x": "https://x.com/torazo52nips79"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://nichijo.world/members/torazo/" },
+    { "field": "birthDate", "url": "https://nichijo.world/members/torazo/" },
+    { "field": "genres", "url": "https://nichijo.world/members/torazo/" },
+    { "field": "affiliation", "url": "https://nichijo.world/members/torazo/" },
+    { "field": "socialLinks", "url": "https://nichijo.world/members/torazo/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

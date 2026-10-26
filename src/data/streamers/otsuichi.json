@@ -1,0 +1,24 @@
+{
+  "name": "おついち",
+  "nameKana": "おついち",
+  "aliases": ["Otsuichi"],
+  "slug": "otsuichi",
+  "birthDate": null,
+  "birthMonthDay": "08-26",
+  "genres": ["ゲーム配信", "ホラーゲーム", "FPS", "TPS"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@otsuichi",
+    "x": "https://x.com/otsuichich"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://otsuichi.net/" },
+    { "field": "aliases", "url": "https://otsuichi.net/" },
+    { "field": "birthMonthDay", "url": "https://otsuichi.net/" },
+    { "field": "genres", "url": "https://otsuichi.net/" },
+    { "field": "socialLinks", "url": "https://otsuichi.net/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

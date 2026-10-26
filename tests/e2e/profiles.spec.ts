@@ -215,7 +215,7 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("SHAKA・k4sen・Laz以外の57人はデバイス未登録", async () => {
+test("SHAKA・k4sen・Laz以外の97人はデバイス未登録", async () => {
   const expectedCounts = new Map([
     ["shaka", 1],
     ["k4sen", 6],

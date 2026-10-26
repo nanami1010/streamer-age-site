@@ -1,0 +1,25 @@
+{
+  "name": "Kazunoko",
+  "nameKana": "かずのこ",
+  "aliases": ["かじゅ"],
+  "slug": "kazunoko",
+  "birthDate": null,
+  "birthMonthDay": "02-15",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/KazunokoChannel",
+    "x": "https://x.com/kazunoko0215"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/kazunoko/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/kazunoko/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/kazunoko/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/kazunoko/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/kazunoko/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/kazunoko/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

@@ -1,0 +1,24 @@
+{
+  "name": "xnfri",
+  "nameKana": "ぜんふ",
+  "aliases": [],
+  "slug": "xnfri",
+  "birthDate": "1999-03-09",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@xnfri",
+    "twitch": "https://www.twitch.tv/xnfri",
+    "x": "https://x.com/xnfri_"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2710/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2710/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2710/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2710/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2710/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

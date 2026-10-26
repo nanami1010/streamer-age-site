@@ -4,6 +4,7 @@
   "aliases": ["Jasper", "Jasper7se"],
   "slug": "jasper",
   "birthDate": null,
+  "birthMonthDay": "11-27",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -27,6 +28,10 @@
     {
       "field": "aliases",
       "url": "https://www.twitch.tv/jasper7se"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://crazyraccoon.jp/member/jasper/"
     },
     {
       "field": "genres",

@@ -1,0 +1,22 @@
+{
+  "name": "kept",
+  "nameKana": "けぷと",
+  "aliases": [],
+  "slug": "kept",
+  "birthDate": "1992-10-04",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCHNfTCiizaDJ8CL3Lh9fmWw",
+    "x": "https://x.com/FaintKept"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" },
+    { "field": "birthDate", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" },
+    { "field": "genres", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" },
+    { "field": "socialLinks", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

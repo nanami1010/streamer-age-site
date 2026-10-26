@@ -1,0 +1,23 @@
+{
+  "name": "Devine",
+  "nameKana": "でぃばいん",
+  "aliases": [],
+  "slug": "devine",
+  "birthDate": "2001-12-17",
+  "genres": ["ゲーム配信", "TPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Devine_pubg",
+    "x": "https://x.com/Devine_pubg"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/devine/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/devine/" },
+    { "field": "genres", "url": "https://reject.jp/member/devine/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/devine/" },
+    { "field": "socialLinks", "url": "https://reject.jp/member/devine/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

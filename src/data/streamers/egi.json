@@ -1,0 +1,22 @@
+{
+  "name": "Egi",
+  "nameKana": "えぎ",
+  "aliases": [],
+  "slug": "egi",
+  "birthDate": "1997-11-10",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "x": "https://x.com/eg_valo"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/egi/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/egi/" },
+    { "field": "genres", "url": "https://reject.jp/member/egi/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/egi/" },
+    { "field": "socialLinks", "url": "https://reject.jp/member/egi/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

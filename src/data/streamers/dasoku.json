@@ -1,0 +1,25 @@
+{
+  "name": "蛇足",
+  "nameKana": "だそく",
+  "aliases": [],
+  "slug": "dasoku",
+  "birthDate": null,
+  "birthMonthDay": "03-02",
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": "UUUM",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/user/dasoku25/featured",
+    "twitch": "https://www.twitch.tv/dasoku_aniki",
+    "x": "https://x.com/dasoku_youtube"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://uuum.jp/creator/dasoku" },
+    { "field": "birthMonthDay", "url": "https://x.com/dasoku_youtube/status/2028123904708050960" },
+    { "field": "genres", "url": "https://uuum.jp/creator/dasoku" },
+    { "field": "affiliation", "url": "https://uuum.jp/creator/dasoku" },
+    { "field": "socialLinks", "url": "https://uuum.jp/creator/dasoku" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

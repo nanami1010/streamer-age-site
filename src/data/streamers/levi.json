@@ -1,0 +1,23 @@
+{
+  "name": "Levi",
+  "nameKana": "れび",
+  "aliases": [],
+  "slug": "levi",
+  "birthDate": "2003-09-29",
+  "genres": ["ゲーム配信"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@levi_ibs",
+    "x": "https://x.com/Levi_ibs"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/levi/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/levi/" },
+    { "field": "genres", "url": "https://reject.jp/member/levi/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/levi/" },
+    { "field": "socialLinks", "url": "https://reject.jp/member/levi/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

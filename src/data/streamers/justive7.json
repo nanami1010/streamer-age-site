@@ -1,0 +1,23 @@
+{
+  "name": "Justive7",
+  "nameKana": "じゃすてぃぶせぶん",
+  "aliases": [],
+  "slug": "justive7",
+  "birthDate": "1998-07-02",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/Justive7gaming",
+    "x": "https://x.com/justive_4"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2733/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2733/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2733/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2733/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2733/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

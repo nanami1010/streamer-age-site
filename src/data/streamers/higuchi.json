@@ -1,0 +1,24 @@
+{
+  "name": "ひぐち",
+  "nameKana": "ひぐち",
+  "aliases": [],
+  "slug": "higuchi",
+  "birthDate": "2001-09-14",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@higuchi2001",
+    "twitch": "https://www.twitch.tv/higuchi2001",
+    "x": "https://x.com/higuchi010914"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://saisys-esports.com/news/6281ab057d11616bc51c3cca" },
+    { "field": "birthDate", "url": "https://saisys-esports.com/news/6281ab057d11616bc51c3cca" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2025/04/01/32061" },
+    { "field": "affiliation", "url": "https://zetadivision.com/news/2025/04/01/32061" },
+    { "field": "socialLinks", "url": "https://zetadivision.com/news/2025/04/01/32061" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

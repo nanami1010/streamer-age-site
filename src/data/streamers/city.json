@@ -1,0 +1,23 @@
+{
+  "name": "City",
+  "nameKana": "してぃ",
+  "aliases": [],
+  "slug": "city",
+  "birthDate": "1998-03-23",
+  "genres": ["ゲーム配信", "第五人格"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@rc_cityy",
+    "x": "https://x.com/cityy_V"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/city/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/city/" },
+    { "field": "genres", "url": "https://reject.jp/member/city/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/city/" },
+    { "field": "socialLinks", "url": "https://reject.jp/member/city/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

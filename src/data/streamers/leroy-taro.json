@@ -1,0 +1,23 @@
+{
+  "name": "リロイ太郎",
+  "nameKana": "りろいたろう",
+  "aliases": [],
+  "slug": "leroy-taro",
+  "birthDate": "1993-12-17",
+  "genres": ["ゲーム配信", "ゲーム実況"],
+  "affiliation": "吉本興業",
+  "socialLinks": {
+    "x": "https://x.com/leroytaro"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=3587" },
+    { "field": "nameKana", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=3587" },
+    { "field": "birthDate", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=3587" },
+    { "field": "genres", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=3587" },
+    { "field": "affiliation", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=3587" },
+    { "field": "socialLinks", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=3587" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

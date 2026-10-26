@@ -27,8 +27,8 @@ test.beforeEach(async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test("トップページにJSONと一致する60件のカードを表示する", async ({ page }) => {
-  expect(streamers).toHaveLength(60);
+test("トップページにJSONと一致する100件のカードを表示する", async ({ page }) => {
+  expect(streamers).toHaveLength(100);
   await expect(page.locator(".hero__lead")).toHaveText(
     "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
   );
@@ -61,7 +61,7 @@ test("生年月日未確認の配信者に年齢を表示しない", async ({ pa
   }
 });
 
-test("生年不明で月日のみ確認済みの13人は誕生日だけを表示する", async ({ page }) => {
+test("生年不明で月日のみ確認済みの29人は誕生日だけを表示する", async ({ page }) => {
   const expectedBirthdays = new Map([
     ["daruma-is-god", "10月31日"],
     ["arisakaaa", "3月2日"],
@@ -75,7 +75,23 @@ test("生年不明で月日のみ確認済みの13人は誕生日だけを表示
     ["bonjour", "5月30日"],
     ["qnly", "9月9日"],
     ["oraf-kun", "5月22日"],
-    ["oohara-men", "7月28日"]
+    ["oohara-men", "7月28日"],
+    ["jasper", "11月27日"],
+    ["mondo", "7月3日"],
+    ["cpt", "2月26日"],
+    ["francisco", "3月12日"],
+    ["meiy", "4月8日"],
+    ["selly", "2月12日"],
+    ["mainy", "9月24日"],
+    ["obo", "9月25日"],
+    ["vanilla", "12月21日"],
+    ["rion", "12月31日"],
+    ["otsuichi", "8月26日"],
+    ["kazunoko", "2月15日"],
+    ["akagami-no-tomo", "7月23日"],
+    ["rader", "11月11日"],
+    ["retort", "12月26日"],
+    ["dasoku", "3月2日"]
   ]);
   const monthDayOnly = streamers.filter((streamer) => streamer.birthMonthDay);
 
@@ -189,10 +205,10 @@ test("年度選択肢を登録データから新しい順に生成する", async
 
 test("年度で絞り込むと同年度の配信者だけを表示する", async ({ page }) => {
   const cases = [
-    { year: 1995, slugs: ["sutanmi-japan", "laz", "zerost"] },
-    { year: 1994, slugs: ["shobosuke", "assari-shoko", "abitun"] },
+    { year: 1995, slugs: ["sutanmi-japan", "laz", "zerost", "peinto", "torazo"] },
+    { year: 1994, slugs: ["shobosuke", "assari-shoko", "abitun", "kuronoa"] },
     { year: 1991, slugs: ["shaka", "k4sen", "shomaru7"] },
-    { year: 1990, slugs: ["seki-yuta", "mokou", "taiji"] }
+    { year: 1990, slugs: ["seki-yuta", "mokou", "taiji", "fuji"] }
   ];
 
   for (const { year, slugs } of cases) {
@@ -218,7 +234,7 @@ test("年度とジャンルをAND条件で検索する", async ({ page }) => {
 test("年度と年齢帯をAND条件で検索する", async ({ page }) => {
   await schoolYearFilter(page).selectOption("1995");
   await page.locator("[data-age-filter]").selectOption("30-34");
-  await expectVisibleCount(page, 3);
+  await expectVisibleCount(page, 5);
 });
 
 test("年度と名前・別名をAND条件で検索する", async ({ page }) => {
@@ -274,7 +290,7 @@ test("年度指定を解除すると生年月日不明の配信者も検索対�
   expect(unknownBirthDate.length).toBeGreaterThan(0);
 
   await schoolYearFilter(page).selectOption("1995");
-  await expectVisibleCount(page, 3);
+  await expectVisibleCount(page, 5);
   await schoolYearFilter(page).selectOption("");
   await expectVisibleCount(page, streamers.length);
 

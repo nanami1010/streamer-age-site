@@ -1,0 +1,23 @@
+{
+  "name": "らっだぁ",
+  "nameKana": "らっだぁ",
+  "aliases": [],
+  "slug": "rader",
+  "birthDate": null,
+  "birthMonthDay": "11-11",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@radaooo",
+    "x": "https://x.com/radaokun"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.animatetimes.com/tag/details.php?id=24336" },
+    { "field": "birthMonthDay", "url": "https://www.animatetimes.com/tag/details.php?id=24336" },
+    { "field": "genres", "url": "https://www.animatetimes.com/tag/details.php?id=24336" },
+    { "field": "socialLinks", "url": "https://www.animatetimes.com/tag/details.php?id=24336" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

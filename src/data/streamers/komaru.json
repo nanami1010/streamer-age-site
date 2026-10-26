@@ -1,0 +1,23 @@
+{
+  "name": "komaru",
+  "nameKana": "こまる",
+  "aliases": [],
+  "slug": "komaru",
+  "birthDate": "1998-09-28",
+  "genres": ["ゲーム配信"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/kamiyakomaru",
+    "x": "https://x.com/komaru_gg"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2723/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2723/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2723/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2723/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2723/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

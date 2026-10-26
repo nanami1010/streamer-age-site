@@ -1,0 +1,24 @@
+{
+  "name": "kawase",
+  "nameKana": "かわせ",
+  "aliases": [],
+  "slug": "kawase",
+  "birthDate": "2001-05-06",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@kawasech",
+    "twitch": "https://www.twitch.tv/kawase56",
+    "x": "https://x.com/gg_kawase"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2804/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2804/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2804/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2804/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2804/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

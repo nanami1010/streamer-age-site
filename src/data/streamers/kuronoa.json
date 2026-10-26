@@ -1,0 +1,23 @@
+{
+  "name": "クロノア",
+  "nameKana": "くろのあ",
+  "aliases": [],
+  "slug": "kuronoa",
+  "birthDate": "1995-01-21",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "日常組",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/user/KuronekoNoa121",
+    "x": "https://x.com/kuronoa121"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://nichijo.world/members/kuronoa/" },
+    { "field": "birthDate", "url": "https://nichijo.world/members/kuronoa/" },
+    { "field": "genres", "url": "https://nichijo.world/members/kuronoa/" },
+    { "field": "affiliation", "url": "https://nichijo.world/members/kuronoa/" },
+    { "field": "socialLinks", "url": "https://nichijo.world/members/kuronoa/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

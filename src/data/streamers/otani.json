@@ -1,0 +1,24 @@
+{
+  "name": "OTANI",
+  "nameKana": "おおたに",
+  "aliases": ["大谷"],
+  "slug": "otani",
+  "birthDate": "1997-04-21",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "Burning Core Toyama",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/otani_bc",
+    "x": "https://x.com/otani_saru"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://burning-core.com/teams/otani" },
+    { "field": "aliases", "url": "https://burning-core.com/teams/otani" },
+    { "field": "birthDate", "url": "https://burning-core.com/teams/otani" },
+    { "field": "genres", "url": "https://burning-core.com/teams/otani" },
+    { "field": "affiliation", "url": "https://burning-core.com/teams" },
+    { "field": "socialLinks", "url": "https://burning-core.com/news/1895" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Shuton",
+  "nameKana": "しゅーとん",
+  "aliases": [],
+  "slug": "shuton",
+  "birthDate": "1996-06-17",
+  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/user/syutolimar",
+    "twitch": "https://www.twitch.tv/shuton_oli",
+    "x": "https://x.com/syu_tolimar"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/shuton/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/shuton/" },
+    { "field": "genres", "url": "https://reject.jp/member/shuton/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/shuton/" },
+    { "field": "socialLinks", "url": "https://reject.jp/member/shuton/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

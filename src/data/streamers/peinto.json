@@ -1,0 +1,23 @@
+{
+  "name": "ぺいんと",
+  "nameKana": "ぺいんと",
+  "aliases": [],
+  "slug": "peinto",
+  "birthDate": "1995-10-08",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "日常組",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UC_qzqv92T-tY9wMnLndGYSQ",
+    "x": "https://x.com/peintooon"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://nichijo.world/members/peinto/" },
+    { "field": "birthDate", "url": "https://nichijo.world/members/peinto/" },
+    { "field": "genres", "url": "https://nichijo.world/members/peinto/" },
+    { "field": "affiliation", "url": "https://nichijo.world/members/peinto/" },
+    { "field": "socialLinks", "url": "https://nichijo.world/members/peinto/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

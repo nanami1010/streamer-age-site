@@ -1,0 +1,25 @@
+{
+  "name": "Cpt",
+  "nameKana": "しーぴーてぃー",
+  "aliases": [],
+  "slug": "cpt",
+  "birthDate": null,
+  "birthMonthDay": "02-26",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCB3Sj1L1PacFLSdFwct7faA",
+    "twitch": "https://www.twitch.tv/cr_cpt",
+    "x": "https://x.com/ApexerCpt"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/cpt/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/cpt/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/cpt/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/cpt/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/cpt/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

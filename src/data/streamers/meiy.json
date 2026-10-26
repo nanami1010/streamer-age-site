@@ -1,0 +1,24 @@
+{
+  "name": "Meiy",
+  "nameKana": "めい",
+  "aliases": [],
+  "slug": "meiy",
+  "birthDate": null,
+  "birthMonthDay": "04-08",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/Meiyzz",
+    "x": "https://x.com/meiyfps"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/meiy/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/meiy/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/meiy/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/meiy/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/meiy/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

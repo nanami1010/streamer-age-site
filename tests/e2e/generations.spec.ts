@@ -108,10 +108,10 @@ for (const { year, members } of generations) {
 
 test("指定された主要4年度の同学年グループが正しい", async ({ page }) => {
   const expectedGroups = new Map<number, string[]>([
-    [1990, ["関優太", "もこう", "たいじ"]],
+    [1990, ["関優太", "もこう", "たいじ", "風次"]],
     [1991, ["SHAKA", "k4sen", "shomaru7"]],
-    [1994, ["しょぼすけ", "あっさりしょこ", "あびつん"]],
-    [1995, ["スタンミじゃぱん", "Laz", "Zerost"]]
+    [1994, ["しょぼすけ", "あっさりしょこ", "あびつん", "クロノア"]],
+    [1995, ["スタンミじゃぱん", "Laz", "Zerost", "ぺいんと", "トラゾー"]]
   ]);
 
   for (const [year, expectedNames] of expectedGroups) {
@@ -124,7 +124,7 @@ test("指定された主要4年度の同学年グループが正しい", async (
 });
 
 test("登録者が存在しない年度ページは生成しない", async ({ request }) => {
-  const response = await request.get("/generations/1992/");
+  const response = await request.get("/generations/2100/");
   expect(response.status()).toBe(404);
 });
 

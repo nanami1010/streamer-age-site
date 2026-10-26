@@ -1,0 +1,23 @@
+{
+  "name": "しにがみ",
+  "nameKana": "しにがみ",
+  "aliases": [],
+  "slug": "sinigami",
+  "birthDate": "1997-02-27",
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "日常組",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/user/kouzakihikaru",
+    "x": "https://x.com/sinigami227"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://nichijo.world/members/sinigami/" },
+    { "field": "birthDate", "url": "https://nichijo.world/members/sinigami/" },
+    { "field": "genres", "url": "https://nichijo.world/members/sinigami/" },
+    { "field": "affiliation", "url": "https://nichijo.world/members/sinigami/" },
+    { "field": "socialLinks", "url": "https://nichijo.world/members/sinigami/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

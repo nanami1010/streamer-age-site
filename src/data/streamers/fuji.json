@@ -1,0 +1,25 @@
+{
+  "name": "風次",
+  "nameKana": "ふうじ",
+  "aliases": ["裏切りマンキーコング風次"],
+  "slug": "fuji",
+  "birthDate": "1990-07-05",
+  "genres": ["ゲーム配信", "ゲーム実況"],
+  "affiliation": "吉本興業",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@uragiri0fuji",
+    "x": "https://x.com/bulldozer_fuji"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
+    { "field": "nameKana", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
+    { "field": "aliases", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
+    { "field": "birthDate", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
+    { "field": "genres", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
+    { "field": "affiliation", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
+    { "field": "socialLinks", "url": "https://news.yoshimoto.co.jp/cat2204/index_6.php" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

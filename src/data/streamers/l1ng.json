@@ -1,0 +1,23 @@
+{
+  "name": "L1ng",
+  "nameKana": "りん",
+  "aliases": [],
+  "slug": "l1ng",
+  "birthDate": "1999-05-22",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/l1ng_ftw",
+    "x": "https://x.com/L1ng_ftw"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2711/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2711/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2711/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2711/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2711/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

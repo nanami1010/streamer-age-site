@@ -1,0 +1,24 @@
+{
+  "name": "obo",
+  "nameKana": "おぼ",
+  "aliases": [],
+  "slug": "obo",
+  "birthDate": null,
+  "birthMonthDay": "09-25",
+  "genres": ["ゲーム配信"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCE4jlsAFvREH-pRd55F8jSA",
+    "x": "https://x.com/obormentv"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/obo/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/obo/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/obo/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/obo/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/obo/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

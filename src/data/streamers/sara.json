@@ -1,0 +1,23 @@
+{
+  "name": "SaRa",
+  "nameKana": "さら",
+  "aliases": [],
+  "slug": "sara",
+  "birthDate": "2001-11-01",
+  "genres": ["ゲーム配信", "TPS"],
+  "affiliation": "REJECT",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@BLUEBERRYNOOB",
+    "x": "https://x.com/BLUEBERRYNOOB__"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://reject.jp/member/sara/" },
+    { "field": "birthDate", "url": "https://reject.jp/member/sara/" },
+    { "field": "genres", "url": "https://reject.jp/member/sara/" },
+    { "field": "affiliation", "url": "https://reject.jp/member/sara/" },
+    { "field": "socialLinks", "url": "https://reject.jp/member/sara/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

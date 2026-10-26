@@ -1,0 +1,23 @@
+{
+  "name": "赤髪のとも",
+  "nameKana": "あかがみのとも",
+  "aliases": [],
+  "slug": "akagami-no-tomo",
+  "birthDate": null,
+  "birthMonthDay": "07-23",
+  "genres": ["ゲーム実況", "Minecraft"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@akagaminotomo",
+    "x": "https://x.com/tomo0723sw"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.youtube.com/@akagaminotomo" },
+    { "field": "birthMonthDay", "url": "https://www.youtube.com/watch?v=o38ae2zt8EU" },
+    { "field": "genres", "url": "https://www.youtube.com/@akagaminotomo" },
+    { "field": "socialLinks", "url": "https://www.youtube.com/@akagaminotomo" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

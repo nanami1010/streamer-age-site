@@ -1,0 +1,23 @@
+{
+  "name": "CURUMI",
+  "nameKana": "くるみ",
+  "aliases": [],
+  "slug": "curumi",
+  "birthDate": "1999-03-27",
+  "genres": ["ゲーム配信"],
+  "affiliation": "FENNEL",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/curumi0x0",
+    "x": "https://x.com/milk_crm"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2713/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2713/" },
+    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2713/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2713/" },
+    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2713/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

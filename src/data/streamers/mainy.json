@@ -1,0 +1,24 @@
+{
+  "name": "Mainy",
+  "nameKana": "めいにー",
+  "aliases": [],
+  "slug": "mainy",
+  "birthDate": null,
+  "birthMonthDay": "09-24",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCquWPl-R7owgJO6_zcL9fHA",
+    "x": "https://x.com/SuperMeyNE"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/mainy/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/mainy/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/mainy/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/mainy/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/mainy/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}

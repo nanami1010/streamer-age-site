@@ -1,0 +1,25 @@
+{
+  "name": "Francisco",
+  "nameKana": "ふらんしすこ",
+  "aliases": ["ふらんしすこ"],
+  "slug": "francisco",
+  "birthDate": null,
+  "birthMonthDay": "03-12",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UC_VFb6Q52lbZJwTuE8Rb5AA",
+    "twitch": "https://www.twitch.tv/franciscoow",
+    "x": "https://x.com/Franciscooo_T"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://crazyraccoon.jp/member/francisco/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/francisco/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/francisco/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/francisco/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/francisco/" }
+  ],
+  "lastVerifiedAt": "2026-10-26",
+  "devices": []
+}
