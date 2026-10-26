@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { DEVICE_SOURCE_TYPES } from "./config/device-sources";
 import { isValidBirthMonthDay } from "./utils/birthday";
 
 const nonEmptyString = z.string().trim().min(1);
@@ -27,6 +28,11 @@ function getTodayJST() {
 const pastOrTodayDate = z.iso.date().refine(
   (date) => date <= getTodayJST(),
   "未来の日付は指定できません"
+);
+
+const pastOrCurrentDateTime = z.iso.datetime({ offset: true }).refine(
+  (dateTime) => new Date(dateTime).getTime() <= Date.now(),
+  "未来の日時は指定できません"
 );
 
 const uniqueStringArray = z.array(nonEmptyString).refine(
@@ -79,14 +85,50 @@ const deviceSchema = z.object({
   productName: nonEmptyString,
   image: imageReference.nullable().optional(),
   sourceUrl: httpUrl,
+  sourceType: z.enum(DEVICE_SOURCE_TYPES),
+  sourceCommand: nonEmptyString.optional(),
   usageConfirmedAt: pastOrTodayDate.optional(),
+  sourceUpdatedAt: pastOrCurrentDateTime.optional(),
+  verificationNote: nonEmptyString.optional(),
   lastVerifiedAt: pastOrTodayDate,
   affiliateUrl: httpUrl.nullable().optional(),
   affiliateLinks: z.object({
     amazon: httpUrl.nullable().optional(),
     rakuten: httpUrl.nullable().optional()
   }).strict().optional()
-}).strict();
+}).strict().superRefine((device, context) => {
+  if (device.sourceType === "channelCommand") {
+    if (device.sourceCommand === undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["sourceCommand"],
+        message: "公開コマンドには確認したコマンド名が必要です"
+      });
+    }
+
+    if (device.sourceUpdatedAt === undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["sourceUpdatedAt"],
+        message: "公開コマンドには出典の最終更新日時が必要です"
+      });
+    }
+
+    if (device.usageConfirmedAt !== undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["usageConfirmedAt"],
+        message: "公開コマンドの更新日時を使用確認日として登録できません"
+      });
+    }
+  } else if (device.sourceCommand !== undefined) {
+    context.addIssue({
+      code: "custom",
+      path: ["sourceCommand"],
+      message: "確認コマンドは公開コマンドの出典だけに指定できます"
+    });
+  }
+});
 
 export const streamerSchema = z.object({
   name: nonEmptyString,

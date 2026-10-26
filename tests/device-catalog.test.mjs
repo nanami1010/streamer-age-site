@@ -5,6 +5,10 @@ import {
   createDeviceProductKey,
   getDeviceAffiliateLinks
 } from "../src/config/device-affiliate-links.ts";
+import {
+  getDeviceSourceCaution,
+  getDeviceSourceLabel
+} from "../src/config/device-sources.ts";
 import { createDeviceCatalog } from "../src/lib/device-catalog.ts";
 
 const streamers = readdirSync(new URL("../src/data/streamers/", import.meta.url))
@@ -18,13 +22,13 @@ const streamers = readdirSync(new URL("../src/data/streamers/", import.meta.url)
     )
   );
 
-test("既存12件の使用記録を11製品にまとめる", () => {
+test("30件の使用記録を26製品にまとめる", () => {
   const catalog = createDeviceCatalog(streamers);
 
-  assert.equal(catalog.length, 11);
+  assert.equal(catalog.length, 26);
   assert.equal(
     catalog.reduce((total, device) => total + device.usages.length, 0),
-    12
+    30
   );
 });
 
@@ -39,10 +43,22 @@ test("同一型番だけをまとめ、異なる世代を分離する", () => {
 
   assert.deepEqual(
     m10s?.usages.map((usage) => usage.streamerName),
-    ["k4sen", "SHAKA"]
+    ["1tappy", "Dep", "k4sen", "SHAKA"]
   );
   assert.equal(m10sSecondGeneration?.usages.length, 1);
   assert.equal(m10sSecondGeneration?.usages[0].streamerName, "k4sen");
+});
+
+test("同一型番のQuietComfort 20を2人の使用記録としてまとめる", () => {
+  const catalog = createDeviceCatalog(streamers);
+  const qc20 = catalog.find(
+    (device) => device.productName === "QuietComfort 20（QC20）"
+  );
+
+  assert.deepEqual(
+    qc20?.usages.map((usage) => usage.streamerSlug),
+    ["cpt", "francisco"]
+  );
 });
 
 test("配信者ごとの使用確認日・検証日・出典を保持する", () => {
@@ -55,10 +71,45 @@ test("配信者ごとの使用確認日・検証日・出典を保持する", ()
   );
 
   assert.equal(shakaUsage?.usageConfirmedAt, "2025-11-27");
-  assert.equal(shakaUsage?.lastVerifiedAt, "2026-10-25");
+  assert.equal(shakaUsage?.sourceType, "directStatement");
+  assert.equal(shakaUsage?.sourceUpdatedAt, undefined);
+  assert.equal(shakaUsage?.lastVerifiedAt, "2026-10-27");
   assert.equal(
     shakaUsage?.sourceUrl,
     "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s"
+  );
+});
+
+test("Nightbot由来18件はコマンド更新日時と使用確認日を分離する", () => {
+  const catalog = createDeviceCatalog(streamers);
+  const channelCommandUsages = catalog.flatMap((device) =>
+    device.usages.filter((usage) => usage.sourceType === "channelCommand")
+  );
+
+  assert.equal(channelCommandUsages.length, 18);
+  assert.equal(
+    channelCommandUsages.every((usage) => usage.sourceUpdatedAt !== undefined),
+    true
+  );
+  assert.equal(
+    channelCommandUsages.every((usage) => usage.sourceCommand?.startsWith("!")),
+    true
+  );
+  assert.equal(
+    channelCommandUsages.every((usage) => usage.usageConfirmedAt === undefined),
+    true
+  );
+  assert.equal(
+    getDeviceSourceLabel("channelCommand"),
+    "配信チャンネルの公開コマンド"
+  );
+  assert.match(
+    getDeviceSourceCaution("channelCommand") ?? "",
+    /本人が直接入力・発言した情報とは限りません/
+  );
+  assert.equal(
+    channelCommandUsages.every((usage) => usage.lastVerifiedAt === "2026-10-27"),
+    true
   );
 });
 

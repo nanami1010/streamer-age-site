@@ -48,48 +48,55 @@
       "manufacturer": "Razer",
       "productName": "Viper V3 Pro Faker Edition",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-25"
+      "lastVerifiedAt": "2026-10-27"
     },
     {
       "type": "キーボード",
       "manufacturer": "VSPO! GEAR",
       "productName": "ゲーミングキーボード 如月れんモデル",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-25"
+      "lastVerifiedAt": "2026-10-27"
     },
     {
       "type": "イヤホン",
       "manufacturer": "Sony",
       "productName": "INZONE Buds（WF-G700N）",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-25"
+      "verificationNote": "動画内のイヤホン情報は確認済みですが、正確な製品名は映像での再確認が必要です。",
+      "lastVerifiedAt": "2026-10-27"
     },
     {
       "type": "モニター",
       "manufacturer": "Sony",
       "productName": "INZONE M10S II（SDM-27Q102）",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-25"
+      "lastVerifiedAt": "2026-10-27"
     },
     {
       "type": "モニター",
       "manufacturer": "Sony",
       "productName": "INZONE M10S（SDM-27Q10S）",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-25"
+      "lastVerifiedAt": "2026-10-27"
     },
     {
       "type": "マイク",
       "manufacturer": "Neumann",
       "productName": "BCM 104",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-25"
+      "lastVerifiedAt": "2026-10-27"
     }
   ]
 }

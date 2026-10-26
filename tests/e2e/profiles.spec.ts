@@ -9,7 +9,15 @@ interface DeviceRecord {
   manufacturer: string;
   productName: string;
   sourceUrl: string;
+  sourceType:
+    | "directStatement"
+    | "ownedDeviceList"
+    | "channelCommand"
+    | "officialMaterial";
+  sourceCommand?: string;
   usageConfirmedAt?: string;
+  sourceUpdatedAt?: string;
+  verificationNote?: string;
   lastVerifiedAt: string;
 }
 
@@ -145,11 +153,31 @@ test.describe("全配信者のプロフィール", () => {
             "href",
             device.sourceUrl
           );
-          await expect(card.locator(".device-meta time")).toHaveAttribute(
+          const siteVerifiedTime = card.locator(".device-meta div").filter({
+            hasText: "サイト確認日"
+          }).locator("time");
+          await expect(siteVerifiedTime).toHaveAttribute(
             "datetime",
             device.lastVerifiedAt
           );
           await expect(card.locator(".device-meta")).toContainText("サイト確認日");
+
+          const expectedSourceLabel = {
+            directStatement: "本人の直接発言・動画",
+            ownedDeviceList: "本人管理サイトのデバイス一覧",
+            channelCommand: "配信チャンネルの公開コマンド",
+            officialMaterial: "その他の公式資料"
+          }[device.sourceType];
+          await expect(card.locator(".device-meta")).toContainText(expectedSourceLabel);
+
+          if (device.sourceCommand) {
+            await expect(card.locator(".device-meta")).toContainText("確認コマンド");
+            await expect(card.locator(".device-meta code")).toHaveText(
+              device.sourceCommand
+            );
+          } else {
+            await expect(card.locator(".device-meta code")).toHaveCount(0);
+          }
 
           const usageConfirmation = card.locator(".usage-confirmation");
           if (device.usageConfirmedAt) {
@@ -166,6 +194,37 @@ test.describe("全配信者のプロフィール", () => {
             );
           } else {
             await expect(usageConfirmation).toHaveCount(0);
+          }
+
+          const sourceUpdatedTime = card.locator(".device-meta div").filter({
+            hasText: device.sourceType === "channelCommand"
+              ? "コマンド最終更新日"
+              : "出典最終更新日"
+          }).locator("time");
+          if (device.sourceUpdatedAt) {
+            await expect(sourceUpdatedTime).toHaveAttribute(
+              "datetime",
+              device.sourceUpdatedAt
+            );
+          } else {
+            await expect(sourceUpdatedTime).toHaveCount(0);
+          }
+
+          if (device.sourceType === "channelCommand") {
+            await expect(card.locator(".source-caution")).toContainText(
+              "本人が直接入力・発言した情報とは限りません"
+            );
+            await expect(card).not.toContainText("使用確認日");
+          } else {
+            await expect(card.locator(".source-caution")).toHaveCount(0);
+          }
+
+          if (device.verificationNote) {
+            await expect(card.locator(".verification-note")).toHaveText(
+              device.verificationNote
+            );
+          } else {
+            await expect(card.locator(".verification-note")).toHaveCount(0);
           }
 
           await expect(card).not.toContainText("現在使用中");
@@ -215,11 +274,16 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("SHAKA・k4sen・Laz以外の97人はデバイス未登録", async () => {
+test("デバイス登録済み8人と未登録92人の件数が正しい", async () => {
   const expectedCounts = new Map([
     ["shaka", 1],
     ["k4sen", 6],
-    ["laz", 5]
+    ["laz", 5],
+    ["vodka", 3],
+    ["1tappy", 4],
+    ["dep", 4],
+    ["cpt", 3],
+    ["francisco", 4]
   ]);
 
   for (const streamer of streamers) {

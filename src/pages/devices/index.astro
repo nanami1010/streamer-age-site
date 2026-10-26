@@ -1,5 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import {
+  getDeviceSourceCaution,
+  getDeviceSourceLabel
+} from "../../config/device-sources";
 import { createDeviceCatalog } from "../../lib/device-catalog";
 import { getValidatedStreamers } from "../../lib/streamers";
 
@@ -14,6 +18,15 @@ const categories = Array.from(new Set(devices.map((device) => device.type))).sor
 function formatJapaneseDate(date: string) {
   const [year, month, day] = date.split("-").map(Number);
   return `${year}年${month}月${day}日`;
+}
+
+function formatJapaneseDateTime(dateTime: string) {
+  return new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(new Date(dateTime));
 }
 ---
 
@@ -98,7 +111,29 @@ function formatJapaneseDate(date: string) {
                       <span aria-hidden="true">→</span>
                     </a>
 
+                    {getDeviceSourceCaution(usage.sourceType) && (
+                      <p class="usage-source-caution">
+                        {getDeviceSourceCaution(usage.sourceType)}
+                      </p>
+                    )}
+
+                    {usage.verificationNote && (
+                      <p class="usage-verification-note">
+                        {usage.verificationNote}
+                      </p>
+                    )}
+
                     <dl class="usage-meta">
+                      <div>
+                        <dt>情報源</dt>
+                        <dd>{getDeviceSourceLabel(usage.sourceType)}</dd>
+                      </div>
+                      {usage.sourceCommand && (
+                        <div>
+                          <dt>確認コマンド</dt>
+                          <dd><code>{usage.sourceCommand}</code></dd>
+                        </div>
+                      )}
                       {usage.usageConfirmedAt && (
                         <div>
                           <dt>使用確認日</dt>
@@ -109,8 +144,22 @@ function formatJapaneseDate(date: string) {
                           </dd>
                         </div>
                       )}
+                      {usage.sourceUpdatedAt && (
+                        <div>
+                          <dt>
+                            {usage.sourceType === "channelCommand"
+                              ? "コマンド最終更新日"
+                              : "出典最終更新日"}
+                          </dt>
+                          <dd>
+                            <time datetime={usage.sourceUpdatedAt}>
+                              {formatJapaneseDateTime(usage.sourceUpdatedAt)}
+                            </time>
+                          </dd>
+                        </div>
+                      )}
                       <div>
-                        <dt>情報の出典</dt>
+                        <dt>出典URL</dt>
                         <dd>
                           <a
                             href={usage.sourceUrl}
@@ -511,6 +560,23 @@ function formatJapaneseDate(date: string) {
     border: 1px solid #e8ebf2;
     border-radius: 12px;
     background: #fafbfe;
+  }
+
+  .usage-source-caution,
+  .usage-verification-note {
+    margin: 10px 0 0;
+    padding: 9px 10px;
+    border-left: 3px solid var(--color-purple);
+    border-radius: 0 8px 8px 0;
+    background: #f8fafc;
+    color: var(--color-text-muted);
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .usage-verification-note {
+    border-left-color: #b45309;
+    background: #fffbeb;
   }
 
   .streamer-link {

@@ -4,6 +4,7 @@ import {
   getDeviceAffiliateLinks,
   type ResolvedDeviceAffiliateLinks
 } from "../config/device-affiliate-links.ts";
+import type { DeviceSourceType } from "../config/device-sources.ts";
 
 type Device = NonNullable<Streamer["devices"]>[number];
 
@@ -11,7 +12,11 @@ export interface DeviceUsageRecord {
   streamerName: string;
   streamerSlug: string;
   sourceUrl: string;
+  sourceType: DeviceSourceType;
+  sourceCommand?: string;
   usageConfirmedAt?: string;
+  sourceUpdatedAt?: string;
+  verificationNote?: string;
   lastVerifiedAt: string;
 }
 
@@ -62,7 +67,11 @@ export function createDeviceCatalog(streamers: Streamer[]): DeviceCatalogItem[] 
         streamerName: streamer.name,
         streamerSlug: streamer.slug,
         sourceUrl: device.sourceUrl,
+        sourceType: device.sourceType,
+        sourceCommand: device.sourceCommand,
         usageConfirmedAt: device.usageConfirmedAt,
+        sourceUpdatedAt: device.sourceUpdatedAt,
+        verificationNote: device.verificationNote,
         lastVerifiedAt: device.lastVerifiedAt
       });
       catalog.set(identityKey, item);

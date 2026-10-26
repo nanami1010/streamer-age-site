@@ -131,11 +131,34 @@ src/
       "productName": "製品名",
       "image": null,
       "sourceUrl": "https://example.com/source",
+      "sourceType": "directStatement",
+      "usageConfirmedAt": "2026-10-22",
       "lastVerifiedAt": "2026-10-22"
     }
   ]
 }
 ```
+
+`sourceType` は出典の性質に合わせて次から選びます。
+
+- `directStatement`: 本人の直接発言・動画
+- `ownedDeviceList`: 本人管理サイトのデバイス一覧
+- `channelCommand`: 公式配信チャンネルに紐づく公開コマンド
+- `officialMaterial`: その他の公式資料
+
+`usageConfirmedAt` は、資料から実際の使用時点を確認できる場合だけ `YYYY-MM-DD` で登録します。公開コマンドの最終更新日時を使用日として登録してはいけません。Nightbotなどの公開コマンドでは `usageConfirmedAt` を省略し、確認したコマンド名を `sourceCommand`、APIが返した更新日時を `sourceUpdatedAt` にISO 8601形式のまま登録してください。`lastVerifiedAt` はSTREAMER AGEが出典を確認した日です。
+
+```json
+{
+  "sourceUrl": "https://nightbot.tv/t/example/commands",
+  "sourceType": "channelCommand",
+  "sourceCommand": "!mouse",
+  "sourceUpdatedAt": "2026-10-22T12:34:56.789Z",
+  "lastVerifiedAt": "2026-10-26"
+}
+```
+
+製品名や型番に未解決事項がある場合は、断定を避けて `verificationNote` に確認状況を記録します。
 
 ### アフィリエイト商品リンク
 

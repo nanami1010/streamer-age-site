@@ -20,5 +20,47 @@
     { "field": "socialLinks", "url": "https://reject.jp/2025/08/17/%E3%80%90%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9E%E3%83%BC%E9%83%A8%E9%96%80%E3%80%911tappy%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" }
   ],
   "lastVerifiedAt": "2026-10-25",
-  "devices": []
+  "devices": [
+    {
+      "type": "マウス",
+      "manufacturer": "Finalmouse",
+      "productName": "SLX Nightfall",
+      "sourceUrl": "https://nightbot.tv/t/1tappytheworld/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2026-10-23T13:41:57.563Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "type": "マウスパッド",
+      "manufacturer": "SkyPAD",
+      "productName": "2.0",
+      "sourceUrl": "https://nightbot.tv/t/1tappytheworld/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mousepad",
+      "sourceUpdatedAt": "2026-06-25T18:40:57.774Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "type": "モニター",
+      "manufacturer": "Sony",
+      "productName": "INZONE M10S（SDM-27Q10S）",
+      "sourceUrl": "https://nightbot.tv/t/1tappytheworld/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!monitor",
+      "sourceUpdatedAt": "2026-01-30T14:42:32.735Z",
+      "verificationNote": "コマンド本文は「INZONE M10S」までで、型番は記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "type": "イヤホン",
+      "manufacturer": "Apple",
+      "productName": "EarPods with 3.5mm Headphone Plug",
+      "sourceUrl": "https://nightbot.tv/t/1tappytheworld/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!earphone",
+      "sourceUpdatedAt": "2024-09-22T09:13:09.806Z",
+      "lastVerifiedAt": "2026-10-27"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 import { mkdirSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 
-test("使用デバイス一覧に既存12記録を11製品として表示する", async ({ page }) => {
+test("使用デバイス一覧に30記録を26製品として表示する", async ({ page }) => {
   const response = await page.goto("/devices/");
 
   expect(response?.status()).toBe(200);
@@ -9,8 +9,8 @@ test("使用デバイス一覧に既存12記録を11製品として表示する"
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "配信者の使用デバイス一覧"
   );
-  await expect(page.locator("[data-device-card]")).toHaveCount(11);
-  await expect(page.locator("[data-device-usage]")).toHaveCount(12);
+  await expect(page.locator("[data-device-card]")).toHaveCount(26);
+  await expect(page.locator("[data-device-usage]")).toHaveCount(30);
   await expect(page.locator("body")).not.toContainText("現在使用中");
 });
 
@@ -31,7 +31,7 @@ test("同一製品の使用者をまとめ、異なるモデルを分離する",
   });
 
   await expect(m10s).toHaveCount(1);
-  await expect(m10s.locator("[data-device-usage]")).toHaveCount(2);
+  await expect(m10s.locator("[data-device-usage]")).toHaveCount(4);
   await expect(m10s.getByRole("link", { name: /SHAKA/ })).toHaveAttribute(
     "href",
     "/streamers/shaka/"
@@ -57,11 +57,43 @@ test("使用確認日・サイト確認日・出典を使用者ごとに表示�
   });
 
   await expect(shakaUsage).toContainText("2025年11月27日");
-  await expect(shakaUsage).toContainText("2026年10月25日");
+  await expect(shakaUsage).toContainText("2026年10月27日");
   await expect(shakaUsage.getByRole("link", { name: /出典を確認/ })).toHaveAttribute(
     "href",
     "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s"
   );
+});
+
+test("Nightbotの更新日時を使用確認日と区別して表示する", async ({ page }) => {
+  await page.goto("/devices/");
+
+  const hyperlight = page.locator("[data-device-card]").filter({
+    has: page.getByRole("heading", { name: "Hyperlight", exact: true })
+  });
+  const vodkaUsage = hyperlight.locator("[data-device-usage]").filter({
+    has: page.getByRole("link", { name: /ボドカ/ })
+  });
+
+  await expect(vodkaUsage).toContainText("配信チャンネルの公開コマンド");
+  await expect(vodkaUsage).toContainText("確認コマンド");
+  await expect(vodkaUsage).toContainText("!mouse");
+  await expect(vodkaUsage).toContainText("コマンド最終更新日");
+  await expect(vodkaUsage).toContainText("2026年2月21日");
+  await expect(vodkaUsage).toContainText("2026年10月27日");
+  await expect(vodkaUsage).not.toContainText("使用確認日");
+  await expect(vodkaUsage).toContainText(
+    "本人が直接入力・発言した情報とは限りません"
+  );
+  await expect(vodkaUsage.locator('time[datetime="2026-02-21T03:22:04.370Z"]')).toHaveCount(1);
+
+  const skypad = page.locator("[data-device-card]").filter({
+    has: page.getByRole("heading", { name: "2.0", exact: true })
+  });
+  const tappyUsage = skypad.locator("[data-device-usage]").filter({
+    has: page.getByRole("link", { name: /1tappy/ })
+  });
+  await expect(tappyUsage).toContainText("2026年6月26日");
+  await expect(tappyUsage.locator('time[datetime="2026-06-25T18:40:57.774Z"]')).toHaveCount(1);
 });
 
 test("提携リンク未登録時は購入ボタンとPR表記を表示しない", async ({ page }) => {
@@ -75,15 +107,15 @@ test("既存カテゴリーで絞り込み、全件表示へ戻せる", async ({
   await page.goto("/devices/");
 
   const filter = page.getByLabel("デバイスの種類");
-  await expect(filter.locator("option")).toHaveCount(7);
+  await expect(filter.locator("option")).toHaveCount(8);
 
   await filter.selectOption("モニター");
   await expect(page.locator("[data-device-card]:visible")).toHaveCount(3);
   await expect(page.locator("[data-device-count]")).toHaveText("3");
 
   await filter.selectOption("");
-  await expect(page.locator("[data-device-card]:visible")).toHaveCount(11);
-  await expect(page.locator("[data-device-count]")).toHaveText("11");
+  await expect(page.locator("[data-device-card]:visible")).toHaveCount(26);
+  await expect(page.locator("[data-device-count]")).toHaveText("26");
 });
 
 test("トップページから一覧へ移動でき、SEO設定を維持する", async ({ page }) => {

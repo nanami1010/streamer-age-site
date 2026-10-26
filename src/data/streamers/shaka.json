@@ -36,8 +36,10 @@
       "manufacturer": "Sony",
       "productName": "INZONE M10S（SDM-27Q10S）",
       "sourceUrl": "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s",
+      "sourceType": "directStatement",
       "usageConfirmedAt": "2025-11-27",
-      "lastVerifiedAt": "2026-10-25"
+      "verificationNote": "動画内の使用発言は確認済みですが、正確な型番は映像での再確認が必要です。",
+      "lastVerifiedAt": "2026-10-27"
     }
   ]
 }

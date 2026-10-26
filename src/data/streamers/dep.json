@@ -20,5 +20,48 @@
     { "field": "socialLinks", "url": "https://reject.jp/2026/06/24/%E3%80%90valorant%E9%83%A8%E9%96%80%E3%80%91dep%E3%80%81%E3%80%8Eesports-nations-cup%E3%80%8F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E3%81%AB%E9%81%B8%E5%87%BA/" }
   ],
   "lastVerifiedAt": "2026-10-25",
-  "devices": []
+  "devices": [
+    {
+      "type": "マウス",
+      "manufacturer": "Pulsar",
+      "productName": "X2 CrazyLight Medium",
+      "sourceUrl": "https://nightbot.tv/t/dep_ow/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2026-06-23T01:12:41.646Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "type": "キーボード",
+      "manufacturer": "Pulsar",
+      "productName": "PCMK 3 HE 60",
+      "sourceUrl": "https://nightbot.tv/t/dep_ow/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!keyboard",
+      "sourceUpdatedAt": "2026-06-23T01:11:45.033Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "type": "モニター",
+      "manufacturer": "Sony",
+      "productName": "INZONE M10S（SDM-27Q10S）",
+      "sourceUrl": "https://nightbot.tv/t/dep_ow/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!monitor",
+      "sourceUpdatedAt": "2026-06-23T01:12:18.443Z",
+      "verificationNote": "コマンド本文は「INZONE M10S」までで、型番は記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "type": "ヘッドセット",
+      "manufacturer": "Sony",
+      "productName": "INZONE H5（WH-G500）",
+      "sourceUrl": "https://nightbot.tv/t/dep_ow/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!headset",
+      "sourceUpdatedAt": "2026-06-23T01:10:19.786Z",
+      "verificationNote": "コマンド本文は「Sony INZONE H5」までで、型番は記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    }
+  ]
 }
