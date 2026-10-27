@@ -1,9 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import {
-  getDeviceSourceCaution,
-  getDeviceSourceLabel
-} from "../../config/device-sources";
+import DeviceSourceDetails from "../../components/DeviceSourceDetails.astro";
 import { createDeviceCatalog } from "../../lib/device-catalog";
 import { getValidatedStreamers } from "../../lib/streamers";
 
@@ -14,20 +11,6 @@ const hasAffiliateLinks = devices.some((device) => device.affiliateLinks);
 const categories = Array.from(new Set(devices.map((device) => device.type))).sort(
   (a, b) => a.localeCompare(b, "ja")
 );
-
-function formatJapaneseDate(date: string) {
-  const [year, month, day] = date.split("-").map(Number);
-  return `${year}年${month}月${day}日`;
-}
-
-function formatJapaneseDateTime(dateTime: string) {
-  return new Intl.DateTimeFormat("ja-JP", {
-    timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  }).format(new Date(dateTime));
-}
 ---
 
 <Layout
@@ -112,74 +95,15 @@ function formatJapaneseDateTime(dateTime: string) {
                       <span aria-hidden="true">→</span>
                     </a>
 
-                    {getDeviceSourceCaution(usage.sourceType) && (
-                      <p class="usage-source-caution">
-                        {getDeviceSourceCaution(usage.sourceType)}
-                      </p>
-                    )}
-
-                    {usage.verificationNote && (
-                      <p class="usage-verification-note">
-                        {usage.verificationNote}
-                      </p>
-                    )}
-
-                    <dl class="usage-meta">
-                      <div>
-                        <dt>情報源</dt>
-                        <dd>{getDeviceSourceLabel(usage.sourceType)}</dd>
-                      </div>
-                      {usage.sourceCommand && (
-                        <div>
-                          <dt>確認コマンド</dt>
-                          <dd><code>{usage.sourceCommand}</code></dd>
-                        </div>
-                      )}
-                      {usage.usageConfirmedAt && (
-                        <div>
-                          <dt>使用確認日</dt>
-                          <dd>
-                            <time datetime={usage.usageConfirmedAt}>
-                              {formatJapaneseDate(usage.usageConfirmedAt)}
-                            </time>
-                          </dd>
-                        </div>
-                      )}
-                      {usage.sourceUpdatedAt && (
-                        <div>
-                          <dt>
-                            {usage.sourceType === "channelCommand"
-                              ? "コマンド最終更新日"
-                              : "出典最終更新日"}
-                          </dt>
-                          <dd>
-                            <time datetime={usage.sourceUpdatedAt}>
-                              {formatJapaneseDateTime(usage.sourceUpdatedAt)}
-                            </time>
-                          </dd>
-                        </div>
-                      )}
-                      <div>
-                        <dt>出典URL</dt>
-                        <dd>
-                          <a
-                            href={usage.sourceUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            出典を確認 ↗
-                          </a>
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>サイト確認日</dt>
-                        <dd>
-                          <time datetime={usage.lastVerifiedAt}>
-                            {formatJapaneseDate(usage.lastVerifiedAt)}
-                          </time>
-                        </dd>
-                      </div>
-                    </dl>
+                    <DeviceSourceDetails
+                      sourceType={usage.sourceType}
+                      sourceUrl={usage.sourceUrl}
+                      sourceCommand={usage.sourceCommand}
+                      usageConfirmedAt={usage.usageConfirmedAt}
+                      sourceUpdatedAt={usage.sourceUpdatedAt}
+                      lastVerifiedAt={usage.lastVerifiedAt}
+                      verificationNote={usage.verificationNote}
+                    />
                   </li>
                 ))}
               </ul>
@@ -539,23 +463,6 @@ function formatJapaneseDateTime(dateTime: string) {
     background: #fafbfe;
   }
 
-  .usage-source-caution,
-  .usage-verification-note {
-    margin: 10px 0 0;
-    padding: 9px 10px;
-    border-left: 3px solid var(--color-purple);
-    border-radius: 0 8px 8px 0;
-    background: #f8fafc;
-    color: var(--color-text-muted);
-    font-size: 11px;
-    line-height: 1.55;
-  }
-
-  .usage-verification-note {
-    border-left-color: #b45309;
-    background: #fffbeb;
-  }
-
   .streamer-link {
     display: flex;
     align-items: center;
@@ -567,54 +474,14 @@ function formatJapaneseDateTime(dateTime: string) {
     text-decoration: none;
   }
 
-  .streamer-link:hover,
-  .usage-meta a:hover {
+  .streamer-link:hover {
     text-decoration: underline;
   }
 
-  .streamer-link:focus-visible,
-  .usage-meta a:focus-visible {
+  .streamer-link:focus-visible {
     border-radius: 5px;
     outline: 3px solid rgb(32 184 165 / 40%);
     outline-offset: 3px;
-  }
-
-  .usage-meta {
-    display: grid;
-    gap: 7px;
-    margin: 12px 0 0;
-  }
-
-  .usage-meta div {
-    display: flex;
-    min-width: 0;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding-top: 7px;
-    border-top: 1px solid #e8ebf2;
-  }
-
-  .usage-meta dt {
-    flex: 0 0 auto;
-    color: var(--color-text-muted);
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  .usage-meta dd {
-    min-width: 0;
-    margin: 0;
-    overflow-wrap: anywhere;
-    color: var(--color-text);
-    font-size: 12px;
-    text-align: right;
-  }
-
-  .usage-meta a {
-    color: #5842bd;
-    font-weight: 700;
-    text-decoration: none;
   }
 
   @media (max-width: 600px) {
@@ -670,14 +537,5 @@ function formatJapaneseDateTime(dateTime: string) {
       gap: 8px;
     }
 
-    .usage-meta div {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .usage-meta dd {
-      text-align: left;
-    }
   }
 </style>

@@ -1,0 +1,298 @@
+---
+import {
+  getDeviceSourceBadgeLabel,
+  getDeviceSourceLabel,
+  type DeviceSourceType
+} from "../config/device-sources";
+
+interface Props {
+  sourceType: DeviceSourceType;
+  sourceUrl: string;
+  sourceCommand?: string;
+  usageConfirmedAt?: string;
+  sourceUpdatedAt?: string;
+  lastVerifiedAt: string;
+  verificationNote?: string;
+}
+
+const {
+  sourceType,
+  sourceUrl,
+  sourceCommand,
+  usageConfirmedAt,
+  sourceUpdatedAt,
+  lastVerifiedAt,
+  verificationNote
+} = Astro.props;
+
+function formatJapaneseDate(date: string) {
+  const [year, month, day] = date.split("-").map(Number);
+  return `${year}年${month}月${day}日`;
+}
+
+function formatJapaneseDateTime(dateTime: string) {
+  return new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(new Date(dateTime));
+}
+---
+
+<div class="device-source" data-device-source data-source-type={sourceType}>
+  <div class="device-source__primary">
+    <span class="device-source-badge">
+      {getDeviceSourceBadgeLabel(sourceType)}
+    </span>
+    <a
+      class="device-source-link"
+      href={sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      出典を確認 ↗
+    </a>
+  </div>
+
+  <details class="device-source-details">
+    <summary>
+      <span class="summary-label summary-label--closed">詳細を見る</span>
+      <span class="summary-label summary-label--open">詳細を閉じる</span>
+      <span class="summary-icon" aria-hidden="true">⌄</span>
+    </summary>
+
+    <div class="device-source-details__content">
+      {verificationNote && (
+        <p class="device-verification-note">{verificationNote}</p>
+      )}
+
+      <dl class="device-source-meta">
+        <div>
+          <dt>情報源</dt>
+          <dd>{getDeviceSourceLabel(sourceType)}</dd>
+        </div>
+        {sourceCommand && (
+          <div>
+            <dt>確認コマンド</dt>
+            <dd><code>{sourceCommand}</code></dd>
+          </div>
+        )}
+        {usageConfirmedAt && (
+          <div>
+            <dt>使用情報の基準日</dt>
+            <dd>
+              <time datetime={usageConfirmedAt}>
+                {formatJapaneseDate(usageConfirmedAt)}
+              </time>
+            </dd>
+          </div>
+        )}
+        {sourceUpdatedAt && (
+          <div>
+            <dt>
+              {sourceType === "channelCommand"
+                ? "コマンド最終更新日"
+                : "出典最終更新日"}
+            </dt>
+            <dd>
+              <time datetime={sourceUpdatedAt}>
+                {formatJapaneseDateTime(sourceUpdatedAt)}
+              </time>
+            </dd>
+          </div>
+        )}
+        <div>
+          <dt>サイト確認日</dt>
+          <dd>
+            <time datetime={lastVerifiedAt}>
+              {formatJapaneseDate(lastVerifiedAt)}
+            </time>
+          </dd>
+        </div>
+      </dl>
+
+      {usageConfirmedAt && (
+        <p class="device-continuation-note">
+          現在も使用しているかは未確認です。
+        </p>
+      )}
+    </div>
+  </details>
+</div>
+
+<style>
+  .device-source {
+    min-width: 0;
+    margin-top: auto;
+    padding-top: 14px;
+  }
+
+  .device-source__primary {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .device-source-badge {
+    display: inline-flex;
+    min-height: 28px;
+    align-items: center;
+    padding: 4px 9px;
+    border: 1px solid #ddd6fe;
+    border-radius: 999px;
+    background: var(--color-purple-soft);
+    color: #5842bd;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  [data-source-type="channelCommand"] .device-source-badge {
+    border-color: #99f6e4;
+    background: var(--color-teal-soft);
+    color: #0f766e;
+  }
+
+  .device-source-link {
+    flex: 0 0 auto;
+    border-radius: 5px;
+    color: #5842bd;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .device-source-link:hover {
+    text-decoration: underline;
+  }
+
+  .device-source-link:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid rgb(32 184 165 / 45%);
+    outline-offset: 3px;
+  }
+
+  .device-source-details {
+    margin-top: 10px;
+    border-top: 1px solid #eef2f7;
+  }
+
+  summary {
+    display: flex;
+    min-height: 40px;
+    cursor: pointer;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    border-radius: 6px;
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .summary-label--open {
+    display: none;
+  }
+
+  .device-source-details[open] .summary-label--closed {
+    display: none;
+  }
+
+  .device-source-details[open] .summary-label--open {
+    display: inline;
+  }
+
+  .summary-icon {
+    font-size: 15px;
+    transition: transform 160ms ease;
+  }
+
+  .device-source-details[open] .summary-icon {
+    transform: rotate(180deg);
+  }
+
+  .device-source-details__content {
+    padding: 0 0 4px;
+  }
+
+  .device-verification-note,
+  .device-continuation-note {
+    margin: 0 0 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    color: var(--color-text-muted);
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .device-verification-note {
+    border-left: 3px solid #b45309;
+    background: #fffbeb;
+  }
+
+  .device-continuation-note {
+    margin-top: 10px;
+    background: #f8fafc;
+  }
+
+  .device-source-meta {
+    display: grid;
+    gap: 7px;
+    margin: 0;
+  }
+
+  .device-source-meta div {
+    display: flex;
+    min-width: 0;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 7px;
+    border-top: 1px solid #eef2f7;
+  }
+
+  .device-source-meta dt {
+    flex: 0 0 auto;
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .device-source-meta dd {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--color-text);
+    font-size: 11px;
+    text-align: right;
+  }
+
+  .device-source-meta code {
+    font-size: inherit;
+  }
+
+  @media (max-width: 360px) {
+    .device-source__primary {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .device-source-meta div {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .device-source-meta dd {
+      text-align: left;
+    }
+  }
+</style>

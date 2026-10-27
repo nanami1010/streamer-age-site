@@ -91,6 +91,16 @@ for (const viewport of viewports) {
     await expectNoHorizontalScroll(page);
     await expect(page.locator(".device-card")).toHaveCount(6);
 
+    const deviceGridColumns = await page.locator(".device-grid").evaluate(
+      (element) => getComputedStyle(element).gridTemplateColumns.split(" ").length
+    );
+    const expectedDeviceGridColumns = viewport.width >= 1100
+      ? 3
+      : viewport.width >= 640
+        ? 2
+        : 1;
+    expect(deviceGridColumns).toBe(expectedDeviceGridColumns);
+
     for (const card of await page.locator(".device-card").all()) {
       await expectInsideViewport(card, viewport.width);
     }

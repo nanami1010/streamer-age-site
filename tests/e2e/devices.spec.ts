@@ -74,16 +74,30 @@ test("Nightbotの更新日時を使用確認日と区別して表示する", asy
     has: page.getByRole("link", { name: /ボドカ/ })
   });
 
-  await expect(vodkaUsage).toContainText("配信チャンネルの公開コマンド");
-  await expect(vodkaUsage).toContainText("確認コマンド");
-  await expect(vodkaUsage).toContainText("!mouse");
-  await expect(vodkaUsage).toContainText("コマンド最終更新日");
-  await expect(vodkaUsage).toContainText("2026年2月21日");
-  await expect(vodkaUsage).toContainText("2026年10月27日");
-  await expect(vodkaUsage).not.toContainText("使用確認日");
-  await expect(vodkaUsage).toContainText(
+  await expect(vodkaUsage.locator(".device-source-badge")).toHaveText(
+    "公開コマンド"
+  );
+  await expect(vodkaUsage.locator(".device-source-link")).toBeVisible();
+  await expect(vodkaUsage).not.toContainText(
     "本人が直接入力・発言した情報とは限りません"
   );
+  await expect(vodkaUsage).not.toContainText("使用確認日");
+
+  const details = vodkaUsage.locator(".device-source-details");
+  const summary = details.locator("summary");
+  await summary.focus();
+  await page.keyboard.press("Enter");
+  await expect(details).toHaveAttribute("open", "");
+  await expect(details.locator(".device-source-meta")).toContainText(
+    "配信チャンネルの公開コマンド"
+  );
+  await expect(details.locator(".device-source-meta")).toContainText("確認コマンド");
+  await expect(details.locator(".device-source-meta code")).toHaveText("!mouse");
+  await expect(details.locator(".device-source-meta")).toContainText(
+    "コマンド最終更新日"
+  );
+  await expect(details.locator(".device-source-meta")).toContainText("2026年2月21日");
+  await expect(details.locator(".device-source-meta")).toContainText("2026年10月27日");
   await expect(vodkaUsage.locator('time[datetime="2026-02-21T03:22:04.370Z"]')).toHaveCount(1);
 
   const skypad = page.locator("[data-device-card]").filter({

@@ -136,32 +136,33 @@ test.describe("全配信者のプロフィール", () => {
         await expect(page.locator(".device-card")).toHaveCount(streamerDevices.length);
 
         for (const device of streamerDevices) {
-          const group = page.locator(".device-group").filter({
-            has: page.getByRole("heading", { level: 3, name: device.type, exact: true })
-          });
-          const card = group.locator(".device-card").filter({
-            has: page.getByRole("heading", {
-              level: 4,
+          const card = page.locator(
+            `[data-device-product-id="${device.productId}"]`
+          );
+
+          await expect(card).toHaveCount(1);
+          await expect(card.locator(".device-category")).toHaveText(device.type);
+          await expect(
+            card.getByRole("heading", {
+              level: 3,
               name: device.productName,
               exact: true
             })
-          });
-
-          await expect(group).toHaveCount(1);
-          await expect(card).toHaveCount(1);
+          ).toBeVisible();
           await expect(card.locator(".manufacturer")).toHaveText(device.manufacturer);
-          await expect(card.locator(".device-meta a")).toHaveAttribute(
+          await expect(card.locator(".device-source-link")).toHaveAttribute(
             "href",
             device.sourceUrl
           );
-          const siteVerifiedTime = card.locator(".device-meta div").filter({
+          const sourceMeta = card.locator(".device-source-meta");
+          const siteVerifiedTime = sourceMeta.locator("div").filter({
             hasText: "サイト確認日"
           }).locator("time");
           await expect(siteVerifiedTime).toHaveAttribute(
             "datetime",
             device.lastVerifiedAt
           );
-          await expect(card.locator(".device-meta")).toContainText("サイト確認日");
+          await expect(sourceMeta).toContainText("サイト確認日");
 
           const expectedSourceLabel = {
             directStatement: "本人の直接発言・動画",
@@ -169,24 +170,31 @@ test.describe("全配信者のプロフィール", () => {
             channelCommand: "配信チャンネルの公開コマンド",
             officialMaterial: "その他の公式資料"
           }[device.sourceType];
-          await expect(card.locator(".device-meta")).toContainText(expectedSourceLabel);
+          const expectedBadgeLabel = {
+            directStatement: "本人発言・動画",
+            ownedDeviceList: "本人管理サイト",
+            channelCommand: "公開コマンド",
+            officialMaterial: "公式資料"
+          }[device.sourceType];
+          await expect(sourceMeta).toContainText(expectedSourceLabel);
+          await expect(card.locator(".device-source-badge")).toHaveText(
+            expectedBadgeLabel
+          );
 
           if (device.sourceCommand) {
-            await expect(card.locator(".device-meta")).toContainText("確認コマンド");
-            await expect(card.locator(".device-meta code")).toHaveText(
+            await expect(sourceMeta).toContainText("確認コマンド");
+            await expect(sourceMeta.locator("code")).toHaveText(
               device.sourceCommand
             );
           } else {
-            await expect(card.locator(".device-meta code")).toHaveCount(0);
+            await expect(sourceMeta.locator("code")).toHaveCount(0);
           }
 
-          const usageConfirmation = card.locator(".usage-confirmation");
+          const usageConfirmation = sourceMeta.locator("div").filter({
+            hasText: "使用情報の基準日"
+          });
           if (device.usageConfirmedAt) {
-            const [year, month, day] = device.usageConfirmedAt.split("-").map(Number);
-            await expect(usageConfirmation).toContainText(
-              `${year}年${month}月${day}日時点の使用情報`
-            );
-            await expect(usageConfirmation).toContainText(
+            await expect(card.locator(".device-continuation-note")).toHaveText(
               "現在も使用しているかは未確認です。"
             );
             await expect(usageConfirmation.locator("time")).toHaveAttribute(
@@ -197,7 +205,7 @@ test.describe("全配信者のプロフィール", () => {
             await expect(usageConfirmation).toHaveCount(0);
           }
 
-          const sourceUpdatedTime = card.locator(".device-meta div").filter({
+          const sourceUpdatedTime = sourceMeta.locator("div").filter({
             hasText: device.sourceType === "channelCommand"
               ? "コマンド最終更新日"
               : "出典最終更新日"
@@ -212,20 +220,21 @@ test.describe("全配信者のプロフィール", () => {
           }
 
           if (device.sourceType === "channelCommand") {
-            await expect(card.locator(".source-caution")).toContainText(
+            await expect(card.locator(".device-source-badge")).toHaveText(
+              "公開コマンド"
+            );
+            await expect(card).not.toContainText(
               "本人が直接入力・発言した情報とは限りません"
             );
             await expect(card).not.toContainText("使用確認日");
-          } else {
-            await expect(card.locator(".source-caution")).toHaveCount(0);
           }
 
           if (device.verificationNote) {
-            await expect(card.locator(".verification-note")).toHaveText(
+            await expect(card.locator(".device-verification-note")).toHaveText(
               device.verificationNote
             );
           } else {
-            await expect(card.locator(".verification-note")).toHaveCount(0);
+            await expect(card.locator(".device-verification-note")).toHaveCount(0);
           }
 
           await expect(card).not.toContainText("現在使用中");

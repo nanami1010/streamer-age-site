@@ -12,7 +12,7 @@ import {
   deviceMatchesProductDefinition
 } from "../src/config/device-products.ts";
 import {
-  getDeviceSourceCaution,
+  getDeviceSourceBadgeLabel,
   getDeviceSourceLabel
 } from "../src/config/device-sources.ts";
 import { createDeviceCatalog } from "../src/lib/device-catalog.ts";
@@ -147,9 +147,9 @@ test("Nightbot由来37件はコマンド更新日時と使用確認日を分離�
     getDeviceSourceLabel("channelCommand"),
     "配信チャンネルの公開コマンド"
   );
-  assert.match(
-    getDeviceSourceCaution("channelCommand") ?? "",
-    /本人が直接入力・発言した情報とは限りません/
+  assert.equal(
+    getDeviceSourceBadgeLabel("channelCommand"),
+    "公開コマンド"
   );
   assert.equal(
     channelCommandUsages.every((usage) => usage.lastVerifiedAt === "2026-10-27"),

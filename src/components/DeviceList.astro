@@ -1,10 +1,7 @@
 ---
 import type { Streamer } from "../lib/streamers";
 import { getDeviceAffiliateLinks } from "../config/device-affiliate-links";
-import {
-  getDeviceSourceCaution,
-  getDeviceSourceLabel
-} from "../config/device-sources";
+import DeviceSourceDetails from "./DeviceSourceDetails.astro";
 
 type Device = NonNullable<Streamer["devices"]>[number];
 
@@ -14,32 +11,15 @@ interface Props {
 
 const { devices } = Astro.props;
 
-const deviceGroups = Array.from(
-  devices.reduce((groups, device) => {
-    const categoryDevices = groups.get(device.type) ?? [];
-    categoryDevices.push(device);
-    groups.set(device.type, categoryDevices);
-    return groups;
-  }, new Map<string, Device[]>())
-).sort(([categoryA], [categoryB]) => categoryA.localeCompare(categoryB, "ja"));
+const sortedDevices = [...devices].sort(
+  (deviceA, deviceB) =>
+    deviceA.type.localeCompare(deviceB.type, "ja") ||
+    deviceA.productName.localeCompare(deviceB.productName, "ja")
+);
 
 const hasAffiliateLinks = devices.some((device) =>
   Boolean(getDeviceAffiliateLinks(device.productId))
 );
-
-function formatJapaneseDate(date: string) {
-  const [year, month, day] = date.split("-").map(Number);
-  return `${year}年${month}月${day}日`;
-}
-
-function formatJapaneseDateTime(dateTime: string) {
-  return new Intl.DateTimeFormat("ja-JP", {
-    timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  }).format(new Date(dateTime));
-}
 ---
 
 {devices.length === 0 ? (
@@ -57,127 +37,63 @@ function formatJapaneseDateTime(dateTime: string) {
       </p>
     )}
 
-    {deviceGroups.map(([category, categoryDevices], groupIndex) => (
-      <section class="device-group" aria-labelledby={`device-category-${groupIndex}`}>
-        <h3 id={`device-category-${groupIndex}`}>
-          <span aria-hidden="true"></span>
-          {category}
-        </h3>
+    <ul class="device-grid">
+      {sortedDevices.map((device) => {
+        const affiliateLinks = getDeviceAffiliateLinks(device.productId);
 
-        <ul class="device-grid">
-          {categoryDevices.map((device) => {
-            const affiliateLinks = getDeviceAffiliateLinks(device.productId);
-            const sourceCaution = getDeviceSourceCaution(device.sourceType);
+        return (
+          <li class="device-card" data-device-product-id={device.productId}>
+            {device.image && (
+              <div class="device-image">
+                <img
+                  src={device.image}
+                  alt={`${device.manufacturer} ${device.productName}`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
 
-            return (
-              <li class="device-card" data-device-product-id={device.productId}>
-              {device.image && (
-                <div class="device-image">
-                  <img
-                    src={device.image}
-                    alt={`${device.manufacturer} ${device.productName}`}
-                    loading="lazy"
-                    decoding="async"
-                  />
+            <div class="device-body">
+              <div class="device-heading">
+                <span class="device-category">{device.type}</span>
+                <p class="manufacturer">{device.manufacturer}</p>
+                <h3>{device.productName}</h3>
+              </div>
+
+              <DeviceSourceDetails
+                sourceType={device.sourceType}
+                sourceUrl={device.sourceUrl}
+                sourceCommand={device.sourceCommand}
+                usageConfirmedAt={device.usageConfirmedAt}
+                sourceUpdatedAt={device.sourceUpdatedAt}
+                lastVerifiedAt={device.lastVerifiedAt}
+                verificationNote={device.verificationNote}
+              />
+
+              {affiliateLinks && (
+                <div
+                  class="purchase-links"
+                  role="group"
+                  aria-label={`${device.productName}の商品リンク`}
+                >
+                  {affiliateLinks.amazon && (
+                    <a
+                      class="purchase-link amazon"
+                      href={affiliateLinks.amazon}
+                      target="_blank"
+                      rel="sponsored nofollow noopener noreferrer"
+                    >
+                      Amazonで見る（PR）
+                    </a>
+                  )}
                 </div>
               )}
-
-              <div class="device-body">
-                <p class="manufacturer">{device.manufacturer}</p>
-                <h4>{device.productName}</h4>
-
-                {device.usageConfirmedAt && (
-                  <div class="usage-confirmation">
-                    <p>
-                      <time datetime={device.usageConfirmedAt}>
-                        {formatJapaneseDate(device.usageConfirmedAt)}
-                      </time>
-                      時点の使用情報
-                    </p>
-                    <p>現在も使用しているかは未確認です。</p>
-                  </div>
-                )}
-
-                {sourceCaution && (
-                  <p class="source-caution">{sourceCaution}</p>
-                )}
-
-                {device.verificationNote && (
-                  <p class="verification-note">{device.verificationNote}</p>
-                )}
-
-                <dl class="device-meta">
-                  <div>
-                    <dt>情報源</dt>
-                    <dd>{getDeviceSourceLabel(device.sourceType)}</dd>
-                  </div>
-                  {device.sourceCommand && (
-                    <div>
-                      <dt>確認コマンド</dt>
-                      <dd><code>{device.sourceCommand}</code></dd>
-                    </div>
-                  )}
-                  {device.sourceUpdatedAt && (
-                    <div>
-                      <dt>
-                        {device.sourceType === "channelCommand"
-                          ? "コマンド最終更新日"
-                          : "出典最終更新日"}
-                      </dt>
-                      <dd>
-                        <time datetime={device.sourceUpdatedAt}>
-                          {formatJapaneseDateTime(device.sourceUpdatedAt)}
-                        </time>
-                      </dd>
-                    </div>
-                  )}
-                  <div>
-                    <dt>出典URL</dt>
-                    <dd>
-                      <a
-                        href={device.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        出典を確認 ↗
-                      </a>
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>サイト確認日</dt>
-                    <dd>
-                      <time datetime={device.lastVerifiedAt}>
-                        {formatJapaneseDate(device.lastVerifiedAt)}
-                      </time>
-                    </dd>
-                  </div>
-                </dl>
-
-                {affiliateLinks && (
-                  <div
-                    class="purchase-links"
-                    role="group"
-                    aria-label={`${device.productName}の商品リンク`}
-                  >
-                    {affiliateLinks.amazon && (
-                      <a
-                        class="purchase-link amazon"
-                        href={affiliateLinks.amazon}
-                        target="_blank"
-                        rel="sponsored nofollow noopener noreferrer"
-                      >
-                        Amazonで見る（PR）
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-    ))}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   </div>
 )}
 
@@ -225,43 +141,20 @@ function formatJapaneseDateTime(dateTime: string) {
     font-weight: 700;
   }
 
-  .device-group {
-    margin-top: 26px;
-  }
-
-  .device-group:first-of-type {
-    margin-top: 20px;
-  }
-
-  .device-group h3 {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin: 0 0 13px;
-    color: var(--color-text);
-    font-size: 17px;
-  }
-
-  .device-group h3 span {
-    width: 4px;
-    height: 18px;
-    border-radius: 999px;
-    background: linear-gradient(var(--color-purple), var(--color-teal));
-  }
-
   .device-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 340px));
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
-    justify-content: start;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   .device-card {
+    display: flex;
     min-width: 0;
     overflow: hidden;
+    flex-direction: column;
     margin: 0;
     border: 1px solid var(--color-border);
     border-radius: 15px;
@@ -271,6 +164,7 @@ function formatJapaneseDateTime(dateTime: string) {
 
   .device-image {
     display: grid;
+    width: 100%;
     aspect-ratio: 16 / 9;
     place-items: center;
     overflow: hidden;
@@ -287,112 +181,45 @@ function formatJapaneseDateTime(dateTime: string) {
   }
 
   .device-body {
+    display: flex;
+    min-width: 0;
+    width: 100%;
+    flex-direction: column;
     padding: 17px;
+  }
+
+  .device-heading {
+    min-width: 0;
+  }
+
+  .device-category {
+    display: inline-flex;
+    min-height: 26px;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--color-teal-soft);
+    color: #0f766e;
+    font-size: 11px;
+    font-weight: 800;
   }
 
   .manufacturer {
     margin: 0 0 5px;
+    overflow-wrap: anywhere;
     color: var(--color-teal);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.04em;
   }
 
-  h4 {
-    margin: 0 0 15px;
+  h3 {
+    margin: 0;
     overflow-wrap: anywhere;
     color: var(--color-text);
     font-size: 17px;
     line-height: 1.45;
-  }
-
-  .usage-confirmation {
-    margin: 0 0 14px;
-    padding: 10px 12px;
-    border-left: 3px solid var(--color-teal);
-    border-radius: 0 9px 9px 0;
-    background: var(--color-teal-soft);
-    color: var(--color-text-muted);
-    font-size: 11px;
-    line-height: 1.55;
-  }
-
-  .usage-confirmation p {
-    margin: 0;
-  }
-
-  .usage-confirmation p:first-child {
-    color: var(--color-text);
-    font-weight: 800;
-  }
-
-  .source-caution,
-  .verification-note {
-    margin: 0 0 14px;
-    padding: 10px 12px;
-    border-radius: 9px;
-    background: #f8fafc;
-    color: var(--color-text-muted);
-    font-size: 11px;
-    line-height: 1.6;
-  }
-
-  .source-caution {
-    border-left: 3px solid var(--color-purple);
-  }
-
-  .verification-note {
-    border-left: 3px solid #b45309;
-    background: #fffbeb;
-  }
-
-  .device-meta {
-    display: grid;
-    gap: 8px;
-    margin: 0;
-  }
-
-  .device-meta div {
-    display: flex;
-    min-width: 0;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding-top: 8px;
-    border-top: 1px solid #eef2f7;
-  }
-
-  dt {
-    flex: 0 0 auto;
-    color: var(--color-text-muted);
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  dd {
-    min-width: 0;
-    margin: 0;
-    overflow-wrap: anywhere;
-    color: var(--color-text);
-    font-size: 12px;
-    text-align: right;
-  }
-
-  .device-meta a {
-    color: #5842bd;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .device-meta a:hover {
-    text-decoration: underline;
-  }
-
-  .device-meta a:focus-visible,
-  .purchase-link:focus-visible {
-    border-radius: 6px;
-    outline: 3px solid rgb(32 184 165 / 45%);
-    outline-offset: 3px;
   }
 
   .purchase-links {
@@ -424,15 +251,28 @@ function formatJapaneseDateTime(dateTime: string) {
     transform: translateY(-1px);
   }
 
+  .purchase-link:focus-visible {
+    outline: 3px solid rgb(32 184 165 / 45%);
+    outline-offset: 3px;
+  }
+
   .purchase-link.amazon {
     background: #8a4b08;
   }
 
-  @media (max-width: 600px) {
+  @media (min-width: 640px) {
     .device-grid {
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+  }
 
+  @media (min-width: 1100px) {
+    .device-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
     .device-body {
       padding: 16px;
     }
