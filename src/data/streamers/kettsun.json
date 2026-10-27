@@ -1,0 +1,26 @@
+{
+  "name": "けっつん",
+  "nameKana": "けっつん",
+  "aliases": [],
+  "slug": "kettsun",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/kettuncyukyuhei",
+    "x": "https://x.com/kettuncyukyuhei"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.twitch.tv/kettuncyukyuhei"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

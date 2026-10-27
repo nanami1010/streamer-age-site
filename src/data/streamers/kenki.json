@@ -1,0 +1,31 @@
+{
+  "name": "けんき",
+  "nameKana": "けんき",
+  "aliases": [],
+  "slug": "kenki",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCNicQVuAQJYlCQKEw1TKn1A",
+    "twitch": "https://www.twitch.tv/kenki521",
+    "x": "https://x.com/T_kenki"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/news/2026/03/23/42054?PageSpeed=noscript"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2026/03/23/42054?PageSpeed=noscript"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

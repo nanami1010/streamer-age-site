@@ -1,0 +1,27 @@
+{
+  "name": "Sasatikk",
+  "nameKana": "ささ",
+  "aliases": ["ささ"],
+  "slug": "sasatikk",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@sasatikk",
+    "twitch": "https://www.twitch.tv/sasatikk",
+    "x": "https://x.com/sasatikk"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://x.com/sasatikk"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

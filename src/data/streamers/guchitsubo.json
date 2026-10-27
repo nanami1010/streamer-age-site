@@ -1,0 +1,35 @@
+{
+  "name": "ぐちつぼ",
+  "nameKana": "ぐちつぼ",
+  "aliases": [],
+  "slug": "guchitsubo",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "Minecraft"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/gutitubo",
+    "twitch": "https://www.twitch.tv/gutitubo",
+    "x": "https://x.com/gutituvo"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/news/2025/12/29/40330"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/news/2025/12/29/40330"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2025/12/29/40330"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

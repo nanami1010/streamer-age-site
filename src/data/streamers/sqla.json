@@ -1,0 +1,31 @@
+{
+  "name": "SqLA",
+  "nameKana": "すきーら",
+  "aliases": [],
+  "slug": "sqla",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "RIDDLE",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCItf9xRYdHYlGwAw9JnsnJw",
+    "twitch": "https://www.twitch.tv/sqla",
+    "x": "https://x.com/imsqla"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://riddle.info/members/sqla/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://riddle.info/members/sqla/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

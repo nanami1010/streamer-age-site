@@ -1,0 +1,39 @@
+{
+  "name": "ととみっくす",
+  "nameKana": "ととみっくす",
+  "aliases": ["tototMix"],
+  "slug": "totomix",
+  "birthDate": null,
+  "birthMonthDay": "08-01",
+  "genres": ["ゲーム配信", "FPS", "MOBA"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/tototmix",
+    "x": "https://x.com/mix_totot"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://crazyraccoon.jp/en/member/tototmix/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/en/member/tototmix/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/20250401-2/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/20250401-2/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

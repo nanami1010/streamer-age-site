@@ -1,0 +1,35 @@
+{
+  "name": "GON",
+  "nameKana": "ごん",
+  "aliases": [],
+  "slug": "gon",
+  "birthDate": "2002-11-15",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@gon_vl",
+    "twitch": "https://www.twitch.tv/gon_vl",
+    "x": "https://x.com/gonsan_vl"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/gonsan_vl"
+    },
+    {
+      "field": "genres",
+      "url": "https://gamezine.jp/13755/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://gamezine.jp/13755/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

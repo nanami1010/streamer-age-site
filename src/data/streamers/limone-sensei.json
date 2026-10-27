@@ -1,0 +1,26 @@
+{
+  "name": "リモーネ先生",
+  "nameKana": "りもーねせんせい",
+  "aliases": [],
+  "slug": "limone-sensei",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "ゲーム実況"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@limone_teacher",
+    "x": "https://x.com/limodom"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://x.com/limodom"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

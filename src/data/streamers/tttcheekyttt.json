@@ -1,0 +1,27 @@
+{
+  "name": "tttcheekyttt",
+  "nameKana": "ちーきー",
+  "aliases": ["cheeky", "チーキー"],
+  "slug": "tttcheekyttt",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@tttcheekyttt",
+    "twitch": "https://www.twitch.tv/tttcheekyttt",
+    "x": "https://x.com/tttcheekyttt"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/@tttcheekyttt"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

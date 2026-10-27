@@ -1,0 +1,31 @@
+{
+  "name": "ゆきお",
+  "nameKana": "ゆきお",
+  "aliases": ["YUKIO"],
+  "slug": "yukio",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "RIDDLE",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@YUKIOMELTDOWN",
+    "twitch": "https://www.twitch.tv/yukiofps14",
+    "x": "https://x.com/YukioFPS"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://riddle.info/members/yukio/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://riddle.info/news/news60/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

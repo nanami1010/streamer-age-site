@@ -1,0 +1,35 @@
+{
+  "name": "ハセシン",
+  "nameKana": "はせしん",
+  "aliases": ["HASESHIN"],
+  "slug": "haseshin",
+  "birthDate": null,
+  "birthMonthDay": "10-31",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@XxHASESHINxX",
+    "x": "https://x.com/HASESHIN_ESHS"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://x.com/HASESHIN_Rush"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/news/2026/10/01/47593"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2026/10/01/47593"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

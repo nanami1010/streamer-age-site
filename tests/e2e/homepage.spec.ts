@@ -27,8 +27,8 @@ test.beforeEach(async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test("トップページにJSONと一致する100件のカードを表示する", async ({ page }) => {
-  expect(streamers).toHaveLength(100);
+test("トップページにJSONと一致する120件のカードを表示する", async ({ page }) => {
+  expect(streamers).toHaveLength(120);
   await expect(page.locator(".hero__lead")).toHaveText(
     "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
   );
@@ -61,7 +61,7 @@ test("生年月日未確認の配信者に年齢を表示しない", async ({ pa
   }
 });
 
-test("生年不明で月日のみ確認済みの29人は誕生日だけを表示する", async ({ page }) => {
+test("生年不明で月日のみ確認済みの31人は誕生日だけを表示する", async ({ page }) => {
   const expectedBirthdays = new Map([
     ["daruma-is-god", "10月31日"],
     ["arisakaaa", "3月2日"],
@@ -91,7 +91,9 @@ test("生年不明で月日のみ確認済みの29人は誕生日だけを表示
     ["akagami-no-tomo", "7月23日"],
     ["rader", "11月11日"],
     ["retort", "12月26日"],
-    ["dasoku", "3月2日"]
+    ["dasoku", "3月2日"],
+    ["haseshin", "10月31日"],
+    ["totomix", "8月1日"]
   ]);
   const monthDayOnly = streamers.filter((streamer) => streamer.birthMonthDay);
 

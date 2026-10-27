@@ -1,0 +1,34 @@
+{
+  "name": "あれる",
+  "nameKana": "あれる",
+  "aliases": ["Alelu"],
+  "slug": "alelu",
+  "birthDate": "1997-10-26",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/aleluCH",
+    "x": "https://x.com/apexalelu"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://fennel-esports.com/news/team/912/"
+    },
+    {
+      "field": "genres",
+      "url": "https://fennel-esports.com/news/team/912/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://fennel-esports.com/news/team/912/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

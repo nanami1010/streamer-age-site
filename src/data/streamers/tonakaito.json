@@ -1,0 +1,35 @@
+{
+  "name": "トナカイト",
+  "nameKana": "となかいと",
+  "aliases": ["ヘンディー", "カイト"],
+  "slug": "tonakaito",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "UUUM",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@TONAHENDY",
+    "twitch": "https://www.twitch.tv/tonakaito_hendy",
+    "x": "https://x.com/k_najimi"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.animatetimes.com/news/details.php?id=1667200831"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://uuum.jp/creator/kaito"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://uuum.jp/creator/kaito"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

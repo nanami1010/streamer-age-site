@@ -1,0 +1,31 @@
+{
+  "name": "ありけん",
+  "nameKana": "ありけん",
+  "aliases": [],
+  "slug": "ariken",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "RIDDLE",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UC3NHhO0wBaZ5OVxaabcDKrw",
+    "twitch": "https://www.twitch.tv/arikendebu",
+    "x": "https://x.com/guraburuslot777"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://riddle.info/members/ariken/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://riddle.info/news/news_21/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

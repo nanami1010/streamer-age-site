@@ -1,0 +1,31 @@
+{
+  "name": "ドンピシャ",
+  "nameKana": "どんぴしゃ",
+  "aliases": [],
+  "slug": "donpisha",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "ゲーム実況"],
+  "affiliation": "三人称",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/sanninshow",
+    "twitch": "https://www.twitch.tv/sanninshow_3ns",
+    "x": "https://x.com/DONPISHA22"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.youtube.com/c/sanninshow"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/c/sanninshow"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

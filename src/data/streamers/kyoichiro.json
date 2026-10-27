@@ -1,0 +1,31 @@
+{
+  "name": "恭一郎",
+  "nameKana": "きょういちろう",
+  "aliases": ["恭ちゃん"],
+  "slug": "kyoichiro",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": "UUUM",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCXlurN679Hgl2UxJAX493QA",
+    "twitch": "https://www.twitch.tv/dmf_kyochan",
+    "x": "https://x.com/kyouitirou2525"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://uuum.jp/creator/kyo_channel"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://uuum.jp/creator/kyo_channel"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

@@ -1,0 +1,31 @@
+{
+  "name": "ファン太",
+  "nameKana": "ふぁんた",
+  "aliases": [],
+  "slug": "fanta",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCWlx7GTk0zQCi_0tKJhV72w",
+    "twitch": "https://www.twitch.tv/fantasista_jp",
+    "x": "https://x.com/Fanta_JPN"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/team/creator"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2024/03/01/20144?PageSpeed=noscript"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

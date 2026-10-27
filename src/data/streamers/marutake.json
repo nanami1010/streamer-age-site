@@ -1,0 +1,30 @@
+{
+  "name": "MARUTAKE",
+  "nameKana": "まるたけ",
+  "aliases": [],
+  "slug": "marutake",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "RIDDLE",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/marutake_a",
+    "x": "https://x.com/A_Marutake"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://riddle.info/members/marutake/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://riddle.info/news/news54/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}

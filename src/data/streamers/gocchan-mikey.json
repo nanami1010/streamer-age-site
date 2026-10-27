@@ -1,0 +1,35 @@
+{
+  "name": "ごっちゃんマイキー",
+  "nameKana": "ごっちゃんまいきー",
+  "aliases": ["ごっちゃん@マイキー"],
+  "slug": "gocchan-mikey",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCgFKdFutAhwsWSoeZ6zXJrg",
+    "twitch": "https://www.twitch.tv/gocchanmikey",
+    "x": "https://x.com/_GocChaN_"
+  },
+  "profileImage": null,
+  "sources": [
+    {
+      "field": "name",
+      "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
+    },
+    {
+      "field": "aliases",
+      "url": "https://crazyraccoon.jp/20240401-2/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/20240401-2/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/20240401-2/"
+    }
+  ],
+  "lastVerifiedAt": "2026-10-28",
+  "devices": []
+}
