@@ -32,6 +32,7 @@
   "lastVerifiedAt": "2026-10-22",
   "devices": [
     {
+      "productId": "sony-inzone-m10s-sdm-27q10s",
       "type": "モニター",
       "manufacturer": "Sony",
       "productName": "INZONE M10S（SDM-27Q10S）",

@@ -88,8 +88,9 @@ function formatJapaneseDateTime(dateTime: string) {
         {devices.map((device) => (
           <article
             class="device-product-card"
-            id={`device-${device.id}`}
+            id={`device-${device.productId}`}
             data-device-card
+            data-device-product-id={device.productId}
             data-device-type={device.type}
           >
             <div class="device-product-card__header">
@@ -198,26 +199,6 @@ function formatJapaneseDateTime(dateTime: string) {
                     rel="sponsored nofollow noopener noreferrer"
                   >
                     Amazonで見る（PR）
-                  </a>
-                )}
-                {device.affiliateLinks.rakuten && (
-                  <a
-                    class="purchase-link purchase-link--rakuten"
-                    href={device.affiliateLinks.rakuten}
-                    target="_blank"
-                    rel="sponsored nofollow noopener noreferrer"
-                  >
-                    楽天市場で見る（PR）
-                  </a>
-                )}
-                {device.affiliateLinks.generic && (
-                  <a
-                    class="purchase-link"
-                    href={device.affiliateLinks.generic}
-                    target="_blank"
-                    rel="sponsored nofollow noopener noreferrer"
-                  >
-                    商品を見る（PR）
                   </a>
                 )}
               </div>
@@ -534,10 +515,6 @@ function formatJapaneseDateTime(dateTime: string) {
 
   .purchase-link--amazon {
     background: #8a4b08;
-  }
-
-  .purchase-link--rakuten {
-    background: #a71919;
   }
 
   .device-users h4 {

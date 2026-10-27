@@ -44,6 +44,7 @@
   "lastVerifiedAt": "2026-10-23",
   "devices": [
     {
+      "productId": "razer-viper-v3-pro-faker-edition",
       "type": "マウス",
       "manufacturer": "Razer",
       "productName": "Viper V3 Pro Faker Edition",
@@ -53,6 +54,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "vspo-kisaragi-ren-keyboard",
       "type": "キーボード",
       "manufacturer": "VSPO! GEAR",
       "productName": "ゲーミングキーボード 如月れんモデル",
@@ -62,6 +64,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "sony-inzone-buds-wf-g700n",
       "type": "イヤホン",
       "manufacturer": "Sony",
       "productName": "INZONE Buds（WF-G700N）",
@@ -72,6 +75,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "sony-inzone-m10s-ii-sdm-27q102",
       "type": "モニター",
       "manufacturer": "Sony",
       "productName": "INZONE M10S II（SDM-27Q102）",
@@ -81,6 +85,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "sony-inzone-m10s-sdm-27q10s",
       "type": "モニター",
       "manufacturer": "Sony",
       "productName": "INZONE M10S（SDM-27Q10S）",
@@ -90,6 +95,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "neumann-bcm-104",
       "type": "マイク",
       "manufacturer": "Neumann",
       "productName": "BCM 104",

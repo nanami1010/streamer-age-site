@@ -1,12 +1,15 @@
 import type { Streamer } from "./streamers";
 import {
-  createDeviceProductKey,
   getDeviceAffiliateLinks,
   type ResolvedDeviceAffiliateLinks
 } from "../config/device-affiliate-links.ts";
+import {
+  deviceMatchesProductDefinition,
+  getDeviceProduct,
+  type DeviceProductCommerceIdentifiers,
+  type DeviceProductIdentityStatus
+} from "../config/device-products.ts";
 import type { DeviceSourceType } from "../config/device-sources.ts";
-
-type Device = NonNullable<Streamer["devices"]>[number];
 
 export interface DeviceUsageRecord {
   streamerName: string;
@@ -21,18 +24,14 @@ export interface DeviceUsageRecord {
 }
 
 export interface DeviceCatalogItem {
-  id: string;
+  productId: string;
   type: string;
   manufacturer: string;
   productName: string;
+  identityStatus: DeviceProductIdentityStatus;
+  commerceIdentifiers?: DeviceProductCommerceIdentifiers;
   affiliateLinks: ResolvedDeviceAffiliateLinks | null;
   usages: DeviceUsageRecord[];
-}
-
-function createStableId(device: Device): string {
-  return createDeviceProductKey(device)
-    .replace(/[^a-z0-9\p{Letter}\p{Number}]+/gu, "-")
-    .replace(/^-|-$/g, "");
 }
 
 export function createDeviceCatalog(streamers: Streamer[]): DeviceCatalogItem[] {
@@ -40,28 +39,23 @@ export function createDeviceCatalog(streamers: Streamer[]): DeviceCatalogItem[] 
 
   for (const streamer of streamers) {
     for (const device of streamer.devices ?? []) {
-      const identityKey = createDeviceProductKey(device);
-      const affiliateLinks = getDeviceAffiliateLinks(device);
-      const item = catalog.get(identityKey) ?? {
-        id: createStableId(device),
-        type: device.type,
-        manufacturer: device.manufacturer,
-        productName: device.productName,
-        affiliateLinks,
-        usages: []
-      };
-
-      if (
-        item.affiliateLinks &&
-        affiliateLinks &&
-        JSON.stringify(item.affiliateLinks) !== JSON.stringify(affiliateLinks)
-      ) {
+      const product = getDeviceProduct(device.productId);
+      if (!product || !deviceMatchesProductDefinition(device)) {
         throw new Error(
-          `同一製品に異なる商品リンクが登録されています: ${device.manufacturer} ${device.productName}`
+          `productIdとデバイス情報が一致しません: ${device.productId}`
         );
       }
 
-      item.affiliateLinks ??= affiliateLinks;
+      const item = catalog.get(device.productId) ?? {
+        productId: product.productId,
+        type: product.type,
+        manufacturer: product.manufacturer,
+        productName: product.productName,
+        identityStatus: product.identityStatus,
+        commerceIdentifiers: product.commerceIdentifiers,
+        affiliateLinks: getDeviceAffiliateLinks(device.productId),
+        usages: []
+      };
 
       item.usages.push({
         streamerName: streamer.name,
@@ -74,7 +68,7 @@ export function createDeviceCatalog(streamers: Streamer[]): DeviceCatalogItem[] 
         verificationNote: device.verificationNote,
         lastVerifiedAt: device.lastVerifiedAt
       });
-      catalog.set(identityKey, item);
+      catalog.set(device.productId, item);
     }
   }
 

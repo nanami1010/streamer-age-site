@@ -1,62 +1,86 @@
-export interface DeviceIdentity {
-  type: string;
-  manufacturer: string;
-  productName: string;
+import {
+  getDeviceProduct,
+  isDeviceProductId,
+  type DeviceProductId
+} from "./device-products.ts";
+
+export type AmazonAffiliateLinkSource =
+  | "associates-toolbar"
+  | "mobile-getlink";
+
+export interface AmazonAffiliateLinkConfig {
+  url: string;
+  issuedBy: AmazonAffiliateLinkSource;
 }
 
-export interface DeviceAffiliateLinks {
+export interface DeviceAffiliateLinkConfig {
+  amazon?: AmazonAffiliateLinkConfig;
+}
+
+export interface ResolvedDeviceAffiliateLinks {
   amazon?: string;
-  rakuten?: string;
 }
 
-type LegacyDeviceAffiliateLinks = DeviceIdentity & {
-  affiliateUrl?: string | null;
-  affiliateLinks?: {
-    amazon?: string | null;
-    rakuten?: string | null;
-  };
-};
+export type DeviceAffiliateLinksByProduct = Readonly<
+  Partial<Record<DeviceProductId, DeviceAffiliateLinkConfig>>
+>;
 
-export interface ResolvedDeviceAffiliateLinks extends DeviceAffiliateLinks {
-  generic?: string;
-}
+// Amazonアソシエイト参加後、公式のリンク作成機能で発行したURLだけを登録する。
+// 表示名ではなく、src/config/device-products.ts の安定したproductIdをキーにする。
+export const DEVICE_AFFILIATE_LINKS: DeviceAffiliateLinksByProduct =
+  Object.freeze({});
 
-export function createDeviceProductKey(device: DeviceIdentity): string {
-  return [device.type, device.manufacturer, device.productName]
-    .map((value) => value.trim())
-    .join("\u001f");
-}
+// 楽天は発行HTMLの実物と利用条件を確認するまで、URL抽出や独自aタグ描画を実装しない。
+export const RAKUTEN_AFFILIATE_IMPLEMENTATION_STATUS =
+  "pending-issued-code-review" as const;
 
-// 提携後、公式のリンク作成機能で発行したURLだけを製品単位で登録する。
-// キーにカテゴリー・メーカー・製品名を含め、似た型番や世代を統合しない。
-export const DEVICE_AFFILIATE_LINKS: Readonly<
-  Record<string, DeviceAffiliateLinks>
-> = Object.freeze({});
+const AMAZON_ALLOWED_HOSTS = new Set([
+  "amazon.co.jp",
+  "www.amazon.co.jp",
+  "amzn.asia",
+  "amzn.to"
+]);
 
-function validateAffiliateUrl(url: string, merchant: string): string {
-  const parsed = new URL(url);
+function validateAmazonAffiliateLink(config: AmazonAffiliateLinkConfig): string {
+  const parsed = new URL(config.url);
 
   if (parsed.protocol !== "https:") {
-    throw new Error(`${merchant}の商品リンクはHTTPS URLで指定してください`);
+    throw new Error("Amazonの商品リンクはHTTPS URLで指定してください");
   }
 
-  return url;
+  if (!AMAZON_ALLOWED_HOSTS.has(parsed.hostname.toLowerCase())) {
+    throw new Error(`Amazonの商品リンクとして許可されていないホストです: ${parsed.hostname}`);
+  }
+
+  if (
+    (parsed.hostname === "amazon.co.jp" || parsed.hostname === "www.amazon.co.jp") &&
+    !parsed.searchParams.get("tag")
+  ) {
+    throw new Error("Amazon.co.jpの通常URLにはアソシエイトタグが必要です");
+  }
+
+  return config.url;
 }
 
 export function getDeviceAffiliateLinks(
-  device: LegacyDeviceAffiliateLinks,
-  linksByProduct: Readonly<Record<string, DeviceAffiliateLinks>> = DEVICE_AFFILIATE_LINKS
+  productId: string,
+  linksByProduct: DeviceAffiliateLinksByProduct = DEVICE_AFFILIATE_LINKS
 ): ResolvedDeviceAffiliateLinks | null {
-  const configured = linksByProduct[createDeviceProductKey(device)];
-  const amazon = configured?.amazon ?? device.affiliateLinks?.amazon ?? undefined;
-  const rakuten = configured?.rakuten ?? device.affiliateLinks?.rakuten ?? undefined;
-  const generic = device.affiliateUrl ?? undefined;
+  const product = getDeviceProduct(productId);
+  if (!product || !isDeviceProductId(productId)) {
+    throw new Error(`製品台帳に登録されていないproductIdです: ${productId}`);
+  }
 
-  if (!amazon && !rakuten && !generic) return null;
+  const configured = linksByProduct[productId];
+  if (!configured?.amazon) return null;
+
+  if (product.identityStatus !== "confirmed") {
+    throw new Error(
+      `商品同一性の確認が完了していない製品には商品リンクを設定できません: ${productId}`
+    );
+  }
 
   return {
-    ...(amazon ? { amazon: validateAffiliateUrl(amazon, "Amazon") } : {}),
-    ...(rakuten ? { rakuten: validateAffiliateUrl(rakuten, "楽天市場") } : {}),
-    ...(generic ? { generic: validateAffiliateUrl(generic, "商品") } : {})
+    amazon: validateAmazonAffiliateLink(configured.amazon)
   };
 }

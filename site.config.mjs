@@ -10,6 +10,7 @@ export const SITE_CONFIG = Object.freeze({
     affiliatePrograms: []
   }),
   sitemapExcludedPathPrefixes: [
+    "/404/",
     "/device-preview/",
     "/preview/",
     "/test/",

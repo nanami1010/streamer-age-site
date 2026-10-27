@@ -2,6 +2,11 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { DEVICE_SOURCE_TYPES } from "./config/device-sources";
+import {
+  DEVICE_PRODUCT_ID_PATTERN,
+  deviceMatchesProductDefinition,
+  isDeviceProductId
+} from "./config/device-products";
 import { isValidBirthMonthDay } from "./utils/birthday";
 
 const nonEmptyString = z.string().trim().min(1);
@@ -80,6 +85,12 @@ const profileImageSchema = z.object({
 }).strict();
 
 const deviceSchema = z.object({
+  productId: z.string()
+    .regex(
+      DEVICE_PRODUCT_ID_PATTERN,
+      "productIdは半角英小文字・数字・ハイフンで指定してください"
+    )
+    .refine(isDeviceProductId, "製品台帳に登録されていないproductIdです"),
   type: nonEmptyString,
   manufacturer: nonEmptyString,
   productName: nonEmptyString,
@@ -90,13 +101,16 @@ const deviceSchema = z.object({
   usageConfirmedAt: pastOrTodayDate.optional(),
   sourceUpdatedAt: pastOrCurrentDateTime.optional(),
   verificationNote: nonEmptyString.optional(),
-  lastVerifiedAt: pastOrTodayDate,
-  affiliateUrl: httpUrl.nullable().optional(),
-  affiliateLinks: z.object({
-    amazon: httpUrl.nullable().optional(),
-    rakuten: httpUrl.nullable().optional()
-  }).strict().optional()
+  lastVerifiedAt: pastOrTodayDate
 }).strict().superRefine((device, context) => {
+  if (isDeviceProductId(device.productId) && !deviceMatchesProductDefinition(device)) {
+    context.addIssue({
+      code: "custom",
+      path: ["productId"],
+      message: "productIdとカテゴリー・メーカー・製品名が一致しません"
+    });
+  }
+
   if (device.sourceType === "channelCommand") {
     if (device.sourceCommand === undefined) {
       context.addIssue({

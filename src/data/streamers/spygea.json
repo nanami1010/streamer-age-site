@@ -42,5 +42,74 @@
     }
   ],
   "lastVerifiedAt": "2026-10-23",
-  "devices": []
+  "devices": [
+    {
+      "productId": "lethal-gaming-gear-saturn-pro",
+      "type": "マウスパッド",
+      "manufacturer": "Lethal Gaming Gear",
+      "productName": "Saturn Pro",
+      "sourceUrl": "https://nightbot.tv/t/spygea/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mousepad",
+      "sourceUpdatedAt": "2026-08-08T15:57:45.189Z",
+      "verificationNote": "コマンド本文は「Saturn Pro」までで、サイズ・硬さは記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "logicool-pro-wireless-gaming-mouse",
+      "type": "マウス",
+      "manufacturer": "Logicool G",
+      "productName": "PRO Wireless Gaming Mouse",
+      "sourceUrl": "https://nightbot.tv/t/spygea/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2019-10-15T01:38:06.152Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "audio-technica-at2035",
+      "type": "マイク",
+      "manufacturer": "Audio-Technica",
+      "productName": "AT2035",
+      "sourceUrl": "https://nightbot.tv/t/spygea/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!microphone",
+      "sourceUpdatedAt": "2021-05-19T13:13:20.452Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "logicool-pro-x-gaming-keyboard",
+      "type": "キーボード",
+      "manufacturer": "Logicool G",
+      "productName": "PRO X Gaming Keyboard",
+      "sourceUrl": "https://nightbot.tv/t/spygea/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!keyboard",
+      "sourceUpdatedAt": "2019-10-25T10:43:08.969Z",
+      "verificationNote": "コマンド本文は「Logicool PRO X」までで、スイッチ・配列は記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "steelseries-arctis-5-black-2019",
+      "type": "ヘッドセット",
+      "manufacturer": "SteelSeries",
+      "productName": "Arctis 5 Black 2019 Edition",
+      "sourceUrl": "https://nightbot.tv/t/spygea/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!headset",
+      "sourceUpdatedAt": "2019-10-15T01:38:41.779Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "bose-quietcomfort-20",
+      "type": "イヤホン",
+      "manufacturer": "Bose",
+      "productName": "QuietComfort 20（QC20）",
+      "sourceUrl": "https://nightbot.tv/t/spygea/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!earphones",
+      "sourceUpdatedAt": "2019-10-15T01:23:10.230Z",
+      "lastVerifiedAt": "2026-10-27"
+    }
+  ]
 }

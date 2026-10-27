@@ -5,6 +5,7 @@ import { getSchoolYear } from "../../src/utils/generation";
 import { formatBirthDate, streamers } from "./streamers";
 
 interface DeviceRecord {
+  productId: string;
   type: string;
   manufacturer: string;
   productName: string;
@@ -274,7 +275,7 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("デバイス登録済み8人と未登録92人の件数が正しい", async () => {
+test("デバイス登録済み13人と未登録87人の件数が正しい", async () => {
   const expectedCounts = new Map([
     ["shaka", 1],
     ["k4sen", 6],
@@ -283,7 +284,12 @@ test("デバイス登録済み8人と未登録92人の件数が正しい", async
     ["1tappy", 4],
     ["dep", 4],
     ["cpt", 3],
-    ["francisco", 4]
+    ["francisco", 4],
+    ["spygea", 6],
+    ["shomaru7", 6],
+    ["ta1yo", 3],
+    ["suzuki-noriaki", 2],
+    ["ras", 2]
   ]);
 
   for (const streamer of streamers) {

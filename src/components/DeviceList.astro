@@ -24,7 +24,7 @@ const deviceGroups = Array.from(
 ).sort(([categoryA], [categoryB]) => categoryA.localeCompare(categoryB, "ja"));
 
 const hasAffiliateLinks = devices.some((device) =>
-  Boolean(getDeviceAffiliateLinks(device))
+  Boolean(getDeviceAffiliateLinks(device.productId))
 );
 
 function formatJapaneseDate(date: string) {
@@ -66,11 +66,11 @@ function formatJapaneseDateTime(dateTime: string) {
 
         <ul class="device-grid">
           {categoryDevices.map((device) => {
-            const affiliateLinks = getDeviceAffiliateLinks(device);
+            const affiliateLinks = getDeviceAffiliateLinks(device.productId);
             const sourceCaution = getDeviceSourceCaution(device.sourceType);
 
             return (
-              <li class="device-card">
+              <li class="device-card" data-device-product-id={device.productId}>
               {device.image && (
                 <div class="device-image">
                   <img
@@ -167,26 +167,6 @@ function formatJapaneseDateTime(dateTime: string) {
                         rel="sponsored nofollow noopener noreferrer"
                       >
                         Amazonで見る（PR）
-                      </a>
-                    )}
-                    {affiliateLinks.rakuten && (
-                      <a
-                        class="purchase-link rakuten"
-                        href={affiliateLinks.rakuten}
-                        target="_blank"
-                        rel="sponsored nofollow noopener noreferrer"
-                      >
-                        楽天市場で見る（PR）
-                      </a>
-                    )}
-                    {affiliateLinks.generic && (
-                      <a
-                        class="purchase-link"
-                        href={affiliateLinks.generic}
-                        target="_blank"
-                        rel="sponsored nofollow noopener noreferrer"
-                      >
-                        商品を見る（PR）
                       </a>
                     )}
                   </div>
@@ -446,10 +426,6 @@ function formatJapaneseDateTime(dateTime: string) {
 
   .purchase-link.amazon {
     background: #8a4b08;
-  }
-
-  .purchase-link.rakuten {
-    background: #a71919;
   }
 
   @media (max-width: 600px) {

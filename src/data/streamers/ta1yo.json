@@ -20,5 +20,41 @@
     { "field": "socialLinks", "url": "https://zetadivision.com/news/2022/01/26/7610" }
   ],
   "lastVerifiedAt": "2026-10-25",
-  "devices": []
+  "devices": [
+    {
+      "productId": "logicool-pro-x2-superstrike",
+      "type": "マウス",
+      "manufacturer": "Logicool G",
+      "productName": "PRO X2 SUPERSTRIKE",
+      "sourceUrl": "https://nightbot.tv/t/ta1yo_tv/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2026-02-20T06:06:19.989Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "sony-inzone-m10s-sdm-27q10s",
+      "type": "モニター",
+      "manufacturer": "Sony",
+      "productName": "INZONE M10S（SDM-27Q10S）",
+      "sourceUrl": "https://nightbot.tv/t/ta1yo_tv/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!monitor",
+      "sourceUpdatedAt": "2025-09-02T08:46:41.497Z",
+      "verificationNote": "コマンド本文は「INZONE M10S」までで、型番は記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "shure-mv7",
+      "type": "マイク",
+      "manufacturer": "Shure",
+      "productName": "MV7",
+      "sourceUrl": "https://nightbot.tv/t/ta1yo_tv/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mic",
+      "sourceUpdatedAt": "2021-05-28T02:06:00.282Z",
+      "verificationNote": "MV7+ではなく、コマンド本文に記載された「MV7」として登録しています。",
+      "lastVerifiedAt": "2026-10-27"
+    }
+  ]
 }

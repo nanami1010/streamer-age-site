@@ -126,9 +126,10 @@ src/
 {
   "devices": [
     {
+      "productId": "razer-deathadder-v3-pro",
       "type": "マウス",
-      "manufacturer": "メーカー名",
-      "productName": "製品名",
+      "manufacturer": "Razer",
+      "productName": "DeathAdder V3 Pro",
       "image": null,
       "sourceUrl": "https://example.com/source",
       "sourceType": "directStatement",
@@ -160,15 +161,19 @@ src/
 
 製品名や型番に未解決事項がある場合は、断定を避けて `verificationNote` に確認状況を記録します。
 
+`productId` は `src/config/device-products.ts` の製品台帳で管理する、表示名から独立した永続IDです。同じ製品を複数人へ登録するときは同じIDを使用し、型番・世代・バリエーションが違う製品には別のIDを割り当てます。表示上のメーカー名や製品名を変更しても、既存の `productId` は変更しません。
+
+製品台帳には、必要に応じて `commerceIdentifiers` として型番、JAN、ASIN、楽天の商品コードを保持できます。公式資料や実際の商品ページで確認できた値だけを追加し、不明な識別子は省略してください。JANは8桁または13桁、ASINは10桁の半角英大文字・数字として検証されます。`identityStatus: "needs-review"` の製品へ購入リンクを設定すると検証エラーになるため、同一性を解決してから `confirmed` に変更します。
+
 ### アフィリエイト商品リンク
 
-Amazon・楽天の商品リンクは、同じ製品を使用する配信者ごとに重複させず、`src/config/device-affiliate-links.ts` で製品単位に管理します。キーはカテゴリー・メーカー・製品名の完全一致で作るため、型番や世代の異なる製品は別々に登録してください。
+商品リンクは、同じ製品を使用する配信者ごとに重複させず、`src/config/device-affiliate-links.ts` で `productId` 単位に管理します。配信者JSONへアフィリエイトURLを直接登録してはいけません。
 
-登録前に、各プログラムへの参加承認と `streamerage.jp` のサイト登録を済ませ、公式のリンク作成機能から発行されたHTTPS URLだけを使用します。リンクを追加したら、`site.config.mjs` の `services.affiliatePrograms` と `/disclosure/` の表示が実態に合うことも確認してください。
+Amazonは、参加承認と `streamerage.jp` のサイト登録後、アソシエイト・ツールバーまたはモバイル・ゲットリンクから正式発行されたリンクだけを登録します。設定には発行元も記録し、HTTPS、許可ホスト、通常URLのアソシエイトタグを検証します。リンクを追加したら、`site.config.mjs` の `services.affiliatePrograms` と `/disclosure/` の表示が実態に合うことも確認してください。
 
-広告サービスから改変禁止のHTMLタグや画像素材が発行された場合は、URLだけを抜き出して登録せず、そのサービスの利用条件に従って別途実装を確認してください。価格や商品画像を手動転載せず、提供元が認めるリンク作成機能やAPIだけを使用します。
+楽天は、発行HTMLの実物と利用条件を確認するまでランタイム設定と表示を未実装にしています。発行HTMLからURLだけを抜き出して独自の `a` タグへ転記したり、属性を追加・削除したりしてはいけません。実物を取得後、改変せず掲載する方式または楽天が明示的に認める方式を決定してから実装します。
 
-商品リンクがある場合だけ、プロフィールと `/devices/` に購入ボタンおよび広告（PR）表記が表示されます。使用情報の出典リンクとは分離され、外部リンクには `rel="sponsored nofollow noopener noreferrer"` が設定されます。既存JSONの `affiliateLinks` と `affiliateUrl` は後方互換のため読み取れますが、新規登録は中央設定を使用してください。
+Amazon商品リンクがある場合だけ、プロフィールと `/devices/` に購入ボタンおよび広告（PR）表記が表示されます。使用情報の出典リンクとは分離され、外部リンクには `rel="sponsored nofollow noopener noreferrer"` が設定されます。価格や商品画像を手動転載せず、提供元が認めるリンク作成機能やAPIだけを使用します。
 
 ## コマンド
 

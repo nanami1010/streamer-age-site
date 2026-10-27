@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="ページが見つかりません | STREAMER AGE"
+  description="お探しのページは見つかりませんでした。STREAMER AGEのトップページから配信者を検索できます。"
+  canonicalPath="/404/"
+  noindex={true}
+>
+  <main class="not-found-main">
+    <section class="not-found-card" aria-labelledby="not-found-heading">
+      <p class="not-found-code" aria-hidden="true">404</p>
+      <h1 id="not-found-heading">ページが見つかりません</h1>
+      <p class="not-found-message">
+        URLが変更されたか、ページが削除された可能性があります。
+        トップページから配信者を探してみてください。
+      </p>
+
+      <div class="not-found-actions">
+        <a class="not-found-primary" href="/">トップページへ戻る</a>
+        <a class="not-found-secondary" href="/#streamer-search-input">
+          配信者を検索する
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .not-found-main {
+    display: grid;
+    min-height: min(640px, calc(100vh - 180px));
+    padding: clamp(48px, 9vw, 96px) 20px;
+    place-items: center;
+    background:
+      radial-gradient(circle at 18% 15%, rgb(117 89 232 / 18%), transparent 34%),
+      radial-gradient(circle at 82% 70%, rgb(32 184 165 / 14%), transparent 34%),
+      var(--color-navy);
+  }
+
+  .not-found-card {
+    width: min(100%, 680px);
+    padding: clamp(32px, 7vw, 56px);
+    border: 1px solid rgb(255 255 255 / 12%);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: 0 24px 70px rgb(0 0 0 / 24%);
+    text-align: center;
+  }
+
+  .not-found-code {
+    margin: 0;
+    color: var(--color-teal);
+    letter-spacing: 0.12em;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  h1 {
+    margin: 12px 0 0;
+    color: var(--color-text);
+    font-size: clamp(28px, 6vw, 44px);
+    line-height: 1.25;
+  }
+
+  .not-found-message {
+    max-width: 520px;
+    margin: 20px auto 0;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .not-found-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .not-found-actions a {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .not-found-primary {
+    background: #5b36c8;
+    color: #fff;
+  }
+
+  .not-found-primary:hover {
+    background: #4726a8;
+  }
+
+  .not-found-secondary {
+    border: 1px solid #b8e9e2;
+    background: var(--color-teal-soft);
+    color: #096b60;
+  }
+
+  .not-found-secondary:hover {
+    border-color: var(--color-teal);
+    background: #d4f6f1;
+  }
+
+  .not-found-actions a:focus-visible {
+    outline: 3px solid rgb(32 184 165 / 48%);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 480px) {
+    .not-found-main {
+      min-height: 540px;
+      padding-inline: 16px;
+    }
+
+    .not-found-card {
+      padding-inline: 22px;
+    }
+
+    .not-found-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .not-found-actions a {
+      width: 100%;
+    }
+  }
+</style>

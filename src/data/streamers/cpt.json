@@ -23,6 +23,7 @@
   "lastVerifiedAt": "2026-10-26",
   "devices": [
     {
+      "productId": "razer-deathadder-v3-pro",
       "type": "マウス",
       "manufacturer": "Razer",
       "productName": "DeathAdder V3 Pro",
@@ -33,6 +34,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "vaxee-pa-winter22",
       "type": "マウスパッド",
       "manufacturer": "VAXEE",
       "productName": "PA Winter22",
@@ -43,6 +45,7 @@
       "lastVerifiedAt": "2026-10-27"
     },
     {
+      "productId": "bose-quietcomfort-20",
       "type": "イヤホン",
       "manufacturer": "Bose",
       "productName": "QuietComfort 20（QC20）",

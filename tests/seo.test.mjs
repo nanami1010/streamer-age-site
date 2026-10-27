@@ -47,6 +47,10 @@ assert.equal(
   false
 );
 assert.equal(
+  shouldIncludeInSitemap(`${SITE_CONFIG.url}404/`),
+  false
+);
+assert.equal(
   getRobotsMetaContent(
     true,
     !shouldIncludeInSitemap(`${SITE_CONFIG.url}device-preview/`)
@@ -129,6 +133,7 @@ assert.ok(htmlFiles.length > 0, "生成済みHTMLが存在する");
 for (const htmlFile of htmlFiles) {
   const html = readFileSync(htmlFile, "utf8");
   const fileLabel = relative(clientDirectory, htmlFile);
+  const isNotFoundPage = fileLabel === "404.html";
   const canonicalMatches = [
     ...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)
   ];
@@ -172,9 +177,10 @@ for (const htmlFile of htmlFiles) {
   assert.equal(ogUrlMatches[0][1], canonicalUrl, `${fileLabel}: og:url`);
   assert.equal(robotsMatches[0][1], "noindex, follow", `${fileLabel}: noindex`);
   assert.ok(!html.includes(legacyOrigin), `${fileLabel}: 暫定ドメインを含まない`);
-  assert.ok(
+  assert.equal(
     sitemap.includes(`<loc>${canonicalUrl}</loc>`),
-    `${fileLabel}: サイトマップ掲載`
+    !isNotFoundPage,
+    `${fileLabel}: 404以外はサイトマップ掲載`
   );
 
   for (const [, href] of html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {

@@ -21,5 +21,75 @@
     { "field": "socialLinks", "url": "https://reject.jp/2025/11/17/%E3%80%90reject-hour-%E7%BF%94%E4%B8%B8%E6%9D%AF%E3%80%9111%E6%9C%8822%E6%97%A5%EF%BC%88%E9%87%91%EF%BC%891900%E3%82%88%E3%82%8A%E9%96%8B%E5%82%AC%E6%B1%BA%E5%AE%9A-%E6%8E%A1%E7%94%A8/" }
   ],
   "lastVerifiedAt": "2026-10-25",
-  "devices": []
+  "devices": [
+    {
+      "productId": "skypad-3-xl",
+      "type": "マウスパッド",
+      "manufacturer": "SkyPAD",
+      "productName": "3.0 XL",
+      "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mousepad",
+      "sourceUpdatedAt": "2023-02-18T06:54:36.000Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "logicool-pro-x-superlight-2-white",
+      "type": "マウス",
+      "manufacturer": "Logicool G",
+      "productName": "PRO X SUPERLIGHT 2 White",
+      "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2024-10-01T18:04:39.984Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "steelseries-apex-pro-tkl-jp",
+      "type": "キーボード",
+      "manufacturer": "SteelSeries",
+      "productName": "Apex Pro TKL（日本語配列）",
+      "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!keyboard",
+      "sourceUpdatedAt": "2022-11-14T16:36:06.688Z",
+      "verificationNote": "コマンド本文に世代の記載はありません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "shure-se846-clear",
+      "type": "イヤホン",
+      "manufacturer": "Shure",
+      "productName": "SE846 Clear",
+      "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!earphone",
+      "sourceUpdatedAt": "2022-10-12T18:48:41.692Z",
+      "verificationNote": "コマンド本文に世代の記載はありません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "audio-technica-at2035",
+      "type": "マイク",
+      "manufacturer": "Audio-Technica",
+      "productName": "AT2035",
+      "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!microphone",
+      "sourceUpdatedAt": "2022-09-19T08:59:19.196Z",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "yamaha-ag03",
+      "type": "オーディオインターフェース",
+      "manufacturer": "Yamaha",
+      "productName": "AG03",
+      "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2024-10-01T18:04:39.984Z",
+      "verificationNote": "コマンド本文は「AG03」で、AG03MK2とは記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    }
+  ]
 }

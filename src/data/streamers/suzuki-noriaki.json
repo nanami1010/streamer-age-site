@@ -20,5 +20,30 @@
     { "field": "socialLinks", "url": "https://zetadivision.com/news/2024/07/14/25419" }
   ],
   "lastVerifiedAt": "2026-10-25",
-  "devices": []
+  "devices": [
+    {
+      "productId": "artisan-99-shiki-matcha",
+      "type": "マウスパッド",
+      "manufacturer": "ARTISAN",
+      "productName": "99式 抹茶",
+      "sourceUrl": "https://nightbot.tv/t/suzukinoriaki/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mousepad",
+      "sourceUpdatedAt": "2024-11-23T04:33:44.716Z",
+      "verificationNote": "コマンド本文は「Artisan 99式 抹茶」までで、サイズ・硬さは記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    },
+    {
+      "productId": "endgame-gear-op1-wired",
+      "type": "マウス",
+      "manufacturer": "Endgame Gear",
+      "productName": "OP1（有線）",
+      "sourceUrl": "https://nightbot.tv/t/suzukinoriaki/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2024-09-02T06:40:09.525Z",
+      "verificationNote": "コマンド本文は「OP1有線」で、OP1 8kなどの派生モデルとは記載されていません。",
+      "lastVerifiedAt": "2026-10-27"
+    }
+  ]
 }
