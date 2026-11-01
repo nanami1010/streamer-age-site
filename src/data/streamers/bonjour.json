@@ -3,8 +3,7 @@
   "nameKana": "ぼんじゅうる",
   "aliases": ["Bonjour"],
   "slug": "bonjour",
-  "birthDate": null,
-  "birthMonthDay": "05-30",
+  "birthDate": "1979-05-30",
   "genres": ["ゲーム配信", "Minecraft"],
   "affiliation": "ドズル社",
   "socialLinks": {
@@ -13,14 +12,15 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://note.com/wonder_dive/n/n14d5a3feb5c4" },
+    { "field": "birthDate", "url": "https://x.com/bonj5555/status/1795954732533506073" },
     { "field": "name", "url": "https://www.dozle.jp/members/bonjour/" },
     { "field": "nameKana", "url": "https://www.dozle.jp/members/bonjour/" },
     { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
-    { "field": "birthMonthDay", "url": "https://www.dozle.jp/members/bonjour/" },
     { "field": "genres", "url": "https://www.dozle.jp/members/bonjour/" },
     { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
     { "field": "socialLinks", "url": "https://www.dozle.jp/members/bonjour/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

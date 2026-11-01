@@ -3,7 +3,7 @@
   "nameKana": "ゆきお",
   "aliases": ["YUKIO"],
   "slug": "yukio",
-  "birthDate": null,
+  "birthDate": "2002-04-08",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "RIDDLE",
   "socialLinks": {
@@ -13,6 +13,10 @@
   },
   "profileImage": null,
   "sources": [
+    {
+      "field": "birthDate",
+      "url": "https://x.com/YukioFPS/status/1644358750395043841"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -26,6 +30,6 @@
       "url": "https://riddle.info/news/news60/"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

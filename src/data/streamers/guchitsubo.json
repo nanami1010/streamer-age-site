@@ -3,7 +3,7 @@
   "nameKana": "ぐちつぼ",
   "aliases": [],
   "slug": "guchitsubo",
-  "birthDate": null,
+  "birthDate": "1996-09-03",
   "genres": ["ゲーム配信", "Minecraft"],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
@@ -13,6 +13,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://zetadivision.com/players/ぐちつぼ" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -30,6 +31,6 @@
       "url": "https://zetadivision.com/news/2025/12/29/40330"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

@@ -4,6 +4,7 @@
   "aliases": ["cheeky", "チーキー"],
   "slug": "tttcheekyttt",
   "birthDate": null,
+  "birthMonthDay": "04-12",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": null,
   "socialLinks": {
@@ -13,6 +14,8 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthMonthDay", "url": "https://x.com/tttcheekyttt/status/1778442176130847074" },
+    { "field": "birthMonthDay", "url": "https://x.com/tttcheekyttt/status/1513649678193401861" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -22,6 +25,6 @@
       "url": "https://www.youtube.com/@tttcheekyttt"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

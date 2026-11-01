@@ -3,8 +3,7 @@
   "nameKana": "どぐら",
   "aliases": ["どぐら"],
   "slug": "dogura",
-  "birthDate": null,
-  "birthMonthDay": "06-12",
+  "birthDate": "1987-06-12",
   "genres": ["ゲーム配信", "格闘ゲーム"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -14,14 +13,14 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/maneater_dgr/status/1668100859316809730" },
     { "field": "name", "url": "https://crazyraccoon.jp/member/dogura/" },
     { "field": "nameKana", "url": "https://crazyraccoon.jp/member/dogura/" },
     { "field": "aliases", "url": "https://crazyraccoon.jp/member/dogura/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/dogura/" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/dogura/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/dogura/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/dogura/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

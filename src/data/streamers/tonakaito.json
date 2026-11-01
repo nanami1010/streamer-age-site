@@ -3,7 +3,7 @@
   "nameKana": "となかいと",
   "aliases": ["ヘンディー", "カイト"],
   "slug": "tonakaito",
-  "birthDate": null,
+  "birthDate": "1991-03-12",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "UUUM",
   "socialLinks": {
@@ -13,6 +13,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/k_najimi/status/1634570252171509760" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
@@ -30,6 +31,6 @@
       "url": "https://uuum.jp/creator/kaito"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

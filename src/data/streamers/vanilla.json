@@ -3,8 +3,7 @@
   "nameKana": "ばにら",
   "aliases": [],
   "slug": "vanilla",
-  "birthDate": null,
-  "birthMonthDay": "12-21",
+  "birthDate": "2000-12-21",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -15,11 +14,11 @@
   "profileImage": null,
   "sources": [
     { "field": "name", "url": "https://crazyraccoon.jp/member/vanilla/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/vanilla/" },
+    { "field": "birthDate", "url": "https://x.com/VanilLaaa12/status/1472945455604846598" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/vanilla/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/vanilla/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/vanilla/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

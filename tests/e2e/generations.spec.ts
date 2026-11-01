@@ -108,10 +108,10 @@ for (const { year, members } of generations) {
 
 test("指定された主要4年度の同学年グループが正しい", async ({ page }) => {
   const expectedGroups = new Map<number, string[]>([
-    [1990, ["関優太", "もこう", "たいじ", "風次"]],
+    [1990, ["関優太", "もこう", "たいじ", "風次", "恭一郎", "トナカイト"]],
     [1991, ["SHAKA", "k4sen", "shomaru7"]],
-    [1994, ["しょぼすけ", "あっさりしょこ", "あびつん", "クロノア"]],
-    [1995, ["スタンミじゃぱん", "Laz", "Zerost", "ぺいんと", "トラゾー"]]
+    [1994, ["しょぼすけ", "あっさりしょこ", "あびつん", "クロノア", "Francisco"]],
+    [1995, ["スタンミじゃぱん", "Laz", "Zerost", "ぺいんと", "トラゾー", "ハセシン"]]
   ]);
 
   for (const [year, expectedNames] of expectedGroups) {

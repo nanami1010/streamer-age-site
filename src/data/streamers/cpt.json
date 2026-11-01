@@ -3,8 +3,7 @@
   "nameKana": "しーぴーてぃー",
   "aliases": [],
   "slug": "cpt",
-  "birthDate": null,
-  "birthMonthDay": "02-26",
+  "birthDate": "1999-02-26",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -15,12 +14,12 @@
   "profileImage": null,
   "sources": [
     { "field": "name", "url": "https://crazyraccoon.jp/member/cpt/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/cpt/" },
+    { "field": "birthDate", "url": "https://x.com/ApexerCpt/status/1761771465479966816" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/cpt/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/cpt/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/cpt/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": [
     {
       "productId": "razer-deathadder-v3-pro",

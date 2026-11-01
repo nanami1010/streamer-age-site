@@ -4,6 +4,7 @@
   "aliases": ["SUMOMO", "SUMOMOXqX"],
   "slug": "sumomo",
   "birthDate": null,
+  "birthMonthDay": "01-13",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "DetonatioN FocusMe",
   "socialLinks": {
@@ -13,6 +14,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthMonthDay", "url": "https://x.com/SUMOMOXqX/status/1613555366545223680" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -30,6 +32,6 @@
       "url": "https://team-detonation.net/team/member/sumomoxqx"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

@@ -4,6 +4,7 @@
   "aliases": [],
   "slug": "limone-sensei",
   "birthDate": null,
+  "birthMonthDay": "08-19",
   "genres": ["ゲーム配信", "ゲーム実況"],
   "affiliation": null,
   "socialLinks": {
@@ -12,6 +13,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthMonthDay", "url": "https://x.com/limodom/status/1560282492388937731" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -21,6 +23,6 @@
       "url": "https://x.com/limodom"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

@@ -3,8 +3,7 @@
   "nameKana": "ねす",
   "aliases": [],
   "slug": "neth",
-  "birthDate": null,
-  "birthMonthDay": "05-26",
+  "birthDate": "1996-05-26",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -14,13 +13,13 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/neth_vz/status/2058929623879262573" },
     { "field": "name", "url": "https://crazyraccoon.jp/member/neth/" },
     { "field": "nameKana", "url": "https://crazyraccoon.jp/member/neth/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/neth/" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/neth/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/neth/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/neth/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

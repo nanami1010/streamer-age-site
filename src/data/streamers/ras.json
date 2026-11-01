@@ -3,8 +3,7 @@
   "nameKana": "らす",
   "aliases": [],
   "slug": "ras",
-  "birthDate": null,
-  "birthMonthDay": "09-28",
+  "birthDate": "1999-09-28",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -16,12 +15,12 @@
   "sources": [
     { "field": "name", "url": "https://crazyraccoon.jp/member/ras/" },
     { "field": "nameKana", "url": "https://crazyraccoon.jp/member/ras/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/ras/" },
+    { "field": "birthDate", "url": "https://x.com/Ras9915/status/1839808586714865848" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/ras/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/ras/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/ras/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": [
     {
       "productId": "razer-deathadder-v3-pro",

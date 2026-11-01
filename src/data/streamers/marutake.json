@@ -4,6 +4,7 @@
   "aliases": [],
   "slug": "marutake",
   "birthDate": null,
+  "birthMonthDay": "03-18",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "RIDDLE",
   "socialLinks": {
@@ -12,6 +13,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthMonthDay", "url": "https://x.com/A_Marutake/status/1636942470805323776" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -25,6 +27,6 @@
       "url": "https://riddle.info/news/news54/"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

@@ -3,8 +3,7 @@
   "nameKana": "だそく",
   "aliases": [],
   "slug": "dasoku",
-  "birthDate": null,
-  "birthMonthDay": "03-02",
+  "birthDate": "1977-03-02",
   "genres": ["ゲーム配信", "雑談"],
   "affiliation": "UUUM",
   "socialLinks": {
@@ -14,12 +13,12 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/dasoku_youtube/status/2028123904708050960" },
     { "field": "name", "url": "https://uuum.jp/creator/dasoku" },
-    { "field": "birthMonthDay", "url": "https://www.youtube.com/watch?v=kb5WCUXifs0" },
     { "field": "genres", "url": "https://uuum.jp/creator/dasoku" },
     { "field": "affiliation", "url": "https://uuum.jp/creator/dasoku" },
     { "field": "socialLinks", "url": "https://uuum.jp/creator/dasoku" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

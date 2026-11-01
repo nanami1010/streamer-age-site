@@ -3,7 +3,7 @@
   "nameKana": "すきーら",
   "aliases": [],
   "slug": "sqla",
-  "birthDate": null,
+  "birthDate": "2000-02-23",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "RIDDLE",
   "socialLinks": {
@@ -13,6 +13,10 @@
   },
   "profileImage": null,
   "sources": [
+    {
+      "field": "birthDate",
+      "url": "https://x.com/imsqla/status/1628666280713781248"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -26,6 +30,6 @@
       "url": "https://riddle.info/members/sqla/"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

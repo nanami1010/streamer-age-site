@@ -3,7 +3,7 @@
   "nameKana": "どんぴしゃ",
   "aliases": [],
   "slug": "donpisha",
-  "birthDate": null,
+  "birthDate": "1986-02-02",
   "genres": ["ゲーム配信", "ゲーム実況"],
   "affiliation": "三人称",
   "socialLinks": {
@@ -13,6 +13,8 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/DONPISHA22/status/1091353211175223296" },
+    { "field": "birthDate", "url": "https://x.com/DONPISHA22/status/1356270977181569025" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -26,6 +28,6 @@
       "url": "https://www.youtube.com/c/sanninshow"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

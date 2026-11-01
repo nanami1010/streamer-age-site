@@ -3,7 +3,7 @@
   "nameKana": "きょういちろう",
   "aliases": ["恭ちゃん"],
   "slug": "kyoichiro",
-  "birthDate": null,
+  "birthDate": "1991-03-05",
   "genres": ["ゲーム配信", "雑談"],
   "affiliation": "UUUM",
   "socialLinks": {
@@ -13,6 +13,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/kyouitirou2525/status/1764786000721535190" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -26,6 +27,6 @@
       "url": "https://uuum.jp/creator/kyo_channel"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

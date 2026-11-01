@@ -3,8 +3,7 @@
   "nameKana": "おついち",
   "aliases": ["Otsuichi"],
   "slug": "otsuichi",
-  "birthDate": null,
-  "birthMonthDay": "08-26",
+  "birthDate": "1980-08-26",
   "genres": ["ゲーム配信", "ホラーゲーム", "FPS", "TPS"],
   "affiliation": null,
   "socialLinks": {
@@ -15,10 +14,12 @@
   "sources": [
     { "field": "name", "url": "https://otsuichi.net/" },
     { "field": "aliases", "url": "https://otsuichi.net/" },
-    { "field": "birthMonthDay", "url": "https://otsuichi.net/" },
+    { "field": "birthDate", "url": "https://x.com/otsuichich/status/1430609997826707456" },
+    { "field": "birthDate", "url": "https://otsuichi.net/" },
+    { "field": "birthDate", "url": "https://x.com/otsuichich/status/2092292601848508490" },
     { "field": "genres", "url": "https://otsuichi.net/" },
     { "field": "socialLinks", "url": "https://otsuichi.net/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-30",
   "devices": []
 }

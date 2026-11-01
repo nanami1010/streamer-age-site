@@ -3,8 +3,7 @@
   "nameKana": "しゅうと",
   "aliases": [],
   "slug": "shuto",
-  "birthDate": null,
-  "birthMonthDay": "08-14",
+  "birthDate": "1998-08-14",
   "genres": ["ゲーム配信", "格闘ゲーム"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -14,13 +13,13 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/Shuto_fgc/status/1690916123561353216" },
     { "field": "name", "url": "https://crazyraccoon.jp/member/shuto/" },
     { "field": "nameKana", "url": "https://crazyraccoon.jp/member/shuto/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/shuto/" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/shuto/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/shuto/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/shuto/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

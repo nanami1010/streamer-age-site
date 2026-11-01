@@ -3,8 +3,7 @@
   "nameKana": "せりー",
   "aliases": [],
   "slug": "selly",
-  "birthDate": null,
-  "birthMonthDay": "02-12",
+  "birthDate": "1998-02-12",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -15,11 +14,11 @@
   "profileImage": null,
   "sources": [
     { "field": "name", "url": "https://crazyraccoon.jp/member/selly/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/selly/" },
+    { "field": "birthDate", "url": "https://x.com/Selly_ow/status/1624439052488564737" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/selly/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/selly/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/selly/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

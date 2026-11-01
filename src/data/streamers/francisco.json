@@ -3,8 +3,7 @@
   "nameKana": "ふらんしすこ",
   "aliases": ["ふらんしすこ"],
   "slug": "francisco",
-  "birthDate": null,
-  "birthMonthDay": "03-12",
+  "birthDate": "1995-03-12",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -14,13 +13,14 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://mirashiru.dai-ichi-life.co.jp/article/1263016" },
     { "field": "name", "url": "https://crazyraccoon.jp/member/francisco/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/francisco/" },
+    { "field": "birthDate", "url": "https://crazyraccoon.jp/member/francisco/" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/francisco/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/francisco/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/francisco/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": [
     {
       "productId": "logicool-pro-x-superlight-magenta",

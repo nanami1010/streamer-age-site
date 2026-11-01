@@ -3,8 +3,7 @@
   "nameKana": "はせしん",
   "aliases": ["HASESHIN"],
   "slug": "haseshin",
-  "birthDate": null,
-  "birthMonthDay": "10-31",
+  "birthDate": "1995-10-31",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
@@ -13,13 +12,14 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://prtimes.jp/main/html/rd/p/000000227.000041650.html" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
     },
     {
-      "field": "birthMonthDay",
-      "url": "https://x.com/HASESHIN_Rush"
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/ハセシン"
     },
     {
       "field": "affiliation",
@@ -30,6 +30,6 @@
       "url": "https://zetadivision.com/news/2026/10/01/47593"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

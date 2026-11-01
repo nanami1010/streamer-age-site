@@ -3,8 +3,7 @@
   "nameKana": "おぼ",
   "aliases": [],
   "slug": "obo",
-  "birthDate": null,
-  "birthMonthDay": "09-25",
+  "birthDate": "1993-09-25",
   "genres": ["ゲーム配信"],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
@@ -14,11 +13,11 @@
   "profileImage": null,
   "sources": [
     { "field": "name", "url": "https://crazyraccoon.jp/member/obo/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/obo/" },
+    { "field": "birthDate", "url": "https://x.com/obormentv/status/1573970962013306880" },
     { "field": "genres", "url": "https://crazyraccoon.jp/member/obo/" },
     { "field": "affiliation", "url": "https://crazyraccoon.jp/member/obo/" },
     { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/obo/" }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }

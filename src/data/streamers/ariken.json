@@ -3,7 +3,7 @@
   "nameKana": "ありけん",
   "aliases": [],
   "slug": "ariken",
-  "birthDate": null,
+  "birthDate": "1997-07-20",
   "genres": ["ゲーム配信", "FPS"],
   "affiliation": "RIDDLE",
   "socialLinks": {
@@ -13,6 +13,7 @@
   },
   "profileImage": null,
   "sources": [
+    { "field": "birthDate", "url": "https://x.com/guraburuslot777/status/1682035672792854531" },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -26,6 +27,6 @@
       "url": "https://riddle.info/news/news_21/"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-10-29",
   "devices": []
 }
