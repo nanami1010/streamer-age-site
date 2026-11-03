@@ -1,0 +1,24 @@
+{
+  "name": "Eugeo",
+  "nameKana": "ゆーじお",
+  "aliases": ["ユージオ"],
+  "slug": "eugeo",
+  "birthDate": null,
+  "birthMonthDay": "01-23",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Eugeoch",
+    "twitch": "https://www.twitch.tv/Eugeoja",
+    "x": "https://x.com/AurEugeo"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://x.com/AurEugeo" },
+    { "field": "birthMonthDay", "url": "https://x.com/AurEugeo" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "socialLinks", "url": "https://x.com/AurEugeo" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

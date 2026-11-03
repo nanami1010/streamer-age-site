@@ -1,0 +1,23 @@
+{
+  "name": "Enty",
+  "nameKana": "えんてぃー",
+  "aliases": ["えんてぃ"],
+  "slug": "enty",
+  "birthDate": "1997-09-25",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/entych",
+    "x": "https://x.com/entyyyyyy"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.twitch.tv/entych/about" },
+    { "field": "birthDate", "url": "https://www.twitch.tv/entych/about" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "socialLinks", "url": "https://www.twitch.tv/entych/about" },
+    { "field": "socialLinks", "url": "https://x.com/entyyyyyy" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

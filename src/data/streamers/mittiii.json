@@ -1,0 +1,26 @@
+{
+  "name": "mittiii",
+  "nameKana": "みっちー",
+  "aliases": ["ミッチー"],
+  "slug": "mittiii",
+  "birthDate": "2000-12-07",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "FENNEL（エージェント契約）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/mittiii",
+    "twitch": "https://www.twitch.tv/im_mittiii",
+    "x": "https://x.com/mittiii"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://fennel-esports.com/members/agent/2731/" },
+    { "field": "nameKana", "url": "https://fennel-esports.com/news/corporate/2966/" },
+    { "field": "birthDate", "url": "https://fennel-esports.com/members/agent/2731/" },
+    { "field": "genres", "url": "https://fennel-esports.com/news/corporate/2966/" },
+    { "field": "affiliation", "url": "https://fennel-esports.com/news/corporate/2966/" },
+    { "field": "socialLinks", "url": "https://www.youtube.com/watch?v=dglsEVZtNrw" },
+    { "field": "socialLinks", "url": "https://x.com/mittiii" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

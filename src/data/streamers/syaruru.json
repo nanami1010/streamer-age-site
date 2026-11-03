@@ -1,0 +1,21 @@
+{
+  "name": "しゃるる",
+  "nameKana": "しゃるる",
+  "aliases": ["syaruru"],
+  "slug": "syaruru",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/syaruru3",
+    "x": "https://x.com/syaruruuu"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://gloe.jp/news/202604_scop/" },
+    { "field": "genres", "url": "https://gloe.jp/news/202604_scop/" },
+    { "field": "socialLinks", "url": "https://gloe.jp/news/202604_scop/" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

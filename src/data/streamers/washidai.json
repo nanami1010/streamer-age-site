@@ -1,0 +1,22 @@
+{
+  "name": "わしだい",
+  "nameKana": "わしだい",
+  "aliases": ["Washidai"],
+  "slug": "washidai",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@washidai",
+    "twitch": "https://www.twitch.tv/washidai_",
+    "x": "https://x.com/Washidai_"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "socialLinks", "url": "https://x.com/Washidai_" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

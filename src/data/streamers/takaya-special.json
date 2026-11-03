@@ -1,0 +1,25 @@
+{
+  "name": "たかやスペシャル",
+  "nameKana": "たかやすぺしゃる",
+  "aliases": [],
+  "slug": "takaya-special",
+  "birthDate": null,
+  "birthMonthDay": "06-13",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": "福岡ソフトバンクホークス ゲーミング",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@takayaspecial",
+    "twitch": "https://www.twitch.tv/takayaspecial",
+    "x": "https://x.com/PowerofTakaya"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
+    { "field": "birthMonthDay", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
+    { "field": "genres", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
+    { "field": "affiliation", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
+    { "field": "socialLinks", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Rainbrain",
+  "nameKana": "れいんぶれいん",
+  "aliases": ["レインブレイン"],
+  "slug": "rainbrain",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/rainbrain"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "socialLinks", "url": "https://www.twitch.tv/rainbrain/about" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

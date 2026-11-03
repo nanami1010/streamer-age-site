@@ -1,0 +1,23 @@
+{
+  "name": "Yutapon",
+  "nameKana": "ゆたぽん",
+  "aliases": ["yutapon"],
+  "slug": "yutapon",
+  "birthDate": "1996-09-10",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": "DetonatioN FocusMe",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/yutapongo",
+    "x": "https://x.com/yutapongo"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://note.com/dfmwin/n/nf7ba0a504d93" },
+    { "field": "birthDate", "url": "https://note.com/dfmwin/n/nf7ba0a504d93" },
+    { "field": "genres", "url": "https://team-detonation.net/news/46508" },
+    { "field": "affiliation", "url": "https://team-detonation.net/news/46508" },
+    { "field": "socialLinks", "url": "https://note.com/dfmwin/n/nf7ba0a504d93" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

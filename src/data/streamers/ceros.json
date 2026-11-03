@@ -1,0 +1,23 @@
+{
+  "name": "Ceros",
+  "nameKana": "せろす",
+  "aliases": ["セロス"],
+  "slug": "ceros",
+  "birthDate": null,
+  "birthMonthDay": "12-07",
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/ceros1207",
+    "x": "https://x.com/trollceros"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://note.com/dfmwin/n/n9cf606d54b21" },
+    { "field": "birthMonthDay", "url": "https://note.com/dfmwin/n/n9cf606d54b21" },
+    { "field": "genres", "url": "https://note.com/dfmwin/n/n9cf606d54b21" },
+    { "field": "socialLinks", "url": "https://note.com/dfmwin/n/n9cf606d54b21" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

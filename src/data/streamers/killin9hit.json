@@ -1,0 +1,25 @@
+{
+  "name": "Killin9Hit",
+  "nameKana": "きりんぐひっと",
+  "aliases": ["KH"],
+  "slug": "killin9hit",
+  "birthDate": "1989-05-14",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Killin9Hit",
+    "twitch": "https://www.twitch.tv/killin9hit",
+    "x": "https://x.com/Killin9Hit"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
+    { "field": "aliases", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
+    { "field": "genres", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
+    { "field": "socialLinks", "url": "https://zetadivision.com/news/2025/10/24/38659" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

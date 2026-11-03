@@ -27,8 +27,8 @@ test.beforeEach(async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test("トップページにJSONと一致する120件のカードを表示する", async ({ page }) => {
-  expect(streamers).toHaveLength(120);
+test("トップページにJSONと一致する141件のカードを表示する", async ({ page }) => {
+  expect(streamers).toHaveLength(141);
   await expect(page.locator(".hero__lead")).toHaveText(
     "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
   );
@@ -61,9 +61,12 @@ test("生年月日未確認の配信者に年齢を表示しない", async ({ pa
   }
 });
 
-test("生年不明で月日のみ確認済みの13人は誕生日だけを表示する", async ({ page }) => {
+test("生年不明で月日のみ確認済みの18人は誕生日だけを表示する", async ({ page }) => {
   const expectedBirthdays = new Map([
     ["akagami-no-tomo", "7月23日"],
+    ["alpha-azur", "4月21日"],
+    ["ceros", "12月7日"],
+    ["eugeo", "1月23日"],
     ["gocchan-mikey", "11月2日"],
     ["jasper", "11月27日"],
     ["limone-sensei", "8月19日"],
@@ -74,8 +77,10 @@ test("生年不明で月日のみ確認済みの13人は誕生日だけを表示
     ["retort", "12月26日"],
     ["rion", "12月31日"],
     ["sumomo", "1月13日"],
+    ["takaya-special", "6月13日"],
     ["totomix", "8月1日"],
-    ["tttcheekyttt", "4月12日"]
+    ["tttcheekyttt", "4月12日"],
+    ["yoru-yoichi", "3月7日"]
   ]);
   const monthDayOnly = streamers.filter((streamer) => streamer.birthMonthDay);
 
@@ -190,7 +195,7 @@ test("年度選択肢を登録データから新しい順に生成する", async
 test("年度で絞り込むと同年度の配信者だけを表示する", async ({ page }) => {
   const cases = [
     { year: 1995, slugs: ["sutanmi-japan", "laz", "zerost", "peinto", "torazo", "haseshin"] },
-    { year: 1994, slugs: ["shobosuke", "assari-shoko", "abitun", "kuronoa", "francisco"] },
+    { year: 1994, slugs: ["shobosuke", "assari-shoko", "abitun", "kuronoa", "francisco", "mother3"] },
     { year: 1991, slugs: ["shaka", "k4sen", "shomaru7"] },
     { year: 1990, slugs: ["seki-yuta", "mokou", "taiji", "fuji", "kyoichiro", "tonakaito"] }
   ];

@@ -1,0 +1,22 @@
+{
+  "name": "なぎさっち",
+  "nameKana": "なぎさっち",
+  "aliases": ["Nagisatti"],
+  "slug": "nagisatti",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/nagisatty",
+    "x": "https://x.com/Nagiponpoko"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" },
+    { "field": "genres", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" },
+    { "field": "socialLinks", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" },
+    { "field": "socialLinks", "url": "https://x.com/Nagiponpoko" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

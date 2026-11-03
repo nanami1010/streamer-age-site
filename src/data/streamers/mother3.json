@@ -1,0 +1,24 @@
+{
+  "name": "まざー3",
+  "nameKana": "まざーすりー",
+  "aliases": ["MOTHER3", "MOTHER3rd"],
+  "slug": "mother3",
+  "birthDate": "1994-12-21",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@MOTHER3rd",
+    "twitch": "https://www.twitch.tv/mother3rd",
+    "x": "https://x.com/mother3rrd"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://gloe.jp/news/202604_scop2/" },
+    { "field": "aliases", "url": "https://www.youtube.com/@MOTHER3rd" },
+    { "field": "birthDate", "url": "https://www.youtube.com/@MOTHER3rd" },
+    { "field": "genres", "url": "https://gloe.jp/news/202604_scop2/" },
+    { "field": "socialLinks", "url": "https://gloe.jp/news/202604_scop2/" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

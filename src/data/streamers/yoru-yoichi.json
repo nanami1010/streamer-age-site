@@ -1,0 +1,24 @@
+{
+  "name": "夜よいち",
+  "nameKana": "よるよいち",
+  "aliases": [],
+  "slug": "yoru-yoichi",
+  "birthDate": null,
+  "birthMonthDay": "03-07",
+  "genres": ["ゲーム配信"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@yoruyoichi_",
+    "twitch": "https://www.twitch.tv/yoichi_0v0",
+    "x": "https://x.com/YoruYoichi"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://x.com/YoruYoichi" },
+    { "field": "birthMonthDay", "url": "https://x.com/YoruYoichi" },
+    { "field": "genres", "url": "https://www.twitch.tv/yoichi_0v0/about" },
+    { "field": "socialLinks", "url": "https://www.youtube.com/@yoruyoichi_" }
+  ],
+  "lastVerifiedAt": "2026-11-03",
+  "devices": []
+}

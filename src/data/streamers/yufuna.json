@@ -1,0 +1,22 @@
+{
+  "name": "ゆふな",
+  "nameKana": "ゆふな",
+  "aliases": ["Yufuna"],
+  "slug": "yufuna",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "FPS", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/YufuNachannel",
+    "twitch": "https://www.twitch.tv/yufuna",
+    "x": "https://x.com/_YFNA"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://prtimes.jp/main/html/rd/p/000007171.000005397.html" },
+    { "field": "genres", "url": "https://prtimes.jp/main/html/rd/p/000007171.000005397.html" },
+    { "field": "socialLinks", "url": "https://x.com/_YFNA" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

@@ -1,0 +1,22 @@
+{
+  "name": "hetel",
+  "nameKana": "へてる",
+  "aliases": ["へてる"],
+  "slug": "hetel",
+  "birthDate": null,
+  "genres": ["ゲーム配信", "MOBA"],
+  "affiliation": null,
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@hetelch",
+    "twitch": "https://www.twitch.tv/heteeel",
+    "x": "https://x.com/heteel"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "genres", "url": "https://zetadivision.com/news/2026/10/02/47674" },
+    { "field": "socialLinks", "url": "https://x.com/heteel" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

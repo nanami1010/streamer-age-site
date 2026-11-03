@@ -284,7 +284,7 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("デバイス登録済み13人と未登録87人の件数が正しい", async () => {
+test("デバイス登録済み13人と未登録128人の件数が正しい", async () => {
   const expectedCounts = new Map([
     ["shaka", 1],
     ["k4sen", 6],

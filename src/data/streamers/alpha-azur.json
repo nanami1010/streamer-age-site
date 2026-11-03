@@ -1,0 +1,25 @@
+{
+  "name": "AlphaAzur",
+  "nameKana": "あるふぁあずーる",
+  "aliases": ["Alpha Azur", "アルファアズール"],
+  "slug": "alpha-azur",
+  "birthDate": null,
+  "birthMonthDay": "04-21",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "UltraLMTM",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@AlphaAzur",
+    "twitch": "https://www.twitch.tv/alphaazur",
+    "x": "https://x.com/AzurAlpha"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://ultralmtm.com/creators/alpha-azur/" },
+    { "field": "birthMonthDay", "url": "https://ultralmtm.com/creators/alpha-azur/" },
+    { "field": "genres", "url": "https://ultralmtm.com/creators/alpha-azur/" },
+    { "field": "affiliation", "url": "https://ultralmtm.com/creators/alpha-azur/" },
+    { "field": "socialLinks", "url": "https://ultralmtm.com/creators/alpha-azur/" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}

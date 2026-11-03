@@ -1,0 +1,24 @@
+{
+  "name": "Clutch_Fi",
+  "nameKana": "くらっちふぁい",
+  "aliases": ["クラッチ"],
+  "slug": "clutch-fi",
+  "birthDate": "1992-12-11",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "ZETA DIVISION",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@ClutchFi",
+    "twitch": "https://www.twitch.tv/clutch_fii",
+    "x": "https://x.com/Clutch_Fi"
+  },
+  "profileImage": null,
+  "sources": [
+    { "field": "name", "url": "https://zetadivision.com/players/clutch_fi" },
+    { "field": "birthDate", "url": "https://zetadivision.com/players/clutch_fi" },
+    { "field": "genres", "url": "https://zetadivision.com/players/clutch_fi" },
+    { "field": "affiliation", "url": "https://zetadivision.com/players/clutch_fi" },
+    { "field": "socialLinks", "url": "https://zetadivision.com/news/2025/10/24/38659" }
+  ],
+  "lastVerifiedAt": "2026-11-02",
+  "devices": []
+}
