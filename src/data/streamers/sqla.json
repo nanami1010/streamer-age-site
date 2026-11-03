@@ -4,14 +4,29 @@
   "aliases": [],
   "slug": "sqla",
   "birthDate": "2000-02-23",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "RIDDLE",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCItf9xRYdHYlGwAw9JnsnJw",
     "twitch": "https://www.twitch.tv/sqla",
     "x": "https://x.com/imsqla"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/sqla.webp",
+    "alt": "SqLAのプロフィール画像",
+    "sourceUrl": "https://x.com/imsqla",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "birthDate",
@@ -28,6 +43,10 @@
     {
       "field": "socialLinks",
       "url": "https://riddle.info/members/sqla/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/imsqla"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

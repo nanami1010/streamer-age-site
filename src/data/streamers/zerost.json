@@ -14,7 +14,19 @@
     "twitch": "https://www.twitch.tv/zerost_s",
     "x": "https://x.com/Zerost_s"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/zerost.webp",
+    "alt": "Zerostのプロフィール画像",
+    "sourceUrl": "https://x.com/Zerost_s",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -38,6 +50,10 @@
     },
     {
       "field": "socialLinks",
+      "url": "https://x.com/Zerost_s"
+    },
+    {
+      "field": "profileImage",
       "url": "https://x.com/Zerost_s"
     }
   ],

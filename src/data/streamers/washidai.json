@@ -1,21 +1,51 @@
 {
   "name": "わしだい",
   "nameKana": "わしだい",
-  "aliases": ["Washidai"],
+  "aliases": [
+    "Washidai"
+  ],
   "slug": "washidai",
   "birthDate": null,
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@washidai",
     "twitch": "https://www.twitch.tv/washidai_",
     "x": "https://x.com/Washidai_"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/washidai.webp",
+    "alt": "わしだいのプロフィール画像",
+    "sourceUrl": "https://x.com/Washidai_",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://zetadivision.com/news/2026/10/02/47674" },
-    { "field": "genres", "url": "https://zetadivision.com/news/2026/10/02/47674" },
-    { "field": "socialLinks", "url": "https://x.com/Washidai_" }
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/news/2026/10/02/47674"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/news/2026/10/02/47674"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://x.com/Washidai_"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Washidai_"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

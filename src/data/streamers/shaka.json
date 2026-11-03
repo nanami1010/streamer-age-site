@@ -1,7 +1,9 @@
 {
   "name": "SHAKA",
   "nameKana": "しゃか",
-  "aliases": ["釈迦"],
+  "aliases": [
+    "釈迦"
+  ],
   "slug": "shaka",
   "birthDate": "1991-12-27",
   "genres": [
@@ -14,7 +16,19 @@
     "twitch": "https://www.twitch.tv/fps_shaka",
     "x": "https://x.com/avashaka"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/shaka.webp",
+    "alt": "SHAKAのプロフィール画像",
+    "sourceUrl": "https://x.com/avashaka",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "birthDate",
@@ -27,6 +41,10 @@
     {
       "field": "socialLinks",
       "url": "https://prtimes.jp/main/html/rd/p/000000093.000041650.html"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/avashaka"
     }
   ],
   "lastVerifiedAt": "2026-10-22",

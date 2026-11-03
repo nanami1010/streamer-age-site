@@ -1,7 +1,10 @@
 {
   "name": "じゃすぱー",
   "nameKana": "じゃすぱー",
-  "aliases": ["Jasper", "Jasper7se"],
+  "aliases": [
+    "Jasper",
+    "Jasper7se"
+  ],
   "slug": "jasper",
   "birthDate": null,
   "birthMonthDay": "11-27",
@@ -15,7 +18,19 @@
     "twitch": "https://www.twitch.tv/jasper7se",
     "x": "https://x.com/Jasper7se"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/jasper.webp",
+    "alt": "じゃすぱーのプロフィール画像",
+    "sourceUrl": "https://x.com/Jasper7se",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -44,6 +59,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.youtube.com/channel/UCzAMU5Kgj8fGxVtcwTcq-_g"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Jasper7se"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

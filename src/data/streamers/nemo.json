@@ -4,22 +4,62 @@
   "aliases": [],
   "slug": "nemo",
   "birthDate": "1985-01-05",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "Saishunkan Sol 熊本",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@GOOD_NEMO",
     "twitch": "https://www.twitch.tv/nemo_good",
     "x": "https://x.com/GOOD_NEMO"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/nemo.webp",
+    "alt": "ネモのプロフィール画像",
+    "sourceUrl": "https://x.com/GOOD_NEMO",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
-    { "field": "nameKana", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
-    { "field": "birthDate", "url": "https://gloe.jp/news/202105_nemo/" },
-    { "field": "genres", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
-    { "field": "affiliation", "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2" },
-    { "field": "socialLinks", "url": "https://gloe.jp/news/202105_nemo/" },
-    { "field": "socialLinks", "url": "https://pc.watch.impress.co.jp/docs/column/stream_env/1568481.html" }
+    {
+      "field": "name",
+      "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://gloe.jp/news/202105_nemo/"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.sskumamoto.com/member/%E3%83%8D%E3%83%A2"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://gloe.jp/news/202105_nemo/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://pc.watch.impress.co.jp/docs/column/stream_env/1568481.html"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/GOOD_NEMO"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

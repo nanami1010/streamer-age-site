@@ -5,18 +5,49 @@
   "slug": "akagami-no-tomo",
   "birthDate": null,
   "birthMonthDay": "07-23",
-  "genres": ["ゲーム実況", "Minecraft"],
+  "genres": [
+    "ゲーム実況",
+    "Minecraft"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@akagaminotomo",
     "x": "https://x.com/tomo0723sw"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/akagami-no-tomo.webp",
+    "alt": "赤髪のとものプロフィール画像",
+    "sourceUrl": "https://x.com/tomo0723sw",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.youtube.com/@akagaminotomo" },
-    { "field": "birthMonthDay", "url": "https://www.youtube.com/watch?v=o38ae2zt8EU" },
-    { "field": "genres", "url": "https://www.youtube.com/@akagaminotomo" },
-    { "field": "socialLinks", "url": "https://www.youtube.com/@akagaminotomo" }
+    {
+      "field": "name",
+      "url": "https://www.youtube.com/@akagaminotomo"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://www.youtube.com/watch?v=o38ae2zt8EU"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.youtube.com/@akagaminotomo"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.youtube.com/@akagaminotomo"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/tomo0723sw"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

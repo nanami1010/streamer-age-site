@@ -1,7 +1,9 @@
 {
   "name": "おにや",
   "nameKana": "おにや",
-  "aliases": ["o-228"],
+  "aliases": [
+    "o-228"
+  ],
   "slug": "oniya",
   "birthDate": null,
   "genres": [
@@ -14,7 +16,19 @@
     "twitch": "https://www.twitch.tv/oniyadayo",
     "x": "https://x.com/oniyanogame"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/oniya.webp",
+    "alt": "おにやのプロフィール画像",
+    "sourceUrl": "https://x.com/oniyanogame",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -35,6 +49,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.youtube.com/@o228"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/oniyanogame"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

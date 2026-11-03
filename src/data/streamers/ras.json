@@ -4,21 +4,58 @@
   "aliases": [],
   "slug": "ras",
   "birthDate": "1999-09-28",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCkiCNZ6c5Th3NpL2U8IhUWw",
     "twitch": "https://www.twitch.tv/ras_sama",
     "x": "https://x.com/Ras9915"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/ras.webp",
+    "alt": "Rasのプロフィール画像",
+    "sourceUrl": "https://x.com/Ras9915",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/ras/" },
-    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/ras/" },
-    { "field": "birthDate", "url": "https://x.com/Ras9915/status/1839808586714865848" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/ras/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/ras/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/ras/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/ras/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://crazyraccoon.jp/member/ras/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/Ras9915/status/1839808586714865848"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/ras/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/ras/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/ras/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Ras9915"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": [

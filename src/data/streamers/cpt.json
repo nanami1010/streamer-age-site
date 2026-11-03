@@ -4,20 +4,54 @@
   "aliases": [],
   "slug": "cpt",
   "birthDate": "1999-02-26",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCB3Sj1L1PacFLSdFwct7faA",
     "twitch": "https://www.twitch.tv/cr_cpt",
     "x": "https://x.com/ApexerCpt"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/cpt.webp",
+    "alt": "Cptのプロフィール画像",
+    "sourceUrl": "https://x.com/ApexerCpt",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/cpt/" },
-    { "field": "birthDate", "url": "https://x.com/ApexerCpt/status/1761771465479966816" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/cpt/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/cpt/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/cpt/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/cpt/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/ApexerCpt/status/1761771465479966816"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/cpt/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/cpt/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/cpt/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/ApexerCpt"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": [

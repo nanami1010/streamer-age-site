@@ -4,20 +4,54 @@
   "aliases": [],
   "slug": "selly",
   "birthDate": "1998-02-12",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCVVQ9pKbYulBUwfu5TmIvaQ",
     "twitch": "https://www.twitch.tv/selly55",
     "x": "https://x.com/Selly_ow"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/selly.webp",
+    "alt": "Sellyのプロフィール画像",
+    "sourceUrl": "https://x.com/Selly_ow",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/selly/" },
-    { "field": "birthDate", "url": "https://x.com/Selly_ow/status/1624439052488564737" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/selly/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/selly/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/selly/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/selly/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/Selly_ow/status/1624439052488564737"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/selly/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/selly/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/selly/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Selly_ow"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

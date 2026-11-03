@@ -1,20 +1,50 @@
 {
   "name": "Day1",
   "nameKana": "でいわん",
-  "aliases": ["デイワン"],
+  "aliases": [
+    "デイワン"
+  ],
   "slug": "day1",
   "birthDate": null,
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": null,
   "socialLinks": {
     "twitch": "https://www.twitch.tv/day1week",
     "x": "https://x.com/Day1week"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/day1.webp",
+    "alt": "Day1のプロフィール画像",
+    "sourceUrl": "https://x.com/Day1week",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" },
-    { "field": "genres", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" },
-    { "field": "socialLinks", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" }
+    {
+      "field": "name",
+      "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Day1week"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

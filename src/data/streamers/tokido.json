@@ -4,20 +4,57 @@
   "aliases": [],
   "slug": "tokido",
   "birthDate": "1985-07-07",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "VARREL",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@Tokido",
     "x": "https://x.com/tokidoki77"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/tokido.webp",
+    "alt": "ときどのプロフィール画像",
+    "sourceUrl": "https://x.com/tokidoki77",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://varrel.jp/team/street-fighter" },
-    { "field": "nameKana", "url": "https://varrel.jp/team/street-fighter" },
-    { "field": "birthDate", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" },
-    { "field": "genres", "url": "https://varrel.jp/team/street-fighter" },
-    { "field": "affiliation", "url": "https://varrel.jp/news/2026/05/01/3913" },
-    { "field": "socialLinks", "url": "https://varrel.jp/team/street-fighter" }
+    {
+      "field": "name",
+      "url": "https://varrel.jp/team/street-fighter"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://varrel.jp/team/street-fighter"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/"
+    },
+    {
+      "field": "genres",
+      "url": "https://varrel.jp/team/street-fighter"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://varrel.jp/news/2026/05/01/3913"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://varrel.jp/team/street-fighter"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/tokidoki77"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

@@ -14,7 +14,19 @@
     "twitch": "https://www.twitch.tv/vodkavdk",
     "x": "https://x.com/VodkaChaso"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/vodka.webp",
+    "alt": "ボドカのプロフィール画像",
+    "sourceUrl": "https://x.com/VodkaChaso",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -31,6 +43,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.twitch.tv/vodkavdk"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/VodkaChaso"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

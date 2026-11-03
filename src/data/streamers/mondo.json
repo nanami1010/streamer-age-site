@@ -5,20 +5,54 @@
   "slug": "mondo",
   "birthDate": null,
   "birthMonthDay": "07-03",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCqc7_so3xdZJnSlfDjphwpg",
     "twitch": "https://www.twitch.tv/mondo2244",
     "x": "https://x.com/Mondo2233"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/mondo.webp",
+    "alt": "Mondoのプロフィール画像",
+    "sourceUrl": "https://x.com/Mondo2233",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/mondo/" },
-    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/mondo/" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/mondo/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/mondo/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/mondo/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/mondo/"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://crazyraccoon.jp/member/mondo/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/mondo/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/mondo/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/mondo/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Mondo2233"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

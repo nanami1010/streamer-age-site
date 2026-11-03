@@ -1,24 +1,66 @@
 {
   "name": "風次",
   "nameKana": "ふうじ",
-  "aliases": ["裏切りマンキーコング風次"],
+  "aliases": [
+    "裏切りマンキーコング風次"
+  ],
   "slug": "fuji",
   "birthDate": "1990-07-05",
-  "genres": ["ゲーム配信", "ゲーム実況"],
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況"
+  ],
   "affiliation": "吉本興業",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@uragiri0fuji",
     "x": "https://x.com/bulldozer_fuji"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/fuji.webp",
+    "alt": "風次のプロフィール画像",
+    "sourceUrl": "https://x.com/bulldozer_fuji",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
-    { "field": "nameKana", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
-    { "field": "aliases", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
-    { "field": "birthDate", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
-    { "field": "genres", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
-    { "field": "affiliation", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408" },
-    { "field": "socialLinks", "url": "https://news.yoshimoto.co.jp/cat2204/index_6.php" }
+    {
+      "field": "name",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408"
+    },
+    {
+      "field": "aliases",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408"
+    },
+    {
+      "field": "genres",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=8408"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://news.yoshimoto.co.jp/cat2204/index_6.php"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/bulldozer_fuji"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

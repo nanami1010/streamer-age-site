@@ -1,7 +1,9 @@
 {
   "name": "スタンミじゃぱん",
   "nameKana": "すたんみじゃぱん",
-  "aliases": ["スタンミ"],
+  "aliases": [
+    "スタンミ"
+  ],
   "slug": "sutanmi-japan",
   "birthDate": "1995-04-23",
   "genres": [
@@ -14,7 +16,19 @@
     "twitch": "https://www.twitch.tv/sutanmi",
     "x": "https://x.com/sutanmiJPN"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/sutanmi-japan.webp",
+    "alt": "スタンミじゃぱんのプロフィール画像",
+    "sourceUrl": "https://x.com/sutanmiJPN",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -43,6 +57,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.oricon.co.jp/special/71877/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/sutanmiJPN"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

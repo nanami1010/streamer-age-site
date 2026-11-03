@@ -4,21 +4,58 @@
   "aliases": [],
   "slug": "japanese-korean-ug",
   "birthDate": "1993-07-01",
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCPLVTmdgB-ljT3S5xGBhBQA",
     "twitch": "https://www.twitch.tv/japanesekoreanug",
     "x": "https://x.com/JPKR_UG"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/japanese-korean-ug.webp",
+    "alt": "JapaneseKoreanUGのプロフィール画像",
+    "sourceUrl": "https://x.com/JPKR_UG",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://zetadivision.com/players/japanesekoreanug" },
-    { "field": "nameKana", "url": "https://zetadivision.com/news/2024/10/14/26689" },
-    { "field": "birthDate", "url": "https://zetadivision.com/players/japanesekoreanug" },
-    { "field": "genres", "url": "https://zetadivision.com/players/japanesekoreanug" },
-    { "field": "affiliation", "url": "https://zetadivision.com/players/japanesekoreanug" },
-    { "field": "socialLinks", "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/" }
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/players/japanesekoreanug"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://zetadivision.com/news/2024/10/14/26689"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/japanesekoreanug"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/players/japanesekoreanug"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/players/japanesekoreanug"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.leagueoflegends.com/ja-jp/community/league-of-legends-partner-program-roster/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/JPKR_UG"
+    }
   ],
   "lastVerifiedAt": "2026-10-25",
   "devices": []

@@ -1,24 +1,66 @@
 {
   "name": "ゴー☆ジャス",
   "nameKana": "ごーじゃす",
-  "aliases": ["ゴージャス"],
+  "aliases": [
+    "ゴージャス"
+  ],
   "slug": "gorgeous",
   "birthDate": "1978-11-10",
-  "genres": ["ゲーム配信", "ゲーム実況"],
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況"
+  ],
   "affiliation": "サンミュージックプロダクション",
   "socialLinks": {
     "youtube": "https://www.youtube.com/user/gorgeousgamemarket",
     "x": "https://x.com/Gorgeous55555"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/gorgeous.webp",
+    "alt": "ゴー☆ジャスのプロフィール画像",
+    "sourceUrl": "https://x.com/Gorgeous55555",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/" },
-    { "field": "nameKana", "url": "https://natalie.mu/music/artist/6529" },
-    { "field": "aliases", "url": "https://natalie.mu/music/artist/6529" },
-    { "field": "birthDate", "url": "https://natalie.mu/music/artist/6529" },
-    { "field": "genres", "url": "https://natalie.mu/music/artist/6529" },
-    { "field": "affiliation", "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/" },
-    { "field": "socialLinks", "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/" }
+    {
+      "field": "name",
+      "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://natalie.mu/music/artist/6529"
+    },
+    {
+      "field": "aliases",
+      "url": "https://natalie.mu/music/artist/6529"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://natalie.mu/music/artist/6529"
+    },
+    {
+      "field": "genres",
+      "url": "https://natalie.mu/music/artist/6529"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.sunmusic-gp.co.jp/talent/gorgeous/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Gorgeous55555"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

@@ -4,19 +4,52 @@
   "aliases": [],
   "slug": "obo",
   "birthDate": "1993-09-25",
-  "genres": ["ゲーム配信"],
+  "genres": [
+    "ゲーム配信"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCE4jlsAFvREH-pRd55F8jSA",
     "x": "https://x.com/obormentv"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/obo.webp",
+    "alt": "oboのプロフィール画像",
+    "sourceUrl": "https://x.com/obormentv",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/obo/" },
-    { "field": "birthDate", "url": "https://x.com/obormentv/status/1573970962013306880" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/obo/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/obo/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/obo/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/obo/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/obormentv/status/1573970962013306880"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/obo/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/obo/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/obo/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/obormentv"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

@@ -4,20 +4,54 @@
   "aliases": [],
   "slug": "vanilla",
   "birthDate": "2000-12-21",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCWueV72q02od55xENhVrI8g",
     "twitch": "https://www.twitch.tv/cr_vanilla",
     "x": "https://x.com/VanilLaaa12"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/vanilla.webp",
+    "alt": "VanilLaのプロフィール画像",
+    "sourceUrl": "https://x.com/VanilLaaa12",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/vanilla/" },
-    { "field": "birthDate", "url": "https://x.com/VanilLaaa12/status/1472945455604846598" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/vanilla/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/vanilla/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/vanilla/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/vanilla/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/VanilLaaa12/status/1472945455604846598"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/vanilla/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/vanilla/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/vanilla/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/VanilLaaa12"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

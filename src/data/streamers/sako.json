@@ -4,21 +4,58 @@
   "aliases": [],
   "slug": "sako",
   "birthDate": "1979-04-09",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "FAV gaming",
   "socialLinks": {
     "youtube": "https://www.youtube.com/c/sakonoko_game",
     "twitch": "https://www.twitch.tv/sakonoko_game",
     "x": "https://x.com/sakonoko"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/sako.webp",
+    "alt": "sakoのプロフィール画像",
+    "sourceUrl": "https://x.com/sakonoko",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.favgaming.com/fighting-games-en/" },
-    { "field": "nameKana", "url": "https://www.favgaming.com/fighting-games-en/" },
-    { "field": "birthDate", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" },
-    { "field": "genres", "url": "https://www.favgaming.com/fighting-games-en/" },
-    { "field": "affiliation", "url": "https://www.favgaming.com/news/14523/" },
-    { "field": "socialLinks", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" }
+    {
+      "field": "name",
+      "url": "https://www.favgaming.com/fighting-games-en/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.favgaming.com/fighting-games-en/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.favgaming.com/fighting-games-en/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.favgaming.com/news/14523/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/sakonoko"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

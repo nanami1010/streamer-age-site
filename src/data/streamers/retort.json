@@ -5,18 +5,48 @@
   "slug": "retort",
   "birthDate": null,
   "birthMonthDay": "12-26",
-  "genres": ["ゲーム実況"],
+  "genres": [
+    "ゲーム実況"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@retokani",
     "x": "https://x.com/retokani"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/retort.webp",
+    "alt": "レトルトのプロフィール画像",
+    "sourceUrl": "https://www.youtube.com/@retokani",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://retokani.com/" },
-    { "field": "birthMonthDay", "url": "https://yutura.net/news/archives/87402" },
-    { "field": "genres", "url": "https://retokani.com/" },
-    { "field": "socialLinks", "url": "https://retokani.com/" }
+    {
+      "field": "name",
+      "url": "https://retokani.com/"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://yutura.net/news/archives/87402"
+    },
+    {
+      "field": "genres",
+      "url": "https://retokani.com/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://retokani.com/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://www.youtube.com/@retokani"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

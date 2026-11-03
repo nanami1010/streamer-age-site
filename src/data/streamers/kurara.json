@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "kurara",
   "birthDate": "1998-06-28",
-  "genres": ["ゲーム配信", "TPS"],
+  "genres": [
+    "ゲーム配信",
+    "TPS"
+  ],
   "affiliation": "REJECT",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCtQ74RU_J-VhQZX255-WLYw",
     "x": "https://x.com/kurara__a"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kurara.webp",
+    "alt": "くららのプロフィール画像",
+    "sourceUrl": "https://x.com/kurara__a",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://reject.jp/member/kurara/" },
-    { "field": "birthDate", "url": "https://reject.jp/member/kurara/" },
-    { "field": "genres", "url": "https://reject.jp/member/kurara/" },
-    { "field": "affiliation", "url": "https://reject.jp/member/kurara/" },
-    { "field": "socialLinks", "url": "https://reject.jp/2023/11/17/%E3%80%90%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%83%85%E5%A0%B1%E3%80%91%E3%81%8F%E3%82%89%E3%82%89%E7%B7%8F%E4%BC%9A%E9%96%8B%E5%82%AC%E6%B1%BA%E5%AE%9A%EF%BC%81/" }
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/kurara/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/kurara/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/kurara/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/kurara/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://reject.jp/2023/11/17/%E3%80%90%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%83%85%E5%A0%B1%E3%80%91%E3%81%8F%E3%82%89%E3%82%89%E7%B7%8F%E4%BC%9A%E9%96%8B%E5%82%AC%E6%B1%BA%E5%AE%9A%EF%BC%81/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/kurara__a"
+    }
   ],
   "lastVerifiedAt": "2026-10-25",
   "devices": []

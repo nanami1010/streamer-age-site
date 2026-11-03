@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "ton-gg",
   "birthDate": "2003-03-28",
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": "REJECT",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@TON0465",
     "x": "https://x.com/TON0465"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/ton-gg.webp",
+    "alt": "TON・GGのプロフィール画像",
+    "sourceUrl": "https://x.com/TON0465",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://reject.jp/member/tongg/" },
-    { "field": "birthDate", "url": "https://reject.jp/member/tongg/" },
-    { "field": "genres", "url": "https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" },
-    { "field": "affiliation", "url": "https://reject.jp/member/tongg/" },
-    { "field": "socialLinks", "url": "https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" }
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/tongg/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/tongg/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/tongg/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/TON0465"
+    }
   ],
   "lastVerifiedAt": "2026-10-25",
   "devices": []

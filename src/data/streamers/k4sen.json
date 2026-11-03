@@ -14,7 +14,19 @@
     "twitch": "https://www.twitch.tv/k4sen",
     "x": "https://x.com/k4sen"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/k4sen.webp",
+    "alt": "k4senのプロフィール画像",
+    "sourceUrl": "https://x.com/k4sen",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -39,6 +51,10 @@
     {
       "field": "socialLinks",
       "url": "https://zetadivision.com/news/2021/09/23/6359?PageSpeed=noscript"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/k4sen"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

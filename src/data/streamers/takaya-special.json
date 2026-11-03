@@ -5,20 +5,54 @@
   "slug": "takaya-special",
   "birthDate": null,
   "birthMonthDay": "06-13",
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": "福岡ソフトバンクホークス ゲーミング",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@takayaspecial",
     "twitch": "https://www.twitch.tv/takayaspecial",
     "x": "https://x.com/PowerofTakaya"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/takaya-special.webp",
+    "alt": "たかやスペシャルのプロフィール画像",
+    "sourceUrl": "https://x.com/PowerofTakaya",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
-    { "field": "birthMonthDay", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
-    { "field": "genres", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
-    { "field": "affiliation", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" },
-    { "field": "socialLinks", "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/" }
+    {
+      "field": "name",
+      "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
+    },
+    {
+      "field": "genres",
+      "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/PowerofTakaya"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

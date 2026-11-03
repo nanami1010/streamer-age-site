@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "sara",
   "birthDate": "2001-11-01",
-  "genres": ["ゲーム配信", "TPS"],
+  "genres": [
+    "ゲーム配信",
+    "TPS"
+  ],
   "affiliation": "REJECT",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@BLUEBERRYNOOB",
     "x": "https://x.com/BLUEBERRYNOOB__"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/sara.webp",
+    "alt": "SaRaのプロフィール画像",
+    "sourceUrl": "https://x.com/BLUEBERRYNOOB__",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://reject.jp/member/sara/" },
-    { "field": "birthDate", "url": "https://reject.jp/member/sara/" },
-    { "field": "genres", "url": "https://reject.jp/member/sara/" },
-    { "field": "affiliation", "url": "https://reject.jp/member/sara/" },
-    { "field": "socialLinks", "url": "https://reject.jp/member/sara/" }
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/sara/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/sara/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/sara/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/sara/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://reject.jp/member/sara/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/BLUEBERRYNOOB__"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

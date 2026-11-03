@@ -1,16 +1,33 @@
 {
   "name": "あれる",
   "nameKana": "あれる",
-  "aliases": ["Alelu"],
+  "aliases": [
+    "Alelu"
+  ],
   "slug": "alelu",
   "birthDate": "1997-10-26",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/c/aleluCH",
     "x": "https://x.com/apexalelu"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/alelu.webp",
+    "alt": "あれるのプロフィール画像",
+    "sourceUrl": "https://x.com/apexalelu",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -27,6 +44,10 @@
     {
       "field": "socialLinks",
       "url": "https://fennel-esports.com/news/team/912/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/apexalelu"
     }
   ],
   "lastVerifiedAt": "2026-10-28",

@@ -1,23 +1,62 @@
 {
   "name": "Kazunoko",
   "nameKana": "かずのこ",
-  "aliases": ["かじゅ"],
+  "aliases": [
+    "かじゅ"
+  ],
   "slug": "kazunoko",
   "birthDate": "1988-02-15",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/c/KazunokoChannel",
     "x": "https://x.com/kazunoko0215"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kazunoko.webp",
+    "alt": "Kazunokoのプロフィール画像",
+    "sourceUrl": "https://x.com/kazunoko0215",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/kazunoko0215/status/1758018981326381371" },
-    { "field": "name", "url": "https://crazyraccoon.jp/member/kazunoko/" },
-    { "field": "aliases", "url": "https://crazyraccoon.jp/member/kazunoko/" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/kazunoko/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/kazunoko/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/kazunoko/" }
+    {
+      "field": "birthDate",
+      "url": "https://x.com/kazunoko0215/status/1758018981326381371"
+    },
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/kazunoko/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://crazyraccoon.jp/member/kazunoko/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/kazunoko/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/kazunoko/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/kazunoko/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/kazunoko0215"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

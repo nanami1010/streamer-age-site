@@ -1,24 +1,68 @@
 {
   "name": "おついち",
   "nameKana": "おついち",
-  "aliases": ["Otsuichi"],
+  "aliases": [
+    "Otsuichi"
+  ],
   "slug": "otsuichi",
   "birthDate": "1980-08-26",
-  "genres": ["ゲーム配信", "ホラーゲーム", "FPS", "TPS"],
+  "genres": [
+    "ゲーム配信",
+    "ホラーゲーム",
+    "FPS",
+    "TPS"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@otsuichi",
     "x": "https://x.com/otsuichich"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/otsuichi.webp",
+    "alt": "おついちのプロフィール画像",
+    "sourceUrl": "https://x.com/otsuichich",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://otsuichi.net/" },
-    { "field": "aliases", "url": "https://otsuichi.net/" },
-    { "field": "birthDate", "url": "https://x.com/otsuichich/status/1430609997826707456" },
-    { "field": "birthDate", "url": "https://otsuichi.net/" },
-    { "field": "birthDate", "url": "https://x.com/otsuichich/status/2092292601848508490" },
-    { "field": "genres", "url": "https://otsuichi.net/" },
-    { "field": "socialLinks", "url": "https://otsuichi.net/" }
+    {
+      "field": "name",
+      "url": "https://otsuichi.net/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://otsuichi.net/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/otsuichich/status/1430609997826707456"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://otsuichi.net/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/otsuichich/status/2092292601848508490"
+    },
+    {
+      "field": "genres",
+      "url": "https://otsuichi.net/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://otsuichi.net/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/otsuichich"
+    }
   ],
   "lastVerifiedAt": "2026-10-30",
   "devices": []

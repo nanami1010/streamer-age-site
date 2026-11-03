@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "mainy",
   "birthDate": "1998-09-24",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCquWPl-R7owgJO6_zcL9fHA",
     "x": "https://x.com/SuperMeyNE"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/mainy.webp",
+    "alt": "Mainyのプロフィール画像",
+    "sourceUrl": "https://x.com/SuperMeyNE",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/mainy/" },
-    { "field": "birthDate", "url": "https://x.com/SuperMeyNE/status/1970446845957857740" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/mainy/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/mainy/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/mainy/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/mainy/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/SuperMeyNE/status/1970446845957857740"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/mainy/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/mainy/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/mainy/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/SuperMeyNE"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

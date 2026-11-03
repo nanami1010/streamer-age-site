@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "peinto",
   "birthDate": "1995-10-08",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": "日常組",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UC_qzqv92T-tY9wMnLndGYSQ",
     "x": "https://x.com/peintooon"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/peinto.webp",
+    "alt": "ぺいんとのプロフィール画像",
+    "sourceUrl": "https://x.com/peintooon",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://nichijo.world/members/peinto/" },
-    { "field": "birthDate", "url": "https://nichijo.world/members/peinto/" },
-    { "field": "genres", "url": "https://nichijo.world/members/peinto/" },
-    { "field": "affiliation", "url": "https://nichijo.world/members/peinto/" },
-    { "field": "socialLinks", "url": "https://nichijo.world/members/peinto/" }
+    {
+      "field": "name",
+      "url": "https://nichijo.world/members/peinto/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://nichijo.world/members/peinto/"
+    },
+    {
+      "field": "genres",
+      "url": "https://nichijo.world/members/peinto/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://nichijo.world/members/peinto/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://nichijo.world/members/peinto/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/peintooon"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

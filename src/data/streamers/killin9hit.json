@@ -1,24 +1,63 @@
 {
   "name": "Killin9Hit",
   "nameKana": "きりんぐひっと",
-  "aliases": ["KH"],
+  "aliases": [
+    "KH"
+  ],
   "slug": "killin9hit",
   "birthDate": "1989-05-14",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@Killin9Hit",
     "twitch": "https://www.twitch.tv/killin9hit",
     "x": "https://x.com/Killin9Hit"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/killin9hit.webp",
+    "alt": "Killin9Hitのプロフィール画像",
+    "sourceUrl": "https://x.com/Killin9Hit",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
-    { "field": "aliases", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
-    { "field": "birthDate", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
-    { "field": "genres", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
-    { "field": "affiliation", "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript" },
-    { "field": "socialLinks", "url": "https://zetadivision.com/news/2025/10/24/38659" }
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript"
+    },
+    {
+      "field": "aliases",
+      "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/players/killin9hit?PageSpeed=noscript"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2025/10/24/38659"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Killin9Hit"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

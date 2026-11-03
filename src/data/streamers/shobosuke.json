@@ -1,7 +1,9 @@
 {
   "name": "しょぼすけ",
   "nameKana": "しょぼすけ",
-  "aliases": ["ShoboSuke"],
+  "aliases": [
+    "ShoboSuke"
+  ],
   "slug": "shobosuke",
   "birthDate": "1994-06-29",
   "genres": [
@@ -14,7 +16,19 @@
     "twitch": "https://www.twitch.tv/shobosuke",
     "x": "https://x.com/ShoboLinco"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/shobosuke.webp",
+    "alt": "しょぼすけのプロフィール画像",
+    "sourceUrl": "https://x.com/ShoboLinco",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -39,6 +53,10 @@
     {
       "field": "socialLinks",
       "url": "https://shobolin.com/shobosuke-profile/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/ShoboLinco"
     }
   ],
   "lastVerifiedAt": "2026-10-25",

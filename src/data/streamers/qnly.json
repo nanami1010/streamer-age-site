@@ -1,24 +1,66 @@
 {
   "name": "おんりー",
   "nameKana": "おんりー",
-  "aliases": ["Qnly"],
+  "aliases": [
+    "Qnly"
+  ],
   "slug": "qnly",
   "birthDate": "2002-09-09",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": "ドズル社",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@QnlyQ",
     "x": "https://x.com/qnlyq"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/qnly.webp",
+    "alt": "おんりーのプロフィール画像",
+    "sourceUrl": "https://x.com/qnlyq",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.dozle.jp/members/qnly/" },
-    { "field": "nameKana", "url": "https://www.dozle.jp/members/qnly/" },
-    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
-    { "field": "birthDate", "url": "https://note.com/wonder_dive/n/n4ed05f9a1065" },
-    { "field": "genres", "url": "https://www.dozle.jp/members/qnly/" },
-    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
-    { "field": "socialLinks", "url": "https://www.dozle.jp/members/qnly/" }
+    {
+      "field": "name",
+      "url": "https://www.dozle.jp/members/qnly/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.dozle.jp/members/qnly/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.dozle.jp/support_rule/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://note.com/wonder_dive/n/n4ed05f9a1065"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.dozle.jp/members/qnly/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.dozle.jp/about/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.dozle.jp/members/qnly/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/qnlyq"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

@@ -1,24 +1,61 @@
 {
   "name": "AlphaAzur",
   "nameKana": "あるふぁあずーる",
-  "aliases": ["Alpha Azur", "アルファアズール"],
+  "aliases": [
+    "Alpha Azur",
+    "アルファアズール"
+  ],
   "slug": "alpha-azur",
   "birthDate": null,
   "birthMonthDay": "04-21",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "UltraLMTM",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@AlphaAzur",
     "twitch": "https://www.twitch.tv/alphaazur",
     "x": "https://x.com/AzurAlpha"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/alpha-azur.webp",
+    "alt": "AlphaAzurのプロフィール画像",
+    "sourceUrl": "https://x.com/AzurAlpha",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://ultralmtm.com/creators/alpha-azur/" },
-    { "field": "birthMonthDay", "url": "https://ultralmtm.com/creators/alpha-azur/" },
-    { "field": "genres", "url": "https://ultralmtm.com/creators/alpha-azur/" },
-    { "field": "affiliation", "url": "https://ultralmtm.com/creators/alpha-azur/" },
-    { "field": "socialLinks", "url": "https://ultralmtm.com/creators/alpha-azur/" }
+    {
+      "field": "name",
+      "url": "https://ultralmtm.com/creators/alpha-azur/"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://ultralmtm.com/creators/alpha-azur/"
+    },
+    {
+      "field": "genres",
+      "url": "https://ultralmtm.com/creators/alpha-azur/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://ultralmtm.com/creators/alpha-azur/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://ultralmtm.com/creators/alpha-azur/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/AzurAlpha"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

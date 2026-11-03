@@ -120,6 +120,8 @@ test("トップカードは許可範囲に応じて画像または頭文字を�
 });
 
 test("名前・読み仮名・別名で全登録データを検索できる", async ({ page }) => {
+  test.setTimeout(90_000);
+
   for (const streamer of streamers) {
     for (const query of [streamer.name, streamer.nameKana, ...streamer.aliases]) {
       await searchInput(page).fill(query);

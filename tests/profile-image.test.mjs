@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
 import test from "node:test";
 import { getDisplayProfileImage } from "../src/lib/profile-image.ts";
 
@@ -67,4 +69,40 @@ test("OGPは明示的に許可された確認済み画像だけを使用する",
 
   assert.equal(getDisplayProfileImage(ogpImage, "ogp"), ogpImage);
   assert.equal(getDisplayProfileImage(ogpImage, "profilePage"), null);
+});
+
+test("全141人の許可済みローカル画像が存在し、OGP用途を含まない", () => {
+  const dataDirectory = path.resolve("src/data/streamers");
+  const streamers = fs.readdirSync(dataDirectory)
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => JSON.parse(fs.readFileSync(path.join(dataDirectory, file), "utf8")));
+
+  assert.equal(streamers.length, 141);
+
+  for (const streamer of streamers) {
+    const image = streamer.profileImage;
+    assert.ok(image, `${streamer.slug}: profileImageが未登録です`);
+    assert.equal(image.permissionStatus, "confirmed");
+    assert.deepEqual(image.usageScopes, [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]);
+    assert.equal(image.usageScopes.includes("ogp"), false);
+    assert.equal(image.src, `/images/streamers/${streamer.slug}.webp`);
+    assert.equal(image.lastVerifiedAt, "2026-11-04");
+    assert.ok(
+      streamer.sources.some(
+        (source) => source.field === "profileImage" && source.url === image.sourceUrl
+      ),
+      `${streamer.slug}: profileImageの出典がありません`
+    );
+
+    const imagePath = path.resolve("public", image.src.replace(/^\//, ""));
+    assert.equal(fs.existsSync(imagePath), true, `${streamer.slug}: 画像ファイルがありません`);
+    const data = fs.readFileSync(imagePath);
+    assert.ok(data.length > 0, `${streamer.slug}: 画像ファイルが空です`);
+    assert.equal(data.subarray(0, 4).toString("ascii"), "RIFF");
+    assert.equal(data.subarray(8, 12).toString("ascii"), "WEBP");
+  }
 });

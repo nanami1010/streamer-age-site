@@ -4,18 +4,49 @@
   "aliases": [],
   "slug": "kept",
   "birthDate": "1992-10-04",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCHNfTCiizaDJ8CL3Lh9fmWw",
     "x": "https://x.com/FaintKept"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kept.webp",
+    "alt": "keptのプロフィール画像",
+    "sourceUrl": "https://x.com/FaintKept",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" },
-    { "field": "birthDate", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" },
-    { "field": "genres", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" },
-    { "field": "socialLinks", "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html" }
+    {
+      "field": "name",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html"
+    },
+    {
+      "field": "genres",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://prtimes.jp/main/html/rd/p/000000005.000046916.html"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/FaintKept"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

@@ -1,7 +1,9 @@
 {
   "name": "加藤純一",
   "nameKana": "かとうじゅんいち",
-  "aliases": ["うんこちゃん"],
+  "aliases": [
+    "うんこちゃん"
+  ],
   "slug": "kato-junichi",
   "birthDate": "1985-08-17",
   "genres": [
@@ -14,7 +16,19 @@
     "twitch": "https://www.twitch.tv/kato_junichi0817",
     "x": "https://x.com/unkochan1234567"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kato-junichi.webp",
+    "alt": "加藤純一のプロフィール画像",
+    "sourceUrl": "https://x.com/unkochan1234567",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -43,6 +57,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.youtube.com/@junchannel"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/unkochan1234567"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

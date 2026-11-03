@@ -1,23 +1,60 @@
 {
   "name": "まざー3",
   "nameKana": "まざーすりー",
-  "aliases": ["MOTHER3", "MOTHER3rd"],
+  "aliases": [
+    "MOTHER3",
+    "MOTHER3rd"
+  ],
   "slug": "mother3",
   "birthDate": "1994-12-21",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@MOTHER3rd",
     "twitch": "https://www.twitch.tv/mother3rd",
     "x": "https://x.com/mother3rrd"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/mother3.webp",
+    "alt": "まざー3のプロフィール画像",
+    "sourceUrl": "https://x.com/mother3rrd",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://gloe.jp/news/202604_scop2/" },
-    { "field": "aliases", "url": "https://www.youtube.com/@MOTHER3rd" },
-    { "field": "birthDate", "url": "https://www.youtube.com/@MOTHER3rd" },
-    { "field": "genres", "url": "https://gloe.jp/news/202604_scop2/" },
-    { "field": "socialLinks", "url": "https://gloe.jp/news/202604_scop2/" }
+    {
+      "field": "name",
+      "url": "https://gloe.jp/news/202604_scop2/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.youtube.com/@MOTHER3rd"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.youtube.com/@MOTHER3rd"
+    },
+    {
+      "field": "genres",
+      "url": "https://gloe.jp/news/202604_scop2/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://gloe.jp/news/202604_scop2/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/mother3rrd"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

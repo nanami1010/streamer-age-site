@@ -1,18 +1,38 @@
 {
   "name": "ハセシン",
   "nameKana": "はせしん",
-  "aliases": ["HASESHIN"],
+  "aliases": [
+    "HASESHIN"
+  ],
   "slug": "haseshin",
   "birthDate": "1995-10-31",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@XxHASESHINxX",
     "x": "https://x.com/HASESHIN_ESHS"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/haseshin.webp",
+    "alt": "ハセシンのプロフィール画像",
+    "sourceUrl": "https://x.com/HASESHIN_ESHS",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://prtimes.jp/main/html/rd/p/000000227.000041650.html" },
+    {
+      "field": "birthDate",
+      "url": "https://prtimes.jp/main/html/rd/p/000000227.000041650.html"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -28,6 +48,10 @@
     {
       "field": "socialLinks",
       "url": "https://zetadivision.com/news/2026/10/01/47593"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/HASESHIN_ESHS"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

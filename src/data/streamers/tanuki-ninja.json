@@ -1,20 +1,50 @@
 {
   "name": "たぬき忍者",
   "nameKana": "たぬきにんじゃ",
-  "aliases": ["tanukininja"],
+  "aliases": [
+    "tanukininja"
+  ],
   "slug": "tanuki-ninja",
   "birthDate": null,
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": null,
   "socialLinks": {
     "twitch": "https://www.twitch.tv/tanukininja",
     "x": "https://x.com/tanukininja_jp"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/tanuki-ninja.webp",
+    "alt": "たぬき忍者のプロフィール画像",
+    "sourceUrl": "https://x.com/tanukininja_jp",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://prtimes.jp/main/html/rd/p/000007171.000005397.html" },
-    { "field": "genres", "url": "https://league.thek4sen.com/" },
-    { "field": "socialLinks", "url": "https://prtimes.jp/main/html/rd/p/000007171.000005397.html" }
+    {
+      "field": "name",
+      "url": "https://prtimes.jp/main/html/rd/p/000007171.000005397.html"
+    },
+    {
+      "field": "genres",
+      "url": "https://league.thek4sen.com/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://prtimes.jp/main/html/rd/p/000007171.000005397.html"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/tanukininja_jp"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

@@ -4,20 +4,54 @@
   "aliases": [],
   "slug": "kawase",
   "birthDate": "2001-05-06",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "FENNEL",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@kawasech",
     "twitch": "https://www.twitch.tv/kawase56",
     "x": "https://x.com/gg_kawase"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kawase.webp",
+    "alt": "kawaseのプロフィール画像",
+    "sourceUrl": "https://x.com/gg_kawase",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2804/" },
-    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2804/" },
-    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2804/" },
-    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2804/" },
-    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2804/" }
+    {
+      "field": "name",
+      "url": "https://fennel-esports.com/members/streamer/2804/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://fennel-esports.com/members/streamer/2804/"
+    },
+    {
+      "field": "genres",
+      "url": "https://fennel-esports.com/members/streamer/2804/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://fennel-esports.com/members/streamer/2804/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://fennel-esports.com/members/streamer/2804/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/gg_kawase"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

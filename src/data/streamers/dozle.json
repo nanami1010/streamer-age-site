@@ -1,24 +1,66 @@
 {
   "name": "ドズル",
   "nameKana": "どずる",
-  "aliases": ["Dozle"],
+  "aliases": [
+    "Dozle"
+  ],
   "slug": "dozle",
   "birthDate": "1989-11-21",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": "ドズル社",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@dozle_sub",
     "x": "https://x.com/kurakurachannel"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/dozle.webp",
+    "alt": "ドズルのプロフィール画像",
+    "sourceUrl": "https://x.com/kurakurachannel",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.dozle.jp/members/dozle/" },
-    { "field": "nameKana", "url": "https://www.dozle.jp/members/dozle/" },
-    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
-    { "field": "birthDate", "url": "https://note.com/wonder_dive/n/n2133808dbea4" },
-    { "field": "genres", "url": "https://www.dozle.jp/members/dozle/" },
-    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
-    { "field": "socialLinks", "url": "https://www.dozle.jp/members/dozle/" }
+    {
+      "field": "name",
+      "url": "https://www.dozle.jp/members/dozle/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.dozle.jp/members/dozle/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.dozle.jp/support_rule/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://note.com/wonder_dive/n/n2133808dbea4"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.dozle.jp/members/dozle/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.dozle.jp/about/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.dozle.jp/members/dozle/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/kurakurachannel"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

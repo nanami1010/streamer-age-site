@@ -1,25 +1,67 @@
 {
   "name": "Arisakaaa",
   "nameKana": "ありさか",
-  "aliases": ["ありさか"],
+  "aliases": [
+    "ありさか"
+  ],
   "slug": "arisakaaa",
   "birthDate": "1998-03-02",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCLLuaTElO1eRGOo2qc_Rdsw",
     "twitch": "https://www.twitch.tv/cr_arisakaaa",
     "x": "https://x.com/ArisakaaaT"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/arisakaaa.webp",
+    "alt": "Arisakaaaのプロフィール画像",
+    "sourceUrl": "https://x.com/ArisakaaaT",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/ArisakaaaT/status/1631114423892049920" },
-    { "field": "name", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
-    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
-    { "field": "aliases", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/arisakaaa/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/arisakaaa/" }
+    {
+      "field": "birthDate",
+      "url": "https://x.com/ArisakaaaT/status/1631114423892049920"
+    },
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/arisakaaa/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://crazyraccoon.jp/member/arisakaaa/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://crazyraccoon.jp/member/arisakaaa/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/arisakaaa/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/arisakaaa/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/arisakaaa/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/ArisakaaaT"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

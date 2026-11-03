@@ -4,20 +4,54 @@
   "aliases": [],
   "slug": "shuton",
   "birthDate": "1996-06-17",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "REJECT",
   "socialLinks": {
     "youtube": "https://www.youtube.com/user/syutolimar",
     "twitch": "https://www.twitch.tv/shuton_oli",
     "x": "https://x.com/syu_tolimar"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/shuton.webp",
+    "alt": "Shutonのプロフィール画像",
+    "sourceUrl": "https://x.com/syu_tolimar",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://reject.jp/member/shuton/" },
-    { "field": "birthDate", "url": "https://reject.jp/member/shuton/" },
-    { "field": "genres", "url": "https://reject.jp/member/shuton/" },
-    { "field": "affiliation", "url": "https://reject.jp/member/shuton/" },
-    { "field": "socialLinks", "url": "https://reject.jp/member/shuton/" }
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/shuton/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/shuton/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/shuton/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/shuton/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://reject.jp/member/shuton/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/syu_tolimar"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

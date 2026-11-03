@@ -5,15 +5,33 @@
   "slug": "marutake",
   "birthDate": null,
   "birthMonthDay": "03-18",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "RIDDLE",
   "socialLinks": {
     "twitch": "https://www.twitch.tv/marutake_a",
     "x": "https://x.com/A_Marutake"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/marutake.webp",
+    "alt": "MARUTAKEのプロフィール画像",
+    "sourceUrl": "https://x.com/A_Marutake",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthMonthDay", "url": "https://x.com/A_Marutake/status/1636942470805323776" },
+    {
+      "field": "birthMonthDay",
+      "url": "https://x.com/A_Marutake/status/1636942470805323776"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -25,6 +43,10 @@
     {
       "field": "socialLinks",
       "url": "https://riddle.info/news/news54/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/A_Marutake"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

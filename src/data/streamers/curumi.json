@@ -4,19 +4,52 @@
   "aliases": [],
   "slug": "curumi",
   "birthDate": "1999-03-27",
-  "genres": ["ゲーム配信"],
+  "genres": [
+    "ゲーム配信"
+  ],
   "affiliation": "FENNEL",
   "socialLinks": {
     "twitch": "https://www.twitch.tv/curumi0x0",
     "x": "https://x.com/milk_crm"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/curumi.webp",
+    "alt": "CURUMIのプロフィール画像",
+    "sourceUrl": "https://x.com/milk_crm",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2713/" },
-    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2713/" },
-    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2713/" },
-    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2713/" },
-    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2713/" }
+    {
+      "field": "name",
+      "url": "https://fennel-esports.com/members/streamer/2713/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://fennel-esports.com/members/streamer/2713/"
+    },
+    {
+      "field": "genres",
+      "url": "https://fennel-esports.com/members/streamer/2713/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://fennel-esports.com/members/streamer/2713/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://fennel-esports.com/members/streamer/2713/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/milk_crm"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

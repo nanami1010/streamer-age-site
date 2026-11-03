@@ -1,24 +1,64 @@
 {
   "name": "焼きパン",
   "nameKana": "やきぱん",
-  "aliases": ["Varvalian"],
+  "aliases": [
+    "Varvalian"
+  ],
   "slug": "yakipan",
   "birthDate": "2000-08-01",
-  "genres": ["ゲーム配信", "Minecraft", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft",
+    "FPS"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCNzyH3uRL8N3AbOmDdRfP8Q",
     "twitch": "https://www.twitch.tv/varvalian",
     "x": "https://x.com/VarvaIian"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/yakipan.webp",
+    "alt": "焼きパンのプロフィール画像",
+    "sourceUrl": "https://x.com/VarvaIian",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3" },
-    { "field": "aliases", "url": "https://zetadivision.com/news/2022/03/07/8181" },
-    { "field": "birthDate", "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3" },
-    { "field": "genres", "url": "https://zetadivision.com/news/2022/03/07/8181" },
-    { "field": "affiliation", "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3" },
-    { "field": "socialLinks", "url": "https://zetadivision.com/news/2022/03/07/8181" }
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3"
+    },
+    {
+      "field": "aliases",
+      "url": "https://zetadivision.com/news/2022/03/07/8181"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/news/2022/03/07/8181"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/players/%E7%84%BC%E3%81%8D%E3%83%91%E3%83%B3"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2022/03/07/8181"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/VarvaIian"
+    }
   ],
   "lastVerifiedAt": "2026-10-25",
   "devices": []

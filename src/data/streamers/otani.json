@@ -1,23 +1,62 @@
 {
   "name": "OTANI",
   "nameKana": "おおたに",
-  "aliases": ["大谷"],
+  "aliases": [
+    "大谷"
+  ],
   "slug": "otani",
   "birthDate": "1997-04-21",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "Burning Core Toyama",
   "socialLinks": {
     "twitch": "https://www.twitch.tv/otani_bc",
     "x": "https://x.com/otani_saru"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/otani.webp",
+    "alt": "OTANIのプロフィール画像",
+    "sourceUrl": "https://x.com/otani_saru",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://burning-core.com/teams/otani" },
-    { "field": "aliases", "url": "https://burning-core.com/teams/otani" },
-    { "field": "birthDate", "url": "https://burning-core.com/teams/otani" },
-    { "field": "genres", "url": "https://burning-core.com/teams/otani" },
-    { "field": "affiliation", "url": "https://burning-core.com/teams" },
-    { "field": "socialLinks", "url": "https://burning-core.com/news/1895" }
+    {
+      "field": "name",
+      "url": "https://burning-core.com/teams/otani"
+    },
+    {
+      "field": "aliases",
+      "url": "https://burning-core.com/teams/otani"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://burning-core.com/teams/otani"
+    },
+    {
+      "field": "genres",
+      "url": "https://burning-core.com/teams/otani"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://burning-core.com/teams"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://burning-core.com/news/1895"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/otani_saru"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

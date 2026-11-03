@@ -1,20 +1,50 @@
 {
   "name": "らいじん",
   "nameKana": "らいじん",
-  "aliases": ["Raijin"],
+  "aliases": [
+    "Raijin"
+  ],
   "slug": "raijin",
   "birthDate": null,
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": null,
   "socialLinks": {
     "twitch": "https://www.twitch.tv/alfrea",
     "x": "https://x.com/Eclair08"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/raijin.webp",
+    "alt": "らいじんのプロフィール画像",
+    "sourceUrl": "https://x.com/Eclair08",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://gloe.jp/news/202604_scop/" },
-    { "field": "genres", "url": "https://gloe.jp/news/202604_scop/" },
-    { "field": "socialLinks", "url": "https://gloe.jp/news/202604_scop/" }
+    {
+      "field": "name",
+      "url": "https://gloe.jp/news/202604_scop/"
+    },
+    {
+      "field": "genres",
+      "url": "https://gloe.jp/news/202604_scop/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://gloe.jp/news/202604_scop/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Eclair08"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

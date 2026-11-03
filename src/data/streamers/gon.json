@@ -4,14 +4,29 @@
   "aliases": [],
   "slug": "gon",
   "birthDate": "2002-11-15",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@gon_vl",
     "twitch": "https://www.twitch.tv/gon_vl",
     "x": "https://x.com/gonsan_vl"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/gon.webp",
+    "alt": "GONのプロフィール画像",
+    "sourceUrl": "https://x.com/gonsan_vl",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -28,6 +43,10 @@
     {
       "field": "socialLinks",
       "url": "https://gamezine.jp/13755/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/gonsan_vl"
     }
   ],
   "lastVerifiedAt": "2026-10-28",

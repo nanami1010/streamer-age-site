@@ -1,25 +1,67 @@
 {
   "name": "Bonchan",
   "nameKana": "ぼんちゃん",
-  "aliases": ["ボンちゃん"],
+  "aliases": [
+    "ボンちゃん"
+  ],
   "slug": "bonchan",
   "birthDate": "1987-03-11",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCJn2kguDu7hLn8rQGCUMgXQ",
     "twitch": "https://www.twitch.tv/bonchan0311",
     "x": "https://x.com/katitagaribon"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/bonchan.webp",
+    "alt": "Bonchanのプロフィール画像",
+    "sourceUrl": "https://x.com/katitagaribon",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/bonchan/" },
-    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/bonchan/" },
-    { "field": "aliases", "url": "https://crazyraccoon.jp/member/bonchan/" },
-    { "field": "birthDate", "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/bonchan/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/bonchan/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/bonchan/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/bonchan/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://crazyraccoon.jp/member/bonchan/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://crazyraccoon.jp/member/bonchan/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://group.kadokawa.co.jp/information/media-download/613/a08c698d01f48bf5/PDF/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/bonchan/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/bonchan/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/bonchan/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/katitagaribon"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

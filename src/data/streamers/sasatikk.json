@@ -1,26 +1,53 @@
 {
   "name": "Sasatikk",
   "nameKana": "ささ",
-  "aliases": ["ささ"],
+  "aliases": [
+    "ささ"
+  ],
   "slug": "sasatikk",
   "birthDate": "1993-05-19",
-  "genres": ["ゲーム配信", "雑談"],
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@sasatikk",
     "twitch": "https://www.twitch.tv/sasatikk",
     "x": "https://x.com/sasatikk"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/sasatikk.webp",
+    "alt": "Sasatikkのプロフィール画像",
+    "sourceUrl": "https://x.com/sasatikk",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/sasatikk/status/1527270404930162688" },
-    { "field": "birthDate", "url": "https://x.com/sasatikk/status/1924352474749800746" },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/sasatikk/status/1527270404930162688"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/sasatikk/status/1924352474749800746"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
     },
     {
       "field": "socialLinks",
+      "url": "https://x.com/sasatikk"
+    },
+    {
+      "field": "profileImage",
       "url": "https://x.com/sasatikk"
     }
   ],

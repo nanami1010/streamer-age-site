@@ -4,20 +4,54 @@
   "aliases": [],
   "slug": "ta1yo",
   "birthDate": "2000-04-12",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/c/ta1yotv",
     "twitch": "https://www.twitch.tv/ta1yo_tv",
     "x": "https://x.com/ta1yo_tv"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/ta1yo.webp",
+    "alt": "ta1yoのプロフィール画像",
+    "sourceUrl": "https://x.com/ta1yo_tv",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://zetadivision.com/players/ta1yo" },
-    { "field": "birthDate", "url": "https://zetadivision.com/players/ta1yo?PageSpeed=noscript" },
-    { "field": "genres", "url": "https://zetadivision.com/players/ta1yo" },
-    { "field": "affiliation", "url": "https://zetadivision.com/players/ta1yo" },
-    { "field": "socialLinks", "url": "https://zetadivision.com/news/2022/01/26/7610" }
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/players/ta1yo"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/ta1yo?PageSpeed=noscript"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/players/ta1yo"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/players/ta1yo"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2022/01/26/7610"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/ta1yo_tv"
+    }
   ],
   "lastVerifiedAt": "2026-10-25",
   "devices": [

@@ -4,16 +4,34 @@
   "aliases": [],
   "slug": "guchitsubo",
   "birthDate": "1996-09-03",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/gutitubo",
     "twitch": "https://www.twitch.tv/gutitubo",
     "x": "https://x.com/gutituvo"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/guchitsubo.webp",
+    "alt": "ぐちつぼのプロフィール画像",
+    "sourceUrl": "https://x.com/gutituvo",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://zetadivision.com/players/ぐちつぼ" },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/ぐちつぼ"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -29,6 +47,10 @@
     {
       "field": "socialLinks",
       "url": "https://zetadivision.com/news/2025/12/29/40330"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/gutituvo"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

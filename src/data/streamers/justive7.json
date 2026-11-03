@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "justive7",
   "birthDate": "1998-07-02",
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": "FENNEL",
   "socialLinks": {
     "youtube": "https://www.youtube.com/c/Justive7gaming",
     "x": "https://x.com/justive_4"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/justive7.webp",
+    "alt": "Justive7のプロフィール画像",
+    "sourceUrl": "https://x.com/justive_4",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2733/" },
-    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2733/" },
-    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2733/" },
-    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2733/" },
-    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2733/" }
+    {
+      "field": "name",
+      "url": "https://fennel-esports.com/members/streamer/2733/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://fennel-esports.com/members/streamer/2733/"
+    },
+    {
+      "field": "genres",
+      "url": "https://fennel-esports.com/members/streamer/2733/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://fennel-esports.com/members/streamer/2733/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://fennel-esports.com/members/streamer/2733/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/justive_4"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

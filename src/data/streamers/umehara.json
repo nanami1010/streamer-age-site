@@ -1,24 +1,63 @@
 {
   "name": "ウメハラ",
   "nameKana": "うめはら",
-  "aliases": ["Daigo"],
+  "aliases": [
+    "Daigo"
+  ],
   "slug": "umehara",
   "birthDate": "1981-05-19",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "REJECT",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@DaigotheBeasTV",
     "twitch": "https://www.twitch.tv/daigothebeastv",
     "x": "https://x.com/daigothebeastJP"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/umehara.webp",
+    "alt": "ウメハラのプロフィール画像",
+    "sourceUrl": "https://x.com/daigothebeastJP",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://reject.jp/member/umehara-daigo/" },
-    { "field": "aliases", "url": "https://reject.jp/member/umehara-daigo/" },
-    { "field": "birthDate", "url": "https://reject.jp/member/umehara-daigo/" },
-    { "field": "genres", "url": "https://reject.jp/member/umehara-daigo/" },
-    { "field": "affiliation", "url": "https://reject.jp/member/umehara-daigo/" },
-    { "field": "socialLinks", "url": "https://www.daigothebeast.com/" }
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/umehara-daigo/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://reject.jp/member/umehara-daigo/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/umehara-daigo/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/umehara-daigo/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/umehara-daigo/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.daigothebeast.com/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/daigothebeastJP"
+    }
   ],
   "lastVerifiedAt": "2026-10-25",
   "devices": []

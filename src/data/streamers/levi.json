@@ -4,19 +4,52 @@
   "aliases": [],
   "slug": "levi",
   "birthDate": "2003-09-29",
-  "genres": ["ゲーム配信"],
+  "genres": [
+    "ゲーム配信"
+  ],
   "affiliation": "REJECT",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@levi_ibs",
     "x": "https://x.com/Levi_ibs"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/levi.webp",
+    "alt": "Leviのプロフィール画像",
+    "sourceUrl": "https://x.com/Levi_ibs",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://reject.jp/member/levi/" },
-    { "field": "birthDate", "url": "https://reject.jp/member/levi/" },
-    { "field": "genres", "url": "https://reject.jp/member/levi/" },
-    { "field": "affiliation", "url": "https://reject.jp/member/levi/" },
-    { "field": "socialLinks", "url": "https://reject.jp/member/levi/" }
+    {
+      "field": "name",
+      "url": "https://reject.jp/member/levi/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://reject.jp/member/levi/"
+    },
+    {
+      "field": "genres",
+      "url": "https://reject.jp/member/levi/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://reject.jp/member/levi/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://reject.jp/member/levi/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Levi_ibs"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

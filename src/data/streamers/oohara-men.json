@@ -1,26 +1,71 @@
 {
   "name": "おおはらMEN",
   "nameKana": "おおはらめん",
-  "aliases": ["ooharaMEN"],
+  "aliases": [
+    "ooharaMEN"
+  ],
   "slug": "oohara-men",
   "birthDate": "1997-07-28",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": "ドズル社",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@ooharaMEN",
     "twitch": "https://www.twitch.tv/ooharameeen",
     "x": "https://x.com/oohara0013"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/oohara-men.webp",
+    "alt": "おおはらMENのプロフィール画像",
+    "sourceUrl": "https://x.com/oohara0013",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://note.com/wonder_dive/n/n274ff2131621" },
-    { "field": "birthDate", "url": "https://x.com/oohara0013/status/1023180335364767744" },
-    { "field": "name", "url": "https://www.dozle.jp/members/ooharamen/" },
-    { "field": "nameKana", "url": "https://www.dozle.jp/members/ooharamen/" },
-    { "field": "aliases", "url": "https://www.dozle.jp/support_rule/" },
-    { "field": "genres", "url": "https://www.dozle.jp/members/ooharamen/" },
-    { "field": "affiliation", "url": "https://www.dozle.jp/about/" },
-    { "field": "socialLinks", "url": "https://www.dozle.jp/members/ooharamen/" }
+    {
+      "field": "birthDate",
+      "url": "https://note.com/wonder_dive/n/n274ff2131621"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/oohara0013/status/1023180335364767744"
+    },
+    {
+      "field": "name",
+      "url": "https://www.dozle.jp/members/ooharamen/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.dozle.jp/members/ooharamen/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.dozle.jp/support_rule/"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.dozle.jp/members/ooharamen/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.dozle.jp/about/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.dozle.jp/members/ooharamen/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/oohara0013"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

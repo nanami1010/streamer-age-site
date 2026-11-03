@@ -1,25 +1,67 @@
 {
   "name": "Daruma is god",
   "nameKana": "だるまいずごっど",
-  "aliases": ["だるまいずごっど"],
+  "aliases": [
+    "だるまいずごっど"
+  ],
   "slug": "daruma-is-god",
   "birthDate": "1998-10-31",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCRRKdB87Oj-FkqS4L9QQRiQ",
     "twitch": "https://www.twitch.tv/darumaisgod",
     "x": "https://x.com/darumaisgod"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/daruma-is-god.webp",
+    "alt": "Daruma is godのプロフィール画像",
+    "sourceUrl": "https://x.com/darumaisgod",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
-    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
-    { "field": "aliases", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
-    { "field": "birthDate", "url": "https://x.com/darumaisgod/status/1189559090424340481" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/daruma-is-god/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/daruma-is-god/" }
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/daruma-is-god/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://crazyraccoon.jp/member/daruma-is-god/"
+    },
+    {
+      "field": "aliases",
+      "url": "https://crazyraccoon.jp/member/daruma-is-god/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/darumaisgod/status/1189559090424340481"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/daruma-is-god/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/daruma-is-god/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/daruma-is-god/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/darumaisgod"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

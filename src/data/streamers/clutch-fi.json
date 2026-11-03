@@ -1,23 +1,59 @@
 {
   "name": "Clutch_Fi",
   "nameKana": "くらっちふぁい",
-  "aliases": ["クラッチ"],
+  "aliases": [
+    "クラッチ"
+  ],
   "slug": "clutch-fi",
   "birthDate": "1992-12-11",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "ZETA DIVISION",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@ClutchFi",
     "twitch": "https://www.twitch.tv/clutch_fii",
     "x": "https://x.com/Clutch_Fi"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/clutch-fi.webp",
+    "alt": "Clutch_Fiのプロフィール画像",
+    "sourceUrl": "https://x.com/Clutch_Fi",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://zetadivision.com/players/clutch_fi" },
-    { "field": "birthDate", "url": "https://zetadivision.com/players/clutch_fi" },
-    { "field": "genres", "url": "https://zetadivision.com/players/clutch_fi" },
-    { "field": "affiliation", "url": "https://zetadivision.com/players/clutch_fi" },
-    { "field": "socialLinks", "url": "https://zetadivision.com/news/2025/10/24/38659" }
+    {
+      "field": "name",
+      "url": "https://zetadivision.com/players/clutch_fi"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://zetadivision.com/players/clutch_fi"
+    },
+    {
+      "field": "genres",
+      "url": "https://zetadivision.com/players/clutch_fi"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://zetadivision.com/players/clutch_fi"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://zetadivision.com/news/2025/10/24/38659"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Clutch_Fi"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

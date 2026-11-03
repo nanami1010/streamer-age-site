@@ -4,20 +4,57 @@
   "aliases": [],
   "slug": "kano-eiko",
   "birthDate": "1982-02-22",
-  "genres": ["ゲーム配信", "ホラーゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "ホラーゲーム"
+  ],
   "affiliation": "マセキ芸能社",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCDn8Lqf-x0zD8hmFUg08f6w",
     "x": "https://x.com/kano9x"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kano-eiko.webp",
+    "alt": "狩野英孝のプロフィール画像",
+    "sourceUrl": "https://x.com/kano9x",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.maseki.co.jp/talent/KanoEiko" },
-    { "field": "nameKana", "url": "https://www.maseki.co.jp/talent/KanoEiko" },
-    { "field": "birthDate", "url": "https://www.maseki.co.jp/talent/KanoEiko" },
-    { "field": "genres", "url": "https://www.maseki.co.jp/talent/KanoEiko" },
-    { "field": "affiliation", "url": "https://www.maseki.co.jp/talent/KanoEiko" },
-    { "field": "socialLinks", "url": "https://www.maseki.co.jp/talent/KanoEiko" }
+    {
+      "field": "name",
+      "url": "https://www.maseki.co.jp/talent/KanoEiko"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.maseki.co.jp/talent/KanoEiko"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.maseki.co.jp/talent/KanoEiko"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.maseki.co.jp/talent/KanoEiko"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.maseki.co.jp/talent/KanoEiko"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.maseki.co.jp/talent/KanoEiko"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/kano9x"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

@@ -4,16 +4,34 @@
   "aliases": [],
   "slug": "ariken",
   "birthDate": "1997-07-20",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "RIDDLE",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UC3NHhO0wBaZ5OVxaabcDKrw",
     "twitch": "https://www.twitch.tv/arikendebu",
     "x": "https://x.com/guraburuslot777"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/ariken.webp",
+    "alt": "ありけんのプロフィール画像",
+    "sourceUrl": "https://x.com/guraburuslot777",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/guraburuslot777/status/1682035672792854531" },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/guraburuslot777/status/1682035672792854531"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
@@ -25,6 +43,10 @@
     {
       "field": "socialLinks",
       "url": "https://riddle.info/news/news_21/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/guraburuslot777"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

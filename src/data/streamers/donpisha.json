@@ -4,17 +4,38 @@
   "aliases": [],
   "slug": "donpisha",
   "birthDate": "1986-02-02",
-  "genres": ["ゲーム配信", "ゲーム実況"],
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況"
+  ],
   "affiliation": "三人称",
   "socialLinks": {
     "youtube": "https://www.youtube.com/c/sanninshow",
     "twitch": "https://www.twitch.tv/sanninshow_3ns",
     "x": "https://x.com/DONPISHA22"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/donpisha.webp",
+    "alt": "ドンピシャのプロフィール画像",
+    "sourceUrl": "https://x.com/DONPISHA22",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/DONPISHA22/status/1091353211175223296" },
-    { "field": "birthDate", "url": "https://x.com/DONPISHA22/status/1356270977181569025" },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/DONPISHA22/status/1091353211175223296"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/DONPISHA22/status/1356270977181569025"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -26,6 +47,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.youtube.com/c/sanninshow"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/DONPISHA22"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

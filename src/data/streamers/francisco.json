@@ -1,24 +1,63 @@
 {
   "name": "Francisco",
   "nameKana": "ふらんしすこ",
-  "aliases": ["ふらんしすこ"],
+  "aliases": [
+    "ふらんしすこ"
+  ],
   "slug": "francisco",
   "birthDate": "1995-03-12",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UC_VFb6Q52lbZJwTuE8Rb5AA",
     "twitch": "https://www.twitch.tv/franciscoow",
     "x": "https://x.com/Franciscooo_T"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/francisco.webp",
+    "alt": "Franciscoのプロフィール画像",
+    "sourceUrl": "https://x.com/Franciscooo_T",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://mirashiru.dai-ichi-life.co.jp/article/1263016" },
-    { "field": "name", "url": "https://crazyraccoon.jp/member/francisco/" },
-    { "field": "birthDate", "url": "https://crazyraccoon.jp/member/francisco/" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/francisco/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/francisco/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/francisco/" }
+    {
+      "field": "birthDate",
+      "url": "https://mirashiru.dai-ichi-life.co.jp/article/1263016"
+    },
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/francisco/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://crazyraccoon.jp/member/francisco/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/francisco/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/francisco/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/francisco/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Franciscooo_T"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": [

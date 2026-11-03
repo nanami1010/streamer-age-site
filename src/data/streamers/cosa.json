@@ -4,19 +4,56 @@
   "aliases": [],
   "slug": "cosa",
   "birthDate": "1993-06-24",
-  "genres": ["ゲーム配信", "格闘ゲーム"],
+  "genres": [
+    "ゲーム配信",
+    "格闘ゲーム"
+  ],
   "affiliation": "Saishunkan Sol 熊本",
   "socialLinks": {
     "x": "https://x.com/cosazeku"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/cosa.webp",
+    "alt": "cosaのプロフィール画像",
+    "sourceUrl": "https://x.com/cosazeku",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.sskumamoto.com/article/20250421-1" },
-    { "field": "nameKana", "url": "https://www.sskumamoto.com/article/20250421-1" },
-    { "field": "birthDate", "url": "https://www.sskumamoto.com/article/20250421-1" },
-    { "field": "genres", "url": "https://www.sskumamoto.com/member" },
-    { "field": "affiliation", "url": "https://www.sskumamoto.com/member" },
-    { "field": "socialLinks", "url": "https://www.sskumamoto.com/article/20250421-1" }
+    {
+      "field": "name",
+      "url": "https://www.sskumamoto.com/article/20250421-1"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://www.sskumamoto.com/article/20250421-1"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.sskumamoto.com/article/20250421-1"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.sskumamoto.com/member"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.sskumamoto.com/member"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.sskumamoto.com/article/20250421-1"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/cosazeku"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

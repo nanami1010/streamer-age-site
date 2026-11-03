@@ -1,20 +1,41 @@
 {
   "name": "すもも",
   "nameKana": "すもも",
-  "aliases": ["SUMOMO", "SUMOMOXqX"],
+  "aliases": [
+    "SUMOMO",
+    "SUMOMOXqX"
+  ],
   "slug": "sumomo",
   "birthDate": null,
   "birthMonthDay": "01-13",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "DetonatioN FocusMe",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UC38hCsF3st1pBJBw8JnAu2g",
     "twitch": "https://www.twitch.tv/sumomo_x",
     "x": "https://x.com/SUMOMOXqX"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/sumomo.webp",
+    "alt": "すもものプロフィール画像",
+    "sourceUrl": "https://x.com/SUMOMOXqX",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthMonthDay", "url": "https://x.com/SUMOMOXqX/status/1613555366545223680" },
+    {
+      "field": "birthMonthDay",
+      "url": "https://x.com/SUMOMOXqX/status/1613555366545223680"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-apex-1"
@@ -30,6 +51,10 @@
     {
       "field": "socialLinks",
       "url": "https://team-detonation.net/team/member/sumomoxqx"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/SUMOMOXqX"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

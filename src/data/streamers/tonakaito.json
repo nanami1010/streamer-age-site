@@ -1,19 +1,40 @@
 {
   "name": "トナカイト",
   "nameKana": "となかいと",
-  "aliases": ["ヘンディー", "カイト"],
+  "aliases": [
+    "ヘンディー",
+    "カイト"
+  ],
   "slug": "tonakaito",
   "birthDate": "1991-03-12",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "UUUM",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@TONAHENDY",
     "twitch": "https://www.twitch.tv/tonakaito_hendy",
     "x": "https://x.com/k_najimi"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/tonakaito.webp",
+    "alt": "トナカイトのプロフィール画像",
+    "sourceUrl": "https://x.com/k_najimi",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/k_najimi/status/1634570252171509760" },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/k_najimi/status/1634570252171509760"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
@@ -29,6 +50,10 @@
     {
       "field": "socialLinks",
       "url": "https://uuum.jp/creator/kaito"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/k_najimi"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

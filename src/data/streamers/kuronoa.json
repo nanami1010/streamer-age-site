@@ -4,19 +4,53 @@
   "aliases": [],
   "slug": "kuronoa",
   "birthDate": "1995-01-21",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": "日常組",
   "socialLinks": {
     "youtube": "https://www.youtube.com/user/KuronekoNoa121",
     "x": "https://x.com/kuronoa121"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kuronoa.webp",
+    "alt": "クロノアのプロフィール画像",
+    "sourceUrl": "https://x.com/kuronoa121",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://nichijo.world/members/kuronoa/" },
-    { "field": "birthDate", "url": "https://nichijo.world/members/kuronoa/" },
-    { "field": "genres", "url": "https://nichijo.world/members/kuronoa/" },
-    { "field": "affiliation", "url": "https://nichijo.world/members/kuronoa/" },
-    { "field": "socialLinks", "url": "https://nichijo.world/members/kuronoa/" }
+    {
+      "field": "name",
+      "url": "https://nichijo.world/members/kuronoa/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://nichijo.world/members/kuronoa/"
+    },
+    {
+      "field": "genres",
+      "url": "https://nichijo.world/members/kuronoa/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://nichijo.world/members/kuronoa/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://nichijo.world/members/kuronoa/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/kuronoa121"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

@@ -1,18 +1,35 @@
 {
   "name": "ごっちゃんマイキー",
   "nameKana": "ごっちゃんまいきー",
-  "aliases": ["ごっちゃん@マイキー"],
+  "aliases": [
+    "ごっちゃん@マイキー"
+  ],
   "slug": "gocchan-mikey",
   "birthDate": null,
   "birthMonthDay": "11-02",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCgFKdFutAhwsWSoeZ6zXJrg",
     "twitch": "https://www.twitch.tv/gocchanmikey",
     "x": "https://x.com/_GocChaN_"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/gocchan-mikey.webp",
+    "alt": "ごっちゃんマイキーのプロフィール画像",
+    "sourceUrl": "https://x.com/_GocChaN_",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "birthMonthDay",
@@ -33,6 +50,10 @@
     {
       "field": "socialLinks",
       "url": "https://crazyraccoon.jp/20240401-2/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/_GocChaN_"
     }
   ],
   "lastVerifiedAt": "2026-10-29",

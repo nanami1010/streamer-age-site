@@ -4,20 +4,57 @@
   "aliases": [],
   "slug": "noda-crystal",
   "birthDate": "1986-11-28",
-  "genres": ["ゲーム配信", "ゲーム制作"],
+  "genres": [
+    "ゲーム配信",
+    "ゲーム制作"
+  ],
   "affiliation": "吉本興業",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCzfagYm_ai4JjGBRedqxu9Q",
     "x": "https://x.com/nodacry"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/noda-crystal.webp",
+    "alt": "野田クリスタルのプロフィール画像",
+    "sourceUrl": "https://x.com/nodacry",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773" },
-    { "field": "nameKana", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773" },
-    { "field": "birthDate", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773" },
-    { "field": "genres", "url": "https://prtimes.jp/main/html/rd/p/000000536.000014685.html" },
-    { "field": "affiliation", "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773" },
-    { "field": "socialLinks", "url": "https://prtimes.jp/main/html/rd/p/000000536.000014685.html" }
+    {
+      "field": "name",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773"
+    },
+    {
+      "field": "genres",
+      "url": "https://prtimes.jp/main/html/rd/p/000000536.000014685.html"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://profile.yoshimoto.co.jp/talent/detail?id=2773"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://prtimes.jp/main/html/rd/p/000000536.000014685.html"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/nodacry"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

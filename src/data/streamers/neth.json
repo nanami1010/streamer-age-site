@@ -4,21 +4,58 @@
   "aliases": [],
   "slug": "neth",
   "birthDate": "1996-05-26",
-  "genres": ["ゲーム配信", "FPS"],
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UC4YCmLG9c7V-nCvcak49Meg",
     "twitch": "https://www.twitch.tv/neth3",
     "x": "https://x.com/neth_vz"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/neth.webp",
+    "alt": "nethのプロフィール画像",
+    "sourceUrl": "https://x.com/neth_vz",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthDate", "url": "https://x.com/neth_vz/status/2058929623879262573" },
-    { "field": "name", "url": "https://crazyraccoon.jp/member/neth/" },
-    { "field": "nameKana", "url": "https://crazyraccoon.jp/member/neth/" },
-    { "field": "genres", "url": "https://crazyraccoon.jp/member/neth/" },
-    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/neth/" },
-    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/neth/" }
+    {
+      "field": "birthDate",
+      "url": "https://x.com/neth_vz/status/2058929623879262573"
+    },
+    {
+      "field": "name",
+      "url": "https://crazyraccoon.jp/member/neth/"
+    },
+    {
+      "field": "nameKana",
+      "url": "https://crazyraccoon.jp/member/neth/"
+    },
+    {
+      "field": "genres",
+      "url": "https://crazyraccoon.jp/member/neth/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://crazyraccoon.jp/member/neth/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://crazyraccoon.jp/member/neth/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/neth_vz"
+    }
   ],
   "lastVerifiedAt": "2026-10-29",
   "devices": []

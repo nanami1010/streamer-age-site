@@ -1,22 +1,58 @@
 {
   "name": "Yutapon",
   "nameKana": "ゆたぽん",
-  "aliases": ["yutapon"],
+  "aliases": [
+    "yutapon"
+  ],
   "slug": "yutapon",
   "birthDate": "1996-09-10",
-  "genres": ["ゲーム配信", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "MOBA"
+  ],
   "affiliation": "DetonatioN FocusMe",
   "socialLinks": {
     "twitch": "https://www.twitch.tv/yutapongo",
     "x": "https://x.com/yutapongo"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/yutapon.webp",
+    "alt": "Yutaponのプロフィール画像",
+    "sourceUrl": "https://x.com/yutapongo",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://note.com/dfmwin/n/nf7ba0a504d93" },
-    { "field": "birthDate", "url": "https://note.com/dfmwin/n/nf7ba0a504d93" },
-    { "field": "genres", "url": "https://team-detonation.net/news/46508" },
-    { "field": "affiliation", "url": "https://team-detonation.net/news/46508" },
-    { "field": "socialLinks", "url": "https://note.com/dfmwin/n/nf7ba0a504d93" }
+    {
+      "field": "name",
+      "url": "https://note.com/dfmwin/n/nf7ba0a504d93"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://note.com/dfmwin/n/nf7ba0a504d93"
+    },
+    {
+      "field": "genres",
+      "url": "https://team-detonation.net/news/46508"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://team-detonation.net/news/46508"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://note.com/dfmwin/n/nf7ba0a504d93"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/yutapongo"
+    }
   ],
   "lastVerifiedAt": "2026-11-02",
   "devices": []

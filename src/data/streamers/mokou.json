@@ -1,7 +1,9 @@
 {
   "name": "もこう",
   "nameKana": "もこう",
-  "aliases": ["馬場豊"],
+  "aliases": [
+    "馬場豊"
+  ],
   "slug": "mokou",
   "birthDate": "1990-11-15",
   "genres": [
@@ -12,7 +14,19 @@
     "youtube": "https://www.youtube.com/@mokoustream",
     "x": "https://x.com/mokouliszt"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/mokou.webp",
+    "alt": "もこうのプロフィール画像",
+    "sourceUrl": "https://x.com/mokouliszt",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -49,6 +63,10 @@
     {
       "field": "socialLinks",
       "url": "https://dorokusa.co.jp/news-moko-gm"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/mokouliszt"
     }
   ],
   "lastVerifiedAt": "2026-10-23",

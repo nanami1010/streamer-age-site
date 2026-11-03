@@ -5,18 +5,49 @@
   "slug": "rader",
   "birthDate": null,
   "birthMonthDay": "11-11",
-  "genres": ["ゲーム配信", "Minecraft"],
+  "genres": [
+    "ゲーム配信",
+    "Minecraft"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@radaooo",
     "x": "https://x.com/radaokun"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/rader.webp",
+    "alt": "らっだぁのプロフィール画像",
+    "sourceUrl": "https://x.com/radaokun",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://www.animatetimes.com/tag/details.php?id=24336" },
-    { "field": "birthMonthDay", "url": "https://www.animatetimes.com/tag/details.php?id=24336" },
-    { "field": "genres", "url": "https://www.animatetimes.com/tag/details.php?id=24336" },
-    { "field": "socialLinks", "url": "https://www.animatetimes.com/tag/details.php?id=24336" }
+    {
+      "field": "name",
+      "url": "https://www.animatetimes.com/tag/details.php?id=24336"
+    },
+    {
+      "field": "birthMonthDay",
+      "url": "https://www.animatetimes.com/tag/details.php?id=24336"
+    },
+    {
+      "field": "genres",
+      "url": "https://www.animatetimes.com/tag/details.php?id=24336"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.animatetimes.com/tag/details.php?id=24336"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/radaokun"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

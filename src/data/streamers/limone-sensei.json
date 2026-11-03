@@ -5,21 +5,43 @@
   "slug": "limone-sensei",
   "birthDate": null,
   "birthMonthDay": "08-19",
-  "genres": ["ゲーム配信", "ゲーム実況"],
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況"
+  ],
   "affiliation": null,
   "socialLinks": {
     "youtube": "https://www.youtube.com/@limone_teacher",
     "x": "https://x.com/limodom"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/limone-sensei.webp",
+    "alt": "リモーネ先生のプロフィール画像",
+    "sourceUrl": "https://x.com/limodom",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "birthMonthDay", "url": "https://x.com/limodom/status/1560282492388937731" },
+    {
+      "field": "birthMonthDay",
+      "url": "https://x.com/limodom/status/1560282492388937731"
+    },
     {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
     },
     {
       "field": "socialLinks",
+      "url": "https://x.com/limodom"
+    },
+    {
+      "field": "profileImage",
       "url": "https://x.com/limodom"
     }
   ],

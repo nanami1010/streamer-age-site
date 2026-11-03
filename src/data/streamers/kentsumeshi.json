@@ -4,20 +4,53 @@
   "aliases": [],
   "slug": "kentsumeshi",
   "birthDate": "1999-10-30",
-  "genres": ["ゲーム配信"],
+  "genres": [
+    "ゲーム配信"
+  ],
   "affiliation": "FENNEL",
   "socialLinks": {
     "youtube": "https://www.youtube.com/channel/UCuWd8brzerR9XQr7RgFgpyQ",
     "twitch": "https://www.twitch.tv/kentsumeshi_heyoo",
     "x": "https://x.com/Kent_Golemeshi"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/kentsumeshi.webp",
+    "alt": "KENTSUMESHIのプロフィール画像",
+    "sourceUrl": "https://x.com/Kent_Golemeshi",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
-    { "field": "name", "url": "https://fennel-esports.com/members/streamer/2727/" },
-    { "field": "birthDate", "url": "https://fennel-esports.com/members/streamer/2727/" },
-    { "field": "genres", "url": "https://fennel-esports.com/members/streamer/2727/" },
-    { "field": "affiliation", "url": "https://fennel-esports.com/members/streamer/2727/" },
-    { "field": "socialLinks", "url": "https://fennel-esports.com/members/streamer/2727/" }
+    {
+      "field": "name",
+      "url": "https://fennel-esports.com/members/streamer/2727/"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://fennel-esports.com/members/streamer/2727/"
+    },
+    {
+      "field": "genres",
+      "url": "https://fennel-esports.com/members/streamer/2727/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://fennel-esports.com/members/streamer/2727/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://fennel-esports.com/members/streamer/2727/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Kent_Golemeshi"
+    }
   ],
   "lastVerifiedAt": "2026-10-26",
   "devices": []

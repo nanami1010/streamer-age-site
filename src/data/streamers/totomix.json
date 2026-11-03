@@ -1,17 +1,35 @@
 {
   "name": "ととみっくす",
   "nameKana": "ととみっくす",
-  "aliases": ["tototMix"],
+  "aliases": [
+    "tototMix"
+  ],
   "slug": "totomix",
   "birthDate": null,
   "birthMonthDay": "08-01",
-  "genres": ["ゲーム配信", "FPS", "MOBA"],
+  "genres": [
+    "ゲーム配信",
+    "FPS",
+    "MOBA"
+  ],
   "affiliation": "Crazy Raccoon",
   "socialLinks": {
     "twitch": "https://www.twitch.tv/tototmix",
     "x": "https://x.com/mix_totot"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/totomix.webp",
+    "alt": "ととみっくすのプロフィール画像",
+    "sourceUrl": "https://x.com/mix_totot",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -32,6 +50,10 @@
     {
       "field": "socialLinks",
       "url": "https://crazyraccoon.jp/20250401-2/"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/mix_totot"
     }
   ],
   "lastVerifiedAt": "2026-10-28",

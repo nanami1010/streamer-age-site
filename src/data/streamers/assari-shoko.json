@@ -14,7 +14,19 @@
     "twitch": "https://www.twitch.tv/assarisyoko1",
     "x": "https://x.com/Saaanjjiii"
   },
-  "profileImage": null,
+  "profileImage": {
+    "src": "/images/streamers/assari-shoko.webp",
+    "alt": "あっさりしょこのプロフィール画像",
+    "sourceUrl": "https://x.com/Saaanjjiii",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-04",
+    "usageScopes": [
+      "homeCard",
+      "profilePage",
+      "generationCard"
+    ]
+  },
   "sources": [
     {
       "field": "name",
@@ -43,6 +55,10 @@
     {
       "field": "socialLinks",
       "url": "https://www.twitch.tv/assarisyoko1"
+    },
+    {
+      "field": "profileImage",
+      "url": "https://x.com/Saaanjjiii"
     }
   ],
   "lastVerifiedAt": "2026-10-25",
