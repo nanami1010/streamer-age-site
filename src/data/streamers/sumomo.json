@@ -6,8 +6,7 @@
     "SUMOMOXqX"
   ],
   "slug": "sumomo",
-  "birthDate": null,
-  "birthMonthDay": "01-13",
+  "birthDate": "1988-01-13",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -33,7 +32,7 @@
   },
   "sources": [
     {
-      "field": "birthMonthDay",
+      "field": "birthDate",
       "url": "https://x.com/SUMOMOXqX/status/1613555366545223680"
     },
     {
@@ -55,8 +54,12 @@
     {
       "field": "profileImage",
       "url": "https://x.com/SUMOMOXqX"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://ja.dbpedia.org/page/%E3%81%99%E3%82%82%E3%82%82_%28%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%29"
     }
   ],
-  "lastVerifiedAt": "2026-10-29",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

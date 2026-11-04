@@ -5,7 +5,7 @@
     "tanukininja"
   ],
   "slug": "tanuki-ninja",
-  "birthDate": null,
+  "birthDate": "1995-04-20",
   "genres": [
     "ゲーム配信",
     "MOBA"
@@ -44,8 +44,12 @@
     {
       "field": "profileImage",
       "url": "https://x.com/tanukininja_jp"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/TwitchJP/status/1384519874714619909"
     }
   ],
-  "lastVerifiedAt": "2026-11-02",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

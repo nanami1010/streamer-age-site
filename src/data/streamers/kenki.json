@@ -3,7 +3,7 @@
   "nameKana": "けんき",
   "aliases": [],
   "slug": "kenki",
-  "birthDate": null,
+  "birthDate": "1993-05-21",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -43,8 +43,12 @@
     {
       "field": "profileImage",
       "url": "https://x.com/T_kenki"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.livlan.com/wp-content/uploads/2023/09/3078adf1146a7059dadd3a3c7d1e9501.pdf"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

@@ -3,7 +3,7 @@
   "nameKana": "ぼどか",
   "aliases": [],
   "slug": "vodka",
-  "birthDate": null,
+  "birthDate": "1996-02-26",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -47,9 +47,13 @@
     {
       "field": "profileImage",
       "url": "https://x.com/VodkaChaso"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/VodkaChaso/status/1365115109790523393"
     }
   ],
-  "lastVerifiedAt": "2026-10-23",
+  "lastVerifiedAt": "2026-11-04",
   "devices": [
     {
       "productId": "hitscan-hyperlight",

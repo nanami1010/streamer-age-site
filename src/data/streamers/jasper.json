@@ -6,8 +6,7 @@
     "Jasper7se"
   ],
   "slug": "jasper",
-  "birthDate": null,
-  "birthMonthDay": "11-27",
+  "birthDate": "1999-11-27",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -45,7 +44,7 @@
       "url": "https://www.twitch.tv/jasper7se"
     },
     {
-      "field": "birthMonthDay",
+      "field": "birthDate",
       "url": "https://crazyraccoon.jp/member/jasper/"
     },
     {
@@ -63,8 +62,16 @@
     {
       "field": "profileImage",
       "url": "https://x.com/Jasper7se"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/Jasper7se/status/1596523414634008577"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/Jasper7se/status/802814119061487616"
     }
   ],
-  "lastVerifiedAt": "2026-10-23",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

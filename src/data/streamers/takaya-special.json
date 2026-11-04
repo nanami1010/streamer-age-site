@@ -3,8 +3,7 @@
   "nameKana": "たかやすぺしゃる",
   "aliases": [],
   "slug": "takaya-special",
-  "birthDate": null,
-  "birthMonthDay": "06-13",
+  "birthDate": "1995-06-13",
   "genres": [
     "ゲーム配信",
     "MOBA"
@@ -34,7 +33,7 @@
       "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
     },
     {
-      "field": "birthMonthDay",
+      "field": "birthDate",
       "url": "https://gaming.softbankhawks.co.jp/team_streamer-1/"
     },
     {
@@ -52,8 +51,12 @@
     {
       "field": "profileImage",
       "url": "https://x.com/PowerofTakaya"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/PowerofTakaya/status/1933184276788543985"
     }
   ],
-  "lastVerifiedAt": "2026-11-02",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

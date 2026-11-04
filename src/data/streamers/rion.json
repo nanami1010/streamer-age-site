@@ -3,8 +3,7 @@
   "nameKana": "りおん",
   "aliases": [],
   "slug": "rion",
-  "birthDate": null,
-  "birthMonthDay": "12-31",
+  "birthDate": "1995-12-31",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -34,7 +33,7 @@
       "url": "https://crazyraccoon.jp/member/rion/"
     },
     {
-      "field": "birthMonthDay",
+      "field": "birthDate",
       "url": "https://crazyraccoon.jp/member/rion/"
     },
     {
@@ -52,8 +51,12 @@
     {
       "field": "profileImage",
       "url": "https://x.com/R_7qq"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/R_7qq/status/1608867133685125120"
     }
   ],
-  "lastVerifiedAt": "2026-10-26",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

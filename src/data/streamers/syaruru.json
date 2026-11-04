@@ -5,7 +5,7 @@
     "syaruru"
   ],
   "slug": "syaruru",
-  "birthDate": null,
+  "birthDate": "1992-03-23",
   "genres": [
     "ゲーム配信",
     "MOBA"
@@ -44,8 +44,12 @@
     {
       "field": "profileImage",
       "url": "https://x.com/syaruruuu"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.youtube.com/watch?v=tafARfSSgY0"
     }
   ],
-  "lastVerifiedAt": "2026-11-02",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }

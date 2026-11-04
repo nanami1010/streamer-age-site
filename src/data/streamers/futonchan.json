@@ -5,7 +5,7 @@
     "魔神"
   ],
   "slug": "futonchan",
-  "birthDate": null,
+  "birthDate": "1985-07-06",
   "genres": [
     "ゲーム配信",
     "雑談"
@@ -53,8 +53,16 @@
     {
       "field": "profileImage",
       "url": "https://x.com/indegnasen210"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://wikiwiki.jp/openrec/%E5%B8%83%E5%9B%A3%E3%81%A1%E3%82%83%E3%82%93"
+    },
+    {
+      "field": "birthDate",
+      "url": "https://www.youtube.com/watch?v=wVrVzLPSYWw"
     }
   ],
-  "lastVerifiedAt": "2026-10-23",
+  "lastVerifiedAt": "2026-11-04",
   "devices": []
 }
