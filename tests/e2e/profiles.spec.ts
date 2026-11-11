@@ -34,7 +34,7 @@ test.describe("全配信者のプロフィール", () => {
       });
 
       const response = await page.goto(`/streamers/${streamer.slug}/`, {
-        waitUntil: "networkidle"
+        waitUntil: "domcontentloaded"
       });
       expect(response?.status()).toBe(200);
 
@@ -181,6 +181,38 @@ test.describe("全配信者のプロフィール", () => {
             expectedBadgeLabel
           );
 
+          const visibleSourceDates = card.locator("[data-device-source-dates]");
+          await expect(visibleSourceDates).toBeVisible();
+
+          if (device.usageConfirmedAt) {
+            const [year, month, day] = device.usageConfirmedAt.split("-");
+            await expect(visibleSourceDates).toContainText(
+              `使用確認日：${year}年${Number(month)}月${Number(day)}日`
+            );
+          }
+
+          if (device.sourceUpdatedAt) {
+            const dateParts = new Intl.DateTimeFormat("ja-JP", {
+              timeZone: "Asia/Tokyo",
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit"
+            }).formatToParts(new Date(device.sourceUpdatedAt));
+            const dateValues = Object.fromEntries(
+              dateParts.map(({ type, value }) => [type, value])
+            );
+            await expect(visibleSourceDates).toContainText(
+              `${device.sourceType === "channelCommand" ? "公開コマンド更新日" : "出典更新日"}：${dateValues.year}年${Number(dateValues.month)}月${Number(dateValues.day)}日`
+            );
+          }
+
+          if (!device.usageConfirmedAt && !device.sourceUpdatedAt) {
+            const [year, month, day] = device.lastVerifiedAt.split("-");
+            await expect(visibleSourceDates).toContainText(
+              `出典確認日：${year}年${Number(month)}月${Number(day)}日`
+            );
+          }
+
           if (device.sourceCommand) {
             await expect(sourceMeta).toContainText("確認コマンド");
             await expect(sourceMeta.locator("code")).toHaveText(
@@ -284,10 +316,10 @@ test.describe("全配信者のプロフィール", () => {
   }
 });
 
-test("デバイス登録済み13人と未登録128人の件数が正しい", async () => {
+test("デバイス登録済み17人とその他の未登録者の件数が正しい", async () => {
   const expectedCounts = new Map([
-    ["shaka", 1],
-    ["k4sen", 6],
+    ["shaka", 10],
+    ["k4sen", 7],
     ["laz", 5],
     ["vodka", 3],
     ["1tappy", 4],
@@ -298,7 +330,11 @@ test("デバイス登録済み13人と未登録128人の件数が正しい", asy
     ["shomaru7", 6],
     ["ta1yo", 3],
     ["suzuki-noriaki", 2],
-    ["ras", 2]
+    ["ras", 2],
+    ["seki-yuta", 1],
+    ["rion", 2],
+    ["selly", 2],
+    ["mondo", 2]
   ]);
 
   for (const streamer of streamers) {

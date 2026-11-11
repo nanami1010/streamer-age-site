@@ -58,7 +58,109 @@
       "sourceType": "directStatement",
       "usageConfirmedAt": "2025-11-27",
       "verificationNote": "動画内の使用発言は確認済みですが、正確な型番は映像での再確認が必要です。",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "finalmouse-ultralightx",
+      "type": "マウス",
+      "manufacturer": "Finalmouse",
+      "productName": "UltralightX",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "verificationNote": "公開コマンドではUltralightXまで確認できます。サイズ・カラー・バッチは特定できていません。",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "fumo-saya-odin-gaming-2xl",
+      "type": "マウスパッド",
+      "manufacturer": "Fumo Collection",
+      "productName": "沙耶の唄 × ふもコレ ゲーミングマウスパッド Odin Gaming 2XL",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "realforce-gx1-keyboard",
+      "type": "キーボード",
+      "manufacturer": "REALFORCE",
+      "productName": "GX1 Keyboard",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "verificationNote": "公開コマンドではGX1 Keyboardまで確認できます。配列・押下圧別の製品型番は特定できていません。",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "sony-inzone-e9",
+      "type": "イヤホン",
+      "manufacturer": "Sony",
+      "productName": "INZONE E9",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "blue-mouse",
+      "type": "マイク",
+      "manufacturer": "Blue Microphones",
+      "productName": "Mouse",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "herman-miller-logitech-g-embody-gaming-chair",
+      "type": "ゲーミングチェア",
+      "manufacturer": "Herman Miller × Logitech G",
+      "productName": "Embody Gaming Chair",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "sony-ilme-fx3",
+      "type": "カメラ",
+      "manufacturer": "Sony",
+      "productName": "FX3（ILME-FX3）",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "magewell-pro-capture-dual-hdmi",
+      "type": "キャプチャーボード",
+      "manufacturer": "Magewell",
+      "productName": "Pro Capture Dual HDMI",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!device",
+      "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "grapht-command-trigger-for-pc",
+      "type": "コントローラー",
+      "manufacturer": "GRAPHT",
+      "productName": "Command Trigger for PC",
+      "sourceUrl": "https://nightbot.tv/t/fps_shaka/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!controller",
+      "sourceUpdatedAt": "2026-09-21T18:11:19.609Z",
+      "verificationNote": "公開コマンドではCommand Trigger for PCまで確認できます。標準モデル・コラボレーションモデルの別と型番は特定できていません。",
+      "lastVerifiedAt": "2026-11-10"
     }
   ]
 }

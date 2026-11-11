@@ -1,0 +1,46 @@
+{
+  "name": "幕末志士・坂本",
+  "nameKana": "ばくまつししさかもと",
+  "aliases": [
+    "坂本"
+  ],
+  "slug": "bakumatsu-sakamoto",
+  "birthDate": "1983-09-15",
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況",
+    "雑談"
+  ],
+  "affiliation": "DOROKUSA（特別顧問）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@幕末志士チャンネル",
+    "twitch": "https://www.twitch.tv/bakumatsu_shishi",
+    "x": "https://x.com/kirizaki_ei"
+  },
+  "profileImage": {
+    "src": "/images/streamers/bakumatsu-sakamoto.webp",
+    "alt": "幕末志士・坂本のプロフィール画像",
+    "sourceUrl": "https://x.com/kirizaki_ei",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/kirizaki_ei" },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/kirizaki_ei/status/1835155640580554824"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://dorokusa.co.jp/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://dorokusa.co.jp/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

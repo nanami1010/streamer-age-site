@@ -1,0 +1,32 @@
+{
+  "name": "ade",
+  "nameKana": "あで",
+  "aliases": [],
+  "slug": "ade",
+  "birthDate": "1997-01-31",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/c/adelazy",
+    "twitch": "https://www.twitch.tv/ade3_3",
+    "x": "https://x.com/ade3_"
+  },
+  "profileImage": {
+    "src": "/images/streamers/ade.webp",
+    "alt": "adeのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/ade-2/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/ade-2/" },
+    { "field": "birthDate", "url": "https://valorant-esports.fandom.com/wiki/Ade" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/ade-2/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/ade-2/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/ade-2/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

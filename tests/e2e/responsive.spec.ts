@@ -35,8 +35,18 @@ for (const viewport of viewports) {
     await expectInsideViewport(page.locator("[data-search-input]"), viewport.width);
     await expectInsideViewport(page.locator("[data-search-clear]"), viewport.width);
     await expectInsideViewport(page.locator("[data-school-year-filter]"), viewport.width);
+    await expectInsideViewport(page.locator("[data-affiliation-filter]"), viewport.width);
     await expectInsideViewport(page.locator("[data-filter-reset]"), viewport.width);
+    await expectInsideViewport(
+      page.getByRole("navigation", { name: "サイトナビゲーション" }),
+      viewport.width
+    );
     await expectInsideViewport(page.locator("[data-streamer-card]").first(), viewport.width);
+    await expectInsideViewport(page.locator("[data-device-directory-promo]"), viewport.width);
+    await expectInsideViewport(
+      page.locator("[data-device-directory-promo] a"),
+      viewport.width
+    );
 
     for (const selector of ["[data-search-clear]", "[data-filter-reset]"]) {
       const clipping = await page.locator(selector).evaluate((element) => {
@@ -58,9 +68,11 @@ for (const viewport of viewports) {
 
     await page.locator("[data-genre-filter]").selectOption("FPS");
     await page.locator("[data-school-year-filter]").selectOption("1995");
+    await page.locator("[data-affiliation-filter]").selectOption({ index: 1 });
     await page.locator("[data-filter-reset]").click();
     await expect(page.locator("[data-genre-filter]")).toHaveValue("");
     await expect(page.locator("[data-school-year-filter]")).toHaveValue("");
+    await expect(page.locator("[data-affiliation-filter]")).toHaveValue("");
 
     if (viewport.width === 375 || viewport.width === 1280) {
       mkdirSync("test-results/screenshots", { recursive: true });
@@ -89,7 +101,7 @@ for (const viewport of viewports) {
 
     await page.goto("/streamers/k4sen/");
     await expectNoHorizontalScroll(page);
-    await expect(page.locator(".device-card")).toHaveCount(6);
+    await expect(page.locator(".device-card")).toHaveCount(7);
 
     const deviceGridColumns = await page.locator(".device-grid").evaluate(
       (element) => getComputedStyle(element).gridTemplateColumns.split(" ").length
@@ -141,6 +153,10 @@ for (const viewport of viewports) {
 
     await page.goto("/generations/1991/");
     await expectNoHorizontalScroll(page);
+    await expectInsideViewport(
+      page.locator("[data-generation-affiliation-filter]"),
+      viewport.width
+    );
     await expectInsideViewport(
       page.locator("[data-generation-streamer]").first(),
       viewport.width

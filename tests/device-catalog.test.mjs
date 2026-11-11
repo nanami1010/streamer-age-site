@@ -15,6 +15,11 @@ import {
   getDeviceSourceBadgeLabel,
   getDeviceSourceLabel
 } from "../src/config/device-sources.ts";
+import {
+  formatDeviceDate,
+  formatDeviceDateTime,
+  getVisibleDeviceDateItems
+} from "../src/utils/device-date.ts";
 import { createDeviceCatalog } from "../src/lib/device-catalog.ts";
 
 const streamers = readdirSync(new URL("../src/data/streamers/", import.meta.url))
@@ -28,34 +33,34 @@ const streamers = readdirSync(new URL("../src/data/streamers/", import.meta.url)
     )
   );
 
-test("49件の掲載記録を40製品にまとめる", () => {
+test("66件の掲載記録を56製品にまとめる", () => {
   const catalog = createDeviceCatalog(streamers);
 
-  assert.equal(catalog.length, 40);
+  assert.equal(catalog.length, 56);
   assert.equal(
     catalog.reduce((total, device) => total + device.usages.length, 0),
-    49
+    66
   );
 });
 
-test("40製品のproductIdと製品情報が一意である", () => {
-  assert.equal(DEVICE_PRODUCTS.length, 40);
+test("56製品のproductIdと製品情報が一意である", () => {
+  assert.equal(DEVICE_PRODUCTS.length, 56);
   assert.equal(
     new Set(DEVICE_PRODUCTS.map((product) => product.productId)).size,
-    40
+    56
   );
   assert.equal(
     new Set(DEVICE_PRODUCTS.map(createDeviceIdentityKey)).size,
-    40
+    56
   );
 });
 
-test("49件すべてが製品台帳のproductIdと正しく紐づく", () => {
+test("66件すべてが製品台帳のproductIdと正しく紐づく", () => {
   const devices = streamers.flatMap((streamer) => streamer.devices ?? []);
 
-  assert.equal(devices.length, 49);
+  assert.equal(devices.length, 66);
   assert.equal(devices.every(deviceMatchesProductDefinition), true);
-  assert.equal(new Set(devices.map((device) => device.productId)).size, 40);
+  assert.equal(new Set(devices.map((device) => device.productId)).size, 56);
 });
 
 test("同一型番だけをまとめ、異なる世代を分離する", () => {
@@ -117,20 +122,20 @@ test("配信者ごとの使用確認日・検証日・出典を保持する", ()
   assert.equal(shakaUsage?.usageConfirmedAt, "2025-11-27");
   assert.equal(shakaUsage?.sourceType, "directStatement");
   assert.equal(shakaUsage?.sourceUpdatedAt, undefined);
-  assert.equal(shakaUsage?.lastVerifiedAt, "2026-10-27");
+  assert.equal(shakaUsage?.lastVerifiedAt, "2026-11-10");
   assert.equal(
     shakaUsage?.sourceUrl,
     "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s"
   );
 });
 
-test("Nightbot由来37件はコマンド更新日時と使用確認日を分離する", () => {
+test("Nightbot由来54件はコマンド更新日時と使用確認日を分離する", () => {
   const catalog = createDeviceCatalog(streamers);
   const channelCommandUsages = catalog.flatMap((device) =>
     device.usages.filter((usage) => usage.sourceType === "channelCommand")
   );
 
-  assert.equal(channelCommandUsages.length, 37);
+  assert.equal(channelCommandUsages.length, 54);
   assert.equal(
     channelCommandUsages.every((usage) => usage.sourceUpdatedAt !== undefined),
     true
@@ -152,9 +157,131 @@ test("Nightbot由来37件はコマンド更新日時と使用確認日を分離�
     "公開コマンド"
   );
   assert.equal(
-    channelCommandUsages.every((usage) => usage.lastVerifiedAt === "2026-10-27"),
+    channelCommandUsages.every(
+      (usage) => usage.lastVerifiedAt === "2026-11-10"
+    ),
     true
   );
+});
+
+test("本人発言・本人管理サイト由来12件は使用確認日だけを保持する", () => {
+  const catalog = createDeviceCatalog(streamers);
+  const usageConfirmedRecords = catalog.flatMap((device) =>
+    device.usages.filter((usage) => usage.sourceType !== "channelCommand")
+  );
+
+  assert.equal(usageConfirmedRecords.length, 12);
+  assert.equal(
+    usageConfirmedRecords.every(
+      (usage) =>
+        usage.usageConfirmedAt !== undefined &&
+        usage.sourceUpdatedAt === undefined
+    ),
+    true
+  );
+});
+
+test("同一配信者・同一製品の掲載記録は重複しない", () => {
+  const records = streamers.flatMap((streamer) =>
+    (streamer.devices ?? []).map((device) =>
+      `${streamer.slug}\u0000${device.productId}`
+    )
+  );
+
+  assert.equal(new Set(records).size, records.length);
+});
+
+test("カード表面の日付種別とJST変換を区別する", () => {
+  assert.equal(formatDeviceDate("2026-01-01"), "2026年1月1日");
+  assert.equal(
+    formatDeviceDateTime("2026-03-23T19:29:50.152Z"),
+    "2026年3月24日"
+  );
+  assert.deepEqual(
+    getVisibleDeviceDateItems({
+      sourceType: "channelCommand",
+      sourceUpdatedAt: "2026-03-23T19:29:50.152Z",
+      lastVerifiedAt: "2026-11-10"
+    }),
+    [
+      {
+        kind: "sourceUpdatedAt",
+        label: "公開コマンド更新日",
+        dateTime: "2026-03-23T19:29:50.152Z",
+        formattedDate: "2026年3月24日"
+      }
+    ]
+  );
+});
+
+test("複数の日付と日付未登録時の出典確認日を正しく返す", () => {
+  assert.deepEqual(
+    getVisibleDeviceDateItems({
+      sourceType: "officialMaterial",
+      usageConfirmedAt: "2026-10-09",
+      sourceUpdatedAt: "2026-10-10T16:00:00.000Z",
+      lastVerifiedAt: "2026-11-10"
+    }).map(({ kind, label, formattedDate }) => ({
+      kind,
+      label,
+      formattedDate
+    })),
+    [
+      {
+        kind: "usageConfirmedAt",
+        label: "使用確認日",
+        formattedDate: "2026年10月9日"
+      },
+      {
+        kind: "sourceUpdatedAt",
+        label: "出典更新日",
+        formattedDate: "2026年10月11日"
+      }
+    ]
+  );
+  assert.deepEqual(
+    getVisibleDeviceDateItems({
+      sourceType: "officialMaterial",
+      lastVerifiedAt: "2026-11-10"
+    }),
+    [
+      {
+        kind: "lastVerifiedAt",
+        label: "出典確認日",
+        dateTime: "2026-11-10",
+        formattedDate: "2026年11月10日"
+      }
+    ]
+  );
+});
+
+test("新規公開コマンド記録は配信者ごとのコマンドと更新日時を保持する", () => {
+  const catalog = createDeviceCatalog(streamers);
+  const shakaController = catalog
+    .find((device) => device.productId === "grapht-command-trigger-for-pc")
+    ?.usages.find((usage) => usage.streamerSlug === "shaka");
+  const rionMouse = catalog
+    .find(
+      (device) =>
+        device.productId === "razer-viper-v3-pro-sentinels-edition"
+    )
+    ?.usages.find((usage) => usage.streamerSlug === "rion");
+
+  assert.equal(shakaController?.sourceCommand, "!controller");
+  assert.equal(
+    shakaController?.sourceUpdatedAt,
+    "2026-09-21T18:11:19.609Z"
+  );
+  assert.equal(shakaController?.usageConfirmedAt, undefined);
+  assert.equal(rionMouse?.sourceCommand, "!mouse");
+  assert.equal(rionMouse?.sourceUpdatedAt, "2025-12-22T06:20:50.507Z");
+  assert.equal(
+    DEVICE_PRODUCTS.find(
+      (product) => product.productId === "grapht-command-trigger-for-pc"
+    )?.identityStatus,
+    "needs-review"
+  );
+  assert.match(shakaController?.verificationNote ?? "", /型番は特定できていません/);
 });
 
 test("Amazon商品リンクは表示名ではなくproductIdで解決する", () => {

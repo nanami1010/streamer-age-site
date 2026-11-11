@@ -5,6 +5,10 @@ import Layout from "../../layouts/Layout.astro";
 import { getDisplayProfileImage } from "../../lib/profile-image";
 import type { Streamer } from "../../lib/streamers";
 import { getValidatedStreamers } from "../../lib/streamers";
+import {
+  getAffiliationOptions,
+  getAffiliationOrganizations
+} from "../../utils/affiliation";
 import { calculateAge } from "../../utils/age";
 import { getSchoolYearRange, groupBySchoolYear } from "../../utils/generation";
 
@@ -30,6 +34,9 @@ export const getStaticPaths = (async () => {
 const { year, streamers } = Astro.props as Props;
 const generationLabel = getGenerationLabel(year);
 const range = getSchoolYearRange(year);
+const affiliations = getAffiliationOptions(
+  streamers.map((streamer) => streamer.affiliation)
+);
 
 function formatBirthDate(birthDate: string) {
   const [birthYear, month, day] = birthDate.split("-").map(Number);
@@ -55,16 +62,37 @@ function formatBirthDate(birthDate: string) {
       </div>
     </section>
 
-    <section class="generation-content" aria-labelledby="generation-streamers-heading">
+    <section
+      class="generation-content"
+      aria-labelledby="generation-streamers-heading"
+      data-generation-filter-root
+    >
       <div class="generation-content__heading">
         <div>
           <p>STREAMERS</p>
           <h2 id="generation-streamers-heading">登録配信者</h2>
         </div>
-        <p><strong>{streamers.length}</strong>人を掲載</p>
+        <p><strong data-generation-count>{streamers.length}</strong>人を表示中</p>
       </div>
 
-      <div class="generation-streamer-grid">
+      <div class="generation-filter">
+        <label for={`generation-${year}-affiliation-filter`}>所属</label>
+        <select
+          id={`generation-${year}-affiliation-filter`}
+          aria-controls={`generation-${year}-streamer-list`}
+          data-generation-affiliation-filter
+        >
+          <option value="">すべての所属</option>
+          {affiliations.map((affiliation) => (
+            <option value={affiliation}>{affiliation}</option>
+          ))}
+        </select>
+      </div>
+
+      <div
+        id={`generation-${year}-streamer-list`}
+        class="generation-streamer-grid"
+      >
         {streamers.map((streamer) => {
           const age = calculateAge(streamer.birthDate);
           const birthDate = streamer.birthDate!;
@@ -75,7 +103,13 @@ function formatBirthDate(birthDate: string) {
           );
 
           return (
-            <article class="generation-streamer-card" data-generation-streamer>
+            <article
+              class="generation-streamer-card"
+              data-generation-streamer
+              data-affiliations={JSON.stringify(
+                getAffiliationOrganizations(streamer.affiliation)
+              )}
+            >
               <a href={`/streamers/${streamer.slug}/`}>
                 <div class="generation-streamer-card__header">
                   <div class="generation-streamer-card__avatar">
@@ -119,16 +153,114 @@ function formatBirthDate(birthDate: string) {
                 </dl>
 
                 <span class="generation-streamer-card__action">
-                  プロフィールを見る <span aria-hidden="true">→</span>
+                  プロフィール・使用デバイスを見る <span aria-hidden="true">→</span>
                 </span>
               </a>
             </article>
           );
         })}
       </div>
+      <p class="generation-filter__empty" data-generation-empty hidden>
+        該当する配信者が見つかりません
+      </p>
     </section>
   </main>
 </Layout>
+
+<script>
+  import { normalizeAffiliationFilterValue } from "../../utils/affiliation";
+  import { matchesAffiliation } from "../../utils/filter";
+
+  document
+    .querySelectorAll<HTMLElement>("[data-generation-filter-root]")
+    .forEach((root) => {
+      const select = root.querySelector<HTMLSelectElement>(
+        "[data-generation-affiliation-filter]"
+      );
+      const count = root.querySelector<HTMLElement>("[data-generation-count]");
+      const emptyMessage = root.querySelector<HTMLElement>(
+        "[data-generation-empty]"
+      );
+      const cards = Array.from(
+        root.querySelectorAll<HTMLElement>("[data-generation-streamer]")
+      ).map((element) => {
+        let affiliations: string[] = [];
+
+        try {
+          const parsedAffiliations: unknown = JSON.parse(
+            element.dataset.affiliations ?? "[]"
+          );
+          if (
+            Array.isArray(parsedAffiliations) &&
+            parsedAffiliations.every(
+              (affiliation) => typeof affiliation === "string"
+            )
+          ) {
+            affiliations = parsedAffiliations;
+          }
+        } catch {
+          affiliations = [];
+        }
+
+        return { element, affiliations };
+      });
+
+      if (!select || !count || !emptyMessage) return;
+
+      const applyUrlState = () => {
+        const value = new URLSearchParams(window.location.search).get(
+          "affiliation"
+        );
+        const availableAffiliations = Array.from(
+          select.options,
+          (option) => option.value
+        ).filter((optionValue) => optionValue !== "");
+        select.value = normalizeAffiliationFilterValue(
+          value ?? "",
+          availableAffiliations
+        );
+      };
+
+      const syncUrl = (mode: "push" | "replace") => {
+        const url = new URL(window.location.href);
+        if (select.value === "") {
+          url.searchParams.delete("affiliation");
+        } else {
+          url.searchParams.set("affiliation", select.value);
+        }
+
+        const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+        if (mode === "push") {
+          window.history.pushState({}, "", nextUrl);
+        } else {
+          window.history.replaceState({}, "", nextUrl);
+        }
+      };
+
+      const updateResults = (historyMode?: "push" | "replace") => {
+        let visibleCount = 0;
+
+        for (const card of cards) {
+          const matches = matchesAffiliation(card.affiliations, select.value);
+          card.element.hidden = !matches;
+          if (matches) visibleCount += 1;
+        }
+
+        count.textContent = String(visibleCount);
+        emptyMessage.hidden = visibleCount !== 0;
+        if (historyMode) syncUrl(historyMode);
+      };
+
+      select.addEventListener("change", () => updateResults("push"));
+      window.addEventListener("popstate", () => {
+        applyUrlState();
+        updateResults();
+      });
+
+      applyUrlState();
+      updateResults("replace");
+    });
+</script>
 
 <style>
   .generation-page {
@@ -261,6 +393,42 @@ function formatBirthDate(birthDate: string) {
     font-size: 24px;
   }
 
+  .generation-filter {
+    display: grid;
+    max-width: 420px;
+    gap: 9px;
+    margin-bottom: 24px;
+    padding: 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .generation-filter label {
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .generation-filter select {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 10px 38px 10px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
+    background: #fff;
+    color: var(--color-text);
+    font: inherit;
+  }
+
+  .generation-filter select:focus {
+    border-color: var(--color-purple);
+    outline: 3px solid rgb(117 89 232 / 22%);
+    outline-offset: 1px;
+  }
+
   .generation-streamer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
@@ -278,6 +446,20 @@ function formatBirthDate(birthDate: string) {
       border-color 180ms ease,
       box-shadow 180ms ease,
       transform 180ms ease;
+  }
+
+  .generation-streamer-card[hidden] {
+    display: none;
+  }
+
+  .generation-filter__empty {
+    margin: 0;
+    padding: 48px 24px;
+    border: 1px dashed #cbd5e1;
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    text-align: center;
   }
 
   .generation-streamer-card:hover {
@@ -417,11 +599,13 @@ function formatBirthDate(birthDate: string) {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     margin-top: auto;
     padding-top: 20px;
     color: #5842bd;
     font-size: 13px;
     font-weight: 800;
+    white-space: nowrap;
   }
 
   @media (max-width: 600px) {

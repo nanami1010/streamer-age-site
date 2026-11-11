@@ -1,0 +1,46 @@
+{
+  "name": "しんじさん",
+  "nameKana": "しんじさん",
+  "aliases": [
+    "Shinji",
+    "しんじ"
+  ],
+  "slug": "shinji-san",
+  "birthDate": "1995-01-02",
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況"
+  ],
+  "affiliation": "RIDDLE",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@shinji3XD",
+    "twitch": "https://www.twitch.tv/shinjifromjapanxd",
+    "x": "https://x.com/Shinjisan_XD"
+  },
+  "profileImage": {
+    "src": "/images/streamers/shinji-san.webp",
+    "alt": "しんじさんのプロフィール画像",
+    "sourceUrl": "https://x.com/Shinjisan_XD",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/Shinjisan_XD" },
+    {
+      "field": "birthDate",
+      "url": "https://fennel-esports.com/news/team/1118/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://riddle.info/news/news_28/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://riddle.info/news/news_28/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

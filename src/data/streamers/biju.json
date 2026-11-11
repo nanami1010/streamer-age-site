@@ -1,0 +1,43 @@
+{
+  "name": "Biju",
+  "nameKana": "びじゅ",
+  "aliases": [],
+  "slug": "biju",
+  "birthDate": "1998-03-10",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "MURASH GAMING",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@Biju_valo",
+    "twitch": "https://www.twitch.tv/bijusan",
+    "x": "https://x.com/Biju_valo"
+  },
+  "profileImage": {
+    "src": "/images/streamers/biju.webp",
+    "alt": "Bijuのプロフィール画像",
+    "sourceUrl": "https://x.com/Biju_valo",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/Biju_valo" },
+    {
+      "field": "birthDate",
+      "url": "https://murashgaming.co.jp/members/biju/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://murashgaming.co.jp/members/biju/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://murashgaming.co.jp/members/biju/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

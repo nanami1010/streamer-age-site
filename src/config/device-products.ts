@@ -193,7 +193,98 @@ export const DEVICE_PRODUCTS = Object.freeze([
     "NINJA FX ZERO SOFT",
     "needs-review"
   ),
-  defineProduct("shure-sm7db", "マイク", "Shure", "SM7dB")
+  defineProduct("shure-sm7db", "マイク", "Shure", "SM7dB"),
+  defineProduct(
+    "finalmouse-ultralightx",
+    "マウス",
+    "Finalmouse",
+    "UltralightX",
+    "needs-review"
+  ),
+  defineProduct(
+    "fumo-saya-odin-gaming-2xl",
+    "マウスパッド",
+    "Fumo Collection",
+    "沙耶の唄 × ふもコレ ゲーミングマウスパッド Odin Gaming 2XL"
+  ),
+  defineProduct(
+    "realforce-gx1-keyboard",
+    "キーボード",
+    "REALFORCE",
+    "GX1 Keyboard",
+    "needs-review"
+  ),
+  defineProduct("blue-mouse", "マイク", "Blue Microphones", "Mouse"),
+  defineProduct(
+    "herman-miller-logitech-g-embody-gaming-chair",
+    "ゲーミングチェア",
+    "Herman Miller × Logitech G",
+    "Embody Gaming Chair"
+  ),
+  defineProduct(
+    "sony-ilme-fx3",
+    "カメラ",
+    "Sony",
+    "FX3（ILME-FX3）",
+    "confirmed",
+    { modelNumber: "ILME-FX3" }
+  ),
+  defineProduct(
+    "magewell-pro-capture-dual-hdmi",
+    "キャプチャーボード",
+    "Magewell",
+    "Pro Capture Dual HDMI",
+    "confirmed",
+    { modelNumber: "11080" }
+  ),
+  defineProduct(
+    "grapht-command-trigger-for-pc",
+    "コントローラー",
+    "GRAPHT",
+    "Command Trigger for PC",
+    "needs-review"
+  ),
+  defineProduct(
+    "astro-a50-gen4",
+    "ヘッドセット",
+    "ASTRO Gaming",
+    "A50 Wireless + Base Station（Gen 4）",
+    "needs-review"
+  ),
+  defineProduct(
+    "razer-viper-v3-pro-sentinels-edition",
+    "マウス",
+    "Razer",
+    "Viper V3 Pro Sentinels Edition"
+  ),
+  defineProduct("asus-rog-falcata", "キーボード", "ASUS ROG", "ROG Falcata"),
+  defineProduct("benq-zowie-u2", "マウス", "BenQ ZOWIE", "U2"),
+  defineProduct(
+    "logicool-g640-esl-edition",
+    "マウスパッド",
+    "Logicool G",
+    "G640 ESL Edition"
+  ),
+  defineProduct(
+    "64-audio-fourte-blanc",
+    "イヤホン",
+    "64 Audio",
+    "Fourté Blanc"
+  ),
+  defineProduct(
+    "xraypad-aqua-control-plus",
+    "マウスパッド",
+    "X-Raypad",
+    "Aqua Control+",
+    "needs-review"
+  ),
+  defineProduct(
+    "herman-miller-embody-chair",
+    "ゲーミングチェア",
+    "Herman Miller",
+    "Embody Chair",
+    "needs-review"
+  )
 ] satisfies readonly DeviceProductDefinition[]);
 
 export type DeviceProductId = (typeof DEVICE_PRODUCTS)[number]["productId"];

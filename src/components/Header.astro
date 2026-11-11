@@ -11,8 +11,9 @@ import { SITE_CONFIG } from "../../site.config.mjs";
         <span class="brand__caption">{SITE_CONFIG.description}</span>
       </span>
     </a>
-    <nav aria-label="配信者の探し方">
-      <a class="generation-link" href="/generations/">同学年で探す</a>
+    <nav class="site-nav" aria-label="サイトナビゲーション">
+      <a class="site-nav__link" href="/generations/">同学年で探す</a>
+      <a class="site-nav__link" href="/devices/">使用デバイス</a>
     </nav>
   </div>
 </header>
@@ -73,10 +74,17 @@ import { SITE_CONFIG } from "../../site.config.mjs";
     font-size: 10px;
   }
 
-  .generation-link {
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-nav__link {
     display: inline-flex;
     min-height: 44px;
     align-items: center;
+    justify-content: center;
     padding: 8px 13px;
     border: 1px solid rgb(255 255 255 / 18%);
     border-radius: 10px;
@@ -87,12 +95,12 @@ import { SITE_CONFIG } from "../../site.config.mjs";
     white-space: nowrap;
   }
 
-  .generation-link:hover {
+  .site-nav__link:hover {
     border-color: rgb(124 224 210 / 58%);
     color: #fff;
   }
 
-  .generation-link:focus-visible {
+  .site-nav__link:focus-visible {
     outline: 3px solid rgb(32 184 165 / 50%);
     outline-offset: 3px;
   }
@@ -100,6 +108,8 @@ import { SITE_CONFIG } from "../../site.config.mjs";
   @media (max-width: 600px) {
     .site-header__inner {
       width: min(100% - 32px, var(--content-width));
+      flex-wrap: wrap;
+      gap: 12px;
       padding-block: 13px;
     }
 
@@ -108,7 +118,13 @@ import { SITE_CONFIG } from "../../site.config.mjs";
       height: 34px;
     }
 
-    .generation-link {
+    .site-nav {
+      width: 100%;
+    }
+
+    .site-nav__link {
+      min-width: 0;
+      flex: 1 1 0;
       padding-inline: 10px;
       font-size: 12px;
     }

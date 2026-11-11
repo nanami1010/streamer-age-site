@@ -58,5 +58,28 @@
     }
   ],
   "lastVerifiedAt": "2026-11-04",
-  "devices": []
+  "devices": [
+    {
+      "productId": "razer-viper-v3-pro-sentinels-edition",
+      "type": "マウス",
+      "manufacturer": "Razer",
+      "productName": "Viper V3 Pro Sentinels Edition",
+      "sourceUrl": "https://nightbot.tv/t/cr_rion/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2025-12-22T06:20:50.507Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "asus-rog-falcata",
+      "type": "キーボード",
+      "manufacturer": "ASUS ROG",
+      "productName": "ROG Falcata",
+      "sourceUrl": "https://nightbot.tv/t/cr_rion/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!keyboard",
+      "sourceUpdatedAt": "2025-10-21T11:06:05.486Z",
+      "lastVerifiedAt": "2026-11-10"
+    }
+  ]
 }

@@ -4,6 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import { getDisplayProfileImage } from "../lib/profile-image";
 import { getValidatedStreamers } from "../lib/streamers";
 import { calculateAge } from "../utils/age";
+import {
+  getAffiliationOptions,
+  getAffiliationOrganizations
+} from "../utils/affiliation";
 import { formatBirthday } from "../utils/birthday";
 import { getSchoolYear } from "../utils/generation";
 import { createStreamerSearchIndex } from "../utils/search";
@@ -12,6 +16,9 @@ const streamers = await getValidatedStreamers();
 const genres = Array.from(
   new Set(streamers.flatMap((streamer) => streamer.genres))
 ).sort((a, b) => a.localeCompare(b, "ja"));
+const affiliations = getAffiliationOptions(
+  streamers.map((streamer) => streamer.affiliation)
+);
 const schoolYears = Array.from(
   new Set(
     streamers
@@ -31,6 +38,7 @@ const schoolYears = Array.from(
     <StreamerSearch
       totalCount={streamers.length}
       genres={genres}
+      affiliations={affiliations}
       schoolYears={schoolYears}
     >
       <div id="streamer-list" class="streamer-grid">
@@ -49,6 +57,9 @@ const schoolYears = Array.from(
               data-streamer-card
               data-search={createStreamerSearchIndex(streamer)}
               data-genres={JSON.stringify(streamer.genres)}
+              data-affiliations={JSON.stringify(
+                getAffiliationOrganizations(streamer.affiliation)
+              )}
               data-birth-date={streamer.birthDate ?? ""}
             >
               <a class="streamer-card__link" href={profileUrl}>
@@ -106,7 +117,7 @@ const schoolYears = Array.from(
                 </dl>
 
                 <span class="streamer-card__detail">
-                  プロフィールを見る <span aria-hidden="true">→</span>
+                  プロフィール・使用デバイスを見る <span aria-hidden="true">→</span>
                 </span>
               </a>
             </article>
@@ -115,13 +126,15 @@ const schoolYears = Array.from(
       </div>
     </StreamerSearch>
 
-    <section class="device-directory-link" aria-labelledby="device-directory-heading">
+    <section
+      class="device-directory-link"
+      aria-labelledby="device-directory-heading"
+      data-device-directory-promo
+    >
       <div>
         <p>DEVICES</p>
         <h2 id="device-directory-heading">配信者の使用デバイス</h2>
-        <p>
-          本人の発言や公式情報などで使用を確認できたデバイスをまとめています。
-        </p>
+        <p>本人の発言や公式情報から、配信者の使用デバイスを探せます。</p>
       </div>
       <a href="/devices/">
         使用デバイス一覧を見る <span aria-hidden="true">→</span>
@@ -133,51 +146,6 @@ const schoolYears = Array.from(
 <style>
   .home-main {
     min-width: 0;
-  }
-
-  .streamer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 360px));
-    gap: 22px;
-    justify-content: start;
-  }
-
-  .streamer-card {
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-large);
-    background: var(--color-surface);
-    box-shadow: var(--shadow-card);
-    transition:
-      border-color 180ms ease,
-      box-shadow 180ms ease,
-      transform 180ms ease;
-  }
-
-  .streamer-card[hidden] {
-    display: none;
-  }
-
-  .streamer-card:hover {
-    border-color: #c8c0f5;
-    box-shadow: 0 18px 48px rgb(15 23 42 / 13%);
-    transform: translateY(-3px);
-  }
-
-  .streamer-card__link {
-    display: flex;
-    min-height: 100%;
-    padding: 24px;
-    color: inherit;
-    flex-direction: column;
-    text-decoration: none;
-  }
-
-  .streamer-card__link:focus-visible {
-    border-radius: inherit;
-    outline: 3px solid rgb(117 89 232 / 35%);
-    outline-offset: -3px;
   }
 
   .device-directory-link {
@@ -242,6 +210,51 @@ const schoolYears = Array.from(
   .device-directory-link > a:focus-visible {
     outline: 3px solid rgb(32 184 165 / 45%);
     outline-offset: 3px;
+  }
+
+  .streamer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 360px));
+    gap: 22px;
+    justify-content: start;
+  }
+
+  .streamer-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .streamer-card[hidden] {
+    display: none;
+  }
+
+  .streamer-card:hover {
+    border-color: #c8c0f5;
+    box-shadow: 0 18px 48px rgb(15 23 42 / 13%);
+    transform: translateY(-3px);
+  }
+
+  .streamer-card__link {
+    display: flex;
+    min-height: 100%;
+    padding: 24px;
+    color: inherit;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+  .streamer-card__link:focus-visible {
+    border-radius: inherit;
+    outline: 3px solid rgb(117 89 232 / 35%);
+    outline-offset: -3px;
   }
 
   .streamer-card__header {
@@ -376,10 +389,12 @@ const schoolYears = Array.from(
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     margin-top: 22px;
     color: var(--color-purple);
     font-size: 13px;
     font-weight: 800;
+    white-space: nowrap;
   }
 
   @media (max-width: 600px) {
@@ -418,4 +433,5 @@ const schoolYears = Array.from(
       width: min(calc(100% - 24px), var(--content-width));
     }
   }
+
 </style>

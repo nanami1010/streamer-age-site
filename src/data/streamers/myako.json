@@ -1,0 +1,47 @@
+{
+  "name": "みゃこ",
+  "nameKana": "みゃこ",
+  "aliases": [],
+  "slug": "myako",
+  "birthDate": "1988-11-24",
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
+  "affiliation": "PPエンタープライズ／MURASH GAMING（Shadowverse部門マネージャー）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@myakkomyako",
+    "twitch": "https://www.twitch.tv/myakkomyako",
+    "x": "https://x.com/myakkomyako"
+  },
+  "profileImage": {
+    "src": "/images/streamers/myako.webp",
+    "alt": "みゃこのプロフィール画像",
+    "sourceUrl": "https://x.com/myakkomyako",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/myakkomyako" },
+    {
+      "field": "birthDate",
+      "url": "https://murashgaming.co.jp/members/myako/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://ppe.jp/talent/myako/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://murashgaming.co.jp/news/shadowverse_001/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://murashgaming.co.jp/members/myako/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

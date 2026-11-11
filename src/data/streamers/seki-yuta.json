@@ -65,5 +65,18 @@
     }
   ],
   "lastVerifiedAt": "2026-10-23",
-  "devices": []
+  "devices": [
+    {
+      "productId": "herman-miller-embody-chair",
+      "type": "ゲーミングチェア",
+      "manufacturer": "Herman Miller",
+      "productName": "Embody Chair",
+      "sourceUrl": "https://nightbot.tv/t/stylishnoob4/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!chair",
+      "sourceUpdatedAt": "2021-05-17T11:11:26.038Z",
+      "verificationNote": "公開コマンドはEmbody Chairs表記です。張地・カラー・構成は特定できていません。",
+      "lastVerifiedAt": "2026-11-10"
+    }
+  ]
 }

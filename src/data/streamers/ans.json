@@ -1,0 +1,31 @@
+{
+  "name": "ANS",
+  "nameKana": "あんす",
+  "aliases": [],
+  "slug": "ans",
+  "birthDate": "2000-02-04",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/ansansniper",
+    "x": "https://x.com/ansansniper__"
+  },
+  "profileImage": {
+    "src": "/images/streamers/ans.webp",
+    "alt": "ANSのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/ans/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/ans/" },
+    { "field": "birthDate", "url": "https://liquipedia.net/overwatch/ANS" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/ans/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/ans/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/ans/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

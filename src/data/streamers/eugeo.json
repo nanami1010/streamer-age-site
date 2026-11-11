@@ -5,8 +5,7 @@
     "ユージオ"
   ],
   "slug": "eugeo",
-  "birthDate": null,
-  "birthMonthDay": "01-23",
+  "birthDate": "2002-01-23",
   "genres": [
     "ゲーム配信",
     "MOBA"
@@ -36,8 +35,8 @@
       "url": "https://x.com/AurEugeo"
     },
     {
-      "field": "birthMonthDay",
-      "url": "https://x.com/AurEugeo"
+      "field": "birthDate",
+      "url": "https://bo3.gg/lol/players/bc-eugeo"
     },
     {
       "field": "genres",
@@ -52,6 +51,6 @@
       "url": "https://x.com/AurEugeo"
     }
   ],
-  "lastVerifiedAt": "2026-11-02",
+  "lastVerifiedAt": "2026-11-08",
   "devices": []
 }

@@ -3,7 +3,7 @@
   "nameKana": "ふぁんた",
   "aliases": [],
   "slug": "fanta",
-  "birthDate": null,
+  "birthDate": "1991-01-05",
   "genres": [
     "ゲーム配信",
     "雑談"
@@ -29,6 +29,10 @@
   },
   "sources": [
     {
+      "field": "birthDate",
+      "url": "https://multientame.com/fanta-height-body-weightreal-fame/"
+    },
+    {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-valorant-6-11"
     },
@@ -45,6 +49,6 @@
       "url": "https://www.youtube.com/channel/UCWlx7GTk0zQCi_0tKJhV72w"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-11-08",
   "devices": []
 }

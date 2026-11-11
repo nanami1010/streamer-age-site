@@ -1,0 +1,46 @@
+{
+  "name": "あゆたろう",
+  "nameKana": "あゆたろう",
+  "aliases": [
+    "中村歩加"
+  ],
+  "slug": "ayutaro",
+  "birthDate": "1998-07-28",
+  "genres": [
+    "ゲーム配信",
+    "TPS",
+    "雑談"
+  ],
+  "affiliation": "株式会社TRAPEZISTE",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@ayutaroch",
+    "twitch": "https://www.twitch.tv/ayutarochan",
+    "x": "https://x.com/ayutaro_728"
+  },
+  "profileImage": {
+    "src": "/images/streamers/ayutaro.webp",
+    "alt": "あゆたろうのプロフィール画像",
+    "sourceUrl": "https://x.com/ayutaro_728",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/ayutaro_728" },
+    {
+      "field": "birthDate",
+      "url": "https://trapeziste-creative.com/wp/wp-content/uploads/a817e2e1762ae368c72b1c81fe37c916.pdf"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://komaca.app/ayutaro-info/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://prtimes.jp/main/html/rd/p/000000055.000114045.html"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

@@ -1,0 +1,45 @@
+{
+  "name": "misaco",
+  "nameKana": "みさこ",
+  "aliases": [
+    "ミチャーコ"
+  ],
+  "slug": "misaco",
+  "birthDate": null,
+  "birthMonthDay": "11-05",
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
+  "affiliation": null,
+  "socialLinks": {
+    "twitch": "https://www.twitch.tv/misacorin",
+    "x": "https://x.com/oOsuyaaaOo"
+  },
+  "profileImage": {
+    "src": "/images/streamers/misaco.webp",
+    "alt": "misacoのプロフィール画像",
+    "sourceUrl": "https://x.com/oOsuyaaaOo",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/oOsuyaaaOo" },
+    {
+      "field": "birthMonthDay",
+      "url": "https://yanmaga.jp/gravures/idols/94af536053c9e023d5a8c33feaa8be1f"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://x.com/oOsuyaaaOo"
+    },
+    {
+      "field": "aliases",
+      "url": "https://www.twitch.tv/misacorin"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

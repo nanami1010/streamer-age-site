@@ -1,6 +1,10 @@
 import { expect, test, type Page } from "@playwright/test";
 import { getDisplayProfileImage } from "../../src/lib/profile-image";
 import { calculateAge, getTodayJST } from "../../src/utils/age";
+import {
+  getAffiliationOptions,
+  getAffiliationOrganizations
+} from "../../src/utils/affiliation";
 import { matchesAgeFilter } from "../../src/utils/filter";
 import { getSchoolYear } from "../../src/utils/generation";
 import { streamers, formatBirthDate, type StreamerRecord } from "./streamers";
@@ -9,12 +13,19 @@ const cards = (page: Page) => page.locator("[data-streamer-card]");
 const visibleCards = (page: Page) => page.locator("[data-streamer-card]:visible");
 const searchInput = (page: Page) => page.locator("[data-search-input]");
 const schoolYearFilter = (page: Page) => page.locator("[data-school-year-filter]");
+const affiliationFilter = (page: Page) => page.locator("[data-affiliation-filter]");
 const resultCount = (page: Page) => page.locator("[data-search-count]");
 
 function cardFor(page: Page, streamer: StreamerRecord) {
   return cards(page).filter({
     has: page.getByRole("heading", { name: streamer.name, exact: true })
   });
+}
+
+function streamersForAffiliation(affiliation: string) {
+  return streamers.filter((streamer) =>
+    getAffiliationOrganizations(streamer.affiliation).includes(affiliation)
+  );
 }
 
 async function expectVisibleCount(page: Page, expected: number) {
@@ -27,8 +38,8 @@ test.beforeEach(async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test("トップページにJSONと一致する141件のカードを表示する", async ({ page }) => {
-  expect(streamers).toHaveLength(141);
+test("トップページにJSONと一致する167件のカードを表示する", async ({ page }) => {
+  expect(streamers).toHaveLength(167);
   await expect(page.locator(".hero__lead")).toHaveText(
     "配信者の年齢・誕生日・同学年を検索。使用デバイスもチェック。"
   );
@@ -47,6 +58,13 @@ test("トップページにJSONと一致する141件のカードを表示する"
     await expect(card.locator("[data-birth]")).toHaveText(
       age === null ? "未確認" : `${age}歳`
     );
+    await expect(card.locator(".streamer-card__detail")).toContainText(
+      "プロフィール・使用デバイスを見る"
+    );
+    await expect(card.locator(".streamer-card__link")).toHaveAttribute(
+      "href",
+      `/streamers/${streamer.slug}/`
+    );
   }
 });
 
@@ -61,19 +79,26 @@ test("生年月日未確認の配信者に年齢を表示しない", async ({ pa
   }
 });
 
-test("生年不明で月日のみ確認済みの12人は誕生日だけを表示する", async ({ page }) => {
+test("生年不明で月日のみ確認済みの配信者は誕生日だけを表示する", async ({ page }) => {
   const expectedBirthdays = new Map([
     ["akagami-no-tomo", "7月23日"],
+    ["alice", "3月15日"],
     ["alpha-azur", "4月21日"],
-    ["eugeo", "1月23日"],
+    ["cornn", "11月4日"],
     ["gocchan-mikey", "11月2日"],
+    ["iori-moe", "1月24日"],
+    ["kettsun", "3月2日"],
     ["limone-sensei", "8月19日"],
     ["marutake", "3月18日"],
-    ["mondo", "7月3日"],
+    ["misaco", "11月5日"],
     ["oraf-kun", "5月22日"],
     ["retort", "12月26日"],
+    ["rigze", "9月25日"],
+    ["rizart", "10月2日"],
+    ["tiramisu", "9月22日"],
     ["totomix", "8月1日"],
     ["tttcheekyttt", "4月12日"],
+    ["zeder", "1月5日"],
     ["yoru-yoichi", "3月7日"]
   ]);
   const monthDayOnly = streamers.filter((streamer) => streamer.birthMonthDay);
@@ -148,6 +173,161 @@ test("登録済みジャンルで絞り込める", async ({ page }) => {
   }
 });
 
+test("所属選択肢を登録データから生成し、所属単独で絞り込める", async ({ page }) => {
+  const affiliations = getAffiliationOptions(
+    streamers.map((streamer) => streamer.affiliation)
+  );
+
+  await expect(affiliationFilter(page).locator("option")).toHaveText([
+    "すべての所属",
+    ...affiliations
+  ]);
+
+  const selectedAffiliation = affiliations.find(
+    (affiliation) =>
+      streamersForAffiliation(affiliation).length > 1
+  ) ?? affiliations[0];
+  const expected = streamersForAffiliation(selectedAffiliation);
+
+  await affiliationFilter(page).selectOption(selectedAffiliation);
+  await expectVisibleCount(page, expected.length);
+  await expect.poll(() => new URL(page.url()).searchParams.get("affiliation")).toBe(
+    selectedAffiliation
+  );
+
+  for (const streamer of expected) {
+    await expect(cardFor(page, streamer)).toBeVisible();
+  }
+});
+
+test("所属未登録者は所属指定時だけ除外し、すべての所属で対象に戻る", async ({ page }) => {
+  const withoutAffiliation = streamers.filter(
+    (streamer) => streamer.affiliation === null
+  );
+  const selectedAffiliation = getAffiliationOptions(
+    streamers.map((streamer) => streamer.affiliation)
+  )[0];
+
+  expect(withoutAffiliation.length).toBeGreaterThan(0);
+  expect(selectedAffiliation).toBeTruthy();
+
+  await affiliationFilter(page).selectOption(selectedAffiliation!);
+  for (const streamer of withoutAffiliation) {
+    await expect(cardFor(page, streamer)).toBeHidden();
+  }
+
+  await affiliationFilter(page).selectOption("");
+  await expectVisibleCount(page, streamers.length);
+  for (const streamer of withoutAffiliation) {
+    await expect(cardFor(page, streamer)).toBeVisible();
+  }
+});
+
+test("役職・契約形態が異なる同一組織を一つの候補へ統合する", async ({ page }) => {
+  const cases = [
+    {
+      affiliation: "RIDDLE",
+      slugs: ["ariken", "marutake", "shinji-san", "sqla", "vodka", "yukio"]
+    },
+    {
+      affiliation: "FENNEL",
+      slugs: [
+        "curumi",
+        "hotoke",
+        "justive7",
+        "kawase",
+        "kentsumeshi",
+        "komaru",
+        "l1ng",
+        "mittiii",
+        "xnfri"
+      ]
+    }
+  ];
+
+  for (const { affiliation, slugs } of cases) {
+    await affiliationFilter(page).selectOption(affiliation);
+    await expectVisibleCount(page, slugs.length);
+
+    for (const slug of slugs) {
+      const streamer = streamers.find((candidate) => candidate.slug === slug);
+      expect(streamer).toBeDefined();
+      await expect(cardFor(page, streamer!)).toBeVisible();
+    }
+  }
+
+  const optionValues = await affiliationFilter(page).locator("option").evaluateAll(
+    (options) => options.map((option) => (option as HTMLOptionElement).value)
+  );
+  expect(new Set(optionValues).size).toBe(optionValues.length);
+  expect(optionValues.filter((value) => value === "RIDDLE")).toHaveLength(1);
+  expect(optionValues.filter((value) => value === "FENNEL")).toHaveLength(1);
+  expect(optionValues).not.toContain("RIDDLE（オーナー）");
+  expect(optionValues).not.toContain("FENNEL（エージェント契約）");
+});
+
+test("複数所属の配信者を各組織の結果へ一度だけ表示する", async ({ page }) => {
+  const mokou = streamers.find((streamer) => streamer.slug === "mokou");
+  const katoJunichi = streamers.find(
+    (streamer) => streamer.slug === "kato-junichi"
+  );
+  const oniya = streamers.find((streamer) => streamer.slug === "oniya");
+  const myako = streamers.find((streamer) => streamer.slug === "myako");
+  const enako = streamers.find((streamer) => streamer.slug === "enako");
+  const bakumatsuSakamoto = streamers.find(
+    (streamer) => streamer.slug === "bakumatsu-sakamoto"
+  );
+  expect(mokou).toBeDefined();
+  expect(katoJunichi).toBeDefined();
+  expect(oniya).toBeDefined();
+  expect(myako).toBeDefined();
+  expect(enako).toBeDefined();
+  expect(bakumatsuSakamoto).toBeDefined();
+
+  for (const affiliation of ["DOROKUSA", "MURASH GAMING"]) {
+    await affiliationFilter(page).selectOption(affiliation);
+    await expect(cardFor(page, mokou!)).toBeVisible();
+    await expect(cardFor(page, mokou!)).toHaveCount(1);
+  }
+
+  await affiliationFilter(page).selectOption("DOROKUSA");
+  await expect(cardFor(page, katoJunichi!)).toBeVisible();
+  await expect(cardFor(page, katoJunichi!)).toHaveCount(1);
+
+  await affiliationFilter(page).selectOption("REJECT");
+  await expect(cardFor(page, oniya!)).toBeVisible();
+  await expect(cardFor(page, oniya!)).toHaveCount(1);
+
+  for (const affiliation of ["PPエンタープライズ", "MURASH GAMING"]) {
+    await affiliationFilter(page).selectOption(affiliation);
+    await expect(cardFor(page, myako!)).toBeVisible();
+    await expect(cardFor(page, myako!)).toHaveCount(1);
+  }
+
+  for (const affiliation of [
+    "PPエンタープライズ",
+    "プラチナムプロダクション"
+  ]) {
+    await affiliationFilter(page).selectOption(affiliation);
+    await expect(cardFor(page, enako!)).toBeVisible();
+    await expect(cardFor(page, enako!)).toHaveCount(1);
+  }
+
+  await affiliationFilter(page).selectOption("DOROKUSA");
+  await expect(cardFor(page, bakumatsuSakamoto!)).toBeVisible();
+  await expect(cardFor(page, bakumatsuSakamoto!)).toHaveCount(1);
+});
+
+test("統合前の単一所属URLを正規化する", async ({ page }) => {
+  await page.goto(`/?${new URLSearchParams({
+    affiliation: "RIDDLE（オーナー）"
+  }).toString()}`);
+
+  await expect(affiliationFilter(page)).toHaveValue("RIDDLE");
+  await expectVisibleCount(page, streamersForAffiliation("RIDDLE").length);
+  expect(new URL(page.url()).searchParams.get("affiliation")).toBe("RIDDLE");
+});
+
 test("すべての年齢帯と年齢不明で絞り込める", async ({ page }) => {
   const today = getTodayJST();
   const ageRanges = [
@@ -215,11 +395,26 @@ test("年度で絞り込むと同年度の配信者だけを表示する", async
         "francisco",
         "mother3",
         "day1",
-        "raijin"
+        "raijin",
+        "shinji-san"
       ]
     },
-    { year: 1991, slugs: ["shaka", "k4sen", "shomaru7", "syaruru"] },
-    { year: 1990, slugs: ["seki-yuta", "mokou", "taiji", "fuji", "kyoichiro", "tonakaito"] }
+    {
+      year: 1991,
+      slugs: ["shaka", "k4sen", "shomaru7", "syaruru", "amatsuki"]
+    },
+    {
+      year: 1990,
+      slugs: [
+        "seki-yuta",
+        "mokou",
+        "taiji",
+        "fuji",
+        "kyoichiro",
+        "tonakaito",
+        "fanta"
+      ]
+    }
   ];
 
   for (const { year, slugs } of cases) {
@@ -273,14 +468,16 @@ test("年度と名前・別名をAND条件で検索する", async ({ page }) => 
   await expect(cardFor(page, shaka!)).toBeVisible();
 });
 
-test("名前・ジャンル・年齢帯・年度をAND条件で検索する", async ({ page }) => {
+test("名前・ジャンル・年齢帯・年度・所属をAND条件で検索する", async ({ page }) => {
   const laz = streamers.find((streamer) => streamer.slug === "laz");
   expect(laz).toBeDefined();
+  expect(laz?.affiliation).toBeTruthy();
 
   await searchInput(page).fill("Lazvell");
   await page.locator("[data-genre-filter]").selectOption("FPS");
   await page.locator("[data-age-filter]").selectOption("30-34");
   await schoolYearFilter(page).selectOption("1995");
+  await affiliationFilter(page).selectOption(laz!.affiliation!);
 
   await expectVisibleCount(page, 1);
   await expect(cardFor(page, laz!)).toBeVisible();
@@ -291,14 +488,67 @@ test("条件リセットで全件表示へ戻る", async ({ page }) => {
   await page.locator("[data-genre-filter]").selectOption("FPS");
   await page.locator("[data-age-filter]").selectOption("30-34");
   await schoolYearFilter(page).selectOption("1995");
+  const laz = streamers.find((streamer) => streamer.slug === "laz");
+  expect(laz?.affiliation).toBeTruthy();
+  await affiliationFilter(page).selectOption(laz!.affiliation!);
   await page.locator("[data-filter-reset]").click();
 
   await expect(searchInput(page)).toHaveValue("");
   await expect(page.locator("[data-genre-filter]")).toHaveValue("");
   await expect(page.locator("[data-age-filter]")).toHaveValue("");
   await expect(schoolYearFilter(page)).toHaveValue("");
+  await expect(affiliationFilter(page)).toHaveValue("");
+  await expect(page).toHaveURL("/");
   await expect(searchInput(page)).toBeFocused();
   await expectVisibleCount(page, streamers.length);
+});
+
+test("URLパラメータから複合条件を復元する", async ({ page }) => {
+  const laz = streamers.find((streamer) => streamer.slug === "laz");
+  expect(laz?.affiliation).toBeTruthy();
+
+  const parameters = new URLSearchParams({
+    q: "Lazvell",
+    genre: "FPS",
+    age: "30-34",
+    year: "1995",
+    affiliation: laz!.affiliation!
+  });
+  await page.goto(`/?${parameters.toString()}`);
+
+  await expect(searchInput(page)).toHaveValue("Lazvell");
+  await expect(page.locator("[data-genre-filter]")).toHaveValue("FPS");
+  await expect(page.locator("[data-age-filter]")).toHaveValue("30-34");
+  await expect(schoolYearFilter(page)).toHaveValue("1995");
+  await expect(affiliationFilter(page)).toHaveValue(laz!.affiliation!);
+  await expectVisibleCount(page, 1);
+  await expect(cardFor(page, laz!)).toBeVisible();
+});
+
+test("所属変更の戻る・進むでURL、選択値、件数を復元する", async ({ page }) => {
+  const affiliations = getAffiliationOptions(
+    streamers.map((streamer) => streamer.affiliation)
+  );
+  expect(affiliations.length).toBeGreaterThanOrEqual(2);
+
+  const [firstAffiliation, secondAffiliation] = affiliations;
+  const firstCount = streamersForAffiliation(firstAffiliation).length;
+  const secondCount = streamersForAffiliation(secondAffiliation).length;
+
+  await affiliationFilter(page).selectOption(firstAffiliation);
+  await expectVisibleCount(page, firstCount);
+  await affiliationFilter(page).selectOption(secondAffiliation);
+  await expectVisibleCount(page, secondCount);
+
+  await page.goBack();
+  await expect(affiliationFilter(page)).toHaveValue(firstAffiliation);
+  await expectVisibleCount(page, firstCount);
+  expect(new URL(page.url()).searchParams.get("affiliation")).toBe(firstAffiliation);
+
+  await page.goForward();
+  await expect(affiliationFilter(page)).toHaveValue(secondAffiliation);
+  await expectVisibleCount(page, secondCount);
+  expect(new URL(page.url()).searchParams.get("affiliation")).toBe(secondAffiliation);
 });
 
 test("0件検索時に案内を表示する", async ({ page }) => {

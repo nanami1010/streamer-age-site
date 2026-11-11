@@ -70,7 +70,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2022-07-19T20:26:11.229Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "logicool-pro-kda",
@@ -81,7 +81,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!keyboard",
       "sourceUpdatedAt": "2022-08-23T01:40:21.903Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "logicool-g840-magenta",
@@ -92,7 +92,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2022-07-19T20:26:11.229Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "bose-quietcomfort-20",
@@ -103,7 +103,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2022-07-19T20:26:11.229Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     }
   ]
 }

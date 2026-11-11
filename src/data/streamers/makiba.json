@@ -1,0 +1,32 @@
+{
+  "name": "makiba",
+  "nameKana": "まきば",
+  "aliases": [],
+  "slug": "makiba",
+  "birthDate": "2003-02-03",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@makiba7",
+    "twitch": "https://www.twitch.tv/makiba7",
+    "x": "https://x.com/makibacs"
+  },
+  "profileImage": {
+    "src": "/images/streamers/makiba.webp",
+    "alt": "makibaのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/makiba/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/makiba/" },
+    { "field": "birthDate", "url": "https://liquipedia.net/valorant/Makiba" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/makiba/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/makiba/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/makiba/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

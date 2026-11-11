@@ -1,0 +1,32 @@
+{
+  "name": "UyuRiru",
+  "nameKana": "うゅりる",
+  "aliases": [],
+  "slug": "uyuriru",
+  "birthDate": "1997-04-27",
+  "genres": ["ゲーム配信", "TPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UC6bZVIFYFdlfrzPJ9-r5zaw",
+    "twitch": "https://www.twitch.tv/cr_uyuriru_",
+    "x": "https://x.com/UyuRiru"
+  },
+  "profileImage": {
+    "src": "/images/streamers/uyuriru.webp",
+    "alt": "UyuRiruのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/uyuriru/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/uyuriru/" },
+    { "field": "birthDate", "url": "https://pentanews.net/uyuriru/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/uyuriru/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/uyuriru/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/uyuriru/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

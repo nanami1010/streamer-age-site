@@ -3,8 +3,7 @@
   "nameKana": "もんど",
   "aliases": [],
   "slug": "mondo",
-  "birthDate": null,
-  "birthMonthDay": "07-03",
+  "birthDate": "1998-07-03",
   "genres": [
     "ゲーム配信",
     "FPS"
@@ -34,8 +33,8 @@
       "url": "https://crazyraccoon.jp/member/mondo/"
     },
     {
-      "field": "birthMonthDay",
-      "url": "https://crazyraccoon.jp/member/mondo/"
+      "field": "birthDate",
+      "url": "https://escharts.com/ja/players/mondo"
     },
     {
       "field": "genres",
@@ -54,6 +53,30 @@
       "url": "https://x.com/Mondo2233"
     }
   ],
-  "lastVerifiedAt": "2026-10-26",
-  "devices": []
+  "lastVerifiedAt": "2026-11-08",
+  "devices": [
+    {
+      "productId": "64-audio-fourte-blanc",
+      "type": "イヤホン",
+      "manufacturer": "64 Audio",
+      "productName": "Fourté Blanc",
+      "sourceUrl": "https://nightbot.tv/t/mondo2244/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!earphone",
+      "sourceUpdatedAt": "2023-03-02T08:05:16.737Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "xraypad-aqua-control-plus",
+      "type": "マウスパッド",
+      "manufacturer": "X-Raypad",
+      "productName": "Aqua Control+",
+      "sourceUrl": "https://nightbot.tv/t/mondo2244/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mousepad",
+      "sourceUpdatedAt": "2023-01-03T09:34:31.280Z",
+      "verificationNote": "公開コマンドではAqua Control+まで確認できます。サイズ・カラーは特定できていません。",
+      "lastVerifiedAt": "2026-11-10"
+    }
+  ]
 }

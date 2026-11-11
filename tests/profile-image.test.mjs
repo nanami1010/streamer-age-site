@@ -71,17 +71,25 @@ test("OGPは明示的に許可された確認済み画像だけを使用する",
   assert.equal(getDisplayProfileImage(ogpImage, "profilePage"), null);
 });
 
-test("全141人の許可済みローカル画像が存在し、OGP用途を含まない", () => {
+test("登録画像は許可済みローカル画像として存在し、未登録時はフォールバックできる", () => {
   const dataDirectory = path.resolve("src/data/streamers");
   const streamers = fs.readdirSync(dataDirectory)
     .filter((file) => file.endsWith(".json"))
     .map((file) => JSON.parse(fs.readFileSync(path.join(dataDirectory, file), "utf8")));
+  const newlyVerifiedImageSlugs = new Set([
+    "ade", "alice", "amatsuki", "ans", "astell", "ayutaro", "bakumatsu-sakamoto",
+    "batora", "biju", "cornn", "enako", "iori-moe", "makiba", "misaco", "myako",
+    "rigze", "rizart", "ruri", "shinji-san", "tiramisu", "toppy", "uyuriru", "wokka",
+    "yy", "yuyuuta", "zeder"
+  ]);
 
-  assert.equal(streamers.length, 141);
+  assert.equal(streamers.length, 167);
+  assert.equal(streamers.filter((streamer) => streamer.profileImage !== null).length, 167);
 
   for (const streamer of streamers) {
     const image = streamer.profileImage;
-    assert.ok(image, `${streamer.slug}: profileImageが未登録です`);
+    if (image === null) continue;
+
     assert.equal(image.permissionStatus, "confirmed");
     assert.deepEqual(image.usageScopes, [
       "homeCard",
@@ -90,7 +98,10 @@ test("全141人の許可済みローカル画像が存在し、OGP用途を含�
     ]);
     assert.equal(image.usageScopes.includes("ogp"), false);
     assert.equal(image.src, `/images/streamers/${streamer.slug}.webp`);
-    assert.equal(image.lastVerifiedAt, "2026-11-04");
+    assert.equal(
+      image.lastVerifiedAt,
+      newlyVerifiedImageSlugs.has(streamer.slug) ? "2026-11-08" : "2026-11-04"
+    );
     assert.ok(
       streamer.sources.some(
         (source) => source.field === "profileImage" && source.url === image.sourceUrl

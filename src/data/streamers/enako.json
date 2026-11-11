@@ -1,0 +1,53 @@
+{
+  "name": "えなこ",
+  "nameKana": "えなこ",
+  "aliases": [
+    "Enako"
+  ],
+  "slug": "enako",
+  "birthDate": "1994-01-22",
+  "genres": [
+    "ゲーム配信",
+    "雑談"
+  ],
+  "affiliation": "PPエンタープライズ／プラチナムプロダクション（業務提携）",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCrUdiKv9LERZmG_MKh63Xgg",
+    "twitch": "https://www.twitch.tv/enako_chan",
+    "x": "https://x.com/enako_cos"
+  },
+  "profileImage": {
+    "src": "/images/streamers/enako.webp",
+    "alt": "えなこのプロフィール画像",
+    "sourceUrl": "https://x.com/enako_cos",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/enako_cos" },
+    {
+      "field": "birthDate",
+      "url": "https://books.shueisha.co.jp/items/contents.html?isbn=978-4-08-780861-2"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://ppe.jp/talent/enako/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://platinumproduction.jp/talent/enako/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://ppe.jp/talent/enako/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://platinumproduction.jp/talent/enako/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

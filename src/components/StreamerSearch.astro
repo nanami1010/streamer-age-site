@@ -2,10 +2,11 @@
 interface Props {
   totalCount: number;
   genres: string[];
+  affiliations: string[];
   schoolYears: number[];
 }
 
-const { totalCount, genres, schoolYears } = Astro.props;
+const { totalCount, genres, affiliations, schoolYears } = Astro.props;
 ---
 
 <div class="streamer-search" data-streamer-search-root>
@@ -90,6 +91,20 @@ const { totalCount, genres, schoolYears } = Astro.props;
               </select>
             </div>
 
+            <div class="filter-field">
+              <label for="streamer-affiliation-filter">所属</label>
+              <select
+                id="streamer-affiliation-filter"
+                aria-controls="streamer-list"
+                data-affiliation-filter
+              >
+                <option value="">すべての所属</option>
+                {affiliations.map((affiliation) => (
+                  <option value={affiliation}>{affiliation}</option>
+                ))}
+              </select>
+            </div>
+
             <button
               class="reset-button"
               type="button"
@@ -132,7 +147,12 @@ const { totalCount, genres, schoolYears } = Astro.props;
 
 <script>
   import { calculateAge, getTodayJST } from "../utils/age";
-  import { matchesAgeFilter, matchesGenre } from "../utils/filter";
+  import { normalizeAffiliationFilterValue } from "../utils/affiliation";
+  import {
+    matchesAffiliation,
+    matchesAgeFilter,
+    matchesGenre
+  } from "../utils/filter";
   import { getSchoolYear } from "../utils/generation";
   import { matchesStreamer } from "../utils/search";
 
@@ -145,6 +165,9 @@ const { totalCount, genres, schoolYears } = Astro.props;
       const ageSelect = root.querySelector<HTMLSelectElement>("[data-age-filter]");
       const schoolYearSelect = root.querySelector<HTMLSelectElement>(
         "[data-school-year-filter]"
+      );
+      const affiliationSelect = root.querySelector<HTMLSelectElement>(
+        "[data-affiliation-filter]"
       );
       const resetButton = root.querySelector<HTMLButtonElement>("[data-filter-reset]");
       const count = root.querySelector<HTMLElement>("[data-search-count]");
@@ -159,6 +182,7 @@ const { totalCount, genres, schoolYears } = Astro.props;
         !genreSelect ||
         !ageSelect ||
         !schoolYearSelect ||
+        !affiliationSelect ||
         !resetButton ||
         !count ||
         !emptyMessage
@@ -166,6 +190,7 @@ const { totalCount, genres, schoolYears } = Astro.props;
 
       const cards = cardElements.map((element) => {
         let genres: string[] = [];
+        let affiliations: string[] = [];
 
         try {
           const parsedGenres: unknown = JSON.parse(element.dataset.genres ?? "[]");
@@ -179,18 +204,106 @@ const { totalCount, genres, schoolYears } = Astro.props;
           genres = [];
         }
 
+        try {
+          const parsedAffiliations: unknown = JSON.parse(
+            element.dataset.affiliations ?? "[]"
+          );
+          if (
+            Array.isArray(parsedAffiliations) &&
+            parsedAffiliations.every(
+              (affiliation) => typeof affiliation === "string"
+            )
+          ) {
+            affiliations = parsedAffiliations;
+          }
+        } catch {
+          affiliations = [];
+        }
+
         const birthDate = element.dataset.birthDate || null;
 
         return {
           element,
           searchIndex: element.dataset.search ?? "",
           genres,
+          affiliations,
           birthDate,
           schoolYear: getSchoolYear(birthDate)
         };
       });
 
-      const updateResults = () => {
+      const urlParameters = {
+        query: "q",
+        genre: "genre",
+        age: "age",
+        schoolYear: "year",
+        affiliation: "affiliation"
+      } as const;
+      const canUseBrowserHistory = typeof window !== "undefined";
+
+      const setSelectFromUrl = (
+        select: HTMLSelectElement,
+        value: string | null
+      ) => {
+        const nextValue = value ?? "";
+        select.value = Array.from(select.options).some(
+          (option) => option.value === nextValue
+        )
+          ? nextValue
+          : "";
+      };
+
+      const applyUrlState = () => {
+        if (!canUseBrowserHistory) return;
+        const parameters = new URLSearchParams(window.location.search);
+        input.value = parameters.get(urlParameters.query) ?? "";
+        setSelectFromUrl(genreSelect, parameters.get(urlParameters.genre));
+        setSelectFromUrl(ageSelect, parameters.get(urlParameters.age));
+        setSelectFromUrl(
+          schoolYearSelect,
+          parameters.get(urlParameters.schoolYear)
+        );
+        const availableAffiliations = Array.from(
+          affiliationSelect.options,
+          (option) => option.value
+        ).filter((value) => value !== "");
+        setSelectFromUrl(
+          affiliationSelect,
+          normalizeAffiliationFilterValue(
+            parameters.get(urlParameters.affiliation) ?? "",
+            availableAffiliations
+          )
+        );
+      };
+
+      const syncUrl = (mode: "push" | "replace") => {
+        if (!canUseBrowserHistory) return;
+        const url = new URL(window.location.href);
+        const values = [
+          [urlParameters.query, input.value.trim()],
+          [urlParameters.genre, genreSelect.value],
+          [urlParameters.age, ageSelect.value],
+          [urlParameters.schoolYear, schoolYearSelect.value],
+          [urlParameters.affiliation, affiliationSelect.value]
+        ] as const;
+
+        for (const [parameter, value] of values) {
+          if (value === "") {
+            url.searchParams.delete(parameter);
+          } else {
+            url.searchParams.set(parameter, value);
+          }
+        }
+
+        const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+        if (mode === "push") {
+          window.history.pushState({}, "", nextUrl);
+        } else {
+          window.history.replaceState({}, "", nextUrl);
+        }
+      };
+
+      const updateResults = (historyMode?: "push" | "replace") => {
         let visibleCount = 0;
         const selectedAge = ageSelect.value;
         const selectedSchoolYear = schoolYearSelect.value;
@@ -200,6 +313,7 @@ const { totalCount, genres, schoolYears } = Astro.props;
           const matches =
             matchesStreamer(card.searchIndex, input.value) &&
             matchesGenre(card.genres, genreSelect.value) &&
+            matchesAffiliation(card.affiliations, affiliationSelect.value) &&
             (
               selectedAge === "" ||
               matchesAgeFilter(calculateAge(card.birthDate, today), selectedAge)
@@ -220,16 +334,20 @@ const { totalCount, genres, schoolYears } = Astro.props;
           input.value === "" &&
           genreSelect.value === "" &&
           ageSelect.value === "" &&
-          schoolYearSelect.value === "";
+          schoolYearSelect.value === "" &&
+          affiliationSelect.value === "";
+
+        if (historyMode) syncUrl(historyMode);
       };
 
-      input.addEventListener("input", updateResults);
-      genreSelect.addEventListener("change", updateResults);
-      ageSelect.addEventListener("change", updateResults);
-      schoolYearSelect.addEventListener("change", updateResults);
+      input.addEventListener("input", () => updateResults("replace"));
+      genreSelect.addEventListener("change", () => updateResults("push"));
+      ageSelect.addEventListener("change", () => updateResults("push"));
+      schoolYearSelect.addEventListener("change", () => updateResults("push"));
+      affiliationSelect.addEventListener("change", () => updateResults("push"));
       clearButton.addEventListener("click", () => {
         input.value = "";
-        updateResults();
+        updateResults("push");
         input.focus();
       });
       resetButton.addEventListener("click", () => {
@@ -237,11 +355,20 @@ const { totalCount, genres, schoolYears } = Astro.props;
         genreSelect.value = "";
         ageSelect.value = "";
         schoolYearSelect.value = "";
-        updateResults();
+        affiliationSelect.value = "";
+        updateResults("push");
         input.focus();
       });
 
-      updateResults();
+      if (canUseBrowserHistory) {
+        window.addEventListener("popstate", () => {
+          applyUrlState();
+          updateResults();
+        });
+      }
+
+      applyUrlState();
+      updateResults("replace");
     });
 </script>
 
@@ -429,7 +556,7 @@ const { totalCount, genres, schoolYears } = Astro.props;
   .filter-controls {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
     gap: 16px;
     align-items: end;
     padding: 22px;
@@ -515,7 +642,7 @@ const { totalCount, genres, schoolYears } = Astro.props;
     }
 
     .filter-controls {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .reset-button {

@@ -1,0 +1,32 @@
+{
+  "name": "Amatsuki",
+  "nameKana": "あまつき",
+  "aliases": ["天月", "天月-あまつき-"],
+  "slug": "amatsuki",
+  "birthDate": "1991-06-30",
+  "genres": ["ゲーム配信", "FPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCY_10f4ef0e1T2skAbHBQTg",
+    "twitch": "https://www.twitch.tv/cr_amatsuki",
+    "x": "https://x.com/_amatsuki_"
+  },
+  "profileImage": {
+    "src": "/images/streamers/amatsuki.webp",
+    "alt": "Amatsukiのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/sushimaster/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/sushimaster/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/sushimaster/" },
+    { "field": "birthDate", "url": "https://jimbutsu.jitenon.jp/jimbutsu/p38176.php" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/sushimaster/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/sushimaster/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

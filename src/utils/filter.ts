@@ -15,6 +15,13 @@ export function matchesGenre(
   return selectedGenre === "" || genres.includes(selectedGenre);
 }
 
+export function matchesAffiliation(
+  affiliations: readonly string[],
+  selectedAffiliation: string
+): boolean {
+  return selectedAffiliation === "" || affiliations.includes(selectedAffiliation);
+}
+
 export function matchesAgeFilter(
   age: number | null,
   selectedAge: string

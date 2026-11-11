@@ -1,0 +1,33 @@
+{
+  "name": "RIGZE",
+  "nameKana": "りぐぜ",
+  "aliases": [],
+  "slug": "rigze",
+  "birthDate": null,
+  "birthMonthDay": "09-25",
+  "genres": ["ゲーム配信"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@rigze0925",
+    "twitch": "https://www.twitch.tv/rigze0925",
+    "x": "https://x.com/_rigze"
+  },
+  "profileImage": {
+    "src": "/images/streamers/rigze.webp",
+    "alt": "RIGZEのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/rigze/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/rigze/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/rigze/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/rigze/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/rigze/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/rigze/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

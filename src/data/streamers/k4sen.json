@@ -67,7 +67,7 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "vspo-kisaragi-ren-keyboard",
@@ -77,7 +77,7 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "sony-inzone-buds-wf-g700n",
@@ -88,7 +88,7 @@
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
       "verificationNote": "動画内のイヤホン情報は確認済みですが、正確な製品名は映像での再確認が必要です。",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "sony-inzone-m10s-ii-sdm-27q102",
@@ -98,7 +98,7 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "sony-inzone-m10s-sdm-27q10s",
@@ -108,7 +108,7 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "neumann-bcm-104",
@@ -118,7 +118,19 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "astro-a50-gen4",
+      "type": "ヘッドセット",
+      "manufacturer": "ASTRO Gaming",
+      "productName": "A50 Wireless + Base Station（Gen 4）",
+      "sourceUrl": "https://nightbot.tv/t/k4sen/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!headset",
+      "sourceUpdatedAt": "2022-02-21T11:58:37.969Z",
+      "verificationNote": "公開コマンドではA50 Gen 4まで確認できます。PlayStation版・Xbox版の別は特定できていません。",
+      "lastVerifiedAt": "2026-11-10"
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "name": "Zeder",
+  "nameKana": "ぜだー",
+  "aliases": [],
+  "slug": "zeder",
+  "birthDate": null,
+  "birthMonthDay": "01-05",
+  "genres": ["ゲーム配信", "FPS", "MOBA"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCtVxmotUTQ4cdSO0CWAJnIA",
+    "x": "https://x.com/ZedLtachi"
+  },
+  "profileImage": {
+    "src": "/images/streamers/zeder.webp",
+    "alt": "Zederのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/zeder/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/zeder/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/zeder/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/zeder/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/zeder/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/zeder/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

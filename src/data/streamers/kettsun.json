@@ -4,6 +4,7 @@
   "aliases": [],
   "slug": "kettsun",
   "birthDate": null,
+  "birthMonthDay": "03-02",
   "genres": [
     "ゲーム配信",
     "雑談"
@@ -28,6 +29,10 @@
   },
   "sources": [
     {
+      "field": "birthMonthDay",
+      "url": "https://www.happylife40.com/kettun-youtuber-profiel/"
+    },
+    {
       "field": "name",
       "url": "https://vaultroom.shop/blogs/vcc-archive-events/vcc-pubg"
     },
@@ -40,6 +45,6 @@
       "url": "https://x.com/kettuncyukyuhei"
     }
   ],
-  "lastVerifiedAt": "2026-10-28",
+  "lastVerifiedAt": "2026-11-08",
   "devices": []
 }

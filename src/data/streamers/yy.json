@@ -1,0 +1,32 @@
+{
+  "name": "YY",
+  "nameKana": "わいわい",
+  "aliases": ["おいたん"],
+  "slug": "yy",
+  "birthDate": "1988-03-27",
+  "genres": ["ゲーム配信", "雑談"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCSkLRGGIGKOtinamhcy_42g",
+    "twitch": "https://www.twitch.tv/crazyraccoonyy",
+    "x": "https://x.com/ABCDYY"
+  },
+  "profileImage": {
+    "src": "/images/streamers/yy.webp",
+    "alt": "YYのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/yy/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/yy/" },
+    { "field": "aliases", "url": "https://crazyraccoon.jp/member/yy/" },
+    { "field": "birthDate", "url": "https://pentanews.net/abcdyy/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/yy/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/yy/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

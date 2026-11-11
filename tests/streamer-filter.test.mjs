@@ -1,7 +1,16 @@
 import assert from "node:assert/strict";
 import { readdirSync } from "node:fs";
 import { calculateAge, getTodayJST } from "../src/utils/age.ts";
-import { matchesAgeFilter, matchesGenre } from "../src/utils/filter.ts";
+import {
+  getAffiliationOptions,
+  getAffiliationOrganizations,
+  normalizeAffiliationFilterValue
+} from "../src/utils/affiliation.ts";
+import {
+  matchesAffiliation,
+  matchesAgeFilter,
+  matchesGenre
+} from "../src/utils/filter.ts";
 import { getSchoolYear } from "../src/utils/generation.ts";
 import {
   createStreamerSearchIndex,
@@ -15,6 +24,7 @@ const fictionalStreamers = [
     nameKana: "あるふぁ",
     aliases: ["エー"],
     genres: ["FPS"],
+    affiliations: ["TEAM A"],
     birthDate: "2001-05-10"
   },
   {
@@ -22,6 +32,7 @@ const fictionalStreamers = [
     nameKana: "べーた",
     aliases: ["ビー"],
     genres: ["RPG"],
+    affiliations: [],
     birthDate: null
   }
 ].map((streamer) => ({
@@ -29,11 +40,18 @@ const fictionalStreamers = [
   searchIndex: createStreamerSearchIndex(streamer)
 }));
 
-function filterStreamers(query = "", genre = "", ageRange = "", schoolYear = "") {
+function filterStreamers(
+  query = "",
+  genre = "",
+  ageRange = "",
+  schoolYear = "",
+  affiliation = ""
+) {
   return fictionalStreamers.filter(
     (streamer) =>
       matchesStreamer(streamer.searchIndex, query) &&
       matchesGenre(streamer.genres, genre) &&
+      matchesAffiliation(streamer.affiliations, affiliation) &&
       matchesAgeFilter(
         calculateAge(streamer.birthDate, fixedToday),
         ageRange
@@ -47,10 +65,63 @@ assert.equal(filterStreamers("", "FPS").length, 1, "ジャンル絞り込み");
 assert.equal(filterStreamers("", "", "25-29").length, 1, "年齢絞り込み");
 assert.equal(filterStreamers("alpha", "FPS", "25-29").length, 1, "3条件AND");
 assert.equal(filterStreamers("alpha", "FPS", "25-29", "2001").length, 1, "4条件AND");
+assert.equal(filterStreamers("alpha", "FPS", "25-29", "2001", "TEAM A").length, 1, "5条件AND");
+assert.equal(filterStreamers("", "", "", "", "TEAM A").length, 1, "所属絞り込み");
+assert.equal(filterStreamers("", "", "", "", "TEAM B").length, 0, "未登録所属を補完しない");
 assert.equal(filterStreamers("", "", "", "2001").length, 1, "年度絞り込み");
 assert.equal(filterStreamers("alpha", "RPG", "25-29").length, 0, "0件");
 assert.equal(filterStreamers().length, 2, "初期条件へのリセット");
 assert.equal(filterStreamers("", "", "unknown")[0]?.name, "BETA", "年齢不明");
+assert.deepEqual(
+  getAffiliationOrganizations(
+    "DOROKUSA／MURASH GAMING（Shadowverse部門GM）"
+  ),
+  ["DOROKUSA", "MURASH GAMING"],
+  "複数所属と役職を検索用組織名へ変換する"
+);
+assert.deepEqual(
+  getAffiliationOrganizations(
+    "PPエンタープライズ／MURASH GAMING（Shadowverse部門マネージャー）"
+  ),
+  ["PPエンタープライズ", "MURASH GAMING"],
+  "複数所属とマネージャー役職を検索用組織名へ変換する"
+);
+assert.deepEqual(
+  getAffiliationOrganizations(
+    "PPエンタープライズ／プラチナムプロダクション（業務提携）"
+  ),
+  ["PPエンタープライズ", "プラチナムプロダクション"],
+  "業務提携表記を組織名へ変換する"
+);
+assert.deepEqual(
+  getAffiliationOrganizations("DOROKUSA（特別顧問）"),
+  ["DOROKUSA"],
+  "特別顧問の役職を組織名へ変換する"
+);
+assert.deepEqual(
+  getAffiliationOptions([
+    "RIDDLE",
+    "RIDDLE（オーナー）",
+    "FENNEL",
+    "FENNEL（エージェント契約）",
+    "MURASH（業務提携）／MURASH GAMING（オーナー）"
+  ]),
+  ["FENNEL", "MURASH", "MURASH GAMING", "RIDDLE"],
+  "役職違いを統合し、MURASHとMURASH GAMINGを区別する"
+);
+assert.equal(
+  normalizeAffiliationFilterValue("RIDDLE（オーナー）", ["RIDDLE"]),
+  "RIDDLE",
+  "統合前の単一所属URLを正規化する"
+);
+assert.equal(
+  normalizeAffiliationFilterValue(
+    "DOROKUSA／MURASH GAMING（Shadowverse部門GM）",
+    ["DOROKUSA", "MURASH GAMING"]
+  ),
+  "",
+  "複数組織を含む旧URLを一組織へ誤変換しない"
+);
 
 const ageRangeCases = [
   [19, "under-20"],
@@ -123,6 +194,7 @@ const clearButton = new ElementMock();
 const genreSelect = new ElementMock();
 const ageSelect = new ElementMock();
 const schoolYearSelect = new ElementMock();
+const affiliationSelect = new ElementMock();
 const resetButton = new ElementMock();
 const count = new ElementMock();
 const emptyMessage = new ElementMock();
@@ -134,6 +206,7 @@ const shakaLikeCard = new ElementMock();
 shakaLikeCard.dataset = {
   search: "shaka|しゃか|釈迦",
   genres: JSON.stringify(["ゲーム配信", "FPS"]),
+  affiliations: JSON.stringify(["TEAM A"]),
   birthDate: thirtyYearOldBirthDate
 };
 
@@ -141,6 +214,7 @@ const unknownAgeCard = new ElementMock();
 unknownAgeCard.dataset = {
   search: "てすと|test",
   genres: JSON.stringify(["RPG"]),
+  affiliations: JSON.stringify([]),
   birthDate: ""
 };
 
@@ -150,6 +224,7 @@ const elements = new Map([
   ["[data-genre-filter]", genreSelect],
   ["[data-age-filter]", ageSelect],
   ["[data-school-year-filter]", schoolYearSelect],
+  ["[data-affiliation-filter]", affiliationSelect],
   ["[data-filter-reset]", resetButton],
   ["[data-search-count]", count],
   ["[data-search-empty]", emptyMessage]
@@ -195,8 +270,9 @@ input.value = "shaka";
 genreSelect.value = "FPS";
 ageSelect.value = "30-34";
 schoolYearSelect.value = String(getSchoolYear(thirtyYearOldBirthDate));
+affiliationSelect.value = "TEAM A";
 input.emit("input");
-assert.equal(count.textContent, "1", "クライアント側の4条件AND");
+assert.equal(count.textContent, "1", "クライアント側の5条件AND");
 
 genreSelect.value = "RPG";
 genreSelect.emit("change");
@@ -207,6 +283,7 @@ input.value = "";
 genreSelect.value = "";
 ageSelect.value = "unknown";
 schoolYearSelect.value = "";
+affiliationSelect.value = "";
 ageSelect.emit("change");
 assert.equal(count.textContent, "1", "クライアント側の年齢不明");
 assert.equal(unknownAgeCard.hidden, false, "年齢不明カードの表示");
@@ -217,6 +294,7 @@ assert.equal(input.value, "", "名前条件のリセット");
 assert.equal(genreSelect.value, "", "ジャンル条件のリセット");
 assert.equal(ageSelect.value, "", "年齢条件のリセット");
 assert.equal(schoolYearSelect.value, "", "年度条件のリセット");
+assert.equal(affiliationSelect.value, "", "所属条件のリセット");
 assert.equal(resetButton.disabled, true, "リセットボタンの無効化");
 assert.equal(input.focused, true, "リセット後のフォーカス");
 

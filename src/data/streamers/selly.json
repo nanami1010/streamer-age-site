@@ -54,5 +54,28 @@
     }
   ],
   "lastVerifiedAt": "2026-10-29",
-  "devices": []
+  "devices": [
+    {
+      "productId": "benq-zowie-u2",
+      "type": "マウス",
+      "manufacturer": "BenQ ZOWIE",
+      "productName": "U2",
+      "sourceUrl": "https://nightbot.tv/t/selly55/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mouse",
+      "sourceUpdatedAt": "2024-04-29T15:43:28.261Z",
+      "lastVerifiedAt": "2026-11-10"
+    },
+    {
+      "productId": "logicool-g640-esl-edition",
+      "type": "マウスパッド",
+      "manufacturer": "Logicool G",
+      "productName": "G640 ESL Edition",
+      "sourceUrl": "https://nightbot.tv/t/selly55/commands",
+      "sourceType": "channelCommand",
+      "sourceCommand": "!mousepad",
+      "sourceUpdatedAt": "2023-08-07T16:11:56.229Z",
+      "lastVerifiedAt": "2026-11-10"
+    }
+  ]
 }

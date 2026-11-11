@@ -10,7 +10,7 @@
     "ゲーム配信",
     "雑談"
   ],
-  "affiliation": "MURASH（業務提携）／MURASH GAMING（オーナー）",
+  "affiliation": "DOROKUSA（発起人）／MURASH（業務提携）／MURASH GAMING（オーナー）",
   "socialLinks": {
     "youtube": "https://www.youtube.com/@junchannel",
     "twitch": "https://www.twitch.tv/kato_junichi0817",
@@ -55,6 +55,10 @@
       "url": "https://murashgaming.co.jp/members/kato-junichi/"
     },
     {
+      "field": "affiliation",
+      "url": "https://dorokusa.co.jp/"
+    },
+    {
       "field": "socialLinks",
       "url": "https://www.youtube.com/@junchannel"
     },
@@ -63,6 +67,6 @@
       "url": "https://x.com/unkochan1234567"
     }
   ],
-  "lastVerifiedAt": "2026-10-23",
+  "lastVerifiedAt": "2026-11-06",
   "devices": []
 }

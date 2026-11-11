@@ -1,0 +1,32 @@
+{
+  "name": "Alice",
+  "nameKana": "ありす",
+  "aliases": [],
+  "slug": "alice",
+  "birthDate": null,
+  "birthMonthDay": "03-15",
+  "genres": ["ゲーム配信", "TPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UC3T_5WYgaLMppPOgwTdVDWQ",
+    "x": "https://x.com/alicev2_"
+  },
+  "profileImage": {
+    "src": "/images/streamers/alice.webp",
+    "alt": "Aliceのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/alice-2/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/alice-2/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/alice-2/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/alice-2/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/alice-2/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/alice-2/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

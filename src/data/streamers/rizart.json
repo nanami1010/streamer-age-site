@@ -1,0 +1,32 @@
+{
+  "name": "RizArt",
+  "nameKana": "りずあーと",
+  "aliases": [],
+  "slug": "rizart",
+  "birthDate": null,
+  "birthMonthDay": "10-02",
+  "genres": ["ゲーム配信", "TPS"],
+  "affiliation": "Crazy Raccoon",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/channel/UCWcS5FzBnhiKm27NJNCB9Qw",
+    "x": "https://x.com/CRRIZARTTT"
+  },
+  "profileImage": {
+    "src": "/images/streamers/rizart.webp",
+    "alt": "RizArtのプロフィール画像",
+    "sourceUrl": "https://crazyraccoon.jp/member/rizart/",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://crazyraccoon.jp/member/rizart/" },
+    { "field": "birthMonthDay", "url": "https://crazyraccoon.jp/member/rizart/" },
+    { "field": "affiliation", "url": "https://crazyraccoon.jp/member/rizart/" },
+    { "field": "genres", "url": "https://crazyraccoon.jp/member/rizart/" },
+    { "field": "socialLinks", "url": "https://crazyraccoon.jp/member/rizart/" }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

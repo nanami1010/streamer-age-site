@@ -5,7 +5,7 @@
     "レインブレイン"
   ],
   "slug": "rainbrain",
-  "birthDate": null,
+  "birthDate": "1987-12-31",
   "genres": [
     "ゲーム配信",
     "MOBA"
@@ -29,6 +29,10 @@
   },
   "sources": [
     {
+      "field": "birthDate",
+      "url": "https://automaton-media.com/articles/newsjp/slr-lol-rj-gaming-house/"
+    },
+    {
       "field": "name",
       "url": "https://zetadivision.com/news/2026/10/02/47674"
     },
@@ -45,6 +49,6 @@
       "url": "https://www.twitch.tv/rainbrain"
     }
   ],
-  "lastVerifiedAt": "2026-11-02",
+  "lastVerifiedAt": "2026-11-08",
   "devices": []
 }

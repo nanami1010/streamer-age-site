@@ -70,7 +70,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!mousepad",
       "sourceUpdatedAt": "2023-02-18T06:54:36.000Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "logicool-pro-x-superlight-2-white",
@@ -81,7 +81,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2024-10-01T18:04:39.984Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "steelseries-apex-pro-tkl-jp",
@@ -93,7 +93,7 @@
       "sourceCommand": "!keyboard",
       "sourceUpdatedAt": "2022-11-14T16:36:06.688Z",
       "verificationNote": "コマンド本文に世代の記載はありません。",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "shure-se846-clear",
@@ -105,7 +105,7 @@
       "sourceCommand": "!earphone",
       "sourceUpdatedAt": "2022-10-12T18:48:41.692Z",
       "verificationNote": "コマンド本文に世代の記載はありません。",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "audio-technica-at2035",
@@ -116,7 +116,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!microphone",
       "sourceUpdatedAt": "2022-09-19T08:59:19.196Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "yamaha-ag03",
@@ -128,7 +128,7 @@
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2024-10-01T18:04:39.984Z",
       "verificationNote": "コマンド本文は「AG03」で、AG03MK2とは記載されていません。",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     }
   ]
 }

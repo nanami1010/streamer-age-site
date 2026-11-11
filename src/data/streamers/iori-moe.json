@@ -1,0 +1,44 @@
+{
+  "name": "伊織もえ",
+  "nameKana": "いおりもえ",
+  "aliases": [],
+  "slug": "iori-moe",
+  "birthDate": null,
+  "birthMonthDay": "01-24",
+  "genres": [
+    "ゲーム配信",
+    "FPS"
+  ],
+  "affiliation": "とてもかわいい株式会社",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/iorimoe",
+    "twitch": "https://www.twitch.tv/moe_iori",
+    "x": "https://x.com/iorimoe_five"
+  },
+  "profileImage": {
+    "src": "/images/streamers/iori-moe.webp",
+    "alt": "伊織もえのプロフィール画像",
+    "sourceUrl": "https://x.com/iorimoe_five",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/iorimoe_five" },
+    {
+      "field": "birthMonthDay",
+      "url": "https://wpb.shueisha.co.jp/gravure/movie/20250416-126697/"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://www.totekawa.com/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://www.totekawa.com/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-08",
+  "devices": []
+}

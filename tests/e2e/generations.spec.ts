@@ -2,6 +2,10 @@ import { expect, test, type Page } from "@playwright/test";
 import { getDisplayProfileImage } from "../../src/lib/profile-image";
 import { calculateAge } from "../../src/utils/age";
 import {
+  getAffiliationOptions,
+  getAffiliationOrganizations
+} from "../../src/utils/affiliation";
+import {
   getSchoolYear,
   getSchoolYearRange,
   groupBySchoolYear
@@ -81,6 +85,9 @@ for (const { year, members } of generations) {
         "href",
         `/streamers/${streamer.slug}/`
       );
+      await expect(card.locator(".generation-streamer-card__action")).toContainText(
+        "プロフィール・使用デバイスを見る"
+      );
 
       const profileImage = getDisplayProfileImage(
         streamer.profileImage,
@@ -108,9 +115,9 @@ for (const { year, members } of generations) {
 
 test("指定された主要4年度の同学年グループが正しい", async ({ page }) => {
   const expectedGroups = new Map<number, string[]>([
-    [1990, ["関優太", "もこう", "たいじ", "風次", "恭一郎", "トナカイト"]],
-    [1991, ["SHAKA", "k4sen", "shomaru7", "しゃるる"]],
-    [1994, ["しょぼすけ", "あっさりしょこ", "あびつん", "クロノア", "Francisco", "まざー3", "Day1", "らいじん"]],
+    [1990, ["関優太", "もこう", "たいじ", "風次", "恭一郎", "トナカイト", "ファン太"]],
+    [1991, ["SHAKA", "k4sen", "shomaru7", "しゃるる", "Amatsuki"]],
+    [1994, ["しょぼすけ", "あっさりしょこ", "あびつん", "クロノア", "Francisco", "まざー3", "Day1", "らいじん", "しんじさん"]],
     [1995, ["スタンミじゃぱん", "Laz", "Zerost", "ぺいんと", "トラゾー", "ハセシン", "rion", "たかやスペシャル", "たぬき忍者", "ボドカ"]]
   ]);
 
@@ -121,6 +128,55 @@ test("指定された主要4年度の同学年グループが正しい", async (
       .allTextContents();
     expect(new Set(actualNames)).toEqual(new Set(expectedNames));
   }
+});
+
+test("年度詳細でも登録データ由来の所属で絞り込める", async ({ page }) => {
+  const targetGeneration = generations.find(({ members }) => {
+    const affiliations = getAffiliationOptions(
+      members.map((streamer) => streamer.affiliation)
+    );
+    return affiliations.length >= 2;
+  });
+  expect(targetGeneration).toBeDefined();
+
+  const affiliations = getAffiliationOptions(
+    targetGeneration!.members.map((streamer) => streamer.affiliation)
+  );
+  const selectedAffiliation = affiliations[0];
+  const expected = targetGeneration!.members.filter(
+    (streamer) =>
+      getAffiliationOrganizations(streamer.affiliation).includes(
+        selectedAffiliation
+      )
+  );
+
+  const parameters = new URLSearchParams({ affiliation: selectedAffiliation });
+  await page.goto(
+    `/generations/${targetGeneration!.year}/?${parameters.toString()}`
+  );
+
+  const filter = page.locator("[data-generation-affiliation-filter]");
+  await expect(filter.locator("option")).toHaveText([
+    "すべての所属",
+    ...affiliations
+  ]);
+  await expect(filter).toHaveValue(selectedAffiliation);
+  await expect(
+    page.locator("[data-generation-streamer]:visible")
+  ).toHaveCount(expected.length);
+  await expect(page.locator("[data-generation-count]")).toHaveText(
+    String(expected.length)
+  );
+
+  for (const streamer of expected) {
+    await expect(generationCardFor(page, streamer.name)).toBeVisible();
+  }
+
+  await filter.selectOption("");
+  await expect(page).toHaveURL(`/generations/${targetGeneration!.year}/`);
+  await expect(
+    page.locator("[data-generation-streamer]:visible")
+  ).toHaveCount(targetGeneration!.members.length);
 });
 
 test("登録者が存在しない年度ページは生成しない", async ({ request }) => {

@@ -1,6 +1,6 @@
 # プロフィール画像一括導入レポート
 
-確認日時（JST）: 2026-11-04 00:53
+確認日時（JST）: 2026-11-08
 
 ## 実施方針
 
@@ -13,12 +13,12 @@
 
 ## 集計
 
-- 試行: 141人
-- 成功: 141人
+- 試行: 167人
+- 成功: 167人
 - 失敗: 0人
-- 最適化前合計: 3941.7 KB
-- 最適化後合計: 2372.8 KB
-- 削減率: 39.8%
+- 最適化前合計: 10408.5 KB
+- 最適化後合計: 3001.1 KB
+- 削減率: 71.2%
 
 ## 個別結果
 
@@ -165,6 +165,32 @@
 | Yutapon | `yutapon` | 成功 | [X](https://x.com/yutapongo) | `public/images/streamers/yutapon.webp` | Xページのハンドル @yutapongo と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 2.1 KB | 1.2 KB | 48x48 → 48x48 |
 | Zerost | `zerost` | 成功 | [X](https://x.com/Zerost_s) | `public/images/streamers/zerost.webp` | Xページのハンドル @Zerost_s と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 22.4 KB | 13.3 KB | 400x400 → 400x400 |
 | ズズ | `zuzu` | 成功 | [X](https://x.com/zetyou2) | `public/images/streamers/zuzu.webp` | Xページのハンドル @zetyou2 と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 33.6 KB | 22.7 KB | 400x400 → 400x400 |
+| みゃこ | `myako` | 成功 | [X](https://x.com/myakkomyako) | `public/images/streamers/myako.webp` | Xページのハンドル @myakkomyako と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 29.2 KB | 20.3 KB | 400x400 → 512x512 |
+| 伊織もえ | `iori-moe` | 成功 | [X](https://x.com/iorimoe_five) | `public/images/streamers/iori-moe.webp` | Xページのハンドル @iorimoe_five と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 32.7 KB | 21.1 KB | 400x400 → 512x512 |
+| misaco | `misaco` | 成功 | [X](https://x.com/oOsuyaaaOo) | `public/images/streamers/misaco.webp` | Xページのハンドル @oOsuyaaaOo と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 27.4 KB | 17.6 KB | 400x400 → 512x512 |
+| えなこ | `enako` | 成功 | [X](https://x.com/enako_cos) | `public/images/streamers/enako.webp` | Xページのハンドル @enako_cos と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 23.5 KB | 12.9 KB | 400x400 → 512x512 |
+| あゆたろう | `ayutaro` | 成功 | [X](https://x.com/ayutaro_728) | `public/images/streamers/ayutaro.webp` | Xページのハンドル @ayutaro_728 と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 25.4 KB | 17.7 KB | 400x400 → 512x512 |
+| バトラ | `batora` | 成功 | [X](https://x.com/batora324) | `public/images/streamers/batora.webp` | Xページのハンドル @batora324 と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 18.0 KB | 10.4 KB | 400x400 → 512x512 |
+| ゆゆうた | `yuyuuta` | 成功 | [X](https://x.com/dai2noyuyuta) | `public/images/streamers/yuyuuta.webp` | Xページのハンドル @dai2noyuyuta と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 15.3 KB | 9.3 KB | 400x400 → 512x512 |
+| Biju | `biju` | 成功 | [X](https://x.com/Biju_valo) | `public/images/streamers/biju.webp` | Xページのハンドル @Biju_valo と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 27.0 KB | 16.7 KB | 400x400 → 512x512 |
+| 幕末志士・坂本 | `bakumatsu-sakamoto` | 成功 | [X](https://x.com/kirizaki_ei) | `public/images/streamers/bakumatsu-sakamoto.webp` | Xページのハンドル @kirizaki_ei と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 7.0 KB | 4.7 KB | 240x240 → 512x512 |
+| しんじさん | `shinji-san` | 成功 | [X](https://x.com/Shinjisan_XD) | `public/images/streamers/shinji-san.webp` | Xページのハンドル @Shinjisan_XD と登録URLが一致 | 運営者申告により確認済み | 不要（指定なし） | 15.7 KB | 9.2 KB | 400x400 → 512x512 |
+| ANS | `ans` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/ans/) | `public/images/streamers/ans.webp` | 公式メンバーページのANS画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 322.6 KB | 37.1 KB | 800x1040 → 512x512 |
+| RIGZE | `rigze` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/rigze/) | `public/images/streamers/rigze.webp` | 公式メンバーページのRIGZE画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 360.3 KB | 39.4 KB | 800x1040 → 512x512 |
+| makiba | `makiba` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/makiba/) | `public/images/streamers/makiba.webp` | 公式メンバーページのmakiba画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 355.6 KB | 28.1 KB | 800x1040 → 512x512 |
+| Tiramisu | `tiramisu` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/tiramisu/) | `public/images/streamers/tiramisu.webp` | 公式メンバーページのTiramisu画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 424.9 KB | 35.4 KB | 800x1040 → 512x512 |
+| YY | `yy` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/yy/) | `public/images/streamers/yy.webp` | 公式メンバーページのYY画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 464.4 KB | 31.0 KB | 800x1040 → 512x512 |
+| Zeder | `zeder` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/zeder/) | `public/images/streamers/zeder.webp` | 公式メンバーページのZeder画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 477.8 KB | 35.0 KB | 800x1040 → 512x512 |
+| Wokka | `wokka` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/wokka/) | `public/images/streamers/wokka.webp` | 公式メンバーページのWokka画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 319.5 KB | 25.6 KB | 800x1040 → 512x512 |
+| UyuRiru | `uyuriru` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/uyuriru/) | `public/images/streamers/uyuriru.webp` | 公式メンバーページのUyuRiru画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 328.1 KB | 24.4 KB | 800x1040 → 512x512 |
+| Toppy | `toppy` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/toppy/) | `public/images/streamers/toppy.webp` | 公式メンバーページのToppy画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 485.5 KB | 35.7 KB | 800x1040 → 512x512 |
+| Ruri | `ruri` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/ruri/) | `public/images/streamers/ruri.webp` | 公式メンバーページのRuri画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 429.6 KB | 30.8 KB | 800x1040 → 512x512 |
+| RizArt | `rizart` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/rizart/) | `public/images/streamers/rizart.webp` | 公式メンバーページのRizArt画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 340.6 KB | 28.6 KB | 800x1040 → 512x512 |
+| Astell | `astell` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/astell-2/) | `public/images/streamers/astell.webp` | 公式メンバーページのAstell画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 358.3 KB | 24.3 KB | 800x1040 → 512x512 |
+| Cornn | `cornn` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/cornn/) | `public/images/streamers/cornn.webp` | 公式メンバーページのCornn画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 432.1 KB | 29.7 KB | 800x1040 → 512x512 |
+| Amatsuki | `amatsuki` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/sushimaster/) | `public/images/streamers/amatsuki.webp` | 公式メンバーページのAmatsuki画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 389.9 KB | 31.1 KB | 800x1040 → 512x512 |
+| Alice | `alice` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/alice-2/) | `public/images/streamers/alice.webp` | 公式メンバーページのAlice画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 439.5 KB | 28.2 KB | 800x1040 → 512x512 |
+| ade | `ade` | 成功 | [Crazy Raccoon公式](https://crazyraccoon.jp/member/ade-2/) | `public/images/streamers/ade.webp` | 公式メンバーページのade画像を採用 | 運営者申告により確認済み | 不要（指定なし） | 316.9 KB | 24.1 KB | 800x1040 → 512x512 |
 
 ## 未取得者
 
@@ -174,7 +200,8 @@
 
 - 全員一覧: `test-results/profile-images/contact-sheet-all.webp`
 - 分割版: `test-results/profile-images/contact-sheet-1.webp` 〜 `contact-sheet-4.webp`
-- 141人全員について活動名・slug・画像を並べ、登録済み公式アカウントとの対応を目視確認した。
+- 新規26人: `test-results/profile-images/new-26-contact-sheet.png`
+- 既存141人と新規26人の全167人について、活動名・slug・画像を並べ、登録済み公式アカウントまたは所属公式ページとの対応を目視確認した。
 - 同姓同名の別人、ファンアカウント、イベント集合写真を本人アイコンとして採用した例は確認されなかった。
 - ファン太とレトルトはX画像の視認性・解像度を考慮し、本人YouTube公式チャンネルのプロフィール画像を採用した。
 - Yutaponの現在のX公式アイコンは48x48pxのため低解像度だが、本人が設定したプロフィール画像を無理に拡大せず維持した。

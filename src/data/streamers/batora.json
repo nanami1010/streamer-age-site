@@ -1,0 +1,43 @@
+{
+  "name": "バトラ",
+  "nameKana": "ばとら",
+  "aliases": [],
+  "slug": "batora",
+  "birthDate": "1993-03-24",
+  "genres": [
+    "ゲーム配信",
+    "ゲーム実況"
+  ],
+  "affiliation": "DOROKUSA",
+  "socialLinks": {
+    "youtube": "https://www.youtube.com/@batoradayo",
+    "twitch": "https://www.twitch.tv/batora324",
+    "x": "https://x.com/batora324"
+  },
+  "profileImage": {
+    "src": "/images/streamers/batora.webp",
+    "alt": "バトラのプロフィール画像",
+    "sourceUrl": "https://x.com/batora324",
+    "permissionStatus": "confirmed",
+    "permissionNote": "サイト運営者申告による掲載許可取得済み。許諾証跡は別途管理。",
+    "lastVerifiedAt": "2026-11-08",
+    "usageScopes": ["homeCard", "profilePage", "generationCard"]
+  },
+  "sources": [
+    { "field": "profileImage", "url": "https://x.com/batora324" },
+    {
+      "field": "birthDate",
+      "url": "https://x.com/batora324/status/1903828458855420262"
+    },
+    {
+      "field": "affiliation",
+      "url": "https://dorokusa.co.jp/"
+    },
+    {
+      "field": "socialLinks",
+      "url": "https://dorokusa.co.jp/"
+    }
+  ],
+  "lastVerifiedAt": "2026-11-07",
+  "devices": []
+}

@@ -4,6 +4,11 @@ import {
   getDeviceSourceLabel,
   type DeviceSourceType
 } from "../config/device-sources";
+import {
+  formatDeviceDate,
+  formatDeviceDateTime,
+  getVisibleDeviceDateItems
+} from "../utils/device-date";
 
 interface Props {
   sourceType: DeviceSourceType;
@@ -25,19 +30,12 @@ const {
   verificationNote
 } = Astro.props;
 
-function formatJapaneseDate(date: string) {
-  const [year, month, day] = date.split("-").map(Number);
-  return `${year}年${month}月${day}日`;
-}
-
-function formatJapaneseDateTime(dateTime: string) {
-  return new Intl.DateTimeFormat("ja-JP", {
-    timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  }).format(new Date(dateTime));
-}
+const visibleDateItems = getVisibleDeviceDateItems({
+  sourceType,
+  usageConfirmedAt,
+  sourceUpdatedAt,
+  lastVerifiedAt
+});
 ---
 
 <div class="device-source" data-device-source data-source-type={sourceType}>
@@ -54,6 +52,18 @@ function formatJapaneseDateTime(dateTime: string) {
       出典を確認 ↗
     </a>
   </div>
+
+  {visibleDateItems.length > 0 && (
+    <div class="device-source-dates" data-device-source-dates>
+      {visibleDateItems.map((item) => (
+        <p>
+          <time datetime={item.dateTime} data-device-date-kind={item.kind}>
+            {item.label}：{item.formattedDate}
+          </time>
+        </p>
+      ))}
+    </div>
+  )}
 
   <details class="device-source-details">
     <summary>
@@ -83,7 +93,7 @@ function formatJapaneseDateTime(dateTime: string) {
             <dt>使用情報の基準日</dt>
             <dd>
               <time datetime={usageConfirmedAt}>
-                {formatJapaneseDate(usageConfirmedAt)}
+                {formatDeviceDate(usageConfirmedAt)}
               </time>
             </dd>
           </div>
@@ -97,7 +107,7 @@ function formatJapaneseDateTime(dateTime: string) {
             </dt>
             <dd>
               <time datetime={sourceUpdatedAt}>
-                {formatJapaneseDateTime(sourceUpdatedAt)}
+                {formatDeviceDateTime(sourceUpdatedAt)}
               </time>
             </dd>
           </div>
@@ -106,7 +116,7 @@ function formatJapaneseDateTime(dateTime: string) {
           <dt>サイト確認日</dt>
           <dd>
             <time datetime={lastVerifiedAt}>
-              {formatJapaneseDate(lastVerifiedAt)}
+              {formatDeviceDate(lastVerifiedAt)}
             </time>
           </dd>
         </div>
@@ -173,6 +183,21 @@ function formatJapaneseDateTime(dateTime: string) {
   summary:focus-visible {
     outline: 3px solid rgb(32 184 165 / 45%);
     outline-offset: 3px;
+  }
+
+  .device-source-dates {
+    display: grid;
+    gap: 2px;
+    margin: 8px 0 0;
+    color: var(--color-text-muted);
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .device-source-dates p {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
   }
 
   .device-source-details {

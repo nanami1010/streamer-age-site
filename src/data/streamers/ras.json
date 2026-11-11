@@ -68,7 +68,7 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!mouse",
       "sourceUpdatedAt": "2023-07-04T22:48:36.595Z",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     },
     {
       "productId": "bose-quietcomfort-20",
@@ -80,7 +80,7 @@
       "sourceCommand": "!earphone",
       "sourceUpdatedAt": "2023-09-04T10:07:46.097Z",
       "verificationNote": "コマンド本文は「QC20」のみで、接続先向けのバリエーションは記載されていません。",
-      "lastVerifiedAt": "2026-10-27"
+      "lastVerifiedAt": "2026-11-10"
     }
   ]
 }
