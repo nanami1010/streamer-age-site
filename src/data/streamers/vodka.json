@@ -75,7 +75,8 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!mousepad",
       "sourceUpdatedAt": "2026-02-21T03:22:36.420Z",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "公開コマンドではARTISAN 零 SOFTまで確認できます。サイズは記載されていません。",
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "shure-sm7db",

@@ -62,6 +62,12 @@ export const DEVICE_PRODUCTS = Object.freeze([
     "needs-review"
   ),
   defineProduct(
+    "bose-quietcomfort-20-apple",
+    "イヤホン",
+    "Bose",
+    "QuietComfort 20（Appleデバイス向け）"
+  ),
+  defineProduct(
     "pulsar-x2-crazylight-medium",
     "マウス",
     "Pulsar",
@@ -100,8 +106,9 @@ export const DEVICE_PRODUCTS = Object.freeze([
     "sony-inzone-buds-wf-g700n",
     "イヤホン",
     "Sony",
-    "INZONE Buds（WF-G700N）",
-    "needs-review"
+    "INZONE Buds Glass Purple（WF-G700N/V）",
+    "confirmed",
+    { modelNumber: "WF-G700N/V" }
   ),
   defineProduct(
     "sony-inzone-m10s-ii-sdm-27q102",
@@ -126,8 +133,9 @@ export const DEVICE_PRODUCTS = Object.freeze([
     "steelseries-apex-pro-tkl-jp",
     "キーボード",
     "SteelSeries",
-    "Apex Pro TKL（日本語配列）",
-    "needs-review"
+    "Apex Pro TKL（日本語配列・64737）",
+    "confirmed",
+    { modelNumber: "64737", asin: "B0829F2MSQ" }
   ),
   defineProduct(
     "shure-se846-clear",
@@ -155,8 +163,9 @@ export const DEVICE_PRODUCTS = Object.freeze([
     "logicool-pro-x-gaming-keyboard",
     "キーボード",
     "Logicool G",
-    "PRO X Gaming Keyboard",
-    "needs-review"
+    "PRO X Gaming Keyboard（G-PKB-002・GX Blue）",
+    "confirmed",
+    { modelNumber: "G-PKB-002" }
   ),
   defineProduct(
     "steelseries-arctis-5-black-2019",

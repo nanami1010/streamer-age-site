@@ -33,25 +33,25 @@ const streamers = readdirSync(new URL("../src/data/streamers/", import.meta.url)
     )
   );
 
-test("66件の掲載記録を56製品にまとめる", () => {
+test("66件の掲載記録を57製品にまとめる", () => {
   const catalog = createDeviceCatalog(streamers);
 
-  assert.equal(catalog.length, 56);
+  assert.equal(catalog.length, 57);
   assert.equal(
     catalog.reduce((total, device) => total + device.usages.length, 0),
     66
   );
 });
 
-test("56製品のproductIdと製品情報が一意である", () => {
-  assert.equal(DEVICE_PRODUCTS.length, 56);
+test("57製品のproductIdと製品情報が一意である", () => {
+  assert.equal(DEVICE_PRODUCTS.length, 57);
   assert.equal(
     new Set(DEVICE_PRODUCTS.map((product) => product.productId)).size,
-    56
+    57
   );
   assert.equal(
     new Set(DEVICE_PRODUCTS.map(createDeviceIdentityKey)).size,
-    56
+    57
   );
 });
 
@@ -60,7 +60,7 @@ test("66件すべてが製品台帳のproductIdと正しく紐づく", () => {
 
   assert.equal(devices.length, 66);
   assert.equal(devices.every(deviceMatchesProductDefinition), true);
-  assert.equal(new Set(devices.map((device) => device.productId)).size, 56);
+  assert.equal(new Set(devices.map((device) => device.productId)).size, 57);
 });
 
 test("同一型番だけをまとめ、異なる世代を分離する", () => {
@@ -86,16 +86,24 @@ test("同一型番だけをまとめ、異なる世代を分離する", () => {
   assert.equal(m10sSecondGeneration?.usages[0].streamerName, "k4sen");
 });
 
-test("同一型番のQuietComfort 20を4人の掲載記録としてまとめる", () => {
+test("QuietComfort 20の接続先別バリエーションを誤統合しない", () => {
   const catalog = createDeviceCatalog(streamers);
   const qc20 = catalog.find(
     (device) => device.productName === "QuietComfort 20（QC20）"
   );
+  const qc20Apple = catalog.find(
+    (device) => device.productName === "QuietComfort 20（Appleデバイス向け）"
+  );
 
   assert.deepEqual(
     qc20?.usages.map((usage) => usage.streamerSlug),
-    ["cpt", "francisco", "ras", "spygea"]
+    ["cpt", "francisco", "ras"]
   );
+  assert.deepEqual(
+    qc20Apple?.usages.map((usage) => usage.streamerSlug),
+    ["spygea"]
+  );
+  assert.notEqual(qc20?.productId, qc20Apple?.productId);
 });
 
 test("同一製品のAT2035を2人の掲載記録としてまとめる", () => {
@@ -122,7 +130,7 @@ test("配信者ごとの使用確認日・検証日・出典を保持する", ()
   assert.equal(shakaUsage?.usageConfirmedAt, "2025-11-27");
   assert.equal(shakaUsage?.sourceType, "directStatement");
   assert.equal(shakaUsage?.sourceUpdatedAt, undefined);
-  assert.equal(shakaUsage?.lastVerifiedAt, "2026-11-10");
+  assert.equal(shakaUsage?.lastVerifiedAt, "2026-11-12");
   assert.equal(
     shakaUsage?.sourceUrl,
     "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s"
@@ -157,10 +165,15 @@ test("Nightbot由来54件はコマンド更新日時と使用確認日を分離�
     "公開コマンド"
   );
   assert.equal(
-    channelCommandUsages.every(
-      (usage) => usage.lastVerifiedAt === "2026-11-10"
-    ),
+    channelCommandUsages.every((usage) => /^\d{4}-\d{2}-\d{2}$/.test(usage.lastVerifiedAt)),
     true
+  );
+  assert.equal(
+    catalog
+      .find((device) => device.productId === "bose-quietcomfort-20-apple")
+      ?.usages.find((usage) => usage.streamerSlug === "spygea")
+      ?.lastVerifiedAt,
+    "2026-11-12"
   );
 });
 
@@ -281,7 +294,7 @@ test("新規公開コマンド記録は配信者ごとのコマンドと更新�
     )?.identityStatus,
     "needs-review"
   );
-  assert.match(shakaController?.verificationNote ?? "", /型番は特定できていません/);
+  assert.match(shakaController?.verificationNote ?? "", /型番.*確定できません/);
 });
 
 test("Amazon商品リンクは表示名ではなくproductIdで解決する", () => {
@@ -331,7 +344,7 @@ test("Amazon商品リンクはHTTPS・許可ホスト・タグを検証する", 
 });
 
 test("商品同一性が未確認の製品にはAmazonリンクを設定できない", () => {
-  const productId = "sony-inzone-buds-wf-g700n";
+  const productId = "sony-inzone-m10s-sdm-27q10s";
   const links = {
     [productId]: {
       amazon: {
@@ -349,6 +362,24 @@ test("商品同一性が未確認の製品にはAmazonリンクを設定でき�
 
 test("本番商品リンクは0件で、楽天表示は発行コード確認まで無効である", () => {
   assert.deepEqual(DEVICE_AFFILIATE_LINKS, {});
+  const se846 = DEVICE_PRODUCTS.find(
+    (product) => product.productId === "shure-se846-clear"
+  );
+  const shomaru7Se846 = streamers
+    .find((streamer) => streamer.slug === "shomaru7")
+    ?.devices?.find((device) => device.productId === "shure-se846-clear");
+
+  assert.equal(se846?.identityStatus, "needs-review");
+  assert.equal(se846?.commerceIdentifiers, undefined);
+  assert.equal(getDeviceAffiliateLinks("shure-se846-clear"), null);
+  assert.equal(
+    shomaru7Se846?.sourceUrl,
+    "https://nightbot.tv/t/shomaru7/commands"
+  );
+  assert.equal(shomaru7Se846?.sourceCommand, "!earphone");
+  assert.equal(shomaru7Se846?.usageConfirmedAt, undefined);
+  assert.equal(shomaru7Se846?.lastVerifiedAt, "2026-11-13");
+  assert.match(shomaru7Se846?.verificationNote ?? "", /SE535.*要確認/);
   assert.equal(
     RAKUTEN_AFFILIATE_IMPLEMENTATION_STATUS,
     "pending-issued-code-review"

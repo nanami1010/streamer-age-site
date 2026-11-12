@@ -103,7 +103,8 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2022-07-19T20:26:11.229Z",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "公開コマンドではBose QC20まで確認できます。Apple向け・Samsung/Android向けの別は特定できていません。",
+      "lastVerifiedAt": "2026-11-12"
     }
   ]
 }

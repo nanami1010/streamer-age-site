@@ -87,13 +87,13 @@
       "productId": "steelseries-apex-pro-tkl-jp",
       "type": "キーボード",
       "manufacturer": "SteelSeries",
-      "productName": "Apex Pro TKL（日本語配列）",
+      "productName": "Apex Pro TKL（日本語配列・64737）",
       "sourceUrl": "https://nightbot.tv/t/shomaru7/commands",
       "sourceType": "channelCommand",
       "sourceCommand": "!keyboard",
       "sourceUpdatedAt": "2022-11-14T16:36:06.688Z",
-      "verificationNote": "コマンド本文に世代の記載はありません。",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "公開コマンドの商品リンクが日本語配列の旧Apex Pro TKL（製品番号64737、ASIN B0829F2MSQ）へ到達することを確認しました。",
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "shure-se846-clear",
@@ -104,8 +104,8 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!earphone",
       "sourceUpdatedAt": "2022-10-12T18:48:41.692Z",
-      "verificationNote": "コマンド本文に世代の記載はありません。",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "コマンド本文はSE846 Clearですが、併記された短縮URLはSE535のAmazon検索へ到達します。世代を含む製品同一性は要確認です。",
+      "lastVerifiedAt": "2026-11-13"
     },
     {
       "productId": "audio-technica-at2035",
@@ -127,8 +127,8 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2024-10-01T18:04:39.984Z",
-      "verificationNote": "コマンド本文は「AG03」で、AG03MK2とは記載されていません。",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "コマンド本文はAG03で、AG03MK2とは記載されていません。Yamaha公式資料でもAG03とAG03MK2は別製品です。",
+      "lastVerifiedAt": "2026-11-12"
     }
   ]
 }

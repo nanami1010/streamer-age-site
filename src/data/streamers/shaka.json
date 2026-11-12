@@ -58,7 +58,7 @@
       "sourceType": "directStatement",
       "usageConfirmedAt": "2025-11-27",
       "verificationNote": "動画内の使用発言は確認済みですが、正確な型番は映像での再確認が必要です。",
-      "lastVerifiedAt": "2026-11-10"
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "finalmouse-ultralightx",
@@ -70,7 +70,7 @@
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
       "verificationNote": "公開コマンドではUltralightXまで確認できます。サイズ・カラー・バッチは特定できていません。",
-      "lastVerifiedAt": "2026-11-10"
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "fumo-saya-odin-gaming-2xl",
@@ -93,7 +93,7 @@
       "sourceCommand": "!device",
       "sourceUpdatedAt": "2026-03-23T19:29:50.152Z",
       "verificationNote": "公開コマンドではGX1 Keyboardまで確認できます。配列・押下圧別の製品型番は特定できていません。",
-      "lastVerifiedAt": "2026-11-10"
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "sony-inzone-e9",
@@ -159,8 +159,8 @@
       "sourceType": "channelCommand",
       "sourceCommand": "!controller",
       "sourceUpdatedAt": "2026-09-21T18:11:19.609Z",
-      "verificationNote": "公開コマンドではCommand Trigger for PCまで確認できます。標準モデル・コラボレーションモデルの別と型番は特定できていません。",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "公開コマンドはCommand Trigger for PC表記です。標準モデルの公式商品名とは一致しますが、型番・コラボレーションモデルの別はコマンドだけでは確定できません。",
+      "lastVerifiedAt": "2026-11-12"
     }
   ]
 }

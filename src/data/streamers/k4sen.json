@@ -77,18 +77,19 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "動画では如月れんモデルまで確認できます。初代・Ver.2などの世代は明言されていません。",
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "sony-inzone-buds-wf-g700n",
       "type": "イヤホン",
       "manufacturer": "Sony",
-      "productName": "INZONE Buds（WF-G700N）",
+      "productName": "INZONE Buds Glass Purple（WF-G700N/V）",
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "verificationNote": "動画内のイヤホン情報は確認済みですが、正確な製品名は映像での再確認が必要です。",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "動画内で装着しているGlass Purpleの外観を確認し、Sony公式の製品名・型番WF-G700N/Vと照合しました。",
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "sony-inzone-m10s-ii-sdm-27q102",
@@ -108,7 +109,8 @@
       "sourceUrl": "https://www.youtube.com/watch?v=bmn1il-BCrk&t=165s",
       "sourceType": "directStatement",
       "usageConfirmedAt": "2026-06-30",
-      "lastVerifiedAt": "2026-11-10"
+      "verificationNote": "動画ではINZONE M10Sまで確認できます。SDM-27Q10Sはメーカー公式の製品型番との照合で、動画内では型番を明言していません。",
+      "lastVerifiedAt": "2026-11-12"
     },
     {
       "productId": "neumann-bcm-104",
@@ -130,7 +132,7 @@
       "sourceCommand": "!headset",
       "sourceUpdatedAt": "2022-02-21T11:58:37.969Z",
       "verificationNote": "公開コマンドではA50 Gen 4まで確認できます。PlayStation版・Xbox版の別は特定できていません。",
-      "lastVerifiedAt": "2026-11-10"
+      "lastVerifiedAt": "2026-11-12"
     }
   ]
 }

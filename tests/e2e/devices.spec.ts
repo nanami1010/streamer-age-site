@@ -1,7 +1,7 @@
 import { mkdirSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 
-test("使用デバイス一覧に66記録を56製品として表示する", async ({ page }) => {
+test("使用デバイス一覧に66記録を57製品として表示する", async ({ page }) => {
   const response = await page.goto("/devices/");
 
   expect(response?.status()).toBe(200);
@@ -9,7 +9,7 @@ test("使用デバイス一覧に66記録を56製品として表示する", asyn
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "配信者の使用デバイス一覧"
   );
-  await expect(page.locator("[data-device-card]")).toHaveCount(56);
+  await expect(page.locator("[data-device-card]")).toHaveCount(57);
   await expect(page.locator("[data-device-usage]")).toHaveCount(66);
   await expect(page.locator("body")).not.toContainText("現在使用中");
 });
@@ -60,7 +60,7 @@ test("使用確認日・サイト確認日・出典を使用者ごとに表示�
   await expect(shakaUsage.locator("[data-device-source-dates]")).toHaveText(
     "使用確認日：2025年11月27日"
   );
-  await expect(shakaUsage).toContainText("2026年11月10日");
+  await expect(shakaUsage).toContainText("2026年11月12日");
   await expect(shakaUsage.getByRole("link", { name: /出典を確認/ })).toHaveAttribute(
     "href",
     "https://www.youtube.com/watch?v=gS4lbJ347vM&t=718s"
@@ -178,6 +178,49 @@ test("提携リンク未登録時は購入ボタンとPR表記を表示しない
   await expect(page.locator(".affiliate-disclosure")).toHaveCount(0);
 });
 
+test("SE846の出典とSE535への誤購入導線を分離する", async ({ page }) => {
+  await page.goto("/devices/");
+
+  const se846 = page.locator('[data-device-product-id="shure-se846-clear"]');
+  const shomaru7Usage = se846.locator("[data-device-usage]").filter({
+    has: page.getByRole("link", { name: /shomaru7/ })
+  });
+
+  await expect(se846).toHaveCount(1);
+  await expect(shomaru7Usage).toHaveCount(1);
+  await expect(
+    shomaru7Usage.getByRole("link", { name: /出典を確認/ })
+  ).toHaveAttribute("href", "https://nightbot.tv/t/shomaru7/commands");
+  await expect(se846.locator(".purchase-link")).toHaveCount(0);
+  await expect(
+    se846.locator('a[href*="3RV7nYm"], a[href*="se535" i]')
+  ).toHaveCount(0);
+  await expect(shomaru7Usage.locator("[data-device-source-dates]")).toHaveText(
+    "公開コマンド更新日：2022年10月13日"
+  );
+
+  await shomaru7Usage.locator("summary").click();
+  await expect(shomaru7Usage.locator(".device-verification-note")).toContainText(
+    "SE535のAmazon検索へ到達します"
+  );
+  await expect(shomaru7Usage.locator(".device-verification-note")).toContainText(
+    "製品同一性は要確認です"
+  );
+  await expect(shomaru7Usage.locator(".device-source-meta")).toContainText(
+    "2026年11月13日"
+  );
+
+  await page.goto("/streamers/shomaru7/");
+  const profileSe846 = page.locator(
+    '[data-device-product-id="shure-se846-clear"]'
+  );
+  await expect(profileSe846).toHaveCount(1);
+  await expect(profileSe846.locator(".purchase-link")).toHaveCount(0);
+  await expect(
+    profileSe846.getByRole("link", { name: /出典を確認/ })
+  ).toHaveAttribute("href", "https://nightbot.tv/t/shomaru7/commands");
+});
+
 test("既存カテゴリーで絞り込み、全件表示へ戻せる", async ({ page }) => {
   await page.goto("/devices/");
 
@@ -189,8 +232,8 @@ test("既存カテゴリーで絞り込み、全件表示へ戻せる", async ({
   await expect(page.locator("[data-device-count]")).toHaveText("3");
 
   await filter.selectOption("");
-  await expect(page.locator("[data-device-card]:visible")).toHaveCount(56);
-  await expect(page.locator("[data-device-count]")).toHaveText("56");
+  await expect(page.locator("[data-device-card]:visible")).toHaveCount(57);
+  await expect(page.locator("[data-device-count]")).toHaveText("57");
 });
 
 test("新規公開コマンド記録の日付と出典を使用者ごとに表示する", async ({ page }) => {
@@ -262,7 +305,7 @@ test("トップ下部と共通ヘッダーから一覧へ移動でき、SEO設�
   );
 });
 
-for (const width of [375, 1280]) {
+for (const width of [320, 375, 768, 1280]) {
   test(`${width}pxで使用デバイス一覧が横にはみ出さない`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/devices/");
@@ -280,10 +323,12 @@ for (const width of [375, 1280]) {
     expect(firstCard!.x).toBeGreaterThanOrEqual(-0.5);
     expect(firstCard!.x + firstCard!.width).toBeLessThanOrEqual(width + 0.5);
 
-    mkdirSync("test-results/screenshots", { recursive: true });
-    await page.screenshot({
-      path: `test-results/screenshots/devices-${width}.png`,
-      fullPage: true
-    });
+    if (width === 375 || width === 1280) {
+      mkdirSync("test-results/screenshots", { recursive: true });
+      await page.screenshot({
+        path: `test-results/screenshots/devices-${width}.png`,
+        fullPage: true
+      });
+    }
   });
 }
