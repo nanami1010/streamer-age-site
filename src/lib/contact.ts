@@ -88,6 +88,44 @@ function jsonResponse(
   });
 }
 
+async function readRequestBodyWithinLimit(
+  request: Request
+): Promise<Uint8Array | null> {
+  const reader = request.body?.getReader();
+  if (!reader) return new Uint8Array();
+
+  const chunks: Uint8Array[] = [];
+  let totalBytes = 0;
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      totalBytes += value.byteLength;
+      if (totalBytes > CONTACT_LIMITS.requestBytes) {
+        try {
+          await reader.cancel();
+        } catch {
+          // サイズ超過の応答を優先し、キャンセル時の例外は外部へ出さない。
+        }
+        return null;
+      }
+      chunks.push(value);
+    }
+  } finally {
+    reader.releaseLock();
+  }
+
+  const body = new Uint8Array(totalBytes);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return body;
+}
+
 function readText(formData: FormData, key: string): string {
   const value = formData.get(key);
   return typeof value === "string" ? value.trim() : "";
@@ -274,25 +312,39 @@ export async function processContactRequest(
 
   const requestUrl = new URL(request.url);
   const origin = request.headers.get("Origin");
-  if (origin && origin !== requestUrl.origin) {
+  if (origin !== requestUrl.origin) {
     return jsonResponse(403, {
       success: false,
       message: "このページから送信してください。"
     });
   }
 
-  const contentLength = Number(request.headers.get("Content-Length") ?? 0);
-  if (contentLength > CONTACT_LIMITS.requestBytes) {
-    return jsonResponse(413, {
-      success: false,
-      message: "入力内容が長すぎます。"
-    });
+  const contentLengthHeader = request.headers.get("Content-Length");
+  if (contentLengthHeader !== null) {
+    if (!/^\d+$/.test(contentLengthHeader)) {
+      return jsonResponse(400, {
+        success: false,
+        message: "入力内容を読み取れませんでした。"
+      });
+    }
+
+    const contentLength = Number(contentLengthHeader);
+    if (
+      !Number.isSafeInteger(contentLength) ||
+      contentLength > CONTACT_LIMITS.requestBytes
+    ) {
+      return jsonResponse(413, {
+        success: false,
+        message: "入力内容が長すぎます。"
+      });
+    }
   }
 
   const contentType = request.headers.get("Content-Type") ?? "";
+  const mediaType = contentType.split(";", 1)[0]?.trim().toLowerCase();
   if (
-    !contentType.startsWith("multipart/form-data") &&
-    !contentType.startsWith("application/x-www-form-urlencoded")
+    mediaType !== "multipart/form-data" &&
+    mediaType !== "application/x-www-form-urlencoded"
   ) {
     return jsonResponse(415, {
       success: false,
@@ -300,9 +352,27 @@ export async function processContactRequest(
     });
   }
 
+  let requestBody: Uint8Array | null;
+  try {
+    requestBody = await readRequestBodyWithinLimit(request);
+  } catch {
+    return jsonResponse(400, {
+      success: false,
+      message: "入力内容を読み取れませんでした。"
+    });
+  }
+  if (requestBody === null) {
+    return jsonResponse(413, {
+      success: false,
+      message: "入力内容が長すぎます。"
+    });
+  }
+
   let formData: FormData;
   try {
-    formData = await request.formData();
+    formData = await new Response(requestBody, {
+      headers: { "Content-Type": contentType }
+    }).formData();
   } catch {
     return jsonResponse(400, {
       success: false,

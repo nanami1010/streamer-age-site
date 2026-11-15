@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { processContactRequest } from "../src/lib/contact.ts";
+import {
+  CONTACT_LIMITS,
+  processContactRequest
+} from "../src/lib/contact.ts";
 
-function createRequest(overrides = {}) {
-  const body = new URLSearchParams({
+function createFormBody(overrides = {}) {
+  return new URLSearchParams({
     type: "correction",
     name: "テスト利用者",
     replyEmail: "visitor@example.com",
@@ -14,13 +17,26 @@ function createRequest(overrides = {}) {
     "cf-turnstile-response": "test-token",
     ...overrides
   });
+}
+
+function createRequest(overrides = {}, options = {}) {
+  const body = options.body ?? createFormBody(overrides);
+  const headers = new Headers({
+    "Content-Type": "application/x-www-form-urlencoded",
+    Origin: "https://example.com"
+  });
+
+  for (const [name, value] of Object.entries(options.headers ?? {})) {
+    if (value === null) {
+      headers.delete(name);
+    } else {
+      headers.set(name, value);
+    }
+  }
 
   return new Request("https://example.com/api/contact", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      Origin: "https://example.com"
-    },
+    headers,
     body
   });
 }
@@ -73,7 +89,7 @@ test("設定不足時はメールを送らず503を返す", async () => {
 test("必須項目と文字数をサーバー側で検証する", async () => {
   let verified = false;
   const response = await processContactRequest(
-    createRequest({ replyEmail: "invalid", message: "短い" }),
+    createRequest({ type: "", replyEmail: "", message: "" }),
     createRuntime(),
     {
       verifyTurnstile: async () => {
@@ -86,6 +102,7 @@ test("必須項目と文字数をサーバー側で検証する", async () => {
 
   assert.equal(response.status, 400);
   assert.equal(body.success, false);
+  assert.ok(body.fieldErrors.type);
   assert.ok(body.fieldErrors.replyEmail);
   assert.ok(body.fieldErrors.message);
   assert.equal(verified, false);
@@ -150,9 +167,11 @@ test("所属事務所URLと単一行項目を検証する", async () => {
 
 test("送信先を固定し、利用者のアドレスはReply-Toだけに使用する", async () => {
   let sentMessage;
+  let sendCount = 0;
   const runtime = createRuntime({
     CONTACT_EMAIL: {
       async send(message) {
+        sendCount += 1;
         sentMessage = message;
         return { messageId: "test-message" };
       }
@@ -166,6 +185,7 @@ test("送信先を固定し、利用者のアドレスはReply-Toだけに使用
 
   assert.equal(response.status, 200);
   assert.equal(body.success, true);
+  assert.equal(sendCount, 1);
   assert.equal(sentMessage.to, "owner@example.com");
   assert.equal(sentMessage.from.email, "contact@example.com");
   assert.equal(sentMessage.from.name, "STREAMER AGE");
@@ -225,4 +245,364 @@ test("メール配送に失敗した場合は成功を返さない", async () =>
 
   assert.equal(response.status, 502);
   assert.equal((await response.json()).success, false);
+});
+
+test("メールヘッダーに使う入力の改行と文字数超過を拒否する", async () => {
+  let sendCount = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sendCount += 1;
+      }
+    }
+  });
+
+  const cases = [
+    { values: { name: "利用者\r\nBcc: attacker@example.com" }, field: "name" },
+    {
+      values: { replyEmail: "visitor@example.com\r\nBcc: attacker@example.com" },
+      field: "replyEmail"
+    },
+    { values: { name: "a".repeat(CONTACT_LIMITS.name + 1) }, field: "name" },
+    {
+      values: { message: "a".repeat(CONTACT_LIMITS.messageMax + 1) },
+      field: "message"
+    }
+  ];
+
+  for (const { values, field } of cases) {
+    const response = await processContactRequest(
+      createRequest(values),
+      runtime,
+      { verifyTurnstile: validTurnstile }
+    );
+    const body = await response.json();
+    assert.equal(response.status, 400);
+    assert.ok(body.fieldErrors[field]);
+  }
+
+  assert.equal(sendCount, 0);
+});
+
+test("Turnstileのhostname・action不一致と通信失敗を拒否する", async () => {
+  let sendCount = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sendCount += 1;
+      }
+    }
+  });
+  const cases = [
+    {
+      verifyTurnstile: async () => ({
+        success: true,
+        hostname: "attacker.example",
+        action: "contact"
+      }),
+      expectedStatus: 400
+    },
+    {
+      verifyTurnstile: async () => ({
+        success: true,
+        hostname: "example.com",
+        action: "other"
+      }),
+      expectedStatus: 400
+    },
+    {
+      verifyTurnstile: async () => {
+        throw new Error("Turnstile unavailable");
+      },
+      expectedStatus: 503
+    }
+  ];
+
+  for (const { verifyTurnstile, expectedStatus } of cases) {
+    const response = await processContactRequest(createRequest(), runtime, {
+      verifyTurnstile
+    });
+    assert.equal(response.status, expectedStatus);
+    assert.equal((await response.json()).success, false);
+  }
+
+  assert.equal(sendCount, 0);
+});
+
+test("レート制限サービスのエラー時はメールを送らず503を返す", async () => {
+  let sendCount = 0;
+  const runtime = createRuntime({
+    CONTACT_RATE_LIMITER: {
+      async limit() {
+        throw new Error("rate limiter unavailable");
+      }
+    },
+    CONTACT_EMAIL: {
+      async send() {
+        sendCount += 1;
+      }
+    }
+  });
+
+  const response = await processContactRequest(createRequest(), runtime, {
+    verifyTurnstile: validTurnstile
+  });
+
+  assert.equal(response.status, 503);
+  assert.equal((await response.json()).success, false);
+  assert.equal(sendCount, 0);
+});
+
+test("不正または欠落したOriginを拒否する", async () => {
+  let verified = 0;
+  let sendCount = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sendCount += 1;
+      }
+    }
+  });
+
+  for (const origin of ["https://attacker.example", null]) {
+    const response = await processContactRequest(
+      createRequest({}, { headers: { Origin: origin } }),
+      runtime,
+      {
+        verifyTurnstile: async () => {
+          verified += 1;
+          return validTurnstile();
+        }
+      }
+    );
+    assert.equal(response.status, 403);
+  }
+
+  assert.equal(verified, 0);
+  assert.equal(sendCount, 0);
+});
+
+test("ハニーポット入力は外部処理を呼ばず一般的な成功応答を返す", async () => {
+  let verified = 0;
+  let limited = 0;
+  let sent = 0;
+  const runtime = createRuntime({
+    CONTACT_RATE_LIMITER: {
+      async limit() {
+        limited += 1;
+        return { success: true };
+      }
+    },
+    CONTACT_EMAIL: {
+      async send() {
+        sent += 1;
+      }
+    }
+  });
+
+  const response = await processContactRequest(
+    createRequest({ website: "https://spam.example/" }),
+    runtime,
+    {
+      verifyTurnstile: async () => {
+        verified += 1;
+        return validTurnstile();
+      }
+    }
+  );
+  const body = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(body.success, true);
+  assert.equal(verified, 0);
+  assert.equal(limited, 0);
+  assert.equal(sent, 0);
+});
+
+test("Content-Lengthの有無にかかわらず上限内の本文を受け付ける", async () => {
+  let sent = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sent += 1;
+      }
+    }
+  });
+  const body = createFormBody({ type: "other", targetReference: "" });
+  const bodyText = body.toString();
+  const byteLength = new TextEncoder().encode(bodyText).byteLength;
+
+  const withoutLength = createRequest(
+    {},
+    { body, headers: { "Content-Length": null } }
+  );
+  assert.equal(withoutLength.headers.get("Content-Length"), null);
+  const withoutLengthResponse = await processContactRequest(withoutLength, runtime, {
+    verifyTurnstile: validTurnstile
+  });
+
+  const withLengthResponse = await processContactRequest(
+    createRequest({}, {
+      body: bodyText,
+      headers: { "Content-Length": String(byteLength) }
+    }),
+    runtime,
+    { verifyTurnstile: validTurnstile }
+  );
+
+  assert.equal(withoutLengthResponse.status, 200);
+  assert.equal(withLengthResponse.status, 200);
+  assert.equal(sent, 2);
+});
+
+test("ブラウザと同じmultipart/form-dataの正常な問い合わせを受け付ける", async () => {
+  let sent = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sent += 1;
+      }
+    }
+  });
+  const formData = new FormData();
+  for (const [name, value] of createFormBody()) {
+    formData.set(name, value);
+  }
+  const request = createRequest({}, {
+    body: formData,
+    headers: {
+      "Content-Type": null,
+      "Content-Length": null
+    }
+  });
+
+  assert.match(
+    request.headers.get("Content-Type") ?? "",
+    /^multipart\/form-data;\s*boundary=/
+  );
+  const response = await processContactRequest(request, runtime, {
+    verifyTurnstile: validTurnstile
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(sent, 1);
+});
+
+test("本文は上限ちょうどを許可し、宣言値または実本文の1バイト超過を拒否する", async () => {
+  let verified = 0;
+  let sent = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sent += 1;
+      }
+    }
+  });
+  const dependencies = {
+    verifyTurnstile: async () => {
+      verified += 1;
+      return validTurnstile();
+    }
+  };
+  const baseBody = createFormBody({ type: "other", targetReference: "" }).toString();
+  const paddingPrefix = `${baseBody}&padding=`;
+  const prefixBytes = new TextEncoder().encode(paddingPrefix).byteLength;
+  const exactLimitBody = `${paddingPrefix}${"a".repeat(
+    CONTACT_LIMITS.requestBytes - prefixBytes
+  )}`;
+  const oneByteOverBody = `${exactLimitBody}a`;
+
+  assert.equal(
+    new TextEncoder().encode(exactLimitBody).byteLength,
+    CONTACT_LIMITS.requestBytes
+  );
+  assert.equal(
+    new TextEncoder().encode(oneByteOverBody).byteLength,
+    CONTACT_LIMITS.requestBytes + 1
+  );
+
+  const exactLimit = await processContactRequest(
+    createRequest({}, {
+      body: exactLimitBody,
+      headers: { "Content-Length": null }
+    }),
+    runtime,
+    dependencies
+  );
+
+  const declaredTooLarge = await processContactRequest(
+    createRequest({}, {
+      headers: { "Content-Length": String(CONTACT_LIMITS.requestBytes + 1) }
+    }),
+    runtime,
+    dependencies
+  );
+  const actualTooLarge = await processContactRequest(
+    createRequest({}, {
+      body: oneByteOverBody,
+      headers: { "Content-Length": null }
+    }),
+    runtime,
+    dependencies
+  );
+  const invalidLength = await processContactRequest(
+    createRequest({}, { headers: { "Content-Length": "invalid" } }),
+    runtime,
+    dependencies
+  );
+
+  assert.equal(exactLimit.status, 200);
+  assert.equal(declaredTooLarge.status, 413);
+  assert.equal(actualTooLarge.status, 413);
+  assert.equal(invalidLength.status, 400);
+  assert.equal(verified, 1);
+  assert.equal(sent, 1);
+});
+
+test("不正なContent-Typeと解析不能なフォームを拒否する", async () => {
+  let sent = 0;
+  const runtime = createRuntime({
+    CONTACT_EMAIL: {
+      async send() {
+        sent += 1;
+      }
+    }
+  });
+
+  const invalidType = await processContactRequest(
+    createRequest({}, { headers: { "Content-Type": "text/plain" } }),
+    runtime,
+    { verifyTurnstile: validTurnstile }
+  );
+  const disguisedType = await processContactRequest(
+    createRequest({}, {
+      headers: { "Content-Type": "application/x-www-form-urlencoded-evil" }
+    }),
+    runtime,
+    { verifyTurnstile: validTurnstile }
+  );
+  const invalidMultipart = await processContactRequest(
+    createRequest({}, {
+      body: "not-multipart",
+      headers: { "Content-Type": "multipart/form-data" }
+    }),
+    runtime,
+    { verifyTurnstile: validTurnstile }
+  );
+
+  assert.equal(invalidType.status, 415);
+  assert.equal(disguisedType.status, 415);
+  assert.equal(invalidMultipart.status, 400);
+  assert.equal(sent, 0);
+});
+
+test("API応答はキャッシュを禁止し秘密情報を含めない", async () => {
+  const response = await processContactRequest(createRequest(), createRuntime(), {
+    verifyTurnstile: validTurnstile
+  });
+  const responseText = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("Cache-Control"), "no-store");
+  assert.doesNotMatch(responseText, /owner@example\.com|contact@example\.com|test-secret/);
 });
