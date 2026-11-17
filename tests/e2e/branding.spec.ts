@@ -23,3 +23,14 @@ for (const pageInfo of pages) {
     await expect(page.locator("body")).not.toContainText("配信者年齢サイト");
   });
 }
+
+test("ヘッダーのロゴリンクにキーボードフォーカスを表示する", async ({ page }) => {
+  await page.goto("/");
+
+  const brand = page.locator(".brand");
+  await brand.focus();
+
+  await expect(brand).toBeFocused();
+  await expect(brand).toHaveCSS("outline-style", "solid");
+  await expect(brand).toHaveCSS("outline-width", "3px");
+});

@@ -46,25 +46,44 @@ test("トップページにJSONと一致する167件のカードを表示する"
   await expect(cards(page)).toHaveCount(streamers.length);
   await expectVisibleCount(page, streamers.length);
 
+  const renderedCards = await cards(page).evaluateAll((elements) =>
+    elements.map((card) => {
+      const facts = card.querySelectorAll(".streamer-card__facts > div");
+      const link = card.querySelector<HTMLAnchorElement>(".streamer-card__link");
+      const age = card.querySelector<HTMLElement>("[data-birth]");
+
+      return {
+        name: card.querySelector("h2")?.textContent?.trim() ?? "",
+        birthday: facts[1]?.querySelector("dd")?.textContent?.trim() ?? "",
+        age: age?.textContent?.trim() ?? "",
+        birthDate: age?.dataset.birth ?? "",
+        detail: card.querySelector(".streamer-card__detail")?.textContent?.trim() ?? "",
+        href: link?.getAttribute("href") ?? ""
+      };
+    })
+  );
+
+  const cardsByHref = new Map(renderedCards.map((card) => [card.href, card]));
+  expect(cardsByHref.size, "カードのリンク先が重複していないこと").toBe(streamers.length);
+
   for (const streamer of streamers) {
-    const card = cardFor(page, streamer);
-    await expect(card).toHaveCount(1);
-    await expect(card).toContainText(streamer.name);
-    await expect(card).toContainText(
+    const href = `/streamers/${streamer.slug}/`;
+    const card = cardsByHref.get(href);
+    const context = `${streamer.name} (${streamer.slug})`;
+
+    expect(card, `${context} のカードが存在すること`).toBeDefined();
+    expect(card?.name, `${context} の活動名`).toBe(streamer.name);
+    expect(card?.birthday, `${context} の誕生日`).toBe(
       formatBirthDate(streamer.birthDate, streamer.birthMonthDay)
     );
 
     const age = calculateAge(streamer.birthDate);
-    await expect(card.locator("[data-birth]")).toHaveText(
-      age === null ? "未確認" : `${age}歳`
-    );
-    await expect(card.locator(".streamer-card__detail")).toContainText(
+    expect(card?.age, `${context} の年齢`).toBe(age === null ? "未確認" : `${age}歳`);
+    expect(card?.birthDate, `${context} の生年月日データ`).toBe(streamer.birthDate ?? "");
+    expect(card?.detail, `${context} の詳細リンク文言`).toContain(
       "プロフィール・使用デバイスを見る"
     );
-    await expect(card.locator(".streamer-card__link")).toHaveAttribute(
-      "href",
-      `/streamers/${streamer.slug}/`
-    );
+    expect(card?.href, `${context} の詳細リンク先`).toBe(href);
   }
 });
 
