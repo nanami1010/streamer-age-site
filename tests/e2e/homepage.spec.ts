@@ -219,6 +219,33 @@ test("所属選択肢を登録データから生成し、所属単独で絞り�
   }
 });
 
+test("OTANIを2026年公式チームの所属として表示・検索する", async ({ page }) => {
+  const otani = streamers.find((streamer) => streamer.slug === "otani");
+  const officialTeam = "名古屋NTPOJA";
+  const previousAffiliation = "Burning Core Toyama";
+
+  expect(otani).toBeDefined();
+  expect(otani?.affiliation).toBe(officialTeam);
+
+  const optionValues = await affiliationFilter(page).locator("option").evaluateAll(
+    (options) => options.map((option) => (option as HTMLOptionElement).value)
+  );
+  expect(optionValues).toContain(officialTeam);
+  expect(optionValues).not.toContain(previousAffiliation);
+  await expect(cardFor(page, otani!)).toHaveAttribute(
+    "data-affiliations",
+    JSON.stringify([officialTeam])
+  );
+
+  await affiliationFilter(page).selectOption(officialTeam);
+  await expectVisibleCount(page, streamersForAffiliation(officialTeam).length);
+  await expect(cardFor(page, otani!)).toBeVisible();
+  await expect(cardFor(page, otani!)).toHaveCount(1);
+
+  await page.goto("/streamers/otani/");
+  await expect(page.locator("main")).toContainText(`所属：${officialTeam}`);
+});
+
 test("所属未登録者は所属指定時だけ除外し、すべての所属で対象に戻る", async ({ page }) => {
   const withoutAffiliation = streamers.filter(
     (streamer) => streamer.affiliation === null
