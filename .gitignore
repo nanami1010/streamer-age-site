@@ -28,6 +28,9 @@ pnpm-debug.log*
 
 .wrangler/
 
+# generated Wrangler config containing the private contact destination
+/.wrangler.contact-binding.*.json
+
 # Playwright
 playwright-report/
 test-results/
